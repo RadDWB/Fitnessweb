@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness - im Schulsport</title>
+
+    <meta name="description" content="Grundsatzseite zu Fitness im Schulsport: ganzheitlicher Fitnessbegriff, Abgrenzung zum Gesundheitsbegriff, Unterrichtsimpulse, Grafiken, Glossar und Quiz.">
+    <meta property="og:title" content="Fitness - im Schulsport">
+    <meta property="og:description" content="Infoseite für Referendarinnen und Referendare im Lehramt Sport - mit Grafiken, Quellen, Glossar und Wissensquiz.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/RadDWB/Fitnessweb/main/assets/images/fitness-ganzheitlich.png">
+    <meta property="og:image:width" content="1222">
+    <meta property="og:image:height" content="1287">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fitness - im Schulsport">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/RadDWB/Fitnessweb/main/assets/images/fitness-ganzheitlich.png">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f3f7f2;
+            --bg-card: #ffffff;
+            --nav-bg: rgba(243,247,242,0.92);
+            --border: rgba(22, 101, 52, 0.14);
+            --border-hl: rgba(8, 145, 178, 0.42);
+            --text: #102017;
+            --muted: #60736a;
+            --accent: #2f7d32;
+            --accent-dk: #1f5f27;
+            --blue: #0e7490;
+            --purple: #7c3a96;
+            --gold: #b7791f;
+            --accent-lg: rgba(47, 125, 50, 0.10);
+            --glow: 0 20px 60px -12px rgba(47, 125, 50, 0.24);
+            --radius: 1.25rem;
+            --fh: 'Space Grotesk', system-ui, sans-serif;
+            --fb: 'Inter', system-ui, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--fb);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.75), rgba(243,247,242,0.92) 46%, #eef6f0),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 200;
+            background: var(--nav-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--accent), var(--blue));
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-family: var(--fh);
+            font-weight: 800;
+        }
+
+        .nav-title {
+            font-family: var(--fh);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .nav-title em { font-style: normal; color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 2px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: color .2s, background .2s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+
+        @media (max-width: 860px) { .nav-links { display: none; } }
+
+        .hero {
+            min-height: 86vh;
+            display: grid;
+            align-items: center;
+            padding: 112px 24px 56px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 62px 0 auto;
+            height: 68%;
+            background: linear-gradient(90deg, rgba(10, 63, 35, 0.72), rgba(14, 116, 144, 0.48)), url("assets/images/fitness-hero.jpeg") center/cover;
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 28%;
+            background: linear-gradient(180deg, rgba(243,247,242,0), var(--bg));
+            z-index: -1;
+        }
+
+        .hero-inner {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            color: #fff;
+            padding-top: 42px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.16);
+            border: 1px solid rgba(255,255,255,0.34);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--fh);
+            font-size: clamp(2.3rem, 7vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.02;
+            max-width: 780px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 670px;
+            color: rgba(255,255,255,0.90);
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .section {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 24px 84px;
+        }
+
+        .section-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .section-heading {
+            font-family: var(--fh);
+            font-size: clamp(1.45rem, 3vw, 2.1rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 18px;
+        }
+
+        .section-lead {
+            color: var(--muted);
+            max-width: 820px;
+            margin-bottom: 28px;
+            font-size: 0.98rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            font-family: var(--fb);
+            font-size: 0.875rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: border-color .2s, box-shadow .2s, color .2s, background .2s, transform .2s;
+        }
+
+        .btn:hover {
+            border-color: var(--border-hl);
+            color: var(--accent);
+            box-shadow: 0 4px 14px rgba(47,125,50,0.14);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dk);
+            border-color: var(--accent-dk);
+            color: #fff;
+        }
+
+        .btn-ghost {
+            background: rgba(255,255,255,0.14);
+            border-color: rgba(255,255,255,0.34);
+            color: #fff;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.22);
+            color: #fff;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) { .concept-grid { grid-template-columns: 1fr; } }
+
+        .text-panel,
+        .source-panel,
+        .quiz-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(18, 64, 35, 0.05);
+        }
+
+        .text-panel h3,
+        .source-panel h3,
+        .quiz-panel h3 {
+            font-family: var(--fh);
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .text-panel p,
+        .source-panel p { color: var(--muted); margin-bottom: 14px; }
+
+        .key-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .key-item {
+            border-left: 4px solid var(--accent);
+            padding: 10px 0 10px 14px;
+            color: var(--muted);
+        }
+
+        .key-item strong { color: var(--text); }
+
+        .dimensions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        @media (max-width: 900px) { .dimensions { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .dimensions { grid-template-columns: 1fr; } }
+
+        .dimension {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .dimension span {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--accent-lg);
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .dimension h3 {
+            font-family: var(--fh);
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .dimension p {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .print-bar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .print-hint {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        .grafiken-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .grafiken-grid .wide { grid-column: 1 / -1; }
+        @media (max-width: 820px) { .grafiken-grid { grid-template-columns: 1fr; } }
+
+        .grafik-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: zoom-in;
+            transition: transform .35s cubic-bezier(.4,0,.2,1),
+                        box-shadow .35s cubic-bezier(.4,0,.2,1),
+                        border-color .2s;
+        }
+
+        .grafik-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--glow);
+            border-color: var(--border-hl);
+        }
+
+        .grafik-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #fff;
+        }
+
+        .grafik-card:not(.wide) img {
+            aspect-ratio: 1055 / 1491;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .grafik-caption {
+            padding: 14px 18px 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .grafik-num {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 3px;
+        }
+
+        .grafik-label {
+            font-family: var(--fh);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .grafik-hint {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        @media (max-width: 760px) { .source-grid { grid-template-columns: 1fr; } }
+
+        .source-link {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            color: inherit;
+            text-decoration: none;
+            transition: border-color .2s, transform .2s, box-shadow .2s;
+        }
+
+        .source-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-hl);
+            box-shadow: var(--glow);
+        }
+
+        .source-link strong {
+            display: block;
+            font-family: var(--fh);
+            margin-bottom: 6px;
+        }
+
+        .source-link span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .quiz-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        @media (max-width: 860px) { .quiz-layout { grid-template-columns: 1fr; } }
+
+        .quiz-score {
+            display: grid;
+            gap: 10px;
+        }
+
+        .score-box {
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(47,125,50,0.12), rgba(14,116,144,0.12));
+            border: 1px solid var(--border-hl);
+            padding: 18px;
+        }
+
+        .score-box strong {
+            font-family: var(--fh);
+            font-size: 2rem;
+            display: block;
+            color: var(--accent);
+        }
+
+        .question {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+
+        .question p {
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .answers {
+            display: grid;
+            gap: 8px;
+        }
+
+        .answer {
+            width: 100%;
+            text-align: left;
+            border: 1px solid var(--border);
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            cursor: pointer;
+            color: var(--text);
+            font-family: var(--fb);
+            font-weight: 600;
+        }
+
+        .answer.correct { border-color: rgba(47,125,50,0.65); background: rgba(47,125,50,0.10); }
+        .answer.wrong { border-color: rgba(190,18,60,0.55); background: rgba(190,18,60,0.08); }
+        .answer:disabled { cursor: default; }
+
+        .feedback {
+            color: var(--muted);
+            font-size: 0.86rem;
+            margin-top: 10px;
+            min-height: 1.4em;
+        }
+
+        .glossar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+        }
+
+        .glossar-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color .2s;
+        }
+
+        .glossar-item:hover { border-color: var(--border-hl); }
+
+        .glossar-trigger {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 13px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--fb);
+        }
+
+        .g-letter {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            background: var(--accent-lg);
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .g-term {
+            flex: 1;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .g-chevron {
+            flex-shrink: 0;
+            color: var(--muted);
+            transition: transform .2s;
+        }
+
+        .glossar-item.open .g-chevron { transform: rotate(180deg); }
+        .glossar-item.open .g-letter { background: var(--accent); color: #fff; }
+
+        .g-def {
+            display: none;
+            padding: 11px 16px 14px 52px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.65;
+            border-top: 1px solid var(--border);
+        }
+
+        .glossar-item.open .g-def { display: block; }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            background: rgba(2, 6, 23, 0.88);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .lightbox.active { display: flex; flex-direction: column; }
+
+        .lb-topbar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            z-index: 10;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.45), transparent);
+            gap: 12px;
+        }
+
+        .lb-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.78);
+        }
+
+        .lb-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .lb-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.20);
+            color: #fff;
+            height: 36px;
+            min-width: 36px;
+            padding: 0 10px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: var(--fb);
+            font-weight: 700;
+            transition: background .2s;
+            white-space: nowrap;
+        }
+
+        .lb-btn:hover { background: rgba(255,255,255,0.22); }
+        .lb-btn:disabled { opacity: 0.4; cursor: default; }
+        .lb-btn:disabled:hover { background: rgba(255,255,255,0.12); }
+
+        .lb-btn-close {
+            background: rgba(220,38,38,0.30);
+            border-color: rgba(220,38,38,0.40);
+        }
+
+        .lb-btn-close:hover { background: rgba(220,38,38,0.55); }
+
+        .lb-scroll {
+            flex: 1;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 74px 20px 24px;
+        }
+
+        .lb-img-wrap { display: inline-block; }
+
+        .lb-img-wrap img {
+            display: block;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+            touch-action: pinch-zoom;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 36px 24px 40px;
+        }
+
+        .footer-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 620px) {
+            nav { padding: 0 16px; }
+            .hero { min-height: 78vh; }
+            .text-panel, .source-panel, .quiz-panel { padding: 18px; }
+            .lb-scroll { padding-top: 112px; }
+        }
+
+        @media print {
+            nav, .hero, .print-bar, .grafik-caption,
+            .glossar-section, .quiz-section, footer, .lightbox { display: none !important; }
+            body { background: #fff; }
+            .section { padding: 0; max-width: 100%; }
+            .grafiken-grid { display: block !important; }
+            .grafik-card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 210mm;
+                min-height: 297mm;
+                page-break-after: always;
+                break-after: page;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                cursor: default;
+                margin: 0 auto;
+            }
+            .grafik-card:last-child { page-break-after: avoid; break-after: avoid; }
+            .grafik-card img {
+                max-width: 190mm;
+                max-height: 280mm;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#grundsatz">Grundsatz</a></li>
+        <li><a href="#grafiken">Grafiken</a></li>
+        <li><a href="#quellen">Quellen</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#glossar">Glossar</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <div class="hero-inner">
+        <div class="badge">Lehramt Sport · Referendariat · Unterrichtsmaterial</div>
+        <h1>Fitness - im Schulsport</h1>
+        <p>Eine Grundsatzseite für eine reflektierte Fitnesspädagogik: Fitness wird hier nicht auf Training, Körperform oder Leistungsoptimierung reduziert, sondern als lernbarer, verantwortbarer und gesundheitsorientierter Lebensstil verstanden.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="#grafiken">Grafiken ansehen</a>
+            <a class="btn btn-ghost" href="#quellen">Quellen öffnen</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="section" id="grundsatz">
+        <p class="section-eyebrow">Grundsatz</p>
+        <h2 class="section-heading">Fitness ist mehr als Training</h2>
+        <p class="section-lead">Für den Schulsport ist die entscheidende Nuance: Fitness ist ein schulisch bearbeitbarer Teilbereich von Gesundheit, aber nicht mit Gesundheit identisch. Gesundheit beschreibt einen umfassenden Zustand bzw. Prozess körperlichen, psychischen und sozialen Wohlbefindens. Fitness bezeichnet die Bereitschaft und Fähigkeit, das eigene Leben bewegungsbezogen, körperlich, sozial und alltagspraktisch leistungsfähig und wohltuend zu gestalten.</p>
+
+        <div class="concept-grid">
+            <div class="text-panel">
+                <h3>Abgrenzung zum Gesundheitsbegriff</h3>
+                <p>Die WHO fasst Gesundheit breit als körperliches, psychisches und soziales Wohlbefinden und ausdrücklich nicht nur als Abwesenheit von Krankheit. Fitness liegt darunter als praxisnaher Bildungsgegenstand: Lernende können Ausdauer, Kraft, Beweglichkeit, Koordination und Schnelligkeit erfahren, aber ebenso Erholung, Ernährung, Schlaf, soziale Unterstützung, Stressregulation und Risikofaktoren reflektieren.</p>
+                <p>Im Unterricht wird daraus kein medizinisches Heilsversprechen. Fitnesspädagogik macht Schülerinnen und Schüler urteilsfähig: Was passt zu mir? Was ist belastbar? Was ist gesundheitsförderlich, riskant, einseitig oder nur trendig inszeniert?</p>
+                <div class="key-list">
+                    <div class="key-item"><strong>Fitness als Kompetenz:</strong> Wissen, Können, Wollen und Verantworten werden miteinander verbunden.</div>
+                    <div class="key-item"><strong>Fitness als Reflexionsanlass:</strong> Trends wie CrossFit können motivieren, müssen aber didaktisiert, individualisiert und kritisch eingeordnet werden.</div>
+                    <div class="key-item"><strong>Fitness als Lebensweltbezug:</strong> Körperbilder, Apps, Social Media, Schlaf, Stress und Alltagsbewegung gehören zur Sache.</div>
+                </div>
+            </div>
+
+            <div class="source-panel">
+                <h3>Für Referendarinnen und Referendare</h3>
+                <p>Die Seite kann doppelt genutzt werden: als fachliche Quelle für die eigene Unterrichtsplanung und als Materialsammlung, um Grafiken gemeinsam mit Lerngruppen in der Halle, im Kursraum oder digital über TaskCards, Messenger oder Lernplattformen zu betrachten.</p>
+                <p>Didaktischer Kern ist nicht: „Mehr Wiederholungen sind automatisch besser.“ Der Kern ist: Lernende sollen ihre Fitness verstehen, entwickeln und begründet gestalten können.</p>
+                <a class="btn" href="assets/docs/sport-6-23-duwenbeck-basis-fitness.pdf">Basis-Fitness PDF öffnen</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <p class="section-eyebrow">Orientierung</p>
+        <h2 class="section-heading">Vier Blickrichtungen für Unterrichtsplanung</h2>
+        <div class="dimensions">
+            <div class="dimension">
+                <span>1</span>
+                <h3>Motorisch</h3>
+                <p>Ausdauer, Kraft, Beweglichkeit, Koordination und Schnelligkeit werden praktisch erfahren und altersgemäß entwickelt.</p>
+            </div>
+            <div class="dimension">
+                <span>2</span>
+                <h3>Regenerativ</h3>
+                <p>Belastung braucht Erholung: Schlaf, Pausen, Entspannung und Körperwahrnehmung sind Teil von Fitness.</p>
+            </div>
+            <div class="dimension">
+                <span>3</span>
+                <h3>Sozial</h3>
+                <p>Fitness entsteht nicht isoliert. Beziehungen, Gruppe, Unterstützung und Anerkennung prägen Motivation und Wohlbefinden.</p>
+            </div>
+            <div class="dimension">
+                <span>4</span>
+                <h3>Reflexiv</h3>
+                <p>Schülerinnen und Schüler prüfen Trends, Körperbilder, Apps und Trainingsformen auf Sinn, Risiko und Passung.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section grafiken-section" id="grafiken">
+        <p class="section-eyebrow">Lernmaterial</p>
+        <h2 class="section-heading">Grafiken zur Arbeit mit Lerngruppen</h2>
+        <p class="section-lead">Die Grafiken lassen sich einzeln in der Lightbox öffnen, zoomen und im Unterrichtsgespräch auswerten. Die ganzheitliche Fitnessgrafik ist zugleich das Vorschaubild für geteilte Links.</p>
+
+        <div class="print-bar">
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"/>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                    <rect x="6" y="14" width="12" height="8"/>
+                </svg>
+                Drucken / Als PDF speichern
+            </button>
+            <span class="print-hint">Jede Grafik wird auf einer eigenen DIN-A4-Seite ausgegeben</span>
+        </div>
+
+        <div class="grafiken-grid">
+            <div class="grafik-card wide" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Ganzheitliche Fitnessgrafik vergrößern">
+                <img src="assets/images/fitness-ganzheitlich.png" alt="Fitness ganzheitlich - nachhaltig - für mehr Lebensqualität" loading="eager">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Vorschaubild und Überblick</div>
+                    <div class="grafik-label">Fitness ganzheitlich denken</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+            <div class="grafik-card" onclick="openLightbox(1)" role="button" tabindex="0" aria-label="Fitness Grafik 1 vergrößern">
+                <img src="assets/images/fitness-1.png" alt="Fitness Grafik 1" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Grafik 1 von 4</div>
+                    <div class="grafik-label">Fitnessbegriff und Grundlagen</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+            <div class="grafik-card" onclick="openLightbox(2)" role="button" tabindex="0" aria-label="Fitness Grafik 2 vergrößern">
+                <img src="assets/images/fitness-2.png" alt="Fitness Grafik 2" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Grafik 2 von 4</div>
+                    <div class="grafik-label">Gesundheitsorientierung und Lebenswelt</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+            <div class="grafik-card" onclick="openLightbox(3)" role="button" tabindex="0" aria-label="Fitness Grafik 3 vergrößern">
+                <img src="assets/images/fitness-3.png" alt="Fitness Grafik 3" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Grafik 3 von 4</div>
+                    <div class="grafik-label">Fitnesspädagogik im Unterricht</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+            <div class="grafik-card" onclick="openLightbox(4)" role="button" tabindex="0" aria-label="Fitness Grafik 4 vergrößern">
+                <img src="assets/images/fitness-4.png" alt="Fitness Grafik 4" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Grafik 4 von 4</div>
+                    <div class="grafik-label">Verantwortung für die eigene Fitness</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="quellen">
+        <p class="section-eyebrow">Quellen und Hintergrund</p>
+        <h2 class="section-heading">Grundsatztexte und externe Bezugspunkte</h2>
+        <p class="section-lead">Die PDFs sind als lokale Grundsatzmaterialien direkt verlinkt. Ergänzend sind offizielle Quellen zur Gesundheitsdefinition und zu Bewegungsempfehlungen aufgeführt, damit die Abgrenzung zwischen Gesundheit, Bewegung und Fitness nachvollziehbar bleibt.</p>
+        <div class="source-grid">
+            <a class="source-link" href="assets/docs/sport-6-23-duwenbeck-basis-fitness.pdf">
+                <strong>Duwenbeck: Fitness ist mehr!</strong>
+                <span>Grundsatztext zur Suche nach einer Fitnesspädagogik für den Sportunterricht.</span>
+            </a>
+            <a class="source-link" href="assets/docs/sport-2-2021-forum-duwenbeck-crossfit.pdf">
+                <strong>Duwenbeck: Mehr als eine CrossFit-Box</strong>
+                <span>Diskussion zum kritischen Umgang mit Fitnesstrends im Unterricht.</span>
+            </a>
+            <a class="source-link" href="https://www.who.int/about/governance/constitution">
+                <strong>WHO: Gesundheitsdefinition</strong>
+                <span>Gesundheit als körperliches, psychisches und soziales Wohlbefinden, nicht nur als Abwesenheit von Krankheit.</span>
+            </a>
+            <a class="source-link" href="https://www.who.int/news-room/fact-sheets/detail/physical-activity">
+                <strong>WHO: Physical activity</strong>
+                <span>Aktuelle Übersicht zu körperlicher Aktivität, Fitness, Gesundheitsnutzen und Bewegungsmangel.</span>
+            </a>
+            <a class="source-link" href="https://gesund.bund.de/en/healthy-through-exercise">
+                <strong>gesund.bund.de: Bewegung und Gesundheit</strong>
+                <span>Alltagsnaher Überblick zu Bewegung als Beitrag zu Gesundheit und körperlicher Fitness.</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+        <p class="section-eyebrow">Wissenscheck</p>
+        <h2 class="section-heading">Quiz: Fitness reflektiert unterrichten</h2>
+        <div class="quiz-layout">
+            <div class="quiz-panel quiz-score">
+                <h3>Auswertung</h3>
+                <div class="score-box">
+                    <strong id="scoreValue">0/6</strong>
+                    <span id="scoreText">Beantworte die Fragen und prüfe dein Verständnis.</span>
+                </div>
+                <button class="btn" onclick="resetQuiz()">Quiz zurücksetzen</button>
+            </div>
+            <div id="quizQuestions"></div>
+        </div>
+    </section>
+
+    <section class="section glossar-section" id="glossar">
+        <p class="section-eyebrow">Fachsprache</p>
+        <h2 class="section-heading">Glossar - Fitness im Schulsport</h2>
+        <div class="glossar-grid" id="glossarGrid"></div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        © 2026 Straight Edge Media · Fitness - im Schulsport · Material für Lehramt Sport und Sportunterricht
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">‹ Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">−</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+const IMAGES = [
+    { src: 'assets/images/fitness-ganzheitlich.png', label: 'Fitness ganzheitlich denken' },
+    { src: 'assets/images/fitness-1.png', label: 'Grafik 1 - Fitnessbegriff und Grundlagen' },
+    { src: 'assets/images/fitness-2.png', label: 'Grafik 2 - Gesundheitsorientierung und Lebenswelt' },
+    { src: 'assets/images/fitness-3.png', label: 'Grafik 3 - Fitnesspädagogik im Unterricht' },
+    { src: 'assets/images/fitness-4.png', label: 'Grafik 4 - Verantwortung für die eigene Fitness' },
+];
+
+let currentIdx = 0;
+let currentZoom = 1;
+const ZOOM_STEP = 0.25;
+const ZOOM_MAX = 4;
+const ZOOM_MIN = 0.5;
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(idx) {
+    currentIdx = idx;
+    currentZoom = 1;
+    setImage(currentIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+
+function setImage(idx) {
+    const d = IMAGES[idx];
+    lbImg.src = d.src;
+    lbImg.alt = d.label;
+    lbLabel.textContent = d.label;
+    btnPrev.disabled = idx === 0;
+    btnNext.disabled = idx === IMAGES.length - 1;
+    updateZoom();
+}
+
+function navLightbox(dir) {
+    const next = currentIdx + dir;
+    if (next < 0 || next >= IMAGES.length) return;
+    currentIdx = next;
+    currentZoom = 1;
+    lbScroll.scrollTo(0, 0);
+    setImage(currentIdx);
+}
+
+function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+}
+
+function updateZoom() {
+    const vw = window.innerWidth - 40;
+    const vh = window.innerHeight - 90;
+    if (currentZoom === 1) {
+        lbImg.style.width = '';
+        lbImg.style.maxWidth = vw + 'px';
+        lbImg.style.maxHeight = vh + 'px';
+    } else {
+        const base = Math.min(vw, lbImg.naturalWidth || vw);
+        lbImg.style.maxWidth = 'none';
+        lbImg.style.maxHeight = 'none';
+        lbImg.style.width = (base * currentZoom) + 'px';
+    }
+    zoomPct.textContent = Math.round(currentZoom * 100) + '%';
+}
+
+function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
+function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+
+lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === '+') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') zoomReset();
+});
+
+window.addEventListener('resize', () => {
+    if (lb.classList.contains('active')) updateZoom();
+});
+
+document.querySelectorAll('.grafik-card').forEach(card => {
+    card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+    });
+});
+
+const TERMS = [
+    { term: 'AMRAP', def: 'Trainingsformat aus dem Fitnessbereich: As many repetitions as possible. Im Schulsport nur sinnvoll, wenn Belastung, Technikqualität, Individualisierung und Reflexion didaktisch abgesichert sind.' },
+    { term: 'Ausdauer', def: 'Motorische Fähigkeit, eine Belastung über längere Zeit aufrechtzuerhalten und sich anschließend angemessen zu erholen.' },
+    { term: 'Beweglichkeit', def: 'Fähigkeit, Bewegungen mit ausreichender Gelenkreichweite und muskulärer Dehnfähigkeit auszuführen.' },
+    { term: 'Fitness', def: 'Im Schulsport ein ganzheitlicher Bildungsgegenstand: körperliche Leistungsfähigkeit, Wohlbefinden, Erholung, soziale Bezüge, Lebensstil und reflektierter Umgang mit Belastung.' },
+    { term: 'Fitnesspädagogik', def: 'Didaktische Perspektive, die Schülerinnen und Schüler nicht nur trainieren lässt, sondern urteils-, gestaltungs- und verantwortungsfähig macht.' },
+    { term: 'Gesundheit', def: 'Breiter Begriff für körperliches, psychisches und soziales Wohlbefinden. Fitness kann dazu beitragen, ist aber nicht mit Gesundheit gleichzusetzen.' },
+    { term: 'Gesundheitsorientierung', def: 'Unterrichtliche Ausrichtung, bei der Bewegung, Belastung und Lebensstil im Hinblick auf Wohlbefinden, Prävention und verantwortliches Handeln reflektiert werden.' },
+    { term: 'Kondition', def: 'Sammelbegriff für energetisch geprägte motorische Fähigkeiten wie Ausdauer, Kraft und Schnelligkeit; oft ergänzt durch Beweglichkeit.' },
+    { term: 'Koordination', def: 'Fähigkeit, Bewegungen zweckmäßig, sicher, ökonomisch und situationsangemessen zu steuern.' },
+    { term: 'Kraft', def: 'Fähigkeit des neuromuskulären Systems, Widerstände zu überwinden, ihnen entgegenzuwirken oder sie zu halten.' },
+    { term: 'Lebensweltbezug', def: 'Anbindung des Unterrichts an Erfahrungen der Lernenden, etwa Fitnessapps, Körperbilder, Social Media, Ernährung, Schlaf oder Fitnesstrends.' },
+    { term: 'Regeneration', def: 'Wiederherstellung nach Belastung. Schlaf, Pausen, Ernährung, Entspannung und Stressmanagement sind dafür zentral.' },
+    { term: 'Schnelligkeit', def: 'Fähigkeit, motorische Aktionen in kurzer Zeit auszuführen oder schnell auf Reize zu reagieren.' },
+    { term: 'Theorie-Praxis-Verzahnung', def: 'Fachliche Informationen werden nicht nur besprochen, sondern an praktischen Erfahrungen überprüft und für eigenes Handeln nutzbar gemacht.' },
+    { term: 'Trainingsprinzipien', def: 'Regeln zur Gestaltung von Belastung, Anpassung und Erholung, etwa Progression, Variation, Individualisierung und angemessene Belastungsdosierung.' },
+];
+
+function buildGlossar() {
+    const grid = document.getElementById('glossarGrid');
+    TERMS.sort((a, b) => a.term.localeCompare(b.term, 'de'));
+    TERMS.forEach(t => {
+        const letter = t.term.replace(/^\d/, '#')[0].toUpperCase();
+        const item = document.createElement('div');
+        item.className = 'glossar-item';
+        item.innerHTML = `
+            <button class="glossar-trigger" onclick="toggleG(this)">
+                <span class="g-letter">${letter}</span>
+                <span class="g-term">${t.term}</span>
+                <svg class="g-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+            <div class="g-def">${t.def}</div>`;
+        grid.appendChild(item);
+    });
+}
+
+function toggleG(btn) {
+    btn.closest('.glossar-item').classList.toggle('open');
+}
+
+const QUIZ = [
+    {
+        q: 'Warum ist Fitness im Schulsport nicht einfach mit Gesundheit gleichzusetzen?',
+        a: ['Fitness ist ein bearbeitbarer Teilbereich und Beitrag zu Gesundheit.', 'Fitness meint ausschließlich maximale Leistung.', 'Gesundheit ist nur die Abwesenheit von Krankheit.'],
+        c: 0,
+        f: 'Fitness kann gesundheitsförderlich sein, bleibt aber enger und unterrichtlich konkreter als der Gesundheitsbegriff.'
+    },
+    {
+        q: 'Welche Perspektive passt am besten zu einer reflektierten Fitnesspädagogik?',
+        a: ['Lernende sollen Trainingsformen verstehen, erproben und beurteilen.', 'Alle machen dasselbe Workout mit maximalem Druck.', 'Körperform ist das zentrale Bewertungskriterium.'],
+        c: 0,
+        f: 'Der pädagogische Auftrag liegt in Urteilskraft, Gestaltung und Verantwortung.'
+    },
+    {
+        q: 'Was ist bei Fitnesstrends wie CrossFit im Unterricht besonders wichtig?',
+        a: ['Sie müssen didaktisiert und individualisiert werden.', 'Sie können unverändert aus dem Studio übernommen werden.', 'Sie ersetzen Theorie und Reflexion.'],
+        c: 0,
+        f: 'Trends können motivieren, brauchen aber Technikqualität, Belastungssteuerung und Reflexion.'
+    },
+    {
+        q: 'Welche Aussage gehört zu einem ganzheitlichen Fitnessverständnis?',
+        a: ['Erholung, Schlaf, soziale Kontakte und Stressregulation sind mitzubedenken.', 'Nur Kraft und Ausdauer zählen.', 'Fitness ist vor allem ein Aussehensthema.'],
+        c: 0,
+        f: 'Ganzheitliche Fitness verbindet motorische, personale, soziale und ökologische Faktoren.'
+    },
+    {
+        q: 'Was bedeutet Theorie-Praxis-Verzahnung in diesem Themenfeld?',
+        a: ['Praktische Belastungserfahrungen werden fachlich ausgewertet.', 'Theorie findet unabhängig von Bewegung statt.', 'Praxis ersetzt jede fachliche Einordnung.'],
+        c: 0,
+        f: 'Lernwirksam wird Fitness, wenn Bewegungserfahrung und fachliche Reflexion zusammenkommen.'
+    },
+    {
+        q: 'Welche Formulierung eignet sich als Ziel für Schülerinnen und Schüler?',
+        a: ['Ich kann begründen, welche Fitnessform zu mir passt und warum.', 'Ich muss immer mehr Wiederholungen schaffen.', 'Ich trainiere nur, was in sozialen Medien gut aussieht.'],
+        c: 0,
+        f: 'Das Ziel ist eine begründete und verantwortliche Gestaltung der eigenen Fitness.'
+    },
+];
+
+let answered = Array(QUIZ.length).fill(false);
+let score = 0;
+
+function buildQuiz() {
+    const root = document.getElementById('quizQuestions');
+    root.innerHTML = '';
+    QUIZ.forEach((item, idx) => {
+        const q = document.createElement('div');
+        q.className = 'question';
+        q.innerHTML = `<p>${idx + 1}. ${item.q}</p><div class="answers"></div><div class="feedback" id="fb-${idx}"></div>`;
+        const answers = q.querySelector('.answers');
+        item.a.forEach((answer, aIdx) => {
+            const btn = document.createElement('button');
+            btn.className = 'answer';
+            btn.textContent = answer;
+            btn.onclick = () => answerQuestion(idx, aIdx, btn);
+            answers.appendChild(btn);
+        });
+        root.appendChild(q);
+    });
+    updateScore();
+}
+
+function answerQuestion(qIdx, aIdx, btn) {
+    if (answered[qIdx]) return;
+    answered[qIdx] = true;
+    const isCorrect = aIdx === QUIZ[qIdx].c;
+    if (isCorrect) score++;
+    const question = btn.closest('.question');
+    question.querySelectorAll('.answer').forEach((b, idx) => {
+        b.disabled = true;
+        if (idx === QUIZ[qIdx].c) b.classList.add('correct');
+        if (idx === aIdx && !isCorrect) b.classList.add('wrong');
+    });
+    document.getElementById(`fb-${qIdx}`).textContent = QUIZ[qIdx].f;
+    updateScore();
+}
+
+function updateScore() {
+    document.getElementById('scoreValue').textContent = `${score}/${QUIZ.length}`;
+    const done = answered.filter(Boolean).length;
+    document.getElementById('scoreText').textContent = done === QUIZ.length
+        ? 'Auswertung abgeschlossen. Nutze falsche Antworten als Gesprächsanlass.'
+        : `${done} von ${QUIZ.length} Fragen beantwortet.`;
+}
+
+function resetQuiz() {
+    answered = Array(QUIZ.length).fill(false);
+    score = 0;
+    buildQuiz();
+}
+
+buildGlossar();
+buildQuiz();
+</script>
+</body>
+</html>
