@@ -130,6 +130,7 @@
             padding: 112px 24px 56px;
             position: relative;
             overflow: hidden;
+            cursor: zoom-in;
         }
 
         .hero::before {
@@ -137,7 +138,7 @@
             position: absolute;
             inset: 62px 0 auto;
             height: 68%;
-            background: linear-gradient(90deg, rgba(10, 63, 35, 0.72), rgba(14, 116, 144, 0.48)), url("assets/images/fitness-hero.jpeg") center/cover;
+            background: linear-gradient(90deg, rgba(10, 63, 35, 0.80), rgba(14, 116, 144, 0.56)), url("assets/images/fitness-ganzheitlich.png") center 18%/cover;
             z-index: -2;
         }
 
@@ -195,6 +196,20 @@
             gap: 12px;
             flex-wrap: wrap;
             margin-top: 28px;
+        }
+
+        .hero-open-hint {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-top: 18px;
+            border-radius: 999px;
+            padding: 6px 12px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.28);
+            color: rgba(255,255,255,0.88);
+            font-size: 0.78rem;
+            font-weight: 700;
         }
 
         .section {
@@ -498,6 +513,50 @@
             font-weight: 800;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+        }
+
+        .source-section {
+            position: relative;
+            padding-top: 34px;
+            padding-bottom: 34px;
+            margin-bottom: 84px;
+            border: 1px solid rgba(14,116,144,0.24);
+            border-radius: 24px;
+            background:
+                linear-gradient(135deg, rgba(14,116,144,0.12), rgba(47,125,50,0.10)),
+                rgba(255,255,255,0.72);
+            box-shadow: 0 24px 70px -34px rgba(16,32,23,0.45);
+        }
+
+        .source-section::before {
+            content: "Quellenbasis";
+            position: absolute;
+            top: -13px;
+            left: 24px;
+            border-radius: 999px;
+            padding: 5px 12px;
+            background: var(--blue);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .source-toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 6px 0 22px;
+        }
+
+        .source-collapsible {
+            display: none;
+        }
+
+        .source-collapsible.open {
+            display: block;
         }
 
         .quiz-layout {
@@ -935,15 +994,16 @@
     </ul>
 </nav>
 
-<header class="hero">
+<header class="hero" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Ganzheitliche Fitnessgrafik öffnen">
     <div class="hero-inner">
         <div class="badge">Lehramt Sport · Referendariat · Unterrichtsmaterial</div>
         <h1>Fitness - im Schulsport</h1>
         <p>Eine Grundsatzseite für eine reflektierte Fitnesspädagogik: Fitness wird hier nicht auf Training, Körperform oder Leistungsoptimierung reduziert, sondern als lernbarer, verantwortbarer und gesundheitsorientierter Lebensstil verstanden.</p>
         <div class="hero-actions">
-            <a class="btn btn-primary" href="#grafiken">Grafiken ansehen</a>
-            <a class="btn btn-ghost" href="#quellen">Quellen öffnen</a>
+            <a class="btn btn-primary" href="#grafiken" onclick="event.stopPropagation()">Grafiken ansehen</a>
+            <a class="btn btn-ghost" href="#quellen" onclick="event.stopPropagation()">Quellen öffnen</a>
         </div>
+        <div class="hero-open-hint">Hintergrundgrafik anklicken zum Vergrößern</div>
     </div>
 </header>
 
@@ -1004,7 +1064,7 @@
     <section class="section grafiken-section" id="grafiken">
         <p class="section-eyebrow">Lernmaterial</p>
         <h2 class="section-heading">Grafiken zur Arbeit mit Lerngruppen</h2>
-        <p class="section-lead">Die Grafiken lassen sich einzeln in der Lightbox öffnen, zoomen und im Unterrichtsgespräch auswerten. Die ganzheitliche Fitnessgrafik ist zugleich das Vorschaubild für geteilte Links.</p>
+        <p class="section-lead">Die Grafiken lassen sich einzeln in der Lightbox öffnen, zoomen und im Unterrichtsgespräch auswerten. Die ganzheitliche Fitnessgrafik bleibt als Header- und Vorschaubild erhalten und öffnet sich per Klick auf den Seitenkopf.</p>
 
         <div class="print-bar">
             <button class="btn btn-primary" onclick="window.print()">
@@ -1019,14 +1079,6 @@
         </div>
 
         <div class="grafiken-grid">
-            <div class="grafik-card wide" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Ganzheitliche Fitnessgrafik vergrößern">
-                <img src="assets/images/fitness-ganzheitlich.png" alt="Fitness ganzheitlich - nachhaltig - für mehr Lebensqualität" loading="eager">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Vorschaubild und Überblick</div>
-                    <div class="grafik-label">Fitness ganzheitlich denken</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
             <div class="grafik-card" onclick="openLightbox(1)" role="button" tabindex="0" aria-label="Fitness Grafik 1 vergrößern">
                 <img src="assets/images/fitness-1.png" alt="Fitness Grafik 1" loading="lazy">
                 <div class="grafik-caption">
@@ -1062,10 +1114,15 @@
         </div>
     </section>
 
-    <section class="section" id="quellen">
+    <section class="section source-section" id="quellen">
         <p class="section-eyebrow">Quellen und Hintergrund</p>
         <h2 class="section-heading">Erweiterte Literaturliste und externe Bezugspunkte</h2>
         <p class="section-lead">Die PDFs sind als lokale Grundsatzmaterialien direkt verlinkt. Ergänzend sind offizielle Quellen zur Gesundheitsdefinition und zu Bewegungsempfehlungen aufgeführt, damit die Abgrenzung zwischen Gesundheit, Bewegung und Fitness nachvollziehbar bleibt. Die Auswahl trennt bewusst zwischen Fitness als Unterrichtsgegenstand, Gesundheit als schulischem Bildungsauftrag und Bewegung als Teil einer gesundheitsförderlichen Schule. Beckers ist hier der zentrale Bezugspunkt für Sicherheits- und Gesundheitsförderung im Schulsport; Duwenbeck schärft den ganzheitlichen Fitnessbegriff.</p>
+        <div class="source-toggle-row">
+            <button class="btn btn-primary" id="sourceToggle" onclick="toggleSources()">Quellen öffnen</button>
+            <a class="btn" href="assets/docs/sport-6-23-duwenbeck-basis-fitness.pdf">Basis-Fitness PDF</a>
+        </div>
+        <div class="source-collapsible" id="sourceCollapsible">
         <div class="source-grid expanded">
             <a class="source-link" href="assets/docs/sport-6-23-duwenbeck-basis-fitness.pdf">
                 <span class="source-meta">Schlüsselquelle Fitness</span>
@@ -1172,6 +1229,7 @@
                 <strong>Förderung der allgemeinen Fitness im Schulsport</strong>
                 <span>Ergänzende schulpraktische Quelle zur Planung und Umsetzung allgemeiner Fitnessförderung im Sportunterricht.</span>
             </a>
+        </div>
         </div>
     </section>
 
@@ -1332,6 +1390,13 @@ document.querySelectorAll('.grafik-card').forEach(card => {
     card.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
     });
+});
+
+document.querySelector('.hero').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(0);
+    }
 });
 
 const TERMS = [
@@ -1568,6 +1633,13 @@ function toggleQuiz() {
     const btn = document.getElementById('quizToggle');
     const open = panel.classList.toggle('open');
     btn.textContent = open ? 'Quiz einklappen' : 'Quiz öffnen';
+}
+
+function toggleSources() {
+    const panel = document.getElementById('sourceCollapsible');
+    const btn = document.getElementById('sourceToggle');
+    const open = panel.classList.toggle('open');
+    btn.textContent = open ? 'Quellen einklappen' : 'Quellen öffnen';
 }
 
 buildGlossar();
