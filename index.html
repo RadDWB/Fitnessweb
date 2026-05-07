@@ -771,6 +771,50 @@
             gap: 10px;
         }
 
+        .glossar-section {
+            position: relative;
+            padding-top: 34px;
+            padding-bottom: 34px;
+            margin-bottom: 84px;
+            border: 1px solid rgba(124,58,150,0.24);
+            border-radius: 24px;
+            background:
+                linear-gradient(135deg, rgba(124,58,150,0.10), rgba(47,125,50,0.10)),
+                rgba(255,255,255,0.72);
+            box-shadow: 0 24px 70px -34px rgba(16,32,23,0.45);
+        }
+
+        .glossar-section::before {
+            content: "Fachsprache";
+            position: absolute;
+            top: -13px;
+            left: 24px;
+            border-radius: 999px;
+            padding: 5px 12px;
+            background: var(--purple);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .glossar-toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 6px 0 22px;
+        }
+
+        .glossar-collapsible {
+            display: none;
+        }
+
+        .glossar-collapsible.open {
+            display: block;
+        }
+
         .glossar-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -1263,7 +1307,14 @@
     <section class="section glossar-section" id="glossar">
         <p class="section-eyebrow">Fachsprache</p>
         <h2 class="section-heading">Glossar - Fitness im Schulsport</h2>
-        <div class="glossar-grid" id="glossarGrid"></div>
+        <p class="section-lead">Das Glossar bündelt zentrale Fitness-, Trainings- und Gesundheitsbegriffe für die Unterrichtsplanung und für die Arbeit mit Schülerinnen und Schülern. Es ist standardmäßig eingeklappt, damit die Seite übersichtlich bleibt.</p>
+        <div class="glossar-toggle-row">
+            <button class="btn btn-primary" id="glossarToggle" onclick="toggleGlossar()">Glossar öffnen</button>
+            <a class="btn" href="#quiz">Zum Quiz</a>
+        </div>
+        <div class="glossar-collapsible" id="glossarCollapsible">
+            <div class="glossar-grid" id="glossarGrid"></div>
+        </div>
     </section>
 </main>
 
@@ -1400,21 +1451,68 @@ document.querySelector('.hero').addEventListener('keydown', e => {
 });
 
 const TERMS = [
-    { term: 'AMRAP', def: 'Trainingsformat aus dem Fitnessbereich: As many repetitions as possible. Im Schulsport nur sinnvoll, wenn Belastung, Technikqualität, Individualisierung und Reflexion didaktisch abgesichert sind.' },
-    { term: 'Ausdauer', def: 'Motorische Fähigkeit, eine Belastung über längere Zeit aufrechtzuerhalten und sich anschließend angemessen zu erholen.' },
-    { term: 'Beweglichkeit', def: 'Fähigkeit, Bewegungen mit ausreichender Gelenkreichweite und muskulärer Dehnfähigkeit auszuführen.' },
+    { term: 'Aerobe Ausdauer', def: 'Ausdauerleistung, bei der Energie überwiegend mit Sauerstoff bereitgestellt wird. Im Schulsport wichtig für gesundheitsorientiertes Herz-Kreislauf-Training und länger andauernde moderate Belastungen.' },
+    { term: 'Anaerobe Belastung', def: 'Kurzzeitige, intensive Belastung, bei der Energie teilweise ohne ausreichende Sauerstoffbereitstellung gewonnen wird. Für Schule nur dosiert und reflektiert einsetzen.' },
+    { term: 'AMRAP', def: 'As many repetitions as possible: möglichst viele Wiederholungen in vorgegebener Zeit. Im Unterricht nur sinnvoll, wenn Technikqualität, Belastungssteuerung, Differenzierung und Reflexion abgesichert sind.' },
+    { term: 'Ausdauer', def: 'Motorische Fähigkeit, eine Belastung über längere Zeit aufrechtzuerhalten, Ermüdung zu widerstehen und sich anschließend angemessen zu erholen.' },
+    { term: 'Beanspruchung', def: 'Individuelle innere Reaktion auf eine Belastung. Zwei Lernende können dieselbe Aufgabe ausführen, aber sehr unterschiedlich beansprucht sein.' },
+    { term: 'Belastung', def: 'Äußere Anforderung einer Übung oder Trainingsform, etwa Dauer, Intensität, Wiederholungszahl, Tempo, Zusatzgewicht oder Pausenlänge.' },
+    { term: 'Belastungsdosierung', def: 'Bewusste Steuerung von Umfang, Intensität, Dichte und Pause. Zentral, damit Fitnessunterricht fordernd, aber nicht überfordernd wird.' },
+    { term: 'Belastungsdichte', def: 'Verhältnis von Belastungs- zu Erholungszeiten. Eine hohe Dichte entsteht bei kurzen Pausen und vielen Arbeitsphasen.' },
+    { term: 'Belastungsintensität', def: 'Grad der Anstrengung einer Belastung. Kann z. B. über Herzfrequenz, Tempo, Gewicht, subjektives Belastungsempfinden oder technische Qualität eingeschätzt werden.' },
+    { term: 'Belastungsumfang', def: 'Gesamtmenge der Belastung, etwa Trainingsdauer, Streckenlänge, Wiederholungen, Sätze oder Stationen.' },
+    { term: 'Beweglichkeit', def: 'Fähigkeit, Bewegungen mit ausreichender Gelenkreichweite und muskulärer Dehnfähigkeit auszuführen. Wichtig für Bewegungsspielraum, Technik und Verletzungsprophylaxe.' },
+    { term: 'Bewegungsförderung', def: 'Alle Maßnahmen, die mehr und qualitativ bessere Bewegung im Schulalltag ermöglichen: Unterricht, Pausen, Schulweg, AGs, Räume und Schulkultur.' },
+    { term: 'Bodyweight Training', def: 'Training mit dem eigenen Körpergewicht, etwa Liegestütz, Kniebeuge, Plank oder Ausfallschritt. Gut schulgeeignet, wenn Varianten differenziert werden.' },
+    { term: 'Cool-down', def: 'Ruhiger Ausklang nach Belastung, z. B. lockeres Bewegen, Atmung, Mobilisation oder Reflexion. Unterstützt Übergang, Wahrnehmung und Regeneration.' },
+    { term: 'Core-Training', def: 'Training der Rumpfstabilität. Ziel ist nicht nur ein trainierter Bauch, sondern stabile Haltung und kontrollierte Kraftübertragung.' },
+    { term: 'CrossFit', def: 'Fitnesstrend mit hochintensiven, funktionellen und oft wettkampforientierten Workouts. Im Schulsport nur als kritisch didaktisiertes Thema geeignet, nicht als bloße Kopie aus der Box.' },
+    { term: 'Dehnen', def: 'Gezielte Beeinflussung von Beweglichkeit und Muskelspannung. Im Unterricht sollte zwischen Mobilisieren, dynamischem Dehnen und länger gehaltenem Stretching unterschieden werden.' },
+    { term: 'Differenzierung', def: 'Anpassung von Aufgaben an unterschiedliche Voraussetzungen, z. B. leichtere/schwerere Übungsvarianten, Tempo, Pausen oder Zielzonen.' },
+    { term: 'Erholung', def: 'Phase, in der Belastungsfolgen verarbeitet werden. Erholung ist kein Zusatz, sondern Bestandteil sinnvoller Fitnessentwicklung.' },
+    { term: 'Ernährung', def: 'Einflussfaktor auf Leistungsfähigkeit, Wohlbefinden und Regeneration. Im Schulsport eher reflektierend und lebensweltbezogen behandeln, nicht moralisierend.' },
+    { term: 'Fartlek', def: 'Fahrtspiel: wechselnde Laufgeschwindigkeiten nach Gelände, Gefühl oder Vorgabe. Niedrigschwellige Methode für abwechslungsreiche Ausdauerschulung.' },
     { term: 'Fitness', def: 'Im Schulsport ein ganzheitlicher Bildungsgegenstand: körperliche Leistungsfähigkeit, Wohlbefinden, Erholung, soziale Bezüge, Lebensstil und reflektierter Umgang mit Belastung.' },
-    { term: 'Fitnesspädagogik', def: 'Didaktische Perspektive, die Schülerinnen und Schüler nicht nur trainieren lässt, sondern urteils-, gestaltungs- und verantwortungsfähig macht.' },
+    { term: 'Fitnesspädagogik', def: 'Didaktische Perspektive, die Lernende nicht nur trainieren lässt, sondern urteils-, gestaltungs- und verantwortungsfähig macht.' },
+    { term: 'Fitnesstest', def: 'Verfahren zur Einschätzung motorischer Leistungsfähigkeit. Tests können Lernanlässe sein, dürfen aber nicht auf Beschämung, Normdruck oder reine Rangordnung hinauslaufen.' },
+    { term: 'FITT-Prinzip', def: 'Planungshilfe für Training: Frequency, Intensity, Time, Type. Also: Häufigkeit, Intensität, Dauer und Art der Belastung.' },
+    { term: 'Funktionelles Training', def: 'Training alltags- oder sportnaher Bewegungsmuster wie Drücken, Ziehen, Heben, Stabilisieren, Springen oder Rotieren.' },
+    { term: 'Ganzheitlicher Fitnessbegriff', def: 'Fitness umfasst nicht nur motorische Fähigkeiten, sondern auch Schlaf, Ernährung, Stress, Hygiene, soziale Kontakte, Umwelt und verantwortliche Selbststeuerung.' },
     { term: 'Gesundheit', def: 'Breiter Begriff für körperliches, psychisches und soziales Wohlbefinden. Fitness kann dazu beitragen, ist aber nicht mit Gesundheit gleichzusetzen.' },
+    { term: 'Gesundheitsbildung', def: 'Bildungsauftrag, Lernende zu Wissen, Urteilsfähigkeit und verantwortlichem Handeln in Bezug auf Gesundheit zu befähigen.' },
     { term: 'Gesundheitsorientierung', def: 'Unterrichtliche Ausrichtung, bei der Bewegung, Belastung und Lebensstil im Hinblick auf Wohlbefinden, Prävention und verantwortliches Handeln reflektiert werden.' },
+    { term: 'HIIT', def: 'High Intensity Interval Training: sehr intensive Intervalle mit Pausen. Im Schulsport nur mit Vorsicht, klarer Techniksteuerung und individueller Anpassung.' },
+    { term: 'Individualisierung', def: 'Anpassung von Trainingszielen und Belastungen an persönliche Voraussetzungen, Bedürfnisse und Lernstände.' },
+    { term: 'Intervallmethode', def: 'Wechsel von Belastungs- und Erholungsphasen. Im Unterricht gut geeignet, wenn Intensität und Pausen transparent gesteuert werden.' },
     { term: 'Kondition', def: 'Sammelbegriff für energetisch geprägte motorische Fähigkeiten wie Ausdauer, Kraft und Schnelligkeit; oft ergänzt durch Beweglichkeit.' },
     { term: 'Koordination', def: 'Fähigkeit, Bewegungen zweckmäßig, sicher, ökonomisch und situationsangemessen zu steuern.' },
     { term: 'Kraft', def: 'Fähigkeit des neuromuskulären Systems, Widerstände zu überwinden, ihnen entgegenzuwirken oder sie zu halten.' },
+    { term: 'Kraftausdauer', def: 'Fähigkeit, Kraftleistungen über längere Zeit oder viele Wiederholungen aufrechtzuerhalten. Häufig relevant bei Zirkeltraining und Bodyweight-Übungen.' },
+    { term: 'Lebensstil', def: 'Muster alltäglicher Entscheidungen und Routinen, z. B. Bewegung, Schlaf, Ernährung, Medienzeit, Stressbewältigung und soziale Kontakte.' },
     { term: 'Lebensweltbezug', def: 'Anbindung des Unterrichts an Erfahrungen der Lernenden, etwa Fitnessapps, Körperbilder, Social Media, Ernährung, Schlaf oder Fitnesstrends.' },
+    { term: 'Maximalkraft', def: 'Größtmögliche Kraft, die willkürlich gegen einen Widerstand entwickelt werden kann. In der Schule meist nicht Schwerpunkt, aber als Begriff für Kraftformen relevant.' },
+    { term: 'Mobilisation', def: 'Vorbereitende Bewegungen zur Aktivierung von Gelenken, Muskulatur und Bewegungsumfang. Häufig sinnvoller Einstieg vor intensiveren Aufgaben.' },
+    { term: 'Monitoring', def: 'Beobachten und Dokumentieren von Belastung, Befinden oder Fortschritt, z. B. über Puls, RPE, Trainingsprotokoll oder Reflexionsbogen.' },
+    { term: 'Motorische Grundeigenschaften', def: 'Zentrale körperliche Fähigkeiten: Ausdauer, Kraft, Schnelligkeit, Beweglichkeit und Koordination.' },
+    { term: 'Pacing', def: 'Einteilung von Kraft und Tempo über eine Belastungsdauer. Wichtig, damit Lernende Belastung kontrollieren statt nur maximal starten.' },
+    { term: 'Progression', def: 'Allmähliche Steigerung von Anforderungen. Im Unterricht kann Progression über Technik, Umfang, Intensität, Komplexität oder Selbstständigkeit erfolgen.' },
+    { term: 'Prävention', def: 'Vorbeugung von Risiken und Erkrankungen. Im Schulsport wichtig, aber nicht der einzige Sinn von Fitness und Gesundheitsbildung.' },
     { term: 'Regeneration', def: 'Wiederherstellung nach Belastung. Schlaf, Pausen, Ernährung, Entspannung und Stressmanagement sind dafür zentral.' },
+    { term: 'RPE-Skala', def: 'Rating of Perceived Exertion: subjektive Einschätzung der Anstrengung. Sehr nützlich, um Belastung ohne Geräte zu steuern.' },
+    { term: 'Schlaf', def: 'Zentraler Regenerationsfaktor für Lernen, Wohlbefinden und Leistungsfähigkeit. Gehört zu einem ganzheitlichen Fitnessverständnis.' },
     { term: 'Schnelligkeit', def: 'Fähigkeit, motorische Aktionen in kurzer Zeit auszuführen oder schnell auf Reize zu reagieren.' },
+    { term: 'Selbststeuerung', def: 'Fähigkeit, Belastung, Ziele, Pausen und Übungswahl zunehmend selbstständig und begründet zu regulieren.' },
+    { term: 'Sicherheitsförderung', def: 'Pädagogischer Auftrag, Risiken zu erkennen, Verhalten anzupassen und Verantwortung für sich und andere zu übernehmen.' },
+    { term: 'Stationstraining', def: 'Organisationsform mit mehreren Übungsstationen. Gut geeignet für Vielfalt und Differenzierung, braucht aber klare Technik- und Belastungssteuerung.' },
+    { term: 'Stressmanagement', def: 'Umgang mit psychischer Belastung, z. B. über Atmung, Entspannung, Bewegung, Pausen, soziale Unterstützung und Reflexion.' },
+    { term: 'Superkompensation', def: 'Modell der Anpassung nach Belastung und Erholung. Für Schule eher als Grundidee nützlich: Training braucht passende Reize und ausreichende Regeneration.' },
+    { term: 'Tabata', def: 'Intervallformat mit sehr kurzen, intensiven Belastungen und Pausen. Im Unterricht nur stark angepasst und mit Technikfokus sinnvoll.' },
     { term: 'Theorie-Praxis-Verzahnung', def: 'Fachliche Informationen werden nicht nur besprochen, sondern an praktischen Erfahrungen überprüft und für eigenes Handeln nutzbar gemacht.' },
     { term: 'Trainingsprinzipien', def: 'Regeln zur Gestaltung von Belastung, Anpassung und Erholung, etwa Progression, Variation, Individualisierung und angemessene Belastungsdosierung.' },
+    { term: 'Trainingsreiz', def: 'Belastungsimpuls, der Anpassung anregen kann. Zu schwache Reize bleiben wirkungslos, zu starke Reize können überfordern.' },
+    { term: 'Warm-up', def: 'Vorbereitung auf Belastung durch Aktivierung, Mobilisation und mentale Einstimmung. Ziel ist Bewegungsbereitschaft, nicht bloß Zeitfüllung.' },
+    { term: 'WOD', def: 'Workout of the Day: aus CrossFit bekannte Tagesaufgabe. Im Unterricht nur verwendbar, wenn Ziele, Technik, Differenzierung und Reflexion pädagogisch geklärt sind.' },
+    { term: 'Zirkeltraining', def: 'Training an mehreren Stationen mit festgelegten Belastungs- und Pausenzeiten. Klassiker im Schulsport, der stark von Differenzierung und Aufgabenqualität lebt.' },
 ];
 
 function buildGlossar() {
@@ -1640,6 +1738,13 @@ function toggleSources() {
     const btn = document.getElementById('sourceToggle');
     const open = panel.classList.toggle('open');
     btn.textContent = open ? 'Quellen einklappen' : 'Quellen öffnen';
+}
+
+function toggleGlossar() {
+    const panel = document.getElementById('glossarCollapsible');
+    const btn = document.getElementById('glossarToggle');
+    const open = panel.classList.toggle('open');
+    btn.textContent = open ? 'Glossar einklappen' : 'Glossar öffnen';
 }
 
 buildGlossar();
