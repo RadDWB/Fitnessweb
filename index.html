@@ -502,12 +502,40 @@
 
         .quiz-layout {
             display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
+            grid-template-columns: 0.78fr 1.22fr;
             gap: 18px;
             align-items: start;
         }
 
         @media (max-width: 860px) { .quiz-layout { grid-template-columns: 1fr; } }
+
+        .quiz-section {
+            position: relative;
+            padding-top: 34px;
+            padding-bottom: 34px;
+            margin-bottom: 84px;
+            border: 1px solid rgba(47,125,50,0.24);
+            border-radius: 24px;
+            background:
+                linear-gradient(135deg, rgba(47,125,50,0.12), rgba(14,116,144,0.10)),
+                rgba(255,255,255,0.72);
+            box-shadow: 0 24px 70px -34px rgba(16,32,23,0.45);
+        }
+
+        .quiz-section::before {
+            content: "Interaktiv";
+            position: absolute;
+            top: -13px;
+            left: 24px;
+            border-radius: 999px;
+            padding: 5px 12px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
 
         .quiz-toggle-row {
             display: flex;
@@ -544,6 +572,59 @@
             color: var(--accent);
         }
 
+        .quiz-mini {
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .quiz-progress {
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(47,125,50,0.12);
+            overflow: hidden;
+            border: 1px solid rgba(47,125,50,0.14);
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--blue));
+            transition: width .25s ease;
+        }
+
+        .quiz-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(47,125,50,0.20);
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 16px 44px -30px rgba(16,32,23,0.65);
+        }
+
+        .quiz-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .quiz-pill {
+            border-radius: 999px;
+            padding: 4px 10px;
+            background: var(--accent-lg);
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .quiz-card h3 {
+            font-family: var(--fh);
+            font-size: clamp(1.1rem, 2.3vw, 1.45rem);
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
         .question {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -573,17 +654,56 @@
             color: var(--text);
             font-family: var(--fb);
             font-weight: 600;
+            transition: border-color .2s, background .2s, transform .2s;
         }
 
-        .answer.correct { border-color: rgba(47,125,50,0.65); background: rgba(47,125,50,0.10); }
-        .answer.wrong { border-color: rgba(190,18,60,0.55); background: rgba(190,18,60,0.08); }
+        .answer:hover:not(:disabled) {
+            border-color: var(--border-hl);
+            transform: translateY(-1px);
+        }
+
+        .answer.correct { border-color: rgba(47,125,50,0.72); background: rgba(47,125,50,0.12); }
+        .answer.wrong { border-color: rgba(190,18,60,0.62); background: rgba(190,18,60,0.10); }
         .answer:disabled { cursor: default; }
 
         .feedback {
-            color: var(--muted);
-            font-size: 0.86rem;
-            margin-top: 10px;
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-top: 14px;
             min-height: 1.4em;
+            border-radius: 12px;
+            padding: 12px;
+            background: rgba(14,116,144,0.08);
+            border: 1px solid rgba(14,116,144,0.16);
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .feedback.correct strong { color: var(--accent); }
+        .feedback.wrong strong { color: #be123c; }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-result {
+            margin-top: 12px;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+            color: var(--muted);
+            font-size: 0.9rem;
         }
 
         .glossar-grid {
@@ -1071,9 +1191,13 @@
                         <strong id="scoreValue">0/12</strong>
                         <span id="scoreText">Beantworte die Fragen und prüfe dein Verständnis.</span>
                     </div>
+                    <div class="quiz-progress" aria-label="Quizfortschritt">
+                        <div class="quiz-progress-fill" id="quizProgress"></div>
+                    </div>
+                    <p class="quiz-mini" id="quizPosition">Karte 1 von 12</p>
                     <button class="btn" onclick="resetQuiz()">Quiz zurücksetzen</button>
                 </div>
-                <div id="quizQuestions"></div>
+                <div class="quiz-card" id="quizCard"></div>
             </div>
         </div>
     </section>
@@ -1327,55 +1451,117 @@ const QUIZ = [
     },
 ];
 
-let answered = Array(QUIZ.length).fill(false);
-let score = 0;
+let quizState = [];
+let currentQuizIdx = 0;
+
+function shuffleArray(items) {
+    return [...items]
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(item => item.value);
+}
+
+function createQuizState() {
+    quizState = QUIZ.map(item => {
+        const answers = item.a.map((text, idx) => ({
+            text,
+            originalIdx: idx,
+            correct: idx === item.c,
+        }));
+        return {
+            ...item,
+            answers: shuffleArray(answers),
+            selectedOriginalIdx: null,
+            answered: false,
+            correct: false,
+        };
+    });
+}
 
 function buildQuiz() {
-    const root = document.getElementById('quizQuestions');
-    root.innerHTML = '';
-    QUIZ.forEach((item, idx) => {
-        const q = document.createElement('div');
-        q.className = 'question';
-        q.innerHTML = `<p>${idx + 1}. ${item.q}</p><div class="answers"></div><div class="feedback" id="fb-${idx}"></div>`;
-        const answers = q.querySelector('.answers');
-        item.a.forEach((answer, aIdx) => {
-            const btn = document.createElement('button');
-            btn.className = 'answer';
-            btn.textContent = answer;
-            btn.onclick = () => answerQuestion(idx, aIdx, btn);
-            answers.appendChild(btn);
-        });
-        root.appendChild(q);
-    });
+    createQuizState();
+    currentQuizIdx = 0;
+    renderQuizCard();
     updateScore();
 }
 
-function answerQuestion(qIdx, aIdx, btn) {
-    if (answered[qIdx]) return;
-    answered[qIdx] = true;
-    const isCorrect = aIdx === QUIZ[qIdx].c;
-    if (isCorrect) score++;
-    const question = btn.closest('.question');
-    question.querySelectorAll('.answer').forEach((b, idx) => {
-        b.disabled = true;
-        if (idx === QUIZ[qIdx].c) b.classList.add('correct');
-        if (idx === aIdx && !isCorrect) b.classList.add('wrong');
-    });
-    document.getElementById(`fb-${qIdx}`).textContent = QUIZ[qIdx].f;
+function renderQuizCard() {
+    const root = document.getElementById('quizCard');
+    const item = quizState[currentQuizIdx];
+    const selected = item.selectedOriginalIdx;
+    const feedbackClass = item.answered ? (item.correct ? 'correct' : 'wrong') : '';
+    const feedbackTitle = item.correct ? 'Richtig.' : 'Noch nicht ganz.';
+    root.innerHTML = `
+        <div class="quiz-card-top">
+            <span class="quiz-pill">Karte ${currentQuizIdx + 1} von ${quizState.length}</span>
+            <span class="quiz-pill">${item.answered ? 'Beantwortet' : 'Offen'}</span>
+        </div>
+        <h3>${item.q}</h3>
+        <div class="answers">
+            ${item.answers.map(answer => {
+                let cls = 'answer';
+                if (item.answered && answer.correct) cls += ' correct';
+                if (item.answered && selected === answer.originalIdx && !answer.correct) cls += ' wrong';
+                return `<button class="${cls}" ${item.answered ? 'disabled' : ''} onclick="answerQuestion(${answer.originalIdx})">${answer.text}</button>`;
+            }).join('')}
+        </div>
+        <div class="feedback ${item.answered ? 'show ' + feedbackClass : ''}">
+            ${item.answered ? `<strong>${feedbackTitle}</strong>${item.f}` : ''}
+        </div>
+        <div class="quiz-nav">
+            <button class="btn" onclick="prevQuizCard()" ${currentQuizIdx === 0 ? 'disabled' : ''}>‹ Vorherige Karte</button>
+            <button class="btn btn-primary" onclick="nextQuizCard()" ${currentQuizIdx === quizState.length - 1 ? 'disabled' : ''}>Nächste Karte ›</button>
+        </div>
+        <div class="quiz-result" id="quizResult">${getResultText()}</div>
+    `;
     updateScore();
+}
+
+function answerQuestion(originalIdx) {
+    const item = quizState[currentQuizIdx];
+    if (item.answered) return;
+    item.selectedOriginalIdx = originalIdx;
+    item.answered = true;
+    item.correct = originalIdx === item.c;
+    renderQuizCard();
+}
+
+function prevQuizCard() {
+    if (currentQuizIdx === 0) return;
+    currentQuizIdx--;
+    renderQuizCard();
+}
+
+function nextQuizCard() {
+    if (currentQuizIdx >= quizState.length - 1) return;
+    currentQuizIdx++;
+    renderQuizCard();
 }
 
 function updateScore() {
-    document.getElementById('scoreValue').textContent = `${score}/${QUIZ.length}`;
-    const done = answered.filter(Boolean).length;
-    document.getElementById('scoreText').textContent = done === QUIZ.length
-        ? 'Auswertung abgeschlossen. Nutze falsche Antworten als Gesprächsanlass.'
-        : `${done} von ${QUIZ.length} Fragen beantwortet.`;
+    const done = quizState.filter(item => item.answered).length;
+    const score = quizState.filter(item => item.correct).length;
+    const progress = quizState.length ? Math.round((done / quizState.length) * 100) : 0;
+    document.getElementById('scoreValue').textContent = `${score}/${quizState.length}`;
+    document.getElementById('scoreText').textContent = done === quizState.length
+        ? getResultText()
+        : `${done} von ${quizState.length} Karten beantwortet.`;
+    document.getElementById('quizPosition').textContent = `Karte ${currentQuizIdx + 1} von ${quizState.length}`;
+    document.getElementById('quizProgress').style.width = `${progress}%`;
+}
+
+function getResultText() {
+    const done = quizState.filter(item => item.answered).length;
+    const score = quizState.filter(item => item.correct).length;
+    if (done < quizState.length) {
+        return `Zwischenstand: ${score} richtige Antworten bei ${done} beantworteten Karten.`;
+    }
+    if (score >= 10) return `Auswertung: ${score}/${quizState.length}. Sehr solide fachliche Einordnung.`;
+    if (score >= 7) return `Auswertung: ${score}/${quizState.length}. Gute Basis, einzelne Begriffe noch nachschärfen.`;
+    return `Auswertung: ${score}/${quizState.length}. Nutze Quellenbereich und Glossar zur Wiederholung.`;
 }
 
 function resetQuiz() {
-    answered = Array(QUIZ.length).fill(false);
-    score = 0;
     buildQuiz();
 }
 
