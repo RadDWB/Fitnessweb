@@ -449,6 +449,13 @@
 
         @media (max-width: 760px) { .source-grid { grid-template-columns: 1fr; } }
 
+        .source-grid.expanded {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @media (max-width: 980px) { .source-grid.expanded { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 700px) { .source-grid.expanded { grid-template-columns: 1fr; } }
+
         .source-link {
             display: block;
             background: var(--bg-card);
@@ -478,6 +485,21 @@
             font-size: 0.86rem;
         }
 
+        .source-meta {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-bottom: 10px;
+            border-radius: 999px;
+            padding: 3px 9px;
+            background: var(--accent-lg);
+            color: var(--accent);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
         .quiz-layout {
             display: grid;
             grid-template-columns: 0.85fr 1.15fr;
@@ -486,6 +508,22 @@
         }
 
         @media (max-width: 860px) { .quiz-layout { grid-template-columns: 1fr; } }
+
+        .quiz-toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 6px 0 22px;
+        }
+
+        .quiz-collapsible {
+            display: none;
+        }
+
+        .quiz-collapsible.open {
+            display: block;
+        }
 
         .quiz-score {
             display: grid;
@@ -906,28 +944,113 @@
 
     <section class="section" id="quellen">
         <p class="section-eyebrow">Quellen und Hintergrund</p>
-        <h2 class="section-heading">Grundsatztexte und externe Bezugspunkte</h2>
-        <p class="section-lead">Die PDFs sind als lokale Grundsatzmaterialien direkt verlinkt. Ergänzend sind offizielle Quellen zur Gesundheitsdefinition und zu Bewegungsempfehlungen aufgeführt, damit die Abgrenzung zwischen Gesundheit, Bewegung und Fitness nachvollziehbar bleibt.</p>
-        <div class="source-grid">
+        <h2 class="section-heading">Erweiterte Literaturliste und externe Bezugspunkte</h2>
+        <p class="section-lead">Die Auswahl trennt bewusst zwischen Fitness als Unterrichtsgegenstand, Gesundheit als schulischem Bildungsauftrag und Bewegung als Teil einer gesundheitsförderlichen Schule. Beckers ist hier der zentrale Bezugspunkt für Sicherheits- und Gesundheitsförderung im Schulsport; Duwenbeck schärft den ganzheitlichen Fitnessbegriff.</p>
+        <div class="source-grid expanded">
             <a class="source-link" href="assets/docs/sport-6-23-duwenbeck-basis-fitness.pdf">
-                <strong>Duwenbeck: Fitness ist mehr!</strong>
-                <span>Grundsatztext zur Suche nach einer Fitnesspädagogik für den Sportunterricht.</span>
+                <span class="source-meta">Schlüsselquelle Fitness</span>
+                <strong>Duwenbeck, Ralf (2023): Fitness ist mehr!</strong>
+                <span>Grundsatztext zur Suche nach einer Fitnesspädagogik für den Sportunterricht. Wichtig für Fitness als mehr als Training, Körperform und Leistungsoptimierung.</span>
             </a>
             <a class="source-link" href="assets/docs/sport-2-2021-forum-duwenbeck-crossfit.pdf">
-                <strong>Duwenbeck: Mehr als eine CrossFit-Box</strong>
-                <span>Diskussion zum kritischen Umgang mit Fitnesstrends im Unterricht.</span>
+                <span class="source-meta">Fitnesstrends</span>
+                <strong>Duwenbeck, Ralf (2021): Mehr als eine CrossFit-Box</strong>
+                <span>Diskussion zum kritischen Umgang mit Fitnesstrends im Unterricht. Relevanz: Training darf nicht unverändert aus der Fitnesskultur in Schule kopiert werden.</span>
+            </a>
+            <a class="source-link" href="https://www.fachportal-paedagogik.de/literatur/vollanzeige.html?FId=3075621">
+                <span class="source-meta">Beckers</span>
+                <strong>Beckers, Edgar (2007): Pädagogischer Orientierungsrahmen</strong>
+                <span>Zentrale Quelle zur Sicherheits- und Gesundheitsförderung im Schulsport NRW. Stark für den Bildungs- und Gesundheitsbezug von Fitness.</span>
+            </a>
+            <a class="source-link" href="https://www.schulsport-nrw.de/fileadmin/user_upload/schulsportpraxis_und_fortbildung/dokumente/POR_Kernaussagen_Schulsportportal_07-09-19.pdf">
+                <span class="source-meta">Kernaussagen NRW</span>
+                <strong>Schulsport NRW: Kernaussagen zum Orientierungsrahmen</strong>
+                <span>Verdichtet die Beckers-Perspektive: Gesundheit mit und durch Bewegung, Spiel und Sport fördern.</span>
+            </a>
+            <a class="source-link" href="https://www.schulsport-nrw.de/fileadmin/user_upload/schulsportpraxis_und_fortbildung/dokumente/POR_Schulsportportal_070919.pdf">
+                <span class="source-meta">Lern- und Lebensraum</span>
+                <strong>Schulsport NRW: Pädagogischer Orientierungsrahmen</strong>
+                <span>Bezieht Sicherheits- und Gesundheitsförderung ausdrücklich auf Schule als Lern- und Lebensraum.</span>
+            </a>
+            <a class="source-link" href="https://www.qua-lis.nrw.de/system/files/media/document/file/die-paedagogische-grundlegung-des-schulsports_kurz_2000_0.pdf">
+                <span class="source-meta">Bildungsauftrag</span>
+                <strong>Die pädagogische Grundlegung des Schulsports in NRW</strong>
+                <span>Grundlegender bildungstheoretischer Rahmen: Schulsport hat einen erzieherischen und bildenden Anspruch, nicht nur einen fitnessbezogenen.</span>
+            </a>
+            <a class="source-link" href="https://www.schulministerium.nrw/schulsport-und-gesundheitsfoerderung">
+                <span class="source-meta">Schulpolitik NRW</span>
+                <strong>Ministerium für Schule und Bildung NRW: Schulsport und Gesundheitsförderung</strong>
+                <span>Schulpolitische Rahmung für den eigenständigen Beitrag des Schulsports zu ganzheitlicher Erziehung und Bildung.</span>
             </a>
             <a class="source-link" href="https://www.who.int/about/governance/constitution">
-                <strong>WHO: Gesundheitsdefinition</strong>
-                <span>Gesundheit als körperliches, psychisches und soziales Wohlbefinden, nicht nur als Abwesenheit von Krankheit.</span>
+                <span class="source-meta">Gesundheitsbegriff</span>
+                <strong>World Health Organization: Constitution</strong>
+                <span>Referenz für die breite Gesundheitsdefinition: körperliches, psychisches und soziales Wohlbefinden, nicht nur Abwesenheit von Krankheit.</span>
             </a>
             <a class="source-link" href="https://www.who.int/news-room/fact-sheets/detail/physical-activity">
-                <strong>WHO: Physical activity</strong>
-                <span>Aktuelle Übersicht zu körperlicher Aktivität, Fitness, Gesundheitsnutzen und Bewegungsmangel.</span>
+                <span class="source-meta">Bewegung</span>
+                <strong>World Health Organization: Physical activity</strong>
+                <span>Aktuelle Übersicht zu körperlicher Aktivität, Gesundheitsnutzen und Bewegungsmangel.</span>
             </a>
-            <a class="source-link" href="https://gesund.bund.de/en/healthy-through-exercise">
-                <strong>gesund.bund.de: Bewegung und Gesundheit</strong>
-                <span>Alltagsnaher Überblick zu Bewegung als Beitrag zu Gesundheit und körperlicher Fitness.</span>
+            <a class="source-link" href="https://www.who.int/publications/i/item/9789240049567">
+                <span class="source-meta">Whole-school</span>
+                <strong>WHO (2022): Promoting physical activity through schools</strong>
+                <span>Internationale Leitlinie für Bewegungsförderung über Schule als Gesamtsystem.</span>
+            </a>
+            <a class="source-link" href="https://iris.who.int/handle/10665/354605">
+                <span class="source-meta">WHO IRIS</span>
+                <strong>WHO IRIS: Policy brief mit Download</strong>
+                <span>Bibliografisch stabile WHO-Ablage zum Policy Brief mit ISBN 978-92-4-004956-7.</span>
+            </a>
+            <a class="source-link" href="https://oops.uni-oldenburg.de/6042/1/P%C3%B6ppel_Webner_2023_Die%20Ber%C3%BCcksichtigung%20von%20Sp.pdf">
+                <span class="source-meta">Curricula</span>
+                <strong>Pöppel &amp; Webner (2023): Gesundheit in deutschen Sport-Curricula</strong>
+                <span>Wissenschaftliche Analyse, wie Gesundheit in deutschen schulischen Sportcurricula berücksichtigt wird.</span>
+            </a>
+            <a class="source-link" href="https://grundgesund.bioeg.de/fuer-fachkraefte/kinder-jugendgesundheit/kinder-in-bewegung/mehr-bewegung-in-der-schule/">
+                <span class="source-meta">Schulentwicklung</span>
+                <strong>BIÖG: Mehr Bewegung in der Schule</strong>
+                <span>Praxisnahe Quelle zur bewegungsfreundlichen Schule und Bewegungsförderung im Schulalltag.</span>
+            </a>
+            <a class="source-link" href="https://www.schulministerium.nrw/fit-durch-die-schule">
+                <span class="source-meta">Praxis NRW</span>
+                <strong>Fit durch die Schule NRW</strong>
+                <span>Programm zur Unterstützung zusätzlicher Bewegungsangebote im außerunterrichtlichen Schulsport.</span>
+            </a>
+            <a class="source-link" href="https://li.hamburg.de/qualitaetsentwicklung-von-unterricht-und-schule/aufgabengebiete-und-querschnittsthemen/gesundheitsfoerderung/bewegungsfoerderung-657130">
+                <span class="source-meta">Bewegungskultur</span>
+                <strong>Landesinstitut Hamburg: Bewegungsförderung Schule</strong>
+                <span>Ergänzt die Perspektive auf schulische Gesundheitsförderung und bewegungsfreundliche Schulkultur.</span>
+            </a>
+            <a class="source-link" href="https://www.hs.mh.tum.de/mgt/news-single-view/article/studie-mit-grundschulkindern-belegt-positive-wirkung-koerperlicher-fitness-sport-verbessert-konzentration-und-lebensqualitaet/">
+                <span class="source-meta">Forschungsbezug</span>
+                <strong>TUM: Fitness, Konzentration und Lebensqualität</strong>
+                <span>Studienbezogener Hinweis auf Zusammenhänge zwischen körperlicher Fitness, Konzentration und gesundheitsbezogener Lebensqualität.</span>
+            </a>
+            <a class="source-link" href="https://www.uni-koblenz.de/de/mathematik-naturwissenschaften/inst_f_sport/ag-didaktik-sport">
+                <span class="source-meta">Sportdidaktik</span>
+                <strong>Universität Koblenz: AG Sportdidaktik/Gesundheitsbildung</strong>
+                <span>Wissenschaftliche Anlaufstelle zu Sportdidaktik, Gesundheitsbildung und schulischem Bewegungslernen.</span>
+            </a>
+            <a class="source-link" href="https://sug.uni-paderborn.de/sportwissenschaft/sportdidaktik-und-paedagogik/forschung">
+                <span class="source-meta">Sportpädagogik</span>
+                <strong>Universität Paderborn: Forschung Sportdidaktik und -pädagogik</strong>
+                <span>Forschungsbezug für schulische Perspektiven auf Fitness, Gesundheit und Bildung.</span>
+            </a>
+            <a class="source-link" href="https://www.fachportal-paedagogik.de/literatur/vollanzeige.html?FId=2427203">
+                <span class="source-meta">Unterrichtsmaterial</span>
+                <strong>Gesundheitsorientierte Fitness - nur ein Trend oder mehr?</strong>
+                <span>Klassische schulbezogene Quelle zur Verbindung von Fitness, Gesundheit, Unterrichtseinheit und Leistungsbeurteilung.</span>
+            </a>
+            <a class="source-link" href="https://uni-tuebingen.de/es/einrichtungen/zentrale-einrichtungen/tuebingen-school-of-education-tuese/forschung/nachwuchsfoerderung/abgeschlossene-promotionen/">
+                <span class="source-meta">Unterrichtskonzept</span>
+                <strong>Universität Tübingen: Kompetenzförderung im Kontext Gesundheit und Fitness</strong>
+                <span>Forschungsnaher Hinweis auf Unterrichtsvorhaben, die fitnessbezogene Wissenselemente mit sportpraktischem Können verbinden.</span>
+            </a>
+            <a class="source-link" href="https://elitebuch.com/foerderung-der-allgemeinen-fitness-im-schulsport-9783941274044/">
+                <span class="source-meta">Praxis / Unterricht</span>
+                <strong>Förderung der allgemeinen Fitness im Schulsport</strong>
+                <span>Ergänzende schulpraktische Quelle zur Planung und Umsetzung allgemeiner Fitnessförderung im Sportunterricht.</span>
             </a>
         </div>
     </section>
@@ -935,16 +1058,23 @@
     <section class="section quiz-section" id="quiz">
         <p class="section-eyebrow">Wissenscheck</p>
         <h2 class="section-heading">Quiz: Fitness reflektiert unterrichten</h2>
-        <div class="quiz-layout">
-            <div class="quiz-panel quiz-score">
-                <h3>Auswertung</h3>
-                <div class="score-box">
-                    <strong id="scoreValue">0/6</strong>
-                    <span id="scoreText">Beantworte die Fragen und prüfe dein Verständnis.</span>
+        <p class="section-lead">Das Quiz ist als kurzer Selbstcheck für Referendarinnen und Referendare gedacht. Es kann im Seminar oder mit einer Lerngruppe geöffnet werden, bleibt aber standardmäßig eingeklappt.</p>
+        <div class="quiz-toggle-row">
+            <button class="btn btn-primary" id="quizToggle" onclick="toggleQuiz()">Quiz öffnen</button>
+            <a class="btn" href="#glossar">Zum Glossar</a>
+        </div>
+        <div class="quiz-collapsible" id="quizCollapsible">
+            <div class="quiz-layout">
+                <div class="quiz-panel quiz-score">
+                    <h3>Auswertung</h3>
+                    <div class="score-box">
+                        <strong id="scoreValue">0/12</strong>
+                        <span id="scoreText">Beantworte die Fragen und prüfe dein Verständnis.</span>
+                    </div>
+                    <button class="btn" onclick="resetQuiz()">Quiz zurücksetzen</button>
                 </div>
-                <button class="btn" onclick="resetQuiz()">Quiz zurücksetzen</button>
+                <div id="quizQuestions"></div>
             </div>
-            <div id="quizQuestions"></div>
         </div>
     </section>
 
@@ -1159,6 +1289,42 @@ const QUIZ = [
         c: 0,
         f: 'Das Ziel ist eine begründete und verantwortliche Gestaltung der eigenen Fitness.'
     },
+    {
+        q: 'Warum ist Edgar Beckers für dieses Thema besonders relevant?',
+        a: ['Er verbindet Schulsport mit Sicherheits- und Gesundheitsförderung im Lern- und Lebensraum Schule.', 'Er reduziert Schulsport auf normierte Fitnesstests.', 'Er lehnt Gesundheitsbildung im Schulsport grundsätzlich ab.'],
+        c: 0,
+        f: 'Beckers stärkt den pädagogischen Rahmen: Gesundheit wird mit und durch Bewegung, Spiel und Sport gebildet.'
+    },
+    {
+        q: 'Was meint der Whole-school-Ansatz der WHO im Kern?',
+        a: ['Bewegung wird nicht nur im Sportunterricht, sondern über Schule als System gefördert.', 'Nur Sportlehrkräfte sind für Aktivität zuständig.', 'Bewegung wird aus dem Unterricht ausgelagert.'],
+        c: 0,
+        f: 'Der Whole-school-Ansatz betrachtet Schulweg, Pausen, Unterricht, Räume, Regeln und Schulkultur zusammen.'
+    },
+    {
+        q: 'Welche Aussage passt zur NRW-Perspektive auf Schulsport und Gesundheitsförderung?',
+        a: ['Schulsport hat einen eigenständigen Beitrag zu Erziehung, Bildung und Gesundheitsförderung.', 'Schulsport soll vor allem Trainingspläne abarbeiten.', 'Gesundheit ist im Schulsport nur ein Randthema ohne Bildungsbezug.'],
+        c: 0,
+        f: 'Die pädagogische Grundlegung betont den erzieherischen und bildenden Anspruch des Schulsports.'
+    },
+    {
+        q: 'Was ist eine sinnvolle Konsequenz aus der Curriculumsforschung zu Gesundheit im Sport?',
+        a: ['Gesundheit muss fachlich geklärt und didaktisch sichtbar gemacht werden.', 'Curricula ersetzen jede Unterrichtsplanung.', 'Gesundheit sollte wegen ihrer Breite nicht unterrichtet werden.'],
+        c: 0,
+        f: 'Curriculare Verankerung allein reicht nicht; Lehrkräfte müssen den Gesundheits- und Fitnessbegriff präzise auslegen.'
+    },
+    {
+        q: 'Welche Rolle spielen Körperbilder und Social Media in einer Fitnessreihe?',
+        a: ['Sie sind Lebensweltbezüge und sollten kritisch reflektiert werden.', 'Sie haben mit Fitnessunterricht nichts zu tun.', 'Sie liefern objektive Maßstäbe für Fitness.'],
+        c: 0,
+        f: 'Fitnesspädagogik nimmt Lebenswelt ernst, ohne unkritisch Körpernormen aus Medien zu übernehmen.'
+    },
+    {
+        q: 'Was ist eine gute Unterrichtsfrage zur Abgrenzung Fitness und Gesundheit?',
+        a: ['Wann fördert Fitness mein Wohlbefinden und wann wird sie einseitig oder riskant?', 'Wie trainieren alle möglichst gleich hart?', 'Welche Übung verbrennt am meisten Kalorien?'],
+        c: 0,
+        f: 'Die gute Frage öffnet Reflexion über Passung, Wohlbefinden, Risiko und Verantwortung.'
+    },
 ];
 
 let answered = Array(QUIZ.length).fill(false);
@@ -1211,6 +1377,13 @@ function resetQuiz() {
     answered = Array(QUIZ.length).fill(false);
     score = 0;
     buildQuiz();
+}
+
+function toggleQuiz() {
+    const panel = document.getElementById('quizCollapsible');
+    const btn = document.getElementById('quizToggle');
+    const open = panel.classList.toggle('open');
+    btn.textContent = open ? 'Quiz einklappen' : 'Quiz öffnen';
 }
 
 buildGlossar();
