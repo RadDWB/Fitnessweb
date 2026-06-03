@@ -1304,3 +1304,12 @@ table.data tr.is-target td { background: rgba(47,125,50,0.12) !important; font-w
     }
     .lead-figure .fig-hint { display: none; }
 }
+
+/* Kleine, anklickbare Vorschau-Grafiken (ab Grafik 2) – groß nur per Lightbox */
+.thumb-figure { display: inline-block; max-width: 320px; margin: 4px 0 18px; vertical-align: top; }
+.thumb-figure img { height: 230px; width: auto; max-width: 100%; }
+.thumb-figure figcaption { padding: 8px 12px 10px; }
+.thumb-figure .fig-label { font-size: 0.84rem; }
+.thumb-figure .fig-hint { margin-left: 0; flex-basis: 100%; }
+@media (max-width: 480px) { .thumb-figure img { height: 185px; } }
+@media print { .thumb-figure { max-width: 60%; } .thumb-figure img { height: auto; max-height: 120mm; } }
