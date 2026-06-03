@@ -1019,10 +1019,9 @@
             .hero::before {
                 background:
                     linear-gradient(90deg,
-                        rgba(10, 63, 35, 0.60) 0%,
-                        rgba(10, 63, 35, 0.50) 38%,
-                        rgba(14, 116, 144, 0.15) 62%,
-                        rgba(14, 116, 144, 0.02) 100%
+                        rgba(10, 63, 35, 0.98) 0%,
+                        rgba(10, 63, 35, 0.95) 45%,
+                        rgba(10, 63, 35, 0.88) 100%
                     ),
                     url("../images/fitness-ganzheitlich.png") right 4% center / 46% auto no-repeat;
             }
