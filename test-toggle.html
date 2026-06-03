@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Test</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .navbar { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            height: 60px; 
+            background: #333; 
+            color: white; 
+            z-index: 200;
+            padding: 10px;
+        }
+        body { padding-top: 80px; }
+        
+        .button { 
+            padding: 10px 20px; 
+            background: #0066cc; 
+            color: white; 
+            border: none; 
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover { background: #0052a3; }
+        
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 280px;
+            height: calc(100vh - 60px);
+            background: #f0f0f0;
+            padding: 20px;
+            display: none;
+            z-index: 180;
+            border-right: 1px solid #ccc;
+        }
+        
+        .sidebar.open {
+            display: block;
+        }
+        
+        .content {
+            padding: 20px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <button class="button" id="toggleBtn">☰ Toggle Menu</button>
+    <span style="margin-left: 20px;">Navigation Bar</span>
+</div>
+
+<div class="sidebar" id="sidebar">
+    <h3>Menu</h3>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Test Page</h1>
+    <p>Click the button above to toggle the sidebar.</p>
+    <p id="status">Status: Ready</p>
+</div>
+
+<script>
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+    const status = document.getElementById('status');
+    status.textContent = 'Status: Toggled! Open=' + sidebar.classList.contains('open');
+    console.log('Toggle called, open =', sidebar.classList.contains('open'));
+}
+
+const btn = document.getElementById('toggleBtn');
+btn.addEventListener('click', function() {
+    console.log('Button clicked');
+    toggleSidebar();
+});
+
+console.log('Page loaded');
+console.log('Button element:', btn);
+console.log('Sidebar element:', document.getElementById('sidebar'));
+</script>
+
+</body>
+</html>
