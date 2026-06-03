@@ -90,6 +90,15 @@
             </div>
         </header>
 
+        <figure class="lead-figure" id="figKt3" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Leitgrafik „Sanftes Krafttraining" vergrößern">
+            <img src="../assets/images/krafttraining/kt-3-sanft-hauptgrafik.png" alt="Infografik: Sanftes Krafttraining – wirksam trainieren ohne maximale Ausbelastung. Zielbereich mittel bis schwer (D&amp;D-Stufe 3/4), Stopp vor der roten Zone, kontrollierte Atmung, Belastungssteuerung, Sicherheit und gesundheitsorientierter Trainingsreiz." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
+            <figcaption>
+                <span class="fig-num">Leitgrafik</span>
+                <span class="fig-label">Sanftes Krafttraining: wirksam ohne maximale Ausbelastung</span>
+                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+            </figcaption>
+        </figure>
+
         <section class="section" style="max-width:none;padding:28px 0 40px;">
 
             <!-- 1. RELEVANZ -->
@@ -242,10 +251,121 @@
     </div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">‹ Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">−</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
 <script>
 function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
 }
+
+/* Galerie dieser Themenseite – weitere Grafiken werden hier ergänzt */
+const IMAGES = [
+    { src: '../assets/images/krafttraining/kt-3-sanft-hauptgrafik.png', label: 'Leitgrafik – Sanftes Krafttraining: wirksam ohne maximale Ausbelastung' },
+];
+
+let currentIdx = 0;
+let currentZoom = 1;
+const ZOOM_STEP = 0.25, ZOOM_MAX = 4, ZOOM_MIN = 0.5;
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(idx) {
+    currentIdx = idx;
+    currentZoom = 1;
+    setImage(currentIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+
+function setImage(idx) {
+    const d = IMAGES[idx];
+    lbImg.src = d.src;
+    lbImg.alt = d.label;
+    lbLabel.textContent = d.label;
+    btnPrev.disabled = idx === 0;
+    btnNext.disabled = idx === IMAGES.length - 1;
+    updateZoom();
+}
+
+function navLightbox(dir) {
+    const next = currentIdx + dir;
+    if (next < 0 || next >= IMAGES.length) return;
+    currentIdx = next;
+    currentZoom = 1;
+    lbScroll.scrollTo(0, 0);
+    setImage(currentIdx);
+}
+
+function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+}
+
+function updateZoom() {
+    const vw = window.innerWidth - 40;
+    const vh = window.innerHeight - 90;
+    if (currentZoom === 1) {
+        lbImg.style.width = '';
+        lbImg.style.maxWidth = vw + 'px';
+        lbImg.style.maxHeight = vh + 'px';
+    } else {
+        const base = Math.min(vw, lbImg.naturalWidth || vw);
+        lbImg.style.maxWidth = 'none';
+        lbImg.style.maxHeight = 'none';
+        lbImg.style.width = (base * currentZoom) + 'px';
+    }
+    zoomPct.textContent = Math.round(currentZoom * 100) + '%';
+}
+
+function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
+function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+
+lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === '+') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') zoomReset();
+});
+
+window.addEventListener('resize', () => { if (lb.classList.contains('active')) updateZoom(); });
+
+document.querySelectorAll('[role="button"][onclick^="openLightbox"]').forEach(el => {
+    el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+});
 </script>
 </body>
 </html>

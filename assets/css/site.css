@@ -1269,3 +1269,38 @@ table.data tr.is-target td { background: rgba(47,125,50,0.12) !important; font-w
     .theme-head { color: #000; background: none; border: 1px solid #ccc; }
     .theme-head h1, .theme-head p, .theme-meta { color: #000; }
 }
+
+/* Leit-/Infografik auf Themenseiten (volle Sichtbarkeit, nicht beschnitten) */
+.lead-figure {
+    margin: 18px 0 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: zoom-in;
+    box-shadow: 0 10px 30px rgba(18, 64, 35, 0.05);
+    transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s, border-color .2s;
+}
+.lead-figure:hover { transform: translateY(-4px); box-shadow: var(--glow); border-color: var(--border-hl); }
+.lead-figure img { width: 100%; height: auto; display: block; background: #fff; }
+.lead-figure figcaption {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    padding: 12px 18px 14px; border-top: 1px solid var(--border);
+}
+.lead-figure .fig-num {
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent);
+}
+.lead-figure .fig-label { font-family: var(--fh); font-weight: 700; color: var(--text); font-size: 0.95rem; }
+.lead-figure .fig-hint { margin-left: auto; font-size: 0.76rem; color: var(--muted); }
+
+/* Inline-Figur innerhalb eines prose-card-Abschnitts */
+.section-figure { margin: 6px 0 16px; }
+
+@media print {
+    .lead-figure, .section-figure {
+        page-break-inside: avoid; break-inside: avoid;
+        cursor: default; box-shadow: none !important;
+    }
+    .lead-figure .fig-hint { display: none; }
+}
