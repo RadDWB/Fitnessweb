@@ -1083,16 +1083,24 @@ function toggleGlossar() {
 }
 
 function toggleThemeNav() {
-    document.getElementById('themeNav').classList.toggle('open');
+    const nav = document.getElementById('themeNav');
+    if (nav) {
+        nav.classList.toggle('open');
+        console.log('Toggled themeNav, open class now:', nav.classList.contains('open'));
+    } else {
+        console.error('themeNav element not found');
+    }
 }
 
 // Ensure button works on iOS
 const themeNavToggle = document.getElementById('themeNavToggle');
 if (themeNavToggle) {
     themeNavToggle.addEventListener('click', function(e) {
-        e.preventDefault();
+        console.log('Button clicked');
         toggleThemeNav();
     });
+} else {
+    console.error('themeNavToggle button not found');
 }
 
 buildGlossar();

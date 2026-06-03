@@ -1298,10 +1298,19 @@
 @media (max-width: 980px) {
     .shell { grid-template-columns: 1fr; }
     .theme-nav {
-        position: static;
-        margin: 10px 16px 0;
-        max-height: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 280px;
+        height: calc(100vh - 62px);
+        margin: 0;
+        padding: 16px;
+        overflow-y: auto;
         display: none;
+        z-index: 180;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
     }
     .theme-nav.open { display: block; }
     .page-toc { display: none; }
