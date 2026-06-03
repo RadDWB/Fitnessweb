@@ -1016,6 +1016,16 @@
         @media (max-width: 620px) {
             body > nav { padding: 0 16px; }
             .hero { min-height: 78vh; }
+            .hero::before {
+                background:
+                    linear-gradient(90deg,
+                        rgba(10, 63, 35, 0.60) 0%,
+                        rgba(10, 63, 35, 0.50) 38%,
+                        rgba(14, 116, 144, 0.15) 62%,
+                        rgba(14, 116, 144, 0.02) 100%
+                    ),
+                    url("../images/fitness-ganzheitlich.png") right 4% center / 46% auto no-repeat;
+            }
             .text-panel, .source-panel, .quiz-panel { padding: 18px; }
             .lb-scroll { padding-top: 112px; }
         }
