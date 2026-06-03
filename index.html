@@ -411,7 +411,7 @@
     <section class="section quiz-section" id="quiz">
         <p class="section-eyebrow">Wissenscheck</p>
         <h2 class="section-heading">Quiz: Fitness reflektiert unterrichten</h2>
-        <p class="section-lead">Das Quiz ist als kurzer Selbstcheck für Referendarinnen und Referendare gedacht. Es kann im Seminar oder mit einer Lerngruppe geöffnet werden, bleibt aber standardmäßig eingeklappt. Die richtigen Antworten stehen bewusst auf wechselnden Positionen.</p>
+        <p class="section-lead">Das Quiz ist als kurzer Selbstcheck für Referendarinnen und Referendare gedacht und deckt nun auch das gesund-funktionale Krafttraining (Ein-Satz-Prinzip, D&amp;D-Skala, Agonist-Antagonist, Personenorientierung) sowie Fitnesstrends ab. Es kann im Seminar oder mit einer Lerngruppe geöffnet werden, bleibt aber standardmäßig eingeklappt. Die richtigen Antworten stehen bewusst auf wechselnden Positionen.</p>
         <div class="quiz-toggle-row">
             <button class="btn btn-primary" id="quizToggle" onclick="toggleQuiz()">Quiz öffnen</button>
             <a class="btn" href="#glossar">Zum Glossar</a>
@@ -421,13 +421,13 @@
                 <div class="quiz-panel quiz-score">
                     <h3>Auswertung</h3>
                     <div class="score-box">
-                        <strong id="scoreValue">0/12</strong>
+                        <strong id="scoreValue">0/20</strong>
                         <span id="scoreText">Beantworte die Fragen und prüfe dein Verständnis.</span>
                     </div>
                     <div class="quiz-progress" aria-label="Quizfortschritt">
                         <div class="quiz-progress-fill" id="quizProgress"></div>
                     </div>
-                    <p class="quiz-mini" id="quizPosition">Karte 1 von 12</p>
+                    <p class="quiz-mini" id="quizPosition">Karte 1 von 20</p>
                     <button class="btn" onclick="resetQuiz()">Quiz zurücksetzen</button>
                 </div>
                 <div class="quiz-card" id="quizCard"></div>
@@ -438,7 +438,7 @@
     <section class="section glossar-section" id="glossar">
         <p class="section-eyebrow">Fachsprache</p>
         <h2 class="section-heading">Glossar - Fitness im Schulsport</h2>
-        <p class="section-lead">Das Glossar bündelt zentrale Fitness-, Trainings- und Gesundheitsbegriffe für die Unterrichtsplanung und für die Arbeit mit Schülerinnen und Schülern. Es ist standardmäßig eingeklappt, damit die Seite übersichtlich bleibt.</p>
+        <p class="section-lead">Das Glossar bündelt zentrale Fitness-, Trainings- und Gesundheitsbegriffe für die Unterrichtsplanung und für die Arbeit mit Schülerinnen und Schülern – inklusive der Begriffe aus dem gesund-funktionalen Krafttraining (Ein-Satz-Prinzip, D&amp;D-Skala, Agonist/Antagonist, Personenorientierung) und den Fitnesstrends. Es ist standardmäßig eingeklappt, damit die Seite übersichtlich bleibt.</p>
         <div class="glossar-toggle-row">
             <button class="btn btn-primary" id="glossarToggle" onclick="toggleGlossar()">Glossar öffnen</button>
             <a class="btn" href="#quiz">Zum Quiz</a>
@@ -666,6 +666,25 @@ const TERMS = [
     { term: 'Warm-up', def: 'Vorbereitung auf Belastung durch Aktivierung, Mobilisation und mentale Einstimmung. Ziel ist Bewegungsbereitschaft, nicht bloß Zeitfüllung.' },
     { term: 'WOD', def: 'Workout of the Day: aus CrossFit bekannte Tagesaufgabe. Im Unterricht nur verwendbar, wenn Ziele, Technik, Differenzierung und Reflexion pädagogisch geklärt sind.' },
     { term: 'Zirkeltraining', def: 'Training an mehreren Stationen mit festgelegten Belastungs- und Pausenzeiten. Klassiker im Schulsport, der stark von Differenzierung und Aufgabenqualität lebt.' },
+    { term: 'Gesund-funktionales Muskelfitnesstraining', def: 'Zentrales Konzept: Muskel- und Bewegungsfunktionen verstehen, Übungen funktional beurteilen und Gesundheit statt maximaler Ausbelastung in den Mittelpunkt stellen.' },
+    { term: 'Sanftes Krafttraining', def: 'Gesundheitsorientierter Ansatz: dynamisch, kontrolliert und ohne maximale Ausbelastung. Belastung ca. 45–60 Sekunden, rund 30 Sekunden Pause, Anstrengung auf D&D-Stufe 3–4.' },
+    { term: 'Ein-Satz-Training', def: 'Sanfte Methode mit nur einem intensiven, sauber ausgeführten Satz je Übung. Im Schulsport wirksam, sicher und zeitökonomisch – Kern des gesund-funktionalen Muskelfitnesstrainings.' },
+    { term: 'Mehr-Satz-Training', def: 'Klassisches Krafttraining mit mehreren Sätzen je Übung. Leistungsorientiert sinnvoll, im Schulkontext aber zeitaufwendiger und für Einsteiger meist nicht nötig.' },
+    { term: 'D&D-Skala', def: 'Skala nach Deddens & Duwenbeck zur subjektiven Belastungssteuerung. Stufe 3–4 markiert die angestrebte, deutlich spürbare, aber nicht maximale Anstrengung im sanften Krafttraining.' },
+    { term: 'Agonist', def: 'Der bei einer Bewegung aktiv arbeitende, sich verkürzende Muskel (Spieler), z. B. der Bizeps beim Anbeugen des Arms.' },
+    { term: 'Antagonist', def: 'Der Gegenspieler des Agonisten, der die Gegenbewegung ermöglicht. Für gesundes Krafttraining sollten Spieler und Gegenspieler ausgewogen gekräftigt werden.' },
+    { term: 'Agonist-Antagonist-Ausgewogenheit', def: 'Prinzip, beide Seiten eines Gelenks (z. B. Brust und oberer Rücken) gleichermaßen zu trainieren, um muskuläre Dysbalancen und Haltungsschwächen zu vermeiden.' },
+    { term: 'Muskelfitness', def: 'Gesundheitsbezogene Kraftfähigkeit der Muskulatur für Haltung, Alltag und Verletzungsprophylaxe – nicht zu verwechseln mit reinem Muskelaufbau.' },
+    { term: 'Personenorientierung', def: 'Grundsatz (u. a. nach Wydra/Klee), Übungen nicht pauschal als „gut" oder „schlecht" zu bewerten, sondern bezogen auf Person, Ziel und Situation.' },
+    { term: 'Basistraining', def: 'Grundlegendes, breit angelegtes Krafttraining der großen Muskelgruppen als Fundament. Ziel ist eine solide, ausgewogene Grundkraft statt früher Spezialisierung.' },
+    { term: 'Sicherheitslogik', def: 'Systematik zur Risikominimierung: saubere Technik vor Last, kontrollierte Ausführung, gelenkschonende Übungsauswahl und angemessene Belastung.' },
+    { term: 'Hypertrophie', def: 'Vergrößerung des Muskelquerschnitts durch Training. Im Schulsport nicht das Ziel; gesund-funktionale Muskelfitness steht im Vordergrund.' },
+    { term: 'Time under Tension', def: 'Dauer, die ein Muskel pro Satz unter Spannung steht. Wichtige Steuergröße im sanften Krafttraining: kontrolliertes Tempo statt Schwung.' },
+    { term: 'Calisthenics', def: 'Training mit dem eigenen Körpergewicht und Progressionen (z. B. Klimmzug- oder Liegestütz-Varianten). Schulgeeignet, wenn Stufen statt Show-Übungen im Fokus stehen.' },
+    { term: 'Functional Fitness', def: 'Trainingsrichtung mit alltags- und sportnahen Bewegungsmustern. Für die Schule besonders anschlussfähig, da übertragbar und gut differenzierbar.' },
+    { term: 'Hyrox', def: 'Wettkampfformat aus Laufabschnitten und funktionellen Kraftstationen. Motivierend, im Unterricht aber nur stark angepasst und entschärft sinnvoll.' },
+    { term: 'Bootcamp', def: 'Gruppentraining mit funktionellen Übungen, oft im Freien und kommandoartig. Im Schulsport nur reflektiert und ohne Drill-Charakter einsetzbar.' },
+    { term: 'EMOM', def: 'Every minute on the minute: zu jedem Minutenbeginn eine festgelegte Aufgabe. Im Unterricht nur mit gesicherter Technik und Differenzierung verwendbar.' },
 ];
 
 function buildGlossar() {
@@ -764,6 +783,54 @@ const QUIZ = [
         a: ['Wann fördert Fitness mein Wohlbefinden und wann wird sie einseitig oder riskant?', 'Welche Fitnesskomponenten lassen sich im Unterricht am zuverlässigsten verbessern?', 'Wie kann ich mein Training so steuern, dass messbare Fortschritte entstehen?'],
         c: 0,
         f: 'Die gute Frage öffnet Reflexion über Passung, Wohlbefinden, Risiko und Verantwortung.'
+    },
+    {
+        q: 'Warum eignet sich ein sanftes Ein-Satz-Training für den Schulsport besonders?',
+        a: ['Es ist wirksam, sicher und zeitökonomisch und kommt ohne maximale Ausbelastung aus.', 'Es führt schneller zu sichtbarem Muskelwachstum als ein Mehr-Satz-Training.', 'Es ist vor allem dann sinnvoll, wenn Geräte und viel Unterrichtszeit zur Verfügung stehen.'],
+        c: 0,
+        f: 'Ein sauber ausgeführter, intensiver Satz reicht für gesund-funktionale Muskelfitness und spart Zeit und Risiko.'
+    },
+    {
+        q: 'Was beschreibt die Stufe 3–4 auf der D&D-Skala (Deddens & Duwenbeck)?',
+        a: ['Eine deutlich spürbare, aber nicht maximale Anstrengung als Zielbereich.', 'Die maximale Ausbelastung kurz vor dem Muskelversagen.', 'Eine sehr leichte Belastung, die nur der Mobilisation dient.'],
+        c: 0,
+        f: 'Das sanfte Krafttraining steuert die Belastung subjektiv im fordernden, aber kontrollierten Bereich – nicht bis zur Erschöpfung.'
+    },
+    {
+        q: 'Warum sollten Agonist und Antagonist ausgewogen trainiert werden?',
+        a: ['Um muskuläre Dysbalancen und Haltungsschwächen zu vermeiden.', 'Weil nur so ein maximaler Kraftzuwachs des Agonisten möglich ist.', 'Damit ausschließlich die für die jeweilige Sportart wichtigen Muskeln gestärkt werden.'],
+        c: 0,
+        f: 'Spieler und Gegenspieler (z. B. Brust und oberer Rücken) gehören zusammen – das schützt Gelenke und Haltung.'
+    },
+    {
+        q: 'Was meint Personenorientierung bei der Beurteilung von Kraftübungen?',
+        a: ['Übungen werden nicht pauschal bewertet, sondern bezogen auf Person, Ziel und Situation.', 'Es gibt feste Listen verbotener und erlaubter Übungen, die für alle gleichermaßen gelten.', 'Eine Übung ist gut, wenn sie möglichst viele Muskeln gleichzeitig maximal belastet.'],
+        c: 0,
+        f: 'Nach Wydra/Klee ist eine Übung nicht per se „gut" oder „schlecht" – entscheidend sind Person, Zweck und Ausführung.'
+    },
+    {
+        q: 'Wie lässt sich die Belastung im sanften Krafttraining grob steuern?',
+        a: ['Dynamisch, ca. 45–60 Sekunden Belastung mit rund 30 Sekunden Pause.', 'Statisch gehalten, möglichst lange ohne Pause bis zur Erschöpfung.', 'Explosiv und maximal schwer mit sehr wenigen Wiederholungen.'],
+        c: 0,
+        f: 'Kontrolliertes, dynamisches Arbeiten in moderaten Zeitfenstern hält das Training gesund und schulgeeignet.'
+    },
+    {
+        q: 'Warum gilt Functional Training für die Schule als besonders anschlussfähig?',
+        a: ['Es nutzt alltags- und sportnahe Bewegungsmuster, die übertragbar und gut differenzierbar sind.', 'Es erfordert spezielle Wettkampfgeräte und feste Zeitintervalle für alle.', 'Es zielt vor allem auf maximale Intensität und Vergleichswerte ab.'],
+        c: 0,
+        f: 'Drücken, Ziehen, Heben, Stabilisieren: funktionelle Muster sind lebensnah und lassen sich leicht anpassen.'
+    },
+    {
+        q: 'Worauf kommt es bei Calisthenics im Unterricht an?',
+        a: ['Auf sinnvolle Progressionen und saubere Technik statt spektakulärer Show-Übungen.', 'Auf möglichst schwierige Kraftakrobatik, um die Lerngruppe zu motivieren.', 'Auf maximale Wiederholungszahlen unter Zeitdruck.'],
+        c: 0,
+        f: 'Körpergewichtstraining wird schulgeeignet, wenn abgestufte Varianten und Bewegungsqualität im Vordergrund stehen.'
+    },
+    {
+        q: 'Was ist das Leitziel des gesund-funktionalen Muskelfitnesstrainings?',
+        a: ['Muskel- und Bewegungsfunktionen verstehen und Gesundheit vor maximale Leistung stellen.', 'Möglichst schnell die individuelle Maximalkraft jeder Schülerin und jedes Schülers steigern.', 'Vor allem einen sichtbaren Muskelaufbau (Hypertrophie) erreichen.'],
+        c: 0,
+        f: 'Im Zentrum steht funktionales Verständnis und gesundheitsorientiertes Handeln – nicht maximale Ausbelastung.'
     },
 ];
 
