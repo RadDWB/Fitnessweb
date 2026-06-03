@@ -1269,7 +1269,28 @@
 /* Mobile: 1 column, left nav toggleable */
 @media (max-width: 980px) {
     .shell { grid-template-columns: 1fr; }
-    .theme-nav-toggle { display: inline-flex; }
+    .theme-nav-toggle {
+        display: inline-flex;
+        position: sticky;
+        top: 62px;
+        z-index: 150;
+        margin: 0;
+        padding: 12px 18px;
+        width: calc(100% - 32px);
+        margin: 12px 16px;
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 16px rgba(47, 125, 50, 0.25);
+    }
+    .theme-nav-toggle:hover {
+        background: var(--accent-dk);
+        border-color: var(--accent-dk);
+        color: #fff;
+        box-shadow: 0 6px 20px rgba(47, 125, 50, 0.35);
+    }
     .theme-nav {
         position: static;
         margin: 10px 16px 0;
