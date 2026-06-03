@@ -1054,7 +1054,9 @@
     margin-bottom: 12px;
 }
 
-.theme-group { margin-bottom: 16px; }
+.theme-group {
+    margin-bottom: 12px;
+}
 .theme-group:last-child { margin-bottom: 0; }
 
 .theme-group-label {
@@ -1066,6 +1068,28 @@
     margin: 0 0 4px;
     padding: 0 4px 5px;
     border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.theme-group-label .toggle-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    flex-shrink: 0;
+    transition: transform .2s;
+}
+
+.theme-group.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.theme-group.collapsed > ul {
+    display: none;
 }
 
 .theme-nav ul { list-style: none; display: grid; gap: 2px; }
