@@ -110,9 +110,16 @@
         .hero::before {
             content: "";
             position: absolute;
-            inset: 62px 0 auto;
-            height: 68%;
-            background: linear-gradient(90deg, rgba(10, 63, 35, 0.80), rgba(14, 116, 144, 0.56)), url("assets/images/fitness-ganzheitlich.png") center 18%/cover;
+            inset: 62px 0 0;
+            height: 72%;
+            background:
+                linear-gradient(90deg,
+                    rgba(10, 63, 35, 0.92) 0%,
+                    rgba(10, 63, 35, 0.85) 38%,
+                    rgba(14, 116, 144, 0.30) 62%,
+                    rgba(14, 116, 144, 0.06) 100%
+                ),
+                url("../images/fitness-ganzheitlich.png") right 4% center / 46% auto no-repeat;
             z-index: -2;
         }
 
@@ -175,15 +182,27 @@
         .hero-open-hint {
             display: inline-flex;
             align-items: center;
+            gap: 7px;
             width: fit-content;
-            margin-top: 18px;
+            margin-top: 20px;
             border-radius: 999px;
-            padding: 6px 12px;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.28);
-            color: rgba(255,255,255,0.88);
-            font-size: 0.78rem;
+            padding: 9px 18px;
+            background: rgba(255,255,255,0.18);
+            border: 1.5px solid rgba(255,255,255,0.50);
+            color: #fff;
+            font-size: 0.82rem;
             font-weight: 700;
+            cursor: zoom-in;
+            transition: background .2s, border-color .2s;
+            letter-spacing: 0.01em;
+        }
+        .hero-open-hint::before {
+            content: "🔍";
+            font-size: 1rem;
+        }
+        .hero:hover .hero-open-hint {
+            background: rgba(255,255,255,0.28);
+            border-color: rgba(255,255,255,0.75);
         }
 
         .section {
