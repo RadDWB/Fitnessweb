@@ -90,7 +90,9 @@
             </div>
         </header>
 
-        <figure class="lead-figure" id="figKt3" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Leitgrafik „Sanftes Krafttraining" vergrößern">
+        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Sanftes Krafttraining" vergrößern"
+                data-full="../assets/images/krafttraining/kt-3-sanft-hauptgrafik.png"
+                data-label="Leitgrafik – Sanftes Krafttraining: wirksam ohne maximale Ausbelastung">
             <img src="../assets/images/krafttraining/kt-3-sanft-hauptgrafik.png" alt="Infografik: Sanftes Krafttraining – wirksam trainieren ohne maximale Ausbelastung. Zielbereich mittel bis schwer (D&amp;D-Stufe 3/4), Stopp vor der roten Zone, kontrollierte Atmung, Belastungssteuerung, Sicherheit und gesundheitsorientierter Trainingsreiz." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
             <figcaption>
                 <span class="fig-num">Leitgrafik</span>
@@ -107,7 +109,9 @@
                 <h3>Relevanz &amp; Wandel des Schulsport-Krafttrainings</h3>
                 <p class="muted">Die Einbettung von Krafttraining in den schulischen Fächerkanon resultiert aus gravierenden Veränderungen der jugendlichen Umwelt und modernen sportmedizinischen Erkenntnissen.</p>
 
-                <figure class="lead-figure thumb-figure" onclick="openLightbox(1)" role="button" tabindex="0" aria-label="Grafik „Warum Krafttraining in den Schulsport gehört" vergrößern">
+                <figure class="lead-figure thumb-figure js-figure" role="button" tabindex="0" aria-label="Grafik „Warum Krafttraining in den Schulsport gehört" vergrößern"
+                        data-full="../assets/images/krafttraining/kt-1-warum-krafttraining.png"
+                        data-label="Grafik 1 – Warum Krafttraining in den Schulsport gehört">
                     <img src="../assets/images/krafttraining/kt-1-warum-krafttraining.png" alt="Infografik: Warum Krafttraining in den Schulsport gehört. Legitimation über Bewegungsmangel, muskuläre Unterforderung, schulisches Krafttraining und gesundheitliche Wirkung; Paradigmenwechsel; Hinweis, dass Kraftzuwächse im Jugendalter vor allem durch verbesserte Koordination statt Muskelhypertrophie entstehen." loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
                     <figcaption>
                         <span class="fig-num">Grafik 1</span>
@@ -136,6 +140,28 @@
                 <p class="section-eyebrow">Abschnitt 2</p>
                 <h3>Die Qual der Methodenwahl: Ein-Satz- vs. Mehr-Satz-Training</h3>
                 <p class="muted">Im eng getakteten Schulalltag stehen sich zwei Kernkonzepte gegenüber. Die wissenschaftliche Evidenz liefert klare Vorteile für zeiteffiziente Ansätze.</p>
+
+                <figure class="lead-figure thumb-figure js-figure" role="button" tabindex="0" aria-label="Grafik „Warum Ein-Satz-Training im Schulsport sinnvoll ist" vergrößern"
+                        data-full="../assets/images/krafttraining/kt-7-einsatz-mehrsatz.png"
+                        data-label="Grafik 7 – Warum Ein-Satz-Training im Schulsport sinnvoll ist">
+                    <img src="../assets/images/krafttraining/kt-7-einsatz-mehrsatz.png" alt="Infografik: Warum Ein-Satz-Training im Schulsport sinnvoll ist. Vergleich Ein-Satz- gegenüber Mehr-Satz-Training: zeiteffizient, flüssiger Stationsbetrieb, weniger Ermüdung, geringeres Risiko, hohe Motivation durch schnellen Wechsel; Mehr-Satz-Training bleibt für Fortgeschrittene möglich. Schulstandard: wirksam, sicher, organisierbar." loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
+                    <figcaption>
+                        <span class="fig-num">Grafik 7</span>
+                        <span class="fig-label">Warum Ein-Satz-Training im Schulsport sinnvoll ist</span>
+                        <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="lead-figure thumb-figure js-figure" role="button" tabindex="0" aria-label="Grafik „Sicherheitslogik des gesundheitsorientierten Krafttrainings" vergrößern"
+                        data-full="../assets/images/krafttraining/kt-6-sicherheitslogik.png"
+                        data-label="Grafik 6 – Sicherheitslogik des gesundheitsorientierten Krafttrainings">
+                    <img src="../assets/images/krafttraining/kt-6-sicherheitslogik.png" alt="Infografik: Sicherheitslogik des gesundheitsorientierten Krafttrainings – Wirbelsäule schützen, saubere Bewegung im 2-1-2-Rhythmus, keine Maximalerschöpfung (Stopp vor völligem Versagen), Rumpf stabilisieren, Atmung kontrollieren (keine Pressatmung) sowie funktionelle Ergänzung durch Dehnen des Hüftbeugers." loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
+                    <figcaption>
+                        <span class="fig-num">Grafik 6</span>
+                        <span class="fig-label">Sicherheitslogik des gesundheitsorientierten Krafttrainings</span>
+                        <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+                    </figcaption>
+                </figure>
 
                 <div class="fact-list">
                     <div class="fact"><strong>Das sanfte Ein-Satz-Training:</strong> EMG-Messungen und Folgestudien belegen, dass ein gesundheitsorientiertes Krafttraining mit nur einem Satz pro Übung bei adäquater Intensität hochsignifikante, gesundheitsrelevante Effekte erzielt. Diese Reize sind lang überdauernd und überstehen selbst Ferienphasen oder Stundenausfälle. <span class="ref">S. 16 / Fn 46–53</span></div>
@@ -285,11 +311,10 @@ function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
 }
 
-/* Galerie dieser Themenseite – weitere Grafiken werden hier ergänzt */
-const IMAGES = [
-    { src: '../assets/images/krafttraining/kt-3-sanft-hauptgrafik.png', label: 'Leitgrafik – Sanftes Krafttraining: wirksam ohne maximale Ausbelastung' },
-    { src: '../assets/images/krafttraining/kt-1-warum-krafttraining.png', label: 'Grafik 1 – Warum Krafttraining in den Schulsport gehört' },
-];
+/* Galerie wird automatisch aus allen .js-figure in DOM-Reihenfolge gebaut –
+   neue Grafiken einfach als <figure class="... js-figure" data-full data-label> einfügen. */
+const figures = Array.from(document.querySelectorAll('.js-figure'));
+const IMAGES = figures.map(f => ({ src: f.dataset.full, label: f.dataset.label }));
 
 let currentIdx = 0;
 let currentZoom = 1;
@@ -371,9 +396,10 @@ document.addEventListener('keydown', e => {
 
 window.addEventListener('resize', () => { if (lb.classList.contains('active')) updateZoom(); });
 
-document.querySelectorAll('[role="button"][onclick^="openLightbox"]').forEach(el => {
-    el.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+figures.forEach((f, i) => {
+    f.addEventListener('click', () => openLightbox(i));
+    f.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
     });
 });
 </script>
