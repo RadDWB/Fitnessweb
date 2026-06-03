@@ -130,7 +130,11 @@
         .theme-nav-toggle:hover { color: var(--accent); }
 
         @media (max-width: 860px) { .nav-links { display: none; } }
-        @media (max-width: 860px) { .theme-nav-toggle { display: flex; align-items: center; } }
+        @media (max-width: 860px) {
+            .theme-nav-toggle { display: flex; align-items: center; }
+            .theme-nav-toggle { order: 3; }
+            .nav-impressum { order: 2; }
+        }
 
         .hero {
             min-height: 86vh;
@@ -1030,7 +1034,8 @@
         .footer-inner a:hover { color: var(--accent); border-color: var(--accent); }
 
         @media (max-width: 620px) {
-            body > nav { padding: 0 16px; }
+            body > nav { padding: 0 12px; }
+            .nav-impressum { font-size: 0.7rem; padding: 5px 10px; }
             .hero { min-height: 78vh; }
             .hero::before {
                 background:
