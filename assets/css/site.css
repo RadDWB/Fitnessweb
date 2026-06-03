@@ -31,7 +31,7 @@
             min-height: 100vh;
         }
 
-        nav {
+        body > nav {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 200;
@@ -977,14 +977,14 @@
         }
 
         @media (max-width: 620px) {
-            nav { padding: 0 16px; }
+            body > nav { padding: 0 16px; }
             .hero { min-height: 78vh; }
             .text-panel, .source-panel, .quiz-panel { padding: 18px; }
             .lb-scroll { padding-top: 112px; }
         }
 
         @media print {
-            nav, .hero, .print-bar, .grafik-caption,
+            body > nav, .page-toc, .hero, .print-bar, .grafik-caption,
             .glossar-section, .quiz-section, footer, .lightbox { display: none !important; }
             body { background: #fff; }
             .section { padding: 0; max-width: 100%; }
@@ -1130,6 +1130,16 @@
 
 /* Placeholder (coming soon) items */
 .theme-nav a.placeholder-link { opacity: 0.42; pointer-events: none; cursor: default; }
+
+/* External link items (open in new tab) */
+.theme-nav a.external-link::after {
+    content: "↗";
+    margin-left: auto;
+    padding-left: 6px;
+    font-size: 0.8em;
+    opacity: 0.6;
+    flex-shrink: 0;
+}
 
 /* Yellow sub-items (outer ring of fitness circle) */
 .theme-nav .theme-sub { margin: 2px 0 6px 14px; gap: 1px; }
