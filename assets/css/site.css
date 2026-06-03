@@ -1313,3 +1313,71 @@ table.data tr.is-target td { background: rgba(47,125,50,0.12) !important; font-w
 .thumb-figure .fig-hint { margin-left: 0; flex-basis: 100%; }
 @media (max-width: 480px) { .thumb-figure img { height: 185px; } }
 @media print { .thumb-figure { max-width: 60%; } .thumb-figure img { height: auto; max-height: 120mm; } }
+
+/* Zwei Vorschau-Grafiken nebeneinander */
+.thumb-row { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; margin: 4px 0 14px; }
+.thumb-row .thumb-figure { margin: 0; }
+
+/* Teil-Trenner zur Gliederung der großen Themenseite */
+.part-divider {
+    margin: 48px 0 4px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+}
+.part-divider .part-num {
+    font-family: var(--fh);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+.part-divider .part-title {
+    font-family: var(--fh);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+}
+.part-divider .part-sub { font-size: 0.86rem; color: var(--muted); flex-basis: 100%; }
+.part-divider:first-of-type { margin-top: 12px; }
+@media print { .part-divider { break-after: avoid; page-break-after: avoid; } }
+
+/* Wörtliche Zitate aus der Fachliteratur */
+.quote-card {
+    border-left: 4px solid var(--blue);
+    background: rgba(14, 116, 144, 0.06);
+    padding: 14px 18px;
+    border-radius: 0 12px 12px 0;
+    margin: 14px 0 16px;
+    color: var(--text);
+    font-style: italic;
+}
+.quote-card cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* Hinweis-Box für den zentralen Fachbegriff */
+.term-box {
+    background: linear-gradient(120deg, rgba(14,116,144,0.10), rgba(47,125,50,0.08));
+    border: 1px solid var(--border-hl);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 16px 0;
+}
+.term-box .term-word {
+    font-family: var(--fh);
+    font-weight: 700;
+    color: var(--blue);
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 4px;
+}
+.term-box span.term-def { color: var(--text); font-size: 0.92rem; }
