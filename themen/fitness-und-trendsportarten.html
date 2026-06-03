@@ -94,6 +94,17 @@
             </div>
         </header>
 
+        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Fitnesstrends im Sportunterricht" vergrößern"
+                data-full="../assets/images/trendsportarten/fitnesstrends-schulsport.png"
+                data-label="Leitgrafik – Fitnesstrends im Sportunterricht: motivierend, aber nur reflektiert, angepasst und gesundheitsorientiert">
+            <img src="../assets/images/trendsportarten/fitnesstrends-schulsport.png" alt="Infografik „Fitnesstrends im Sportunterricht" – motivierend, aber nur reflektiert, angepasst und gesundheitsorientiert. Fünf Trendbegriffe: CrossFit (intensives Ganzkörpertraining, im Unterricht vereinfacht und reflektiert), HIIT (Intervalltraining mit hoher Intensität, Belastung dosieren), Functional Training (alltagsnahe Bewegungen, für Schule besonders anschlussfähig), Calisthenics (Körpergewichtstraining, Progressionen statt Show-Übungen), Hyrox / Bootcamp (motivierend, aber nicht angepasst). Chancen: hoher Lebensweltbezug, vielseitige Ganzkörperbeanspruchung, motivierend und zeiteffizient. Kritischer Blick: Technikverlust unter Zeitdruck, Überforderung von Anfängern, Vergleichs- und Leistungsdruck, Gefahr der bloßen Trainingskopie. Für die Schule gilt: individuell anpassen, saubere Technik sichern, Belastung steuern, reflektiert statt blind imitieren. Ziel: Training verstehen und steuern lernen – nicht einfach nur auspowern." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
+            <figcaption>
+                <span class="fig-num">Leitgrafik</span>
+                <span class="fig-label">Fitnesstrends im Sportunterricht – motivierend, aber nur reflektiert und gesundheitsorientiert</span>
+                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+            </figcaption>
+        </figure>
+
         <section class="section" style="max-width:none;padding:28px 0 40px;">
 
             <!-- INTRO -->
@@ -159,12 +170,6 @@
                 <h3>CrossFit · HIIT · Functional Training im Unterricht</h3>
                 <p class="muted">Eine vertiefende Analyse dieser drei zentralen Trendformate und ihre didaktische Transformation für den schulischen Kontext.</p>
 
-                <!-- Platzhalter für Header-Grafik -->
-                <div style="background: rgba(14,116,144,0.08); border: 2px dashed rgba(14,116,144,0.40); border-radius: 12px; padding: 28px; text-align: center; margin: 16px 0 24px; color: var(--muted);">
-                    <p style="font-size: 0.9rem; font-weight: 600; margin: 0;">📊 Header-Grafik zu CrossFit folgt</p>
-                    <p style="font-size: 0.8rem; margin: 6px 0 0;">Infografik zur Einordnung und didaktischen Transformation wird ergänzt</p>
-                </div>
-
                 <div class="fact-list">
                     <div class="fact"><strong>Didaktische Dekonstruktion statt Übernahme:</strong> Trends sind didaktische Folien: Man nutzt ihre Attraktivität, dekonstruiert aber ihre Logik. Aus „CrossFit" wird nicht „möglichst hart trainieren", sondern ein Unterrichtsthema zu funktionellen Ganzkörperübungen, Belastungssteuerung und Bewegungsqualität. Aus „HIIT" wird nicht „alle bis an die Grenze treiben", sondern ein Vergleich unterschiedlicher Belastungs-Pausen-Strukturen.</div>
                     <div class="fact"><strong>Zentrale Reflexionsfragen im Unterricht:</strong> „Wann kippt die Technik?", „Wie verändert Zeitdruck die Ausführung?", „Welche Übung passt zu welchen Voraussetzungen?", „Wie lässt sich Belastung steuern?" und „Wann wird aus Trainingsreiz ein Gesundheitsrisiko?" – Diese Fragen ersetzen das klassische Leistungs-Ranking „Wer schafft am meisten?"</div>
@@ -200,10 +205,87 @@
     </div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">‹ Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">−</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
 <script>
 function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
 }
+
+const figures = Array.from(document.querySelectorAll('.js-figure'));
+const IMAGES = figures.map(f => ({ src: f.dataset.full, label: f.dataset.label }));
+
+let currentIdx = 0, currentZoom = 1;
+const ZOOM_STEP = 0.25, ZOOM_MAX = 4, ZOOM_MIN = 0.5;
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(idx) {
+    currentIdx = idx; currentZoom = 1;
+    setImage(currentIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+function setImage(idx) {
+    const d = IMAGES[idx];
+    lbImg.src = d.src; lbImg.alt = d.label; lbLabel.textContent = d.label;
+    btnPrev.disabled = idx === 0; btnNext.disabled = idx === IMAGES.length - 1;
+    updateZoom();
+}
+function navLightbox(dir) {
+    const next = currentIdx + dir;
+    if (next < 0 || next >= IMAGES.length) return;
+    currentIdx = next; currentZoom = 1; lbScroll.scrollTo(0, 0); setImage(currentIdx);
+}
+function closeLightbox() { lb.classList.remove('active'); document.body.style.overflow = ''; lbImg.src = ''; }
+function updateZoom() {
+    const vw = window.innerWidth - 40, vh = window.innerHeight - 90;
+    if (currentZoom === 1) { lbImg.style.width = ''; lbImg.style.maxWidth = vw + 'px'; lbImg.style.maxHeight = vh + 'px'; }
+    else { const base = Math.min(vw, lbImg.naturalWidth || vw); lbImg.style.maxWidth = 'none'; lbImg.style.maxHeight = 'none'; lbImg.style.width = (base * currentZoom) + 'px'; }
+    zoomPct.textContent = Math.round(currentZoom * 100) + '%';
+}
+function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
+function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === '+') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') zoomReset();
+});
+window.addEventListener('resize', () => { if (lb.classList.contains('active')) updateZoom(); });
+figures.forEach((f, i) => {
+    f.addEventListener('click', () => openLightbox(i));
+    f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+});
 </script>
 
 </body>
