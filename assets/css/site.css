@@ -128,6 +128,8 @@
             z-index: 210;
         }
         .theme-nav-toggle:hover { color: var(--accent); }
+        .theme-nav-toggle:active { color: var(--accent-dk); }
+        .theme-nav-toggle:focus { outline: none; }
 
         @media (max-width: 860px) { .nav-links { display: none; } }
         @media (max-width: 860px) {
