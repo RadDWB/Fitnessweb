@@ -1103,6 +1103,17 @@ if (themeNavToggle) {
     console.error('themeNavToggle button not found');
 }
 
+// Close menu when clicking on a link (mobile UX)
+const themeNav = document.getElementById('themeNav');
+if (themeNav) {
+    const navLinks = themeNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            themeNav.classList.remove('open');
+        });
+    });
+}
+
 buildGlossar();
 buildQuiz();
 </script>
