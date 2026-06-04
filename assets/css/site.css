@@ -468,9 +468,8 @@
         }
 
         .grafik-card:not(.wide) img {
-            aspect-ratio: 1055 / 1491;
-            object-fit: cover;
-            object-position: top;
+            max-width: 100%;
+            height: auto;
         }
 
         .grafik-caption {
@@ -492,8 +491,10 @@
         }
 
         .grafiken-grid-thumbnails .grafik-num {
-            font-size: 0.58rem;
-            margin-bottom: 2px;
+            font-size: 0.65rem;
+            margin-bottom: 3px;
+            font-weight: 700;
+            color: var(--accent);
         }
 
         .grafik-label {
@@ -505,9 +506,10 @@
         }
 
         .grafiken-grid-thumbnails .grafik-label {
-            font-size: 0.72rem;
-            margin-bottom: 2px;
-            line-height: 1.3;
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+            line-height: 1.4;
+            font-weight: 700;
         }
 
         .grafik-hint {
@@ -519,8 +521,36 @@
         }
 
         .grafiken-grid-thumbnails .grafik-hint {
-            font-size: 0.62rem;
-            display: none;
+            font-size: 0.6rem;
+            display: flex;
+            margin-top: 4px;
+        }
+
+        /* Unterschiedliche Layouts basierend auf Bildorientierung */
+        .grafik-card.portrait {
+            grid-column: span 1;
+        }
+
+        .grafik-card.landscape {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 980px) {
+            .grafik-card.landscape {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 820px) {
+            .grafik-card.landscape {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .grafik-card.landscape {
+                grid-column: span 1;
+            }
         }
 
         .source-grid {
