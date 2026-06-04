@@ -744,6 +744,7 @@ const TERMS = [
     { term: 'Aerobe Ausdauer', def: 'Ausdauerleistung, bei der Energie überwiegend mit Sauerstoff bereitgestellt wird. Im Schulsport wichtig für gesundheitsorientiertes Herz-Kreislauf-Training und länger andauernde moderate Belastungen.' },
     { term: 'Anaerobe Belastung', def: 'Kurzzeitige, intensive Belastung, bei der Energie teilweise ohne ausreichende Sauerstoffbereitstellung gewonnen wird. Für Schule nur dosiert und reflektiert einsetzen.' },
     { term: 'AMRAP', def: 'As many repetitions as possible: möglichst viele Wiederholungen in vorgegebener Zeit. Im Unterricht nur sinnvoll, wenn Technikqualität, Belastungssteuerung, Differenzierung und Reflexion abgesichert sind.' },
+    { term: 'Aktive Erholung', def: 'Leichte Bewegung auf niedriger Intensität (lockeres Auslaufen, ruhiges Spiel) nach Belastung. Fördert Durchblutung und Abtransport von Stoffwechselprodukten, ohne neuen Trainingsreiz zu setzen.' },
     { term: 'Ausdauer', def: 'Motorische Fähigkeit, eine Belastung über längere Zeit aufrechtzuerhalten, Ermüdung zu widerstehen und sich anschließend angemessen zu erholen.' },
     { term: 'Beanspruchung', def: 'Individuelle innere Reaktion auf eine Belastung. Zwei Lernende können dieselbe Aufgabe ausführen, aber sehr unterschiedlich beansprucht sein.' },
     { term: 'Belastung', def: 'Äußere Anforderung einer Übung oder Trainingsform, etwa Dauer, Intensität, Wiederholungszahl, Tempo, Zusatzgewicht oder Pausenlänge.' },
@@ -772,6 +773,7 @@ const TERMS = [
     { term: 'Gesundheitsbildung', def: 'Bildungsauftrag, Lernende zu Wissen, Urteilsfähigkeit und verantwortlichem Handeln in Bezug auf Gesundheit zu befähigen.' },
     { term: 'Gesundheitsorientierung', def: 'Unterrichtliche Ausrichtung, bei der Bewegung, Belastung und Lebensstil im Hinblick auf Wohlbefinden, Prävention und verantwortliches Handeln reflektiert werden.' },
     { term: 'HIIT', def: 'High Intensity Interval Training: sehr intensive Intervalle mit Pausen. Im Schulsport nur mit Vorsicht, klarer Techniksteuerung und individueller Anpassung.' },
+    { term: 'Homöostase', def: 'Inneres Gleichgewicht des Körpers (Temperatur, Flüssigkeitshaushalt, Energiestoffwechsel etc.). Ein Trainingsreiz stört dieses Gleichgewicht vorübergehend, worauf der Körper mit Anpassung reagiert.' },
     { term: 'Individualisierung', def: 'Anpassung von Trainingszielen und Belastungen an persönliche Voraussetzungen, Bedürfnisse und Lernstände.' },
     { term: 'Intervallmethode', def: 'Wechsel von Belastungs- und Erholungsphasen. Im Unterricht gut geeignet, wenn Intensität und Pausen transparent gesteuert werden.' },
     { term: 'Kondition', def: 'Sammelbegriff für energetisch geprägte motorische Fähigkeiten wie Ausdauer, Kraft und Schnelligkeit; oft ergänzt durch Beweglichkeit.' },
@@ -785,6 +787,7 @@ const TERMS = [
     { term: 'Monitoring', def: 'Beobachten und Dokumentieren von Belastung, Befinden oder Fortschritt, z. B. über Puls, RPE, Trainingsprotokoll oder Reflexionsbogen.' },
     { term: 'Motorische Grundeigenschaften', def: 'Zentrale körperliche Fähigkeiten: Ausdauer, Kraft, Schnelligkeit, Beweglichkeit und Koordination.' },
     { term: 'Pacing', def: 'Einteilung von Kraft und Tempo über eine Belastungsdauer. Wichtig, damit Lernende Belastung kontrollieren statt nur maximal starten.' },
+    { term: 'Passive Erholung', def: 'Vollständige Ruhe nach Belastung – kein Sport, keine intensive Aktivität. Sinnvoll bei starkem Muskelkater, ersten Krankheitszeichen, Verletzung oder nach sehr intensiven Phasen, um den Körper vollständig zu schonen.' },
     { term: 'Progression', def: 'Allmähliche Steigerung von Anforderungen. Im Unterricht kann Progression über Technik, Umfang, Intensität, Komplexität oder Selbstständigkeit erfolgen.' },
     { term: 'Prävention', def: 'Vorbeugung von Risiken und Erkrankungen. Im Schulsport wichtig, aber nicht der einzige Sinn von Fitness und Gesundheitsbildung.' },
     { term: 'Regeneration', def: 'Wiederherstellung nach Belastung. Schlaf, Pausen, Ernährung, Entspannung und Stressmanagement sind dafür zentral.' },
@@ -797,6 +800,7 @@ const TERMS = [
     { term: 'Stressmanagement', def: 'Umgang mit psychischer Belastung, z. B. über Atmung, Entspannung, Bewegung, Pausen, soziale Unterstützung und Reflexion.' },
     { term: 'Superkompensation', def: 'Modell der Anpassung nach Belastung und Erholung. Für Schule eher als Grundidee nützlich: Training braucht passende Reize und ausreichende Regeneration.' },
     { term: 'Tabata', def: 'Intervallformat mit sehr kurzen, intensiven Belastungen und Pausen. Im Unterricht nur stark angepasst und mit Technikfokus sinnvoll.' },
+    { term: 'Übertraining', def: 'Chronische Überlastung durch zu viel Belastung bei zu wenig Erholung. Warnsignale sind Leistungsabfall trotz Trainings, dauerhafte Müdigkeit, Reizbarkeit und erhöhte Infektanfälligkeit. Prävention durch bewusste Belastungs- und Erholungssteuerung.' },
     { term: 'Theorie-Praxis-Verzahnung', def: 'Fachliche Informationen werden nicht nur besprochen, sondern an praktischen Erfahrungen überprüft und für eigenes Handeln nutzbar gemacht.' },
     { term: 'Trainingsprinzipien', def: 'Regeln zur Gestaltung von Belastung, Anpassung und Erholung, etwa Progression, Variation, Individualisierung und angemessene Belastungsdosierung.' },
     { term: 'Trainingsreiz', def: 'Belastungsimpuls, der Anpassung anregen kann. Zu schwache Reize bleiben wirkungslos, zu starke Reize können überfordern.' },
@@ -964,10 +968,28 @@ const QUIZ = [
         f: 'Körpergewichtstraining wird schulgeeignet, wenn abgestufte Varianten und Bewegungsqualität im Vordergrund stehen.'
     },
     {
-        q: 'Was ist das Leitziel des gesund-funktionalen Muskelfitnesstrainings?',
-        a: ['Muskel- und Bewegungsfunktionen verstehen und Gesundheit vor maximale Leistung stellen.', 'Möglichst schnell die individuelle Maximalkraft jeder Schülerin und jedes Schülers steigern.', 'Vor allem einen sichtbaren Muskelaufbau (Hypertrophie) erreichen.'],
+        q: 'Was meint das Modell der Superkompensation?',
+        a: ['Nach Belastung und passender Erholung passt sich der Körper über das Ausgangsniveau hinaus an.', 'Der Körper kehrt nach Belastung zur Ausgangsfähigkeit zurück; weitere Verbesserung braucht neue Reize.', 'Durch mehrfache intensive Belastungen hintereinander entsteht schneller Trainingsfortschritt.'],
         c: 0,
-        f: 'Im Zentrum steht funktionales Verständnis und gesundheitsorientiertes Handeln – nicht maximale Ausbelastung.'
+        f: 'Superkompensation zeigt: Training funktioniert nur mit passender Erholung. Zu frühe Reize verhindern Aufbau, zu späte lassen den Effekt verpuffen.'
+    },
+    {
+        q: 'Wie viel Schlaf empfehlen Schlafforscher für 14- bis 17-Jährige?',
+        a: ['8 bis 10 Stunden pro Nacht', 'mindestens 6 bis 7 Stunden', '10 bis 12 Stunden für optimales Wachstum'],
+        c: 0,
+        f: 'Schlaf ist zentrale Regeneration: Muskeln, Gehirn, Immunsystem und Gedächtnis reparieren und konsolidieren sich hauptsächlich nachts.'
+    },
+    {
+        q: 'Was ist der Unterschied zwischen aktiver und passiver Erholung?',
+        a: ['Aktiv: leichte Bewegung fördert Durchblutung. Passiv: vollständige Ruhe bei starkem Ermüdungssignal.', 'Aktiv bedeutet gezieltes Training, passiv einfach Pausen machen.', 'Der Unterschied ist minimal – beide Formen wirken gleich.'],
+        c: 0,
+        f: 'Je nach Belastung und Befinden ist der richtige Mix wichtig: Nach moderater Belastung hilft aktive Erholung; bei Übertrainingssignalen ist passive Ruhe angebracht.'
+    },
+    {
+        q: 'Welche Aussage passt zu Übertraining?',
+        a: ['Chronisches Übertraining entsteht durch zu viel Belastung bei zu wenig Erholung – Warnsignale sind Leistungsabfall, Müdigkeit und schlechtere Immunabwehr.', 'Übertraining ist harmlos und verschwindet nach wenigen Tagen Pause von selbst.', 'Übertraining passiert nur im Hochleistungssport, im Schulsport ist es kein echtes Risiko.'],
+        c: 0,
+        f: 'Ziel ist, angesammelte Erschöpfung rechtzeitig abzubauen, bevor daraus echtes Übertraining entsteht. Prävention durch bewusste Belastungs- und Erholungssteuerung.'
     },
 ];
 
