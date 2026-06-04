@@ -34,9 +34,8 @@
         <li><a href="../index.html#glossar">Glossar</a></li>
     </ul>
     <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
 </nav>
-
-<button class="btn theme-nav-toggle" onclick="toggleThemeNav()" id="themeNavToggle">☰ Themen &amp; Bereiche</button>
 
 <div class="shell">
     <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
@@ -691,6 +690,13 @@ function toggleAccordion(e) {
 function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
 }
+
+// Auto-close sidebar when clicking navigation links
+document.querySelectorAll('.theme-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('themeNav').classList.remove('open');
+    });
+});
 
 /* Galerie wird automatisch aus allen .js-figure in DOM-Reihenfolge gebaut –
    neue Grafiken einfach als <figure class="... js-figure" data-full data-label> einfügen. */
