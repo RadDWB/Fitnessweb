@@ -460,6 +460,14 @@ function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
 }
 
+// Ensure button works on all devices
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) {
+    themeNavToggle.addEventListener('click', function(e) {
+        toggleThemeNav();
+    });
+}
+
 // Auto-close sidebar when clicking navigation links
 document.querySelectorAll('.theme-nav a').forEach(link => {
     link.addEventListener('click', () => {
