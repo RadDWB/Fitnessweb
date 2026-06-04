@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belastung &amp; Erholung – Regeneration im Schulsport · Fitness im Schulsport</title>
+
+    <meta name="description" content="Belastung und Erholung im Schulsport: Superkompensation, Schlaf, aktive und passive Erholung, Pausengestaltung und Übertraining – gesundheitsorientiert aufbereitet für Lehramt Sport. Erholung ist Teil des Trainings.">
+    <meta property="og:title" content="Belastung &amp; Erholung – Regeneration im Schulsport">
+    <meta property="og:description" content="Superkompensation, Schlaf, aktive Erholung und Belastungssteuerung: Warum Regeneration kein Gegenteil von Training ist, sondern sein Bestandteil – aufbereitet für den Sportunterricht.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="theme-page">
+
+<nav>
+    <a href="../index.html" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#grundsatz">Grundsatz</a></li>
+        <li><a href="../index.html#themen">Themen</a></li>
+        <li><a href="../index.html#grafiken">Grafiken</a></li>
+        <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <a href="../impressum.html" class="nav-impressum">Impressum</a>
+</nav>
+
+<button class="btn theme-nav-toggle" onclick="toggleThemeNav()" id="themeNavToggle">☰ Themen &amp; Bereiche</button>
+
+<div class="shell">
+    <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
+        <p class="theme-nav-title">Fitness im Schulsport</p>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Start</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html"><span class="dot"></span>Überblick &amp; Grundsatz</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Lebensstil &amp; Regeneration</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>An- &amp; Entspannung</a></li>
+                <li><a class="active" href="belastung-und-erholung.html"><span class="dot"></span>Ausreichender Schlaf</a></li>
+                <li><a class="active" href="belastung-und-erholung.html"><span class="dot"></span>Aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Urlaub &amp; Regeneration</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Soziales &amp; Umfeld</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Familie</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Freunde &amp; Beziehungen</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziales Umfeld</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Belastungen reduzieren</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Geringe Exposition</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Weniger Bildschirmzeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressfaktoren reduzieren</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Weitere Einflussfaktoren</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressmanagement</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Mentale Gesundheit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umgebung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzen &amp; Sicherheit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Natur &amp; Bewegung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Material &amp; Werkzeuge</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html#grafiken"><span class="dot"></span>Grafiken</a></li>
+                <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
+                <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
+                <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header class="theme-head">
+            <div class="badge">Trainingslehre &amp; Gesundheit · Sekundarstufe II · NRW</div>
+            <h1>Belastung &amp; Erholung – Regeneration im Schulsport</h1>
+            <p>Wer trainiert, denkt meist an Anstrengung. Doch die eigentliche Leistungsentwicklung geschieht nicht <em>während</em>, sondern <em>nach</em> der Belastung – in der Erholung. Erholung ist damit kein Gegenteil von Training, sondern sein Bestandteil. Wie können Schülerinnen und Schüler lernen, Belastung und Erholung selbst einzuschätzen und gesundheitsorientiert zu steuern?</p>
+            <div class="theme-meta">
+                <span><strong>Grundlage:</strong> Trainingsprinzip Belastung &amp; Erholung (Superkompensation)</span>
+                <span><strong>Bezug:</strong> NRW – Gesundheit fördern, Gesundheitsbewusstsein entwickeln</span>
+                <span><strong>Ansatz:</strong> Belastung verstehen und steuern statt nur auspowern</span>
+            </div>
+        </header>
+
+        <div id="top"></div>
+        <p class="nav-anchor"><a href="../index.html">← Zur Startseite</a></p>
+
+        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Der Belastungs-Erholungs-Kreislauf" vergrößern"
+                data-full="../assets/images/regeneration/regeneration-belastung-erholung.png"
+                data-label="Leitgrafik – Der Belastungs-Erholungs-Kreislauf (Superkompensation): Belastung, Ermüdung, Erholung und Anpassung über das Ausgangsniveau hinaus">
+            <img src="../assets/images/regeneration/regeneration-belastung-erholung.png" alt="Infografik „Der Belastungs-Erholungs-Kreislauf“ – Superkompensation: Auf eine Belastung folgt eine vorübergehende Ermüdung (Leistungsabfall), anschließend stellt die Erholung das Ausgangsniveau nicht nur wieder her, sondern überschießend darüber hinaus. Trifft der nächste Belastungsreiz den optimalen Zeitpunkt, steigt das Leistungsniveau schrittweise an. Zu früh gesetzte Reize verhindern den Aufbau, zu späte lassen den Effekt verpuffen. Drei Säulen der Erholung: Schlaf, aktive und passive Erholung sowie Ernährung. Ziel: Belastung und Erholung bewusst steuern statt maximale Ausbelastung." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
+            <figcaption>
+                <span class="fig-num">Leitgrafik</span>
+                <span class="fig-label">Der Belastungs-Erholungs-Kreislauf – Erholung ist Teil des Trainings</span>
+                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+            </figcaption>
+        </figure>
+
+        <section class="section" style="max-width:none;padding:28px 0 40px;">
+
+            <!-- INTRO -->
+            <div class="prose-card" id="intro">
+                <p class="section-eyebrow">Überblick</p>
+                <h3>Erholung ist kein Gegenteil von Training</h3>
+                <p class="muted">Im Schulsport – und besonders rund um Fitnesstrends – herrscht oft die unausgesprochene Annahme: Wer härter trainiert, wird fitter. Tatsächlich ist Belastung nur der <em>Reiz</em>. Der eigentliche Aufbau passiert in der Erholungsphase. Ohne ausreichende Regeneration verpufft der Trainingseffekt – oder kippt ins Gegenteil.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Belastung setzt den Reiz, Erholung bringt den Gewinn:</strong> Ein Trainingsreiz stört das körperliche Gleichgewicht (Homöostase) vorübergehend. Erst in der anschließenden Ruhephase repariert und verstärkt der Körper die beanspruchten Strukturen. Wer diese Phase überspringt, trainiert gegen den eigenen Fortschritt.</div>
+                    <div class="fact"><strong>Lebensweltbezug der Lerngruppe:</strong> Viele Jugendliche kennen aus Social Media und Fitnessstudios die Botschaft „no pain, no gain“. Gleichzeitig sind Schlafmangel, Dauerstress und ständige Erreichbarkeit reale Themen ihres Alltags. Regeneration ist damit ein hochaktueller, anschlussfähiger Unterrichtsgegenstand.</div>
+                    <div class="fact"><strong>Anschluss an den Bildungsauftrag:</strong> Die NRW-Perspektive „Gesundheit fördern, Gesundheitsbewusstsein entwickeln“ nennt das Erleben von Anstrengung <em>und</em> Erholung sowie das Verständnis ihrer Bedeutung ausdrücklich als Aufgabe des Schulsports. Regeneration ist kein Rand-, sondern ein Kernthema.</div>
+                </div>
+
+                <div class="callout">
+                    <strong>Leitidee:</strong> <em>Gesundheitsorientierter Schulsport zielt nicht auf maximale Ausbelastung, sondern darauf, Belastung und Erholung selbst einschätzen und gestalten zu können.</em> Dieselbe Logik wie bei der D&amp;D-Skala im Krafttraining – nur diesmal von der Seite der Erholung gedacht.
+                </div>
+            </div>
+
+            <!-- ============ TEIL A — DAS PRINZIP ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil A</span>
+                <span class="part-title">Das Prinzip: Warum Erholung trainiert</span>
+                <span class="part-sub">Die trainingswissenschaftliche Grundlage von Regeneration – verständlich für die Lerngruppe aufbereitet.</span>
+            </div>
+
+            <!-- §1 SUPERKOMPENSATION -->
+            <div class="prose-card" id="superkompensation">
+                <p class="section-eyebrow">Abschnitt 1</p>
+                <h3>Superkompensation – die überschießende Wiederherstellung</h3>
+                <p class="muted">Das Modell der Superkompensation erklärt anschaulich, warum Erholung leistungswirksam ist. Es ist didaktisch wertvoll, weil es das abstrakte „Training wirkt“ in einen nachvollziehbaren Ablauf übersetzt.</p>
+
+                <div class="term-box">
+                    <span class="term-word">Superkompensation</span>
+                    <span class="term-def">Die überschießende Anpassungsreaktion des Körpers nach einer Belastung: Die Erholung stellt das Ausgangsniveau nicht nur wieder her, sondern hebt es vorübergehend <strong>darüber hinaus</strong> an. Wird der nächste Reiz in dieser Phase gesetzt, steigt das Leistungsniveau schrittweise.</span>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Vier Phasen im Kreislauf:</strong> (1) Belastung als Reiz, (2) vorübergehende Ermüdung mit Leistungsabfall, (3) Erholung mit Wiederherstellung, (4) Anpassung über das Ausgangsniveau hinaus. Dieser Ablauf wiederholt sich – richtig getaktet entsteht ein langsamer, stabiler Aufstieg.</div>
+                    <div class="fact"><strong>Das Timing entscheidet:</strong> Kommt der nächste Reiz <em>zu früh</em>, ist der Körper noch nicht erholt – die Leistung stagniert oder sinkt. Kommt er <em>zu spät</em>, ist die Superkompensation bereits abgeklungen – der Effekt verpufft. Nicht die Härte, sondern der Rhythmus macht den Fortschritt.</div>
+                    <div class="fact"><strong>Brücke zum Ein-Satz-Krafttraining:</strong> Das sanfte, gesundheitsorientierte Krafttraining wirkt gerade deshalb, weil ein einziger, sauber gesetzter Reiz pro Woche genügt – vorausgesetzt, die Erholung dazwischen stimmt. Erholung ist die stille Voraussetzung jedes wirksamen Trainings.</div>
+                    <div class="fact"><strong>Grenzen des Modells:</strong> Superkompensation ist ein vereinfachtes Modell, kein exaktes Naturgesetz. Es eignet sich hervorragend als Denkwerkzeug im Unterricht, sollte aber nicht als starre „Stundenplan-Formel“ missverstanden werden – der Körper reagiert individuell.</div>
+                </div>
+            </div>
+
+            <!-- ANIMATION: SUPERKOMPENSATION -->
+            <figure class="lead-figure animation-figure" style="margin: 32px 0;">
+                <video controls autoplay muted style="width: 100%; height: auto; border-radius: 8px; background: #f5f5f5;">
+                    <source src="../assets/images/Superkompanimation.mp4" type="video/mp4">
+                    Ihr Browser unterstützt HTML5-Video nicht. Bitte laden Sie die Animation direkt herunter oder aktualisieren Sie Ihren Browser.
+                </video>
+                <figcaption style="margin-top: 12px; font-size: 0.9rem; color: var(--muted);">
+                    <span class="fig-num">Animation</span>
+                    <span class="fig-label">Superkompensation in Aktion – Der Ablauf der Leistungsanpassung</span>
+                </figcaption>
+            </figure>
+
+            <!-- §2 BELASTUNG & ERHOLUNG -->
+            <div class="prose-card" id="belastung-erholung">
+                <p class="section-eyebrow">Abschnitt 2</p>
+                <h3>Belastung &amp; Erholung als Trainingsprinzip</h3>
+                <p class="muted">Aus der Superkompensation folgt eines der grundlegenden Trainingsprinzipien: Auf einen ausreichenden Reiz muss eine ausreichende Erholung folgen. Wie lang diese ist, hängt von mehreren Faktoren ab.</p>
+
+                <div class="stat-grid">
+                    <div class="stat"><b>48–72&nbsp;h</b><span>typische Erholungsdauer nach Kraft- und Schnelligkeitsbelastung</span></div>
+                    <div class="stat"><b>18–36&nbsp;h</b><span>typische Erholungsdauer nach Ausdauerbelastung</span></div>
+                    <div class="stat"><b>4</b><span>Einflussfaktoren: Intensität, Dauer, Trainingszustand, Alter</span></div>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Intensität und Dauer:</strong> Je höher die Belastungsintensität und je länger die Belastung, desto länger braucht der Körper, um zu regenerieren. Eine intensive CrossFit- oder HIIT-Einheit verlangt deutlich mehr Erholung als ein lockeres Ausdauerspiel.</div>
+                    <div class="fact"><strong>Trainingszustand:</strong> Untrainierte und Anfänger benötigen oft längere Erholung – ein wichtiges Differenzierungsargument für heterogene Lerngruppen. Was für Vereinssportlerinnen passt, kann Einsteiger überfordern.</div>
+                    <div class="fact"><strong>Alter und Entwicklung:</strong> Im Jugendalter sind Wachstum und Entwicklung zusätzliche „Baustellen“ des Körpers. Erholung – allen voran Schlaf – konkurriert hier mit Regenerationsbedarf und ist deshalb besonders schützenswert.</div>
+                    <div class="fact"><strong>Konsequenz für den Unterricht:</strong> Belastung lässt sich nicht losgelöst von Erholung planen. Wer Stunden gestaltet, plant Pausen, Wechsel und Intensitätsphasen bewusst mit – nicht als „Lückenfüller“, sondern als wirksamen Teil des Trainings.</div>
+                </div>
+            </div>
+
+            <p class="nav-anchor"><a href="#top">↑ Nach oben</a></p>
+
+            <!-- ============ TEIL B — DREI SÄULEN DER ERHOLUNG ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil B</span>
+                <span class="part-title">Die Säulen der Erholung</span>
+                <span class="part-sub">Schlaf, aktive und passive Erholung sowie die Pausengestaltung im Unterricht – konkret und schulnah.</span>
+            </div>
+
+            <!-- §3 SCHLAF -->
+            <div class="prose-card" id="schlaf">
+                <p class="section-eyebrow">Abschnitt 3</p>
+                <h3>Schlaf – die Basisregeneration</h3>
+                <p class="muted">Keine andere Maßnahme erholt so umfassend wie Schlaf. Er ist die Grundlage, auf der alle weiteren Erholungsformen aufbauen – und gleichzeitig das Thema, bei dem viele Jugendliche den größten Nachholbedarf haben.</p>
+
+                <div class="stat-grid">
+                    <div class="stat"><b>8–10&nbsp;h</b><span>empfohlener Schlaf für 14- bis 17-Jährige (National Sleep Foundation)</span></div>
+                    <div class="stat"><b>jede/r 8.</b><span>der 12- bis 17-Jährigen ist chronisch unterschlafen</span></div>
+                    <div class="stat"><b>Nachts</b><span>schüttet der Körper Wachstums- und Reparaturhormone aus</span></div>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Was im Schlaf passiert:</strong> Der Körper – und besonders das Gehirn – schaltet in einen Reparatur- und Regenerationsmodus. Muskeln, Knochen und Organe werden wiederhergestellt, das Immunsystem arbeitet verstärkt, und Gelerntes wird im Gedächtnis verankert (Gedächtniskonsolidierung).</div>
+                    <div class="fact"><strong>Folgen von Schlafmangel:</strong> Zu kurzer oder unregelmäßiger Schlaf führt zu Tagesmüdigkeit, sinkender Konzentration, schlechterem Gedächtnis und Problemen beim Problemlösen. Auch Emotionsregulation und sportliche Leistungsfähigkeit leiden – ein doppelter Nachteil für Schule und Sport.</div>
+                    <div class="fact"><strong>Verschobener Biorhythmus:</strong> In der Pubertät verschiebt sich der natürliche Schlafrhythmus nach hinten – Jugendliche werden abends später müde. Früher Schulbeginn und später Schlafdruck geraten so in Konflikt. Das erklärt Müdigkeit, ohne sie als „Faulheit“ abzustempeln.</div>
+                    <div class="fact"><strong>Reflexionsbrücke – Bildschirmzeit:</strong> Späte Nutzung von Smartphone, Konsole und Streaming verschlechtert Einschlafen und Schlafqualität. Hier verbindet sich das Thema mit „Digitale Balance“ und „Weniger Bildschirmzeit“ – ein lohnender fächerverbindender Anknüpfungspunkt.</div>
+                </div>
+            </div>
+
+            <!-- §4 AKTIVE VS PASSIVE ERHOLUNG -->
+            <div class="prose-card" id="aktiv-passiv">
+                <p class="section-eyebrow">Abschnitt 4</p>
+                <h3>Aktive und passive Erholung</h3>
+                <p class="muted">Erholung heißt nicht zwangsläufig „nichts tun“. Je nach Situation ist leichte Bewegung oder vollständige Ruhe sinnvoll. Beide Formen gehören zusammen – die Kunst liegt in der passenden Wahl.</p>
+
+                <div class="table-wrap">
+                    <table class="data">
+                        <caption>Aktive und passive Erholung im Vergleich – Wirkung und sinnvolle Einsatzsituationen.</caption>
+                        <thead>
+                            <tr><th style="width:22%;"></th><th style="width:39%;">Aktive Erholung</th><th style="width:39%;">Passive Erholung</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Was</strong></td><td>Bewegung auf niedriger Intensität (lockeres Auslaufen, ruhiges Spiel, Mobilisation)</td><td>Vollständige Ruhe – kein Sport, keine intensive Belastung</td></tr>
+                            <tr><td><strong>Wirkung</strong></td><td>Fördert Durchblutung, unterstützt den Abtransport von Stoffwechselprodukten – ohne neuen Reiz</td><td>Schont den Körper und erlaubt vollständige Wiederherstellung</td></tr>
+                            <tr><td><strong>Sinnvoll bei</strong></td><td>nach moderater Belastung, am Tag nach einer Einheit, zum „Lockern“</td><td>starkem Muskelkater, ersten Krankheitszeichen, nach Verletzung oder sehr intensiven Phasen</td></tr>
+                            <tr><td><strong>Im Unterricht</strong></td><td>Cool-down, ruhige Abschlussspiele, Dehnen, Körperwahrnehmung</td><td>bewusste Pausentage thematisieren, Belastungssignale ernst nehmen</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.95rem; color: var(--muted);"><strong>Merksatz für die Lerngruppe:</strong> Aktive Erholung hilft dem Körper, „runterzukommen“; passive Erholung gibt ihm Zeit, sich vollständig zu reparieren. Wer auf klare Überlastungssignale hört, trifft die richtige Wahl.</p>
+            </div>
+
+            <!-- §5 PAUSENGESTALTUNG -->
+            <div class="prose-card" id="pausen">
+                <p class="section-eyebrow">Abschnitt 5</p>
+                <h3>Pausengestaltung im Unterricht</h3>
+                <p class="muted">Erholung beginnt nicht erst nach der Stunde – sie ist Teil der Stunde. Bewusst gesetzte Pausen sichern Bewegungsqualität, Sicherheit und Lernerfolg.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Pausen schützen die Technik:</strong> Bei Ermüdung kippt zuerst die Bewegungsqualität. Wer Pausen einplant, hält die Ausführung sauber – das ist gerade bei anspruchsvollen Übungen ein Sicherheits- und kein Komfortargument.</div>
+                    <div class="fact"><strong>Lohnende Pause statt Leerlauf:</strong> Stationswechsel, Partnerbeobachtung, kurze Reflexion oder Materialaufbau können Erholungsphasen sinnvoll füllen, ohne den Stundenfluss zu unterbrechen.</div>
+                    <div class="fact"><strong>Belastungs-Pausen-Verhältnis als Lerngegenstand:</strong> Unterschiedliche Verhältnisse von Belastung und Pause lassen sich im Unterricht direkt erfahrbar machen – etwa im Vergleich verschiedener Intervallstrukturen (Anknüpfung an HIIT/Tabata aus dem Trendsport-Thema).</div>
+                    <div class="fact"><strong>Differenzierung über Pausen:</strong> Längere oder kürzere Pausen sind ein einfaches, wirksames Mittel, um dieselbe Übung für unterschiedlich leistungsfähige Schülerinnen und Schüler passend zu machen.</div>
+                </div>
+            </div>
+
+            <p class="nav-anchor"><a href="#top">↑ Nach oben</a></p>
+
+            <!-- ============ TEIL C — STEUERUNG & REFLEXION ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil C</span>
+                <span class="part-title">Steuerung &amp; Reflexion</span>
+                <span class="part-sub">Vom Wissen zum Handeln: Überlastung erkennen und Erholung selbstständig steuern lernen.</span>
+            </div>
+
+            <!-- §6 ÜBERTRAINING -->
+            <div class="prose-card" id="uebertraining">
+                <p class="section-eyebrow">Abschnitt 6</p>
+                <h3>Wenn die Erholung fehlt – Übertraining erkennen</h3>
+                <p class="muted">Dauerhaft zu viel Belastung bei zu wenig Erholung führt nicht zu mehr Leistung, sondern zu einem Abwärtstrend. Die Warnzeichen zu kennen, ist gelebte Gesundheitsbildung.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Typische Warnsignale:</strong> anhaltender Leistungsabfall trotz Trainings, dauerhafte Müdigkeit, Reizbarkeit und Stimmungstiefs, Schlafprobleme sowie erhöhte Infektanfälligkeit. Treten mehrere Zeichen gemeinsam auf, ist das ein deutliches Stoppsignal.</div>
+                    <div class="fact"><strong>Das Grundprinzip:</strong> Ziel ist es, angesammelte Erschöpfung rechtzeitig abzubauen, <em>bevor</em> daraus ein echtes Übertraining wird. Vorbeugen ist deutlich einfacher als die oft langwierige Erholung aus dem Übertraining heraus.</div>
+                    <div class="fact"><strong>Schulischer Bezug:</strong> Übertraining ist im Schulsport selten das Hauptrisiko – wohl aber die Kombination aus Schule, Verein, Freizeitsport, Schlafmangel und Stress. Genau diese Gesamtbelastung sichtbar zu machen, ist ein lohnender Reflexionsanlass.</div>
+                </div>
+            </div>
+
+            <!-- §7 SELBST STEUERN -->
+            <div class="prose-card" id="steuern">
+                <p class="section-eyebrow">Abschnitt 7</p>
+                <h3>Erholung selbst steuern lernen</h3>
+                <p class="muted">Das eigentliche Bildungsziel ist nicht, Erholung zu „verordnen“, sondern Schülerinnen und Schüler zu befähigen, ihre Belastung und Erholung selbst wahrzunehmen und zu regulieren.</p>
+
+                <div class="callout">
+                    <strong>Kernsatz:</strong> <em>Fitness heißt auch, die eigene Erholung verstehen und gestalten zu können.</em> Wer lernt, Belastungssignale zu deuten und Pausen, Schlaf und Erholungsformen bewusst einzusetzen, handelt gesundheitsorientiert – ein Leben lang.
+                </div>
+
+                <figure class="lead-figure thumb-figure js-figure" role="button" tabindex="0" aria-label="D&amp;D-Skala: subjektives Belastungsempfinden vergrößern"
+                        data-full="../assets/images/krafttraining/kt-4-dd-skala.png"
+                        data-label="D&amp;D-Skala – subjektives Belastungsempfinden als Steuerungsinstrument für Belastung und Erholung">
+                    <img src="../assets/images/krafttraining/kt-4-dd-skala.png" alt="Grafik D&amp;D-Skala: Bewusstsein und Durchhaltefähigkeit als Skala des subjektiven Belastungsempfindens von 1 (sehr leicht) bis 10 (maximale Ausbelastung). Im gesundheitsorientierten Bereich liegt die Belastung in der Zone 3–4. Übertragen auf Erholung hilft die Skala einzuschätzen, ob eine Belastung verkraftbar war oder mehr Erholung nötig ist." loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
+                    <figcaption>
+                        <span class="fig-num">Werkzeug</span>
+                        <span class="fig-label">D&amp;D-Skala: subjektives Empfinden als Steuerungsinstrument</span>
+                        <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+                    </figcaption>
+                </figure>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Subjektives Empfinden nutzen:</strong> Die aus dem Krafttraining bekannte D&amp;D-Skala lässt sich auf Erholung übertragen: „Wie anstrengend war das?“ und „Wie erholt fühle ich mich heute?“ machen Belastung und Regeneration besprechbar – ganz ohne Messgeräte.</div>
+                    <div class="fact"><strong>Reflexionsfragen für den Unterricht:</strong> „Woran merke ich, dass ich erholt bin?“, „Was raubt mir Schlaf?“, „Welche Pause tut mir gut – aktiv oder passiv?“, „Wie viel Belastung aus Schule, Verein und Alltag kommt zusammen?“ Diese Fragen ersetzen das Ranking „Wer schafft am meisten?“.</div>
+                    <div class="fact"><strong>Transfer über die Schule hinaus:</strong> Wer Erholung steuern kann, nimmt eine Kompetenz mit, die in Freizeitsport, Ausbildung und Alltag trägt. Genau das meint der ganzheitliche Fitnessbegriff: Fitness als lernbarer, verantwortbarer Lebensstil.</div>
+                </div>
+            </div>
+
+            <!-- QUELLEN -->
+            <div class="prose-card" id="quelle">
+                <p class="section-eyebrow">Quellen &amp; Hintergrund</p>
+                <h3>Grundlagen dieser Seite</h3>
+                <p class="muted">Die Inhalte verbinden trainingswissenschaftliche Grundlagen (Belastung &amp; Erholung, Superkompensation) mit dem schulsportlichen Bildungsauftrag in NRW (Perspektive „Gesundheit fördern, Gesundheitsbewusstsein entwickeln“) und aktuellen Hinweisen zu Schlaf und Regeneration im Jugendalter.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Trainingsprinzip Belastung &amp; Erholung / Superkompensation:</strong> trainingswissenschaftliche Grundlage zu Reiz, Ermüdung, Erholung und Anpassung sowie zu Erholungszeiten und Einflussfaktoren.</div>
+                    <div class="fact"><strong>Schlaf im Jugendalter:</strong> Empfehlungen (8–10&nbsp;h), Funktion des Schlafs für Regeneration und Gedächtnis sowie Folgen von Schlafmangel für Konzentration und Leistung.</div>
+                    <div class="fact"><strong>Aktive und passive Erholung:</strong> Wirkungsweise und sinnvolle Einsatzsituationen beider Erholungsformen sowie Hinweise zur Übertrainingsprävention.</div>
+                    <div class="fact"><strong>NRW-Rahmenvorgaben Schulsport:</strong> Pädagogische Perspektive „Gesundheit fördern, Gesundheitsbewusstsein entwickeln“ als Legitimation des Themas im Sportunterricht.</div>
+                </div>
+
+                <div class="hero-actions" style="margin-top:10px;">
+                    <a class="btn btn-primary" href="gesundheitsorientiertes-krafttraining.html">Zum Gesund-funktionalen Krafttraining</a>
+                    <a class="btn" href="fitness-und-trendsportarten.html">Zu Fitness &amp; Trendsportarten</a>
+                    <button class="btn" onclick="window.print()">Drucken / als PDF</button>
+                </div>
+            </div>
+
+            <p class="nav-anchor"><a href="#top">↑ Nach oben</a></p>
+
+        </section>
+    </main>
+
+    <nav class="page-toc" id="pageToc" aria-label="Auf dieser Seite">
+        <p class="page-toc-title">Auf dieser Seite</p>
+        <ul>
+            <li><a href="#intro">Überblick</a></li>
+            <li><a href="#superkompensation">Superkompensation</a></li>
+            <li><a href="#belastung-erholung">Belastung &amp; Erholung</a></li>
+            <li><a href="#schlaf">Schlaf</a></li>
+            <li><a href="#aktiv-passiv">Aktive &amp; passive Erholung</a></li>
+            <li><a href="#pausen">Pausengestaltung</a></li>
+            <li><a href="#uebertraining">Übertraining erkennen</a></li>
+            <li><a href="#steuern">Selbst steuern</a></li>
+            <li><a href="#quelle">Quellen</a></li>
+        </ul>
+    </nav>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
+        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport<br>
+        <a href="../impressum.html">Impressum</a> · <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> · <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">‹ Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">−</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleAccordion(e) {
+    e.preventDefault();
+    const label = e.target.closest('.theme-group-label');
+    if (!label) return;
+    const group = label.closest('.theme-group');
+    const isOpen = group.classList.contains('open');
+
+    const allGroups = document.querySelectorAll('.theme-group');
+    allGroups.forEach(g => {
+        if (g.classList.contains('open') && g !== group) {
+            g.classList.remove('open');
+            g.classList.add('collapsed');
+        }
+    });
+
+    group.classList.toggle('open');
+    group.classList.toggle('collapsed');
+}
+
+function toggleThemeNav() {
+    document.getElementById('themeNav').classList.toggle('open');
+}
+
+const figures = Array.from(document.querySelectorAll('.js-figure'));
+const IMAGES = figures.map(f => ({ src: f.dataset.full, label: f.dataset.label }));
+
+let currentIdx = 0, currentZoom = 1;
+const ZOOM_STEP = 0.25, ZOOM_MAX = 4, ZOOM_MIN = 0.5;
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(idx) {
+    currentIdx = idx; currentZoom = 1;
+    setImage(currentIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+function setImage(idx) {
+    const d = IMAGES[idx];
+    lbImg.src = d.src; lbImg.alt = d.label; lbLabel.textContent = d.label;
+    btnPrev.disabled = idx === 0; btnNext.disabled = idx === IMAGES.length - 1;
+    updateZoom();
+}
+function navLightbox(dir) {
+    const next = currentIdx + dir;
+    if (next < 0 || next >= IMAGES.length) return;
+    currentIdx = next; currentZoom = 1; lbScroll.scrollTo(0, 0); setImage(currentIdx);
+}
+function closeLightbox() { lb.classList.remove('active'); document.body.style.overflow = ''; lbImg.src = ''; }
+function updateZoom() {
+    const vw = window.innerWidth - 40, vh = window.innerHeight - 90;
+    if (currentZoom === 1) { lbImg.style.width = ''; lbImg.style.maxWidth = vw + 'px'; lbImg.style.maxHeight = vh + 'px'; }
+    else { const base = Math.min(vw, lbImg.naturalWidth || vw); lbImg.style.maxWidth = 'none'; lbImg.style.maxHeight = 'none'; lbImg.style.width = (base * currentZoom) + 'px'; }
+    zoomPct.textContent = Math.round(currentZoom * 100) + '%';
+}
+function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
+function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === '+') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') zoomReset();
+});
+window.addEventListener('resize', () => { if (lb.classList.contains('active')) updateZoom(); });
+figures.forEach((f, i) => {
+    f.addEventListener('click', () => openLightbox(i));
+    f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+});
+
+(function() {
+    const tocLinks = document.querySelectorAll('.page-toc a[href^="#"]');
+    if (!tocLinks.length || !window.IntersectionObserver) return;
+    const targets = Array.from(tocLinks).map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting)
+                tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+        });
+    }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+    targets.forEach(t => obs.observe(t));
+})();
+</script>
+
+</body>
+</html>
