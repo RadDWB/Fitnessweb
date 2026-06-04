@@ -1420,6 +1420,26 @@
     margin-bottom: 22px;
 }
 
+/* Navigations-Links für Jump-Navigation */
+.nav-anchor {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 12px 0 0 0;
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+}
+.nav-anchor a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+.nav-anchor a:hover {
+    color: var(--accent-dk);
+    text-decoration: underline;
+}
+
 .prose-card h3 {
     font-family: var(--fh);
     font-size: 1.2rem;
