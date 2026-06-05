@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinn &amp; Persönlichkeitsentwicklung – Wachsen, Fokus finden, Dinge erledigen · Fitness im Schulsport</title>
+
+    <meta name="description" content="Sinn &amp; Persönlichkeitsentwicklung im Schulsport: Prokrastination überwinden, Selbstwirksamkeit stärken und mit erprobten Life-Strategien mehr schaffen – aufbereitet für Lehramt Sport.">
+    <meta property="og:title" content="Sinn &amp; Persönlichkeitsentwicklung – Wachsen, Fokus finden, Dinge erledigen">
+    <meta property="og:description" content="4 Life-Strategien gegen Prokrastination, Selbstmotivation und Persönlichkeitswachstum im Kontext des Schulsports.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav { transform: translateX(-100%); will-change: transform; }
+        }
+        /* Violett-Theme für Sinn & Persönlichkeitsentwicklung */
+        .fact { border-left-color: #4A3580; background: rgba(74,53,128,0.06); }
+        .fact strong { color: #4A3580; }
+        .callout { border-left-color: #4A3580; }
+        .callout strong { color: #4A3580; }
+        .theme-head { border-left: 5px solid #4A3580; }
+        .section-eyebrow { color: #4A3580; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#grundsatz">Grundsatz</a></li>
+        <li><a href="../index.html#themen">Themen</a></li>
+        <li><a href="../medienbibliothek.html">Medienbibliothek</a></li>
+        <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">&#9776;</button>
+</nav>
+
+<div class="shell">
+    <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
+        <p class="theme-nav-title">Fitness im Schulsport</p>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Start</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="https://kar-reglermodell.vercel.app/index.html" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Regeneration &amp; mentale Balance</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="stressmanagement-und-achtsamkeit.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="sinn-und-persoenlichkeitsentwicklung.html" class="active outer-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Ernährung &amp; gesunde Gewohnheiten</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Alltag, Lebensraum &amp; Umwelt</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Soziale Gesundheit</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Material &amp; Werkzeuge</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../medienbibliothek.html"><span class="dot"></span>Medienbibliothek</a></li>
+                <li><a href="stressmanagement-und-achtsamkeit.html#praxisecke"><span class="dot"></span>Praxisecke: Entspannungsübungen</a></li>
+                <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
+                <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
+                <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header class="theme-head">
+            <div class="badge">Sinn &amp; Persönlichkeitsentwicklung · Sekundarstufe I/II · NRW</div>
+            <h1>Sinn &amp; Persönlichkeitsentwicklung – Wachsen, Fokus finden, Dinge erledigen</h1>
+            <p>Wer weiß, warum er etwas tut, findet leichter den Weg dorthin. Persönlichkeitsentwicklung im Kontext von Fitness bedeutet mehr als körperliche Leistung – es geht um Selbstwirksamkeit, mentale Stärke und die Fähigkeit, auch dann anzufangen, wenn man keine Lust hat. Dieser Bereich zeigt, wie konkrete Strategien aus Psychologie und Praxis helfen, sich selbst besser zu kennen, eigene Ziele zu verfolgen und Prokrastination zu überwinden.</p>
+            <div class="theme-meta">
+                <span><strong>Kernthema:</strong> Selbstwirksamkeit, Motivation &amp; Prokrastination</span>
+                <span><strong>Bezug:</strong> NRW – Gesundheitsbewusstsein, Persönlichkeitsentwicklung im Sport</span>
+                <span><strong>Ansatz:</strong> Wissenschaftlich fundierte Alltagsstrategien für Schüler:innen</span>
+            </div>
+        </header>
+
+        <div id="top"></div>
+        <p class="nav-anchor"><a href="../index.html">&#8592; Zur Startseite</a></p>
+
+        <section class="section" style="max-width:none;padding:28px 0 40px;">
+
+            <!-- INTRO -->
+            <div class="prose-card" id="intro">
+                <p class="section-eyebrow">Überblick</p>
+                <h3>Persönlichkeitsentwicklung beginnt mit dem ersten Schritt</h3>
+                <p class="muted">Prokrastination, das Aufschieben von Aufgaben, ist kein Willensproblem – sondern ein Emotionsregulationsproblem. Wer Strategien kennt, die das Anfangen erleichtern und Motivation aufrechterhalten, hat einen entscheidenden Vorteil im Schulalltag, im Sport und im Leben. Dieser Bereich wächst: Hier kommen nach und nach Inhalte zu Selbstwirksamkeit, Zielsetzung, Sinnfindung und Resilienz hinzu.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Prokrastination ist kein Charakterfehler:</strong> Neurowissenschaftlich betrachtet ist Aufschieben eine Reaktion des limbischen Systems auf unangenehme Emotionen – Angst vor Versagen, Überforderung, Perfektionismus. Die Forschung zeigt: Selbstmitgefühl statt Selbstkritik ist der wirksamste erste Schritt (Pychyl, 2013).</div>
+                    <div class="fact"><strong>Selbstwirksamkeit ist trainierbar:</strong> Wer erlebt, dass er schwierige Aufgaben angeht und bewältigt, baut Vertrauen in die eigenen Fähigkeiten auf. Dieser Effekt überträgt sich auf Sport, Schule und den Alltag. Kleine Erfolge zählen – die 2-Minuten- oder 5-Minuten-Regel sind genau dafür konzipiert.</div>
+                    <div class="fact"><strong>Fitness und Fokus hängen zusammen:</strong> Körperliche Aktivität erhöht den Dopaminspiegel und verbessert die Konzentrationsfähigkeit. Wer regelmäßig Sport treibt, prokrastiniert nachweislich weniger – weil Bewegung die Stimmung hebt und die Startbarriere für andere Aufgaben senkt.</div>
+                </div>
+            </div>
+
+            <!-- §1: 4 LIFE-STRATEGIEN -->
+            <div class="prose-card" id="vier-strategien">
+                <p class="section-eyebrow">Abschnitt 1</p>
+                <h3>4 Life-Strategien – Dinge machbar machen</h3>
+                <p class="muted">Prokrastination besiegen, mehr schaffen, mit Leichtigkeit starten: Diese vier erprobten Techniken helfen, die Startbarriere zu überwinden und ins Handeln zu kommen – im Schulalltag, im Sport und im Leben. Sie sind nicht teoretisch, sondern sofort einsetzbar.</p>
+
+                <div class="concept-grid" style="margin-top:18px;">
+                    <div>
+                        <div class="fact-list">
+                            <div class="fact"><strong>2-Minuten-Regel:</strong> Alles, was sich in unter 2 Minuten erledigen lässt, wird sofort gemacht. Kleine Aufgaben stapeln sich sonst und blockieren mental. Schnell weg = freier Kopf. (David Allen, GTD-Methode)</div>
+                            <div class="fact"><strong>5-4-3-2-1-Methode:</strong> Bei innerem Widerstand rückwärts zählen und sofort handeln. Der Countdown unterbricht das Grübeln und aktiviert den Handlungsimpuls. Perfekt für Morgenroutinen und Angst-Momente. (Mel Robbins)</div>
+                            <div class="fact"><strong>Eat the Frog – den Frosch essen:</strong> Die wichtigste oder schwierigste Aufgabe als Allererstes erledigen. Der härteste Teil zuerst = weniger mentale Belastung und starkes Erfolgserlebnis früh am Tag. (Brian Tracy)</div>
+                            <div class="fact"><strong>5-Minuten-Regel:</strong> Bei riesiger Hürde: nur 5 Minuten anfangen – danach darf man aufhören. In über 80 % der Fälle baut sich Momentum auf. Die Startbarriere wird durchbrochen (KVT-Technik).</div>
+                        </div>
+                        <div class="callout">
+                            <strong>Im Unterricht:</strong> Die vier Strategien lassen sich direkt thematisieren: Welche davon kenne ich schon? Welche setze ich unbewusst ein? Schülerinnen und Schüler können eine Woche lang eine Strategie erproben und danach reflektieren. Besonders wirkungsvoll: die 5-Minuten-Regel vor dem Lernen für die Schule.
+                        </div>
+                    </div>
+                    <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0" aria-label="4 Life-Strategien gegen Prokrastination vergrößern"
+                        data-full="../assets/images/4 strategien.png"
+                        data-label="4 Life-Strategien, die Dinge machbar machen: 2-Minuten-Regel, 5-4-3-2-1-Methode, Eat the Frog und 5-Minuten-Regel – vier erprobte Techniken gegen Prokrastination für Schülerinnen und Schüler der Oberstufe.">
+                    <img src="../assets/images/4 strategien.png" alt="Grafik: 4 Life-Strategien gegen Prokrastination – 2-Minuten-Regel, 5-4-3-2-1-Methode, Eat the Frog, 5-Minuten-Regel" loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
+                    <figcaption>
+                        <span class="fig-num">Strategie</span>
+                        <span class="fig-label">4 Life-Strategien – Dinge machbar machen</span>
+                        <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+                    </figcaption>
+                </figure>
+                </div>
+            </div>
+
+        </section>
+
+        <p class="nav-anchor"><a href="../index.html">&#8592; Zur Startseite</a></p>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
+        &#169; 2026 Straight Edge Media &middot; Fitness im Schulsport &middot; Material für Lehramt Sport &middot; v1.0.7<br>
+        <a href="../impressum.html">Impressum</a> &middot; <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> &middot; <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">&#8249; Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">&#8722;</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">&#65291;</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">&#8634;</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter &#8250;</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">&#10005;</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+const FIGURES = document.querySelectorAll('.js-figure');
+let currentFig = 0;
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const lbScroll = document.getElementById('lbScroll');
+let scale = 1;
+
+function openLightboxFig(idx) {
+    currentFig = idx;
+    const fig = FIGURES[idx];
+    lbImg.src = fig.dataset.full;
+    lbImg.alt = fig.querySelector('img').alt;
+    lbLabel.textContent = fig.dataset.label || '';
+    scale = 1; lbImg.style.transform = 'scale(1)';
+    document.getElementById('zoomPct').textContent = '100%';
+    btnPrev.disabled = idx === 0;
+    btnNext.disabled = idx === FIGURES.length - 1;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function navLightbox(dir) { openLightboxFig(Math.max(0, Math.min(FIGURES.length - 1, currentFig + dir))); }
+function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; lbImg.src = ''; }
+function zoomIn() { scale = Math.min(4, scale + 0.25); applyZoom(); }
+function zoomOut() { scale = Math.max(0.5, scale - 0.25); applyZoom(); }
+function zoomReset() { scale = 1; applyZoom(); }
+function applyZoom() { lbImg.style.transform = 'scale('+scale+')'; document.getElementById('zoomPct').textContent = Math.round(scale*100)+'%'; }
+function printLightboxImage() { const w = window.open(''); w.document.write('<img src="'+lbImg.src+'" style="max-width:100%">'); w.print(); }
+
+FIGURES.forEach((fig, i) => {
+    fig.addEventListener('click', () => openLightboxFig(i));
+    fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightboxFig(i); }});
+});
+lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lbScroll) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+function toggleAccordion(e) {
+    e.preventDefault();
+    const label = e.target.closest('.theme-group-label');
+    if (!label) return;
+    const group = label.closest('.theme-group');
+    document.querySelectorAll('.theme-group').forEach(g => {
+        if (g.classList.contains('open') && g !== group) { g.classList.remove('open'); g.classList.add('collapsed'); }
+    });
+    group.classList.toggle('open');
+    group.classList.toggle('collapsed');
+}
+function toggleThemeNav() { document.getElementById('themeNav').classList.toggle('open'); }
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) themeNavToggle.addEventListener('click', toggleThemeNav);
+document.querySelectorAll('.theme-nav a').forEach(link => {
+    link.addEventListener('click', () => document.getElementById('themeNav').classList.remove('open'));
+});
+</script>
+</body>
+</html>
