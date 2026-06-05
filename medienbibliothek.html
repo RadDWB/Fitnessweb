@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafikbibliothek · Fitness im Schulsport</title>
+    <title>Medienbibliothek · Fitness im Schulsport</title>
 
-    <meta name="description" content="Grafikbibliothek des Fitnessweb: alle Infografiken zu Fitnessbegriff, Krafttraining, Trendsportarten und Regeneration gebündelt – zum Ausdrucken, Weitergeben oder Projizieren im Sportunterricht. Moderne Arbeitsblätter für Lehramt Sport.">
-    <meta property="og:title" content="Grafikbibliothek · Fitness im Schulsport">
-    <meta property="og:description" content="Alle Infografiken des Fitnessweb in einer Bibliothek – zum Ausdrucken, Weitergeben an Lerngruppen oder zur Projektion im Unterricht.">
+    <meta name="description" content="Medienbibliothek des Fitnessweb: alle Infografiken zu Fitnessbegriff, Krafttraining, Trendsportarten und Regeneration gebündelt – zum Ausdrucken, Weitergeben oder Projizieren im Sportunterricht. Moderne Arbeitsblätter für Lehramt Sport.">
+    <meta property="og:title" content="Medienbibliothek · Fitness im Schulsport">
+    <meta property="og:description" content="Alle Infografiken und Arbeitsblätter des Fitnessweb in einer Bibliothek – zum Ausdrucken, Weitergeben an Lerngruppen oder zur Projektion im Unterricht.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
 
@@ -17,6 +17,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/site.css">
+
+    <style>
+        /* In-page tab navigation */
+        .media-tabs {
+            display: flex;
+            gap: 0;
+            margin: 28px 0 36px;
+            border-bottom: 2px solid var(--border);
+        }
+        .media-tab {
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: .9rem;
+            text-decoration: none;
+            color: var(--muted);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: color .15s;
+        }
+        .media-tab.active, .media-tab:hover { color: var(--accent); }
+        .media-tab.active { border-bottom-color: var(--accent); }
+        /* Arbeitsblatt-Karten */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 0;
+        }
+        .doc-card {
+            background: var(--surface, #fff);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .doc-icon { font-size: 2rem; line-height: 1; margin-bottom: 4px; }
+        .doc-title { font-size: .95rem; font-weight: 700; color: var(--text); }
+        .doc-desc { font-size: .82rem; color: var(--muted); line-height: 1.5; flex-grow: 1; }
+        .doc-card .btn { align-self: flex-start; margin-top: 10px; font-size: .85rem; padding: 7px 14px; }
+    </style>
 </head>
 <body>
 
@@ -28,7 +70,7 @@
     <ul class="nav-links">
         <li><a href="index.html#grundsatz">Grundsatz</a></li>
         <li><a href="index.html#themen">Themen</a></li>
-        <li><a href="grafikbibliothek.html" class="active">Grafikbibliothek</a></li>
+        <li><a href="medienbibliothek.html" class="active">Medienbibliothek</a></li>
         <li><a href="index.html#quellen">Quellen</a></li>
         <li><a href="index.html#quiz">Quiz</a></li>
         <li><a href="index.html#glossar">Glossar</a></li>
@@ -39,11 +81,17 @@
 <main>
     <section class="section" style="padding-top:104px;">
         <p class="section-eyebrow">Lernmaterial</p>
-        <h2 class="section-heading">Grafikbibliothek</h2>
-        <p class="section-lead">Hier finden Sie alle Infografiken des Fitnessweb gebündelt an einem Ort. Diese Grafiken eignen sich, um sie auszudrucken, Schülerinnen und Schülern zur Verfügung zu stellen oder sie – auch nur in Auszügen – auf einem Großmonitor im Unterricht zu thematisieren. Jede Grafik fasst wichtige Zusammenhänge kompakt zusammen und versteht sich so als eine Art „modernes Arbeitsblatt".</p>
+        <h2 class="section-heading">Medienbibliothek</h2>
+        <p class="section-lead">Alle Infografiken und druckfertigen Arbeitsblätter des Fitnessweb an einem Ort. Grafiken lassen sich antippen, vergrößern und als PDF drucken. Arbeitsblätter öffnen sich im Browser und können direkt ausgedruckt werden.</p>
 
-        <!-- ============ EINFÜHRUNG & GRUNDLAGEN ============ -->
-        <div class="section-subheading" style="margin: 8px 0 24px;">
+        <!-- In-page Navigation -->
+        <nav class="media-tabs" aria-label="Inhalt der Medienbibliothek">
+            <a href="#grafiken" class="media-tab active">Grafiken <span style="font-weight:400;opacity:.65;">(33)</span></a>
+            <a href="#arbeitsblaetter" class="media-tab">Arbeitsblätter <span style="font-weight:400;opacity:.65;">(5)</span></a>
+        </nav>
+
+        <!-- ============ GRAFIKEN ============ -->
+        <div id="grafiken" class="section-subheading" style="margin: 8px 0 24px;">
             <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">Einführung &amp; Grundlagen</h3>
             <p style="font-size: 0.875rem; color: var(--muted);">Der ganzheitliche Fitnessbegriff und der Weg zur lebenslangen Fitness</p>
         </div>
@@ -351,6 +399,53 @@
             </div>
         </div>
 
+
+        <!-- ============ ARBEITSBLÄTTER ============ -->
+        <div id="arbeitsblaetter" style="margin-top:56px;padding-top:36px;border-top:1px solid var(--border);">
+            <div class="section-subheading" style="margin:0 0 24px;">
+                <h3 style="font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:4px;">Arbeitsblätter &amp; Materialien</h3>
+                <p style="font-size:0.875rem;color:var(--muted);">Druckfertige Unterrichtsmaterialien zum Thema Stressmanagement – direkt im Browser öffnen und ausdrucken.</p>
+            </div>
+            <div class="doc-grid">
+
+                <div class="doc-card">
+                    <div class="doc-icon">📋</div>
+                    <div class="doc-title">Stressfragebogen</div>
+                    <div class="doc-desc">Wie wirkt sich Stress bei mir aus? Selbsteinschätzungsbogen für körperliche, gedankliche und verhaltensbezogene Stressreaktionen.</div>
+                    <a class="btn" href="assets/docs/stress-fragebogen-selbsteinschaetzung.html" target="_blank" rel="noopener">Öffnen →</a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">🥛</div>
+                    <div class="doc-title">Mein Stressglas</div>
+                    <div class="doc-desc">Das Stressglas-Modell zum Ausfüllen – eigene Stressquellen eintragen und Bewältigungsstrategien entwickeln.</div>
+                    <a class="btn" href="assets/docs/mein-stressglas-arbeitsblatt.html" target="_blank" rel="noopener">Öffnen →</a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">🃏</div>
+                    <div class="doc-title">Strategiekarten</div>
+                    <div class="doc-desc">9 Strategiekarten gegen Stress zum Ausschneiden und Sortieren. Mit Unterrichtsidee und Variationen. Druckbuttons eingebaut.</div>
+                    <a class="btn" href="assets/docs/strategiekarten-stressabbau.html" target="_blank" rel="noopener">Öffnen →</a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">🗓️</div>
+                    <div class="doc-title">Stundenplan</div>
+                    <div class="doc-desc">Vollständiger Stundenverlauf „Stressmanagement &amp; Entspannung" – mit Einstieg, Erarbeitung, Praxisteil und Reflexion.</div>
+                    <a class="btn" href="assets/docs/stundenplan-stressmanagement-einheit.html" target="_blank" rel="noopener">Öffnen →</a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">📝</div>
+                    <div class="doc-title">Übungsprotokoll</div>
+                    <div class="doc-desc">Protokollbogen für Entspannungsübungen – Schülerinnen und Schüler dokumentieren Technik, Dauer und Wirkung.</div>
+                    <a class="btn" href="assets/docs/uebungsprotokoll-entspannungsuebungen.html" target="_blank" rel="noopener">Öffnen →</a>
+                </div>
+
+            </div>
+        </div>
+
         <p class="nav-anchor" style="margin-top:40px;"><a href="index.html">← Zurück zur Startseite</a></p>
     </section>
 </main>
@@ -471,7 +566,49 @@ function printLightboxImage() {
     const img = lbImg.src;
     const label = lbLabel.textContent;
     const w = window.open('', '', 'width=800,height=600');
-    w.document.write('<html><head><title>' + label + '</title><style>body{margin:0;padding:20px;display:flex;align-items:center;justify-content:center;min-height:100vh;}img{max-width:100%;max-height:100vh;}</style></head><body><img src="' + img + '" alt="' + label + '"></body></html>');
+    w.document.write('<html><head><title>' + label + '</title><style>body{margin:0;padding:20px;display:flex;align-items:center;justify-content:center;min-height:100vh;}img{max-width:100%;max-height:100vh;}</style>
+    <style>
+        /* In-page tab navigation */
+        .media-tabs {
+            display: flex;
+            gap: 0;
+            margin: 28px 0 36px;
+            border-bottom: 2px solid var(--border);
+        }
+        .media-tab {
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: .9rem;
+            text-decoration: none;
+            color: var(--muted);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: color .15s;
+        }
+        .media-tab.active, .media-tab:hover { color: var(--accent); }
+        .media-tab.active { border-bottom-color: var(--accent); }
+        /* Arbeitsblatt-Karten */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 0;
+        }
+        .doc-card {
+            background: var(--surface, #fff);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .doc-icon { font-size: 2rem; line-height: 1; margin-bottom: 4px; }
+        .doc-title { font-size: .95rem; font-weight: 700; color: var(--text); }
+        .doc-desc { font-size: .82rem; color: var(--muted); line-height: 1.5; flex-grow: 1; }
+        .doc-card .btn { align-self: flex-start; margin-top: 10px; font-size: .85rem; padding: 7px 14px; }
+    </style>
+</head><body><img src="' + img + '" alt="' + label + '"></body></html>');
     w.document.close();
     setTimeout(() => w.print(), 500);
 }
