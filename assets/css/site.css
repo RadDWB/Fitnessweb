@@ -1209,8 +1209,6 @@
     user-select: none;
 }
 
-.theme-group-label > span { min-width: 0; overflow-wrap: anywhere; }
-
 .theme-group-label .toggle-icon {
     display: inline-block;
     width: 14px;
@@ -1242,9 +1240,6 @@
     font-weight: 600;
     border: 1px solid transparent;
     transition: background .18s, color .18s, border-color .18s;
-    /* lange Begriffe (z. B. „Persönlichkeitsentwicklung") umbrechen statt überlaufen */
-    min-width: 0;
-    overflow-wrap: anywhere;
 }
 
 /* Alle Menü-Unterpunkte einheitlich in der Bordeaux-Themenfarbe */
