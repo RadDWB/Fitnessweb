@@ -38,27 +38,6 @@
         <li><a href="#themen">Themen</a></li>
         <li><a href="grafikbibliothek.html">Grafikbibliothek</a></li>
         <li><a href="#quellen">Quellen</a></li>
-        <li><a href="#quiz">Quiz</a></li>
-        <li><a href="#glossar">Glossar</a></li>
-    </ul>
-    <a href="impressum.html" class="nav-impressum">Impressum</a>
-    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
-</nav>
-
-<header class="hero" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Ganzheitliche Fitnessgrafik öffnen">
-    <div class="hero-inner">
-        <div class="badge">Lehramt Sport · Referendariat · Unterrichtsmaterial</div>
-        <h1>Fitness - im Schulsport</h1>
-        <p>Eine Grundsatzseite für eine reflektierte Fitnesspädagogik: Fitness wird hier nicht auf Training, Körperform oder Leistungsoptimierung reduziert, sondern als lernbarer, verantwortbarer und gesundheitsorientierter Lebensstil verstanden.</p>
-        <div class="hero-actions">
-            <a class="btn btn-primary" href="grafikbibliothek.html" onclick="event.stopPropagation()">Grafikbibliothek</a>
-            <a class="btn btn-ghost" href="#quellen" onclick="event.stopPropagation()">Quellen öffnen</a>
-        </div>
-        <div class="hero-open-hint">Grafik „Fitness ganzheitlich denken" vergrößern</div>
-    </div>
-</header>
-
-<div class="shell">
     <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
         <p class="theme-nav-title">Fitness im Schulsport</p>
 
@@ -68,7 +47,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a class="active" href="index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+                <li><a href="../index.html"><span class="dot"></span>Überblick &amp; Grundsatz</a></li>
             </ul>
         </div>
 
@@ -80,11 +59,11 @@
             <ul>
                 <li><a href="#" class="placeholder-link"><span class="dot"></span>Fitnesstraining</a></li>
                 <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
-                <li><a href="themen/gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Muskelfitnesstraining</a></li>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Muskelfitnesstraining</a></li>
                 <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
                 <li><a href="#" class="placeholder-link"><span class="dot"></span>Koordination</a></li>
                 <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
-                <li><a href="themen/fitness-und-trendsportarten.html"><span class="dot"></span>Trends &amp; Methoden</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Trends & Methoden</a></li>
             </ul>
         </div>
 
@@ -94,8 +73,8 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="themen/belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
-                <li><a href="themen/belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
             </ul>
         </div>
@@ -150,21 +129,40 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="grafikbibliothek.html"><span class="dot"></span>Grafikbibliothek</a></li>
-                <li><a href="#quellen"><span class="dot"></span>Quellen</a></li>
-                <li><a href="#quiz"><span class="dot"></span>Quiz</a></li>
-                <li><a href="#glossar"><span class="dot"></span>Glossar</a></li>
+                <li><a href="../grafikbibliothek.html"><span class="dot"></span>Grafikbibliothek</a></li>
+                <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
+                <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
+                <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
             </ul>
         </div>
     </aside>
 
-<main>
-    <section class="section" id="grundsatz">
-        <p class="section-eyebrow">Grundsatz</p>
-        <h2 class="section-heading">Fitness ist mehr als Training</h2>
-        <p class="section-lead">Für den Schulsport ist die entscheidende Nuance: Fitness ist ein schulisch bearbeitbarer Teilbereich von Gesundheit, aber nicht mit Gesundheit identisch. Gesundheit beschreibt einen umfassenden Zustand bzw. Prozess körperlichen, psychischen und sozialen Wohlbefindens. Fitness bezeichnet die Bereitschaft und Fähigkeit, das eigene Leben bewegungsbezogen, körperlich, sozial und alltagspraktisch leistungsfähig und wohltuend zu gestalten.</p>
+    <main>
+        <header class="theme-head">
+            <div class="badge">Fitness &amp; Trendsportarten · Sekundarstufe II</div>
+            <h1>Fitness und Trendsportarten im Schulsport</h1>
+            <p>Fitnesstrends wie CrossFit, HIIT und Functional Training sind in der Lebenswelt von Jugendlichen präsent. Wie lassen sich diese Formate pädagogisch verantwortbar und gesundheitsorientiert im Unterricht nutzen – nicht als fertige Trainingsprogramme, sondern als Gegenstände kritischer Reflexion?</p>
+            <div class="theme-meta">
+                <span><strong>Grundlage:</strong> Ralf Duwenbeck – Mehr als eine CrossFit-Box</span>
+                <span><strong>Quelle:</strong> Sportunterricht, Forum 2/2021</span>
+                <span><strong>Ansatz:</strong> Kritische Analyse und didaktische Einordnung</span>
+            </div>
+        </header>
 
-        <div class="concept-grid">
+        <p class="nav-anchor"><a href="../index.html">← Zur Startseite</a></p>
+
+        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Fitnesstrends im Sportunterricht" vergrößern"
+                data-full="../assets/images/trendsportarten/fitnesstrends-schulsport.png"
+                data-label="Leitgrafik – Fitnesstrends im Sportunterricht: motivierend, aber nur reflektiert, angepasst und gesundheitsorientiert">
+            <img src="../assets/images/trendsportarten/fitnesstrends-schulsport.png" alt="Infografik „Fitnesstrends im Sportunterricht" – motivierend, aber nur reflektiert, angepasst und gesundheitsorientiert. Fünf Trendbegriffe: CrossFit (intensives Ganzkörpertraining, im Unterricht vereinfacht und reflektiert), HIIT (Intervalltraining mit hoher Intensität, Belastung dosieren), Functional Training (alltagsnahe Bewegungen, für Schule besonders anschlussfähig), Calisthenics (Körpergewichtstraining, Progressionen statt Show-Übungen), Hyrox / Bootcamp (motivierend, aber nicht angepasst). Chancen: hoher Lebensweltbezug, vielseitige Ganzkörperbeanspruchung, motivierend und zeiteffizient. Kritischer Blick: Technikverlust unter Zeitdruck, Überforderung von Anfängern, Vergleichs- und Leistungsdruck, Gefahr der bloßen Trainingskopie. Für die Schule gilt: individuell anpassen, saubere Technik sichern, Belastung steuern, reflektiert statt blind imitieren. Ziel: Training verstehen und steuern lernen – nicht einfach nur auspowern." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
+            <figcaption>
+                <span class="fig-num">Leitgrafik</span>
+                <span class="fig-label">Fitnesstrends im Sportunterricht – motivierend, aber nur reflektiert und gesundheitsorientiert</span>
+                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+            </figcaption>
+        </figure>
+
+        <section class="section" style="max-width:none;padding:28px 0 40px;">
             <div class="text-panel">
                 <h3>Abgrenzung zum Gesundheitsbegriff</h3>
                 <p>Die WHO fasst Gesundheit breit als körperliches, psychisches und soziales Wohlbefinden und ausdrücklich nicht nur als Abwesenheit von Krankheit. Fitness liegt darunter als praxisnaher Bildungsgegenstand: Lernende können Ausdauer, Kraft, Beweglichkeit, Koordination und Schnelligkeit erfahren, aber ebenso Erholung, Ernährung, Schlaf, soziale Unterstützung, Stressregulation und Risikofaktoren reflektieren.</p>
