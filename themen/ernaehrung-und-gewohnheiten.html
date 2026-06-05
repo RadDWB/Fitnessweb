@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ernährung &amp; gesunde Gewohnheiten – Energie, Fokus, smarte Habits · Fitness im Schulsport</title>
-    <meta name="description" content="Ernährung für Schüler:innen: Brain-Food, Hydration, Budget-Küche und smarte Gewohnheiten – wissenschaftlich fundiert, alltagstauglich, ohne erhobenen Zeigefinger.">
+    <meta name="description" content="Ernährung für Schüler:innen: Ernährungskompass, Brain-Food, Hydration und smarte Gewohnheiten – wissenschaftlich fundiert, ohne erhobenen Zeigefinger.">
     <meta property="og:title" content="Ernährung &amp; gesunde Gewohnheiten – Energie und Fokus für den Schulalltag">
-    <meta property="og:description" content="Die 4 Säulen für langanhaltende Energie, günstige Ernährung und smarte Habits – aufbereitet für Oberstufenschüler:innen.">
+    <meta property="og:description" content="Ernährungskompass, Brain-Food und smarte Habits – aufbereitet für Oberstufenschüler:innen.">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="de_DE">
-
     <link rel="icon" href="../favicon.ico?v=2" sizes="any">
     <link rel="shortcut icon" href="../favicon.ico?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +19,6 @@
         @media (max-width: 980px) {
             .theme-nav { transform: translateX(-100%); will-change: transform; }
         }
-        /* Orange-Theme Ernährung & gesunde Gewohnheiten */
         .fact { border-left-color: #C4822A; background: rgba(196,130,42,0.06); }
         .fact strong { color: #C4822A; }
         .callout { border-left-color: #C4822A; }
@@ -36,13 +34,24 @@
         .problem-block:first-child { border-top: none; padding-top: 0; }
         .problem-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
         .problem-label.red { color: #b94040; }
+        .problem-label.red::before { content: "! "; }
         .problem-label.green { color: #2D8A4E; }
         .problem-label.green::before { content: "\2713  "; }
-        .problem-label.red::before { content: "! "; }
         .challenge-box { background: linear-gradient(135deg, rgba(196,130,42,0.1), rgba(196,130,42,0.03)); border: 2px solid #C4822A; border-radius: 14px; padding: 28px 32px; margin-top: 24px; }
         .challenge-box h3 { color: #C4822A; margin-top: 0; }
         .challenge-box ol { padding-left: 22px; margin: 12px 0 0; }
         .challenge-box li { margin-bottom: 8px; font-size: 0.95rem; line-height: 1.6; }
+        .pollan-quote { border-left: 4px solid #C4822A; background: rgba(196,130,42,0.05); border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 20px 0; }
+        .pollan-quote blockquote { font-size: 1.15rem; font-style: italic; color: #333; margin: 0 0 8px; line-height: 1.55; }
+        .pollan-quote cite { font-size: 0.82rem; color: #888; font-style: normal; }
+        .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+        @media (max-width: 700px) { .rules-grid { grid-template-columns: 1fr; } }
+        .rule-item { display: flex; gap: 10px; align-items: flex-start; background: rgba(196,130,42,0.05); border-radius: 8px; padding: 12px 14px; }
+        .rule-num { font-size: 1.1rem; font-weight: 700; color: #C4822A; flex-shrink: 0; min-width: 24px; }
+        .rule-text { font-size: 0.88rem; line-height: 1.55; color: #444; }
+        .rule-text strong { color: #333; display: block; margin-bottom: 2px; }
+        .figure-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+        @media (max-width: 700px) { .figure-pair { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -169,7 +178,7 @@
             <h1>Ernährung &amp; gesunde Gewohnheiten – Mehr Energie, Fokus und Habits, die bleiben</h1>
             <p>In der Oberstufe läuft dein Alltag auf Hochtouren: Klausurenphase, Sport, Freunde, Nebenjob. Dein Körper und vor allem dein Gehirn brauchen verdammt guten Treibstoff. Du musst nicht perfekt essen – du brauchst keine Diäten oder teuren Superfoods. Was du brauchst, sind smarte Grundlagen und Gewohnheiten, die ohne Stress in deinen vollgepackten Alltag passen.</p>
             <div class="theme-meta">
-                <span><strong>Kernthema:</strong> Ernährung, Hydration, Budget-Küche &amp; Habit-Building</span>
+                <span><strong>Kernthema:</strong> Ernährungskompass, Brain-Food, Hydration &amp; Habit-Building</span>
                 <span><strong>Bezug:</strong> NRW – Gesundheitsbewusstsein, gesunde Lebensführung im Alltag</span>
                 <span><strong>Ansatz:</strong> Alltagstaugliche Strategien ohne Perfektionsdruck – für Schüler:innen</span>
             </div>
@@ -185,36 +194,151 @@
                 <p class="section-eyebrow">Überblick</p>
                 <h3>Dein Körper ist kein Notstromaggregat</h3>
                 <p class="muted">Schlechte Ernährung schlägt sich nicht erst nach Jahren nieder – sie schlägt sich direkt im nächsten Unterricht nieder. Wer versteht, wie Nahrung Energie, Konzentration und Stimmung beeinflusst, hat einen klaren Vorteil im Schulalltag. Und: Gesunde Ernährung ist kein Lifestyle-Projekt für Influencer:innen, sondern eine grundlegende Kompetenz für das Leben.</p>
-
                 <div class="fact-list">
-                    <div class="fact"><strong>Dein Gehirn frisst 20 % deiner Energie:</strong> Das zentrale Nervensystem ist auf einen gleichmäßigen Blutzuckerspiegel angewiesen. Starke Schwankungen durch Zucker und Energy Drinks führen direkt zu Konzentrationslöchern, Reizbarkeit und Sekundenschlaf im Unterricht – kein Willenproblem, sondern Biochemie.</div>
-                    <div class="fact"><strong>Schon 1–2 % Flüssigkeitsmangel beeinträchtigt kognitive Leistung:</strong> Kopfschmerzen, Müdigkeit und eine „langsame Leitung im Kopf" entstehen oft nicht durch Schlafmangel, sondern schlicht durch Dehydration. Wasser ist der am meisten unterschätzte Leistungs-Hack in der Schule (Adan, 2012).</div>
-                    <div class="fact"><strong>80/20 statt Perfektion:</strong> Wenn 80 % deiner Ernährung aus unverarbeiteten, nährstoffreichen Lebensmitteln bestehen, sind die anderen 20 % für Pizza, Chips und Fast Food völlig in Ordnung. Dieses Prinzip reduziert den mentalen Druck und verhindert das Alles-oder-Nichts-Denken, das die meisten Ernährungsversuche scheitern lässt.</div>
+                    <div class="fact"><strong>Dein Gehirn frisst 20&nbsp;% deiner Energie:</strong> Das zentrale Nervensystem ist auf einen gleichmäßigen Blutzuckerspiegel angewiesen. Starke Schwankungen durch Zucker und Energy Drinks führen direkt zu Konzentrationslöchern, Reizbarkeit und Sekundenschlaf im Unterricht – kein Willensproblem, sondern Biochemie.</div>
+                    <div class="fact"><strong>Schon 1–2&nbsp;% Flüssigkeitsmangel beeinträchtigt kognitive Leistung:</strong> Kopfschmerzen, Müdigkeit und eine „langsame Leitung" entstehen oft nicht durch Schlafmangel, sondern durch Dehydration. Wasser ist der am meisten unterschätzte Leistungs-Hack in der Schule (Adan, 2012; Wittbrodt &amp; Millard-Stafford, 2018).</div>
+                    <div class="fact"><strong>80/20 statt Perfektion:</strong> Wenn 80&nbsp;% deiner Ernährung aus unverarbeiteten, nährstoffreichen Lebensmitteln bestehen, sind die anderen 20&nbsp;% für Pizza, Chips und Fast Food völlig in Ordnung. Flexibles Essverhalten schlägt rigide Restriktion langfristig immer (Westenhoefer et&nbsp;al., 1999).</div>
                 </div>
             </div>
 
-            <!-- §1: BRAIN POWER & BLUTZUCKER -->
-            <div class="prose-card" id="brain-power">
+            <!-- §1: ERNÄHRUNGSKOMPASS -->
+            <div class="prose-card" id="ernaehrungskompass">
                 <p class="section-eyebrow">Abschnitt 1</p>
+                <h3>Der Ernährungskompass – 10 Grundregeln für echtes Essen</h3>
+                <p class="muted">Journalist und Wissenschaftsautor Bas Kast hat für sein Buch <em>Der Ernährungskompass</em> (2018) tausende Ernährungsstudien ausgewertet und 10 destillierte Grundregeln formuliert. Kein Dogma, keine Diät – sondern ein Ess-Stil, der auf dem breitesten verfügbaren Forschungsstand beruht. Hier sind die Kernprinzipien.</p>
+
+                <div class="concept-grid" style="margin-top:18px;">
+                    <div>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <span class="rule-num">1</span>
+                                <div class="rule-text"><strong>Echtes Essen bevorzugen</strong>Je weniger verarbeitet, desto mehr Nährstoffe. Essen, das keine Zutatenliste braucht.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">2</span>
+                                <div class="rule-text"><strong>Pflanzen dominieren</strong>Gemüse, Hülsenfrüchte, Nüsse als tägliche Basis – Tiere ergänzen, nicht umgekehrt.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">3</span>
+                                <div class="rule-text"><strong>Fisch statt rotem Fleisch</strong>Omega-3-reicher Fisch (Lachs, Makrele, Hering) mehrmals pro Woche.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">4</span>
+                                <div class="rule-text"><strong>Hülsenfrüchte täglich</strong>Linsen, Bohnen, Kichererbsen – billig, sättigend, proteinreich.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">5</span>
+                                <div class="rule-text"><strong>Nüsse als Snack</strong>Eine Handvoll täglich – nachweislich protektiv für Herz und Gehirn.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">6</span>
+                                <div class="rule-text"><strong>Vollkorn statt Weißmehl</strong>Ballaststoffe regulieren den Blutzucker und sättigen deutlich länger.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">7</span>
+                                <div class="rule-text"><strong>Zucker &amp; Raffinadestärke meiden</strong>Größter Einzel-Wirkhebel bei der Ernährungsoptimierung. Softdrinks streichen.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">8</span>
+                                <div class="rule-text"><strong>Fermentierte Milchprodukte</strong>Joghurt und Käse statt Vollmilch – Darmflora und Sättigungswert profitieren.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">9</span>
+                                <div class="rule-text"><strong>Hochwertiges Öl</strong>Olivenöl als primäres Fett, Rapsöl als günstige Alternative.</div>
+                            </div>
+                            <div class="rule-item">
+                                <span class="rule-num">10</span>
+                                <div class="rule-text"><strong>Mediterrane Kost als Muster</strong>Kein Kalorienzählen – sondern ein Ess-Stil, der in Studien am besten abschneidet.</div>
+                            </div>
+                        </div>
+                        <div class="callout" style="margin-top:16px;">
+                            <strong>Im Unterricht:</strong> Die 10 Regeln eignen sich hervorragend als Diskussionsimpuls: Welche davon setzen wir (unbewusst) schon um? Welche sind für unseren Alltag schwer umsetzbar – und warum? Schüler:innen können ihren persönlichen „Ernährungs-Score" reflektieren, ohne sich schlecht fühlen zu müssen.
+                        </div>
+                    </div>
+                    <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0"
+                        aria-label="Ernährungskompass-Grafik vergrößern"
+                        data-full="../assets/images/Ern%C3%A4hrungskompass.png"
+                        data-label="Der Ernährungskompass – Bas Kast: Grundregeln für gesunde Ernährung">
+                        <img src="../assets/images/Ernährungskompass.png"
+                            alt="Ernährungskompass – Grundregeln gesunder Ernährung nach Bas Kast"
+                            style="width:100%;border-radius:10px;display:block;" loading="lazy">
+                        <figcaption>Ernährungskompass (Bas Kast, 2018) · Grafik antippen zum Vergrößern</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Basics der gesunden Ernährung -->
+                <div style="margin-top:24px;">
+                    <p style="font-size:0.9rem;font-weight:600;color:var(--text);margin:0 0 10px;">Infografik: Basics der gesunden Ernährung</p>
+                    <figure class="lead-figure js-figure" style="margin:0;" role="button" tabindex="0"
+                        aria-label="Basics der gesunden Ernährung – Grafik vergrößern"
+                        data-full="../assets/images/Basics der gesunden Ern%C3%A4hrung.png"
+                        data-label="Basics der gesunden Ernährung – Überblick der Grundprinzipien">
+                        <img src="../assets/images/Basics der gesunden Ernährung.png"
+                            alt="Basics der gesunden Ernährung – Grundprinzipien im Überblick"
+                            style="width:100%;border-radius:10px;display:block;max-height:420px;object-fit:contain;" loading="lazy">
+                        <figcaption>Basics der gesunden Ernährung · Grafik antippen zum Vergrößern</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- §2: GROSSMUTTER-TEST / HOCHVERARBEITETE LEBENSMITTEL -->
+            <div class="prose-card" id="grossmutter-test">
+                <p class="section-eyebrow">Abschnitt 2</p>
+                <h3>Der Großmutter-Test – Hochverarbeitete Lebensmittel erkennen</h3>
+                <p class="muted">Eine der einfachsten und wirkungsvollsten Regeln für eine bessere Ernährung stammt nicht aus einer wissenschaftlichen Studie, sondern aus einer kurzen Faustregel des amerikanischen Ernährungsjournalisten Michael Pollan. Sie fasst zusammen, worum es geht: zurück zu echtem Essen.</p>
+
+                <div class="pollan-quote">
+                    <blockquote>„Iss nichts, was deine Urgroßmutter nicht als Lebensmittel erkannt hätte."</blockquote>
+                    <cite>– Michael Pollan, Food Rules: An Eater's Manual (2009), Regel&nbsp;2</cite>
+                </div>
+
+                <p style="margin-top:16px;">Was Pollan meint: Produkte mit langen Zutatenlisten, denen Farbstoffe, Verdickungsmittel, Aromen und Konservierungsstoffe zugesetzt wurden, waren unseren Vorfahren völlig unbekannt. Sie sind hochverarbeitet (NOVA-Klasse&nbsp;4) und liefern zwar Kalorien – aber kaum Nährstoffe. Studien zeigen: wer mehr hochverarbeitete Lebensmittel isst, nimmt automatisch mehr Kalorien auf, fühlt sich weniger satt und hat ein höheres Risiko für chronische Erkrankungen.</p>
+
+                <div class="concept-grid" style="margin-top:20px;">
+                    <div>
+                        <div class="fact-list">
+                            <div class="fact"><strong>Hochverarbeitete Lebensmittel (NOVA-4):</strong> Industriell hergestellte Produkte mit Zusatzstoffen, die in der Haushaltsküche nicht vorkommen – Chips, Fertigmahlzeiten, Süßigkeiten, Softdrinks, viele Frühstückscerealien.</div>
+                            <div class="fact"><strong>Die einfache Erkennungsregel:</strong> Enthält das Produkt mehr als 5 Zutaten? Sind Inhaltsstoffe dabei, die du nicht aussprechen kannst? Dann ist es hochverarbeitet.</div>
+                            <div class="fact"><strong>Der Unterschied zu „ungesund":</strong> Verarbeitete Lebensmittel (Käse, Joghurt, Brot) sind nicht automatisch schlecht. Hochverarbeitet bedeutet: der Industrieprozess selbst verändert die Lebensmittelmatrix so, dass sie das Sättigungssystem überlistet.</div>
+                        </div>
+                        <div class="callout" style="margin-top:16px;">
+                            <strong>Im Unterricht:</strong> Schüler:innen bringen je ein Lebensmittelprodukt mit – und wenden die Pollan-Regel an. Erkenne ich alle Zutaten? Hätte meine Urgroßmutter das gekauft? Der Vergleich zweier ähnlicher Produkte (z.B. Naturjoghurt vs. Fruchtjoghurt) macht die Verarbeitungsstufen sofort sichtbar.
+                        </div>
+                    </div>
+                    <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0"
+                        aria-label="Hochverarbeitete Produkte – Grafik vergrößern"
+                        data-full="../assets/images/hochverarbeiteteProdukte.png"
+                        data-label="Hochverarbeitete Lebensmittel – NOVA-Klassifikation und Merkmale">
+                        <img src="../assets/images/hochverarbeiteteProdukte.png"
+                            alt="Hochverarbeitete Lebensmittel: Merkmale und NOVA-Klassifikation"
+                            style="width:100%;border-radius:10px;display:block;" loading="lazy">
+                        <figcaption>Hochverarbeitete Lebensmittel · Grafik antippen zum Vergrößern</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- §3: BRAIN POWER & BLUTZUCKER -->
+            <div class="prose-card" id="brain-power">
+                <p class="section-eyebrow">Abschnitt 3</p>
                 <h3>Brain Power statt Zucker-Crash</h3>
-                <p class="muted">Dein Gehirn verbraucht rund 20 % deiner täglichen Energie – und es ist wählerisch, was die Qualität dieser Energie angeht. Die Formel für anhaltenden Fokus ist einfach: Kombiniere bei deinen Mahlzeiten immer Protein, komplexe Kohlenhydrate und Vitamine bzw. gesunde Fette. Was danach passiert, ist nachvollziehbar – und lässt sich im Unterricht direkt erleben.</p>
+                <p class="muted">Dein Gehirn verbraucht rund 20&nbsp;% deiner täglichen Energie – und es ist wählerisch, was die Qualität angeht. Die Formel für anhaltenden Fokus ist einfach: Kombiniere bei Mahlzeiten Protein, komplexe Kohlenhydrate und Vitamine bzw. gesunde Fette. Was danach passiert, lässt sich direkt im Unterricht erleben.</p>
 
                 <div class="concept-grid" style="margin-top:18px;">
                     <div>
                         <div class="fact-list">
                             <div class="fact"><strong>Protein:</strong> Quark, Eier, Tofu, Hülsenfrüchte, Nüsse – Bausteine für Neurotransmitter und langanhaltende Sättigung. Verhindert das Nachmittagstief.</div>
-                            <div class="fact"><strong>Komplexe Kohlenhydrate:</strong> Vollkornbrot, Haferflocken, Reis – setzen Glukose langsam und gleichmäßig frei. Kein Energiespike, kein Crash danach.</div>
-                            <div class="fact"><strong>Vitamine &amp; gesunde Fette:</strong> Gemüse, Obst, Avocado, Nüsse – Mikronährstoffe für die Nervenfunktion, Omega-3-Fette für die Konzentrationsfähigkeit.</div>
+                            <div class="fact"><strong>Komplexe Kohlenhydrate:</strong> Vollkornbrot, Haferflocken, Reis – setzen Glukose langsam und gleichmäßig frei. Kein Energiespike, kein Crash danach. (Cooper et&nbsp;al., 2012)</div>
+                            <div class="fact"><strong>Vitamine &amp; gesunde Fette:</strong> Gemüse, Obst, Avocado, Nüsse – Mikronährstoffe für die Nervenfunktion, Omega-3 für Konzentrationsfähigkeit.</div>
                         </div>
                         <div class="callout" style="margin-top:16px;">
-                            <strong>Das Problem mit Energy Drinks:</strong> Ein Energy Drink lässt den Blutzucker innerhalb von 20–30 Minuten steil ansteigen – und danach genauso steil abstürzen. Die Folge ist das klassische „Konzentrationsloch" in der zweiten Hälfte des Unterrichts. Der Körper gleicht das mit Cortisol aus, was Stress erhöht und den Schlaf verschlechtert.
+                            <strong>Das Problem mit Energy Drinks:</strong> Lässt den Blutzucker innerhalb von 20–30 Minuten steil ansteigen – und danach genauso steil abstürzen. Die Folge ist das klassische Konzentrationsloch. Der Körper gleicht mit Cortisol aus, was Stress erhöht und Schlaf verschlechtert.
                         </div>
                     </div>
                     <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0"
                         aria-label="Blutzucker-Kurve: Zucker-Crash vs. stabiler Fokus – Grafik vergrößern"
-                        data-full="../assets/images/ernaehrung-blutzucker.png"
-                        data-label="Blutzucker-Kurve – Zucker-Crash vs. stabiler Fokus über 3 Stunden">
-                        <img src="../assets/images/ernaehrung-blutzucker.png"
+                        data-full="../assets/images/Blutzucker.png"
+                        data-label="Blutzucker-Kurve – Zucker-Crash vs. stabiler Fokus">
+                        <img src="../assets/images/Blutzucker.png"
                             alt="Blutzucker-Kurve: Vergleich Zucker-Crash vs. stabile Energie"
                             style="width:100%;border-radius:10px;display:block;" loading="lazy">
                         <figcaption>Zucker-Crash vs. stabiler Fokus · Grafik antippen zum Vergrößern</figcaption>
@@ -222,48 +346,43 @@
                 </div>
             </div>
 
-            <!-- §2: HYDRATION -->
+            <!-- §4: HYDRATION -->
             <div class="prose-card" id="hydration">
-                <p class="section-eyebrow">Abschnitt 2</p>
+                <p class="section-eyebrow">Abschnitt 4</p>
                 <h3>Hydration: Der einfachste Noten-Hack</h3>
-                <p class="muted">Wassermangel ist der Konzentrationskiller Nummer eins. Schon ein leichtes Flüssigkeitsdefizit von 1–2 % des Körpergewichts sorgt für Kopfschmerzen, Müdigkeit und eine langsame Leitung im Kopf. Softdrinks und Energy Drinks zählen hier übrigens nicht – sie entziehen durch ihren Zuckergehalt dem Körper oft noch Flüssigkeit.</p>
-
+                <p class="muted">Wassermangel ist der Konzentrationskiller Nummer eins. Schon ein leichtes Flüssigkeitsdefizit von 1–2&nbsp;% des Körpergewichts sorgt für Kopfschmerzen, Müdigkeit und eine langsame Leitung im Kopf. Softdrinks und Energy Drinks zählen hier nicht – sie entziehen durch ihren Zuckergehalt dem Körper oft noch Flüssigkeit.</p>
                 <div class="fact-list">
-                    <div class="fact"><strong>Tagesziel:</strong> 2–2,5 Liter Wasser oder ungesüßter Tee täglich – auf den eigenen Körper hören, bei Sport und Hitze mehr.</div>
-                    <div class="fact"><strong>Lernsessions-Hack:</strong> Stelle dir zu Beginn jeder Lernsession eine 1-Liter-Flasche auf den Schreibtisch. Bei jeder kurzen Pause: ein großes Glas trinken. Klingt banal – wirkt zuverlässig.</div>
-                    <div class="fact"><strong>Schule:</strong> Trinkflasche morgens befüllen, mit in die Schule nehmen. Wer in der Schule nichts trinkt, kommt nachmittags schon dehydriert ans Schreibtisch.</div>
+                    <div class="fact"><strong>Tagesziel:</strong> 2–2,5 Liter Wasser oder ungesüßter Tee täglich – bei Sport und Hitze mehr.</div>
+                    <div class="fact"><strong>Lernsessions-Hack:</strong> Zu Beginn jeder Lernsession eine 1-Liter-Flasche auf den Schreibtisch stellen. Bei jeder kurzen Pause: ein großes Glas trinken. Klingt banal – wirkt zuverlässig.</div>
+                    <div class="fact"><strong>Schule:</strong> Trinkflasche morgens befüllen und mitnehmen. Wer in der Schule nichts trinkt, kommt nachmittags schon dehydriert ans Schreibtisch.</div>
                 </div>
-
                 <div class="callout" style="margin-top:16px;">
-                    <strong>Warum Kaffee und Energy Drinks nicht zählen:</strong> Koffein ist ein Diuretikum – es treibt die Urinproduktion an. Bei moderatem Konsum gleicht das Wasser im Getränk dies etwa aus, bei großen Mengen nicht mehr. Wer morgens 2 Becher Kaffee oder Energy Drinks trinkt, hat noch keinen nennenswerten Flüssigkeitsbedarf gedeckt.
+                    <strong>Warum Kaffee und Energy Drinks nicht zählen:</strong> Koffein ist ein Diuretikum. Bei moderatem Konsum gleicht das Wasser im Getränk dies etwa aus – bei großen Mengen nicht mehr. Wer morgens 2 Becher Kaffee oder Energy Drinks trinkt, hat noch keinen nennenswerten Flüssigkeitsbedarf gedeckt.
                 </div>
             </div>
 
-            <!-- §3: SMART & GÜNSTIG + REZEPTE -->
+            <!-- §5: BUDGET-KÜCHE & REZEPTE -->
             <div class="prose-card" id="budget-kueche">
-                <p class="section-eyebrow">Abschnitt 3</p>
+                <p class="section-eyebrow">Abschnitt 5</p>
                 <h3>Smart &amp; Günstig – Budget-Küche für den Alltag</h3>
-                <p class="muted">Gesundes Essen muss weder teuer sein noch Stunden in der Küche erfordern. Ob im Elternhaus oder in der ersten eigenen WG: Diese Basics kosten fast nichts, sind extrem nährstoffreich und lassen sich in 5 Minuten zubereiten.</p>
-
+                <p class="muted">Gesundes Essen muss weder teuer sein noch Stunden in der Küche erfordern. Ob im Elternhaus oder in der ersten WG: Diese Basics kosten fast nichts, sind nährstoffreich und lassen sich in 5 Minuten zubereiten.</p>
                 <div class="fact-list" style="margin-bottom:24px;">
-                    <div class="fact"><strong>Deine Budget-Besties:</strong> Haferflocken, Eier, Bananen, Quark, Kichererbsen, Erdnussmus, TK-Gemüse (ungewürzt) – kaum teurer als Fast Food, aber um ein Vielfaches wertvoller.</div>
-                    <div class="fact"><strong>Die 80/20-Regel:</strong> 80 % der Ernährung aus unverarbeiteten Lebensmitteln – die restlichen 20 % für Pizza, Chips und Fast Food. Kein schlechtes Gewissen nötig, kein Alles-oder-Nichts.</div>
-                    <div class="fact"><strong>Meal-Prep als Frosch:</strong> Ein Sonntag, 30 Minuten: Gemüse vorschneiden, Reis/Nudeln vorkochen, Overnight Oats ansetzen. Unter der Woche ist das „Projekt gesunde Ernährung" dann längst erledigt.</div>
+                    <div class="fact"><strong>Budget-Besties:</strong> Haferflocken, Eier, Bananen, Quark, Kichererbsen, Erdnussmus, TK-Gemüse (ungewürzt) – kaum teurer als Fast Food, aber um ein Vielfaches wertvoller.</div>
+                    <div class="fact"><strong>Die 80/20-Regel:</strong> 80&nbsp;% aus unverarbeiteten Lebensmitteln – die restlichen 20&nbsp;% für Pizza, Chips und Fast Food. Kein schlechtes Gewissen nötig, kein Alles-oder-Nichts.</div>
+                    <div class="fact"><strong>Meal-Prep als Frosch:</strong> Sonntag, 30 Minuten: Gemüse vorschneiden, Reis kochen, Overnight Oats ansetzen. Unter der Woche ist das Projekt gesunde Ernährung längst erledigt.</div>
                 </div>
-
                 <h4 style="font-size:1rem;font-weight:600;color:var(--text);margin:0 0 4px;">5-Minuten-Rezepte für stressige Tage</h4>
                 <p class="muted" style="margin-bottom:0;">Alle dauern kürzer als das Warten beim Bäcker.</p>
-
                 <div class="recipe-grid">
                     <div class="recipe-card">
-                        <div class="recipe-time">&#9900; Abends 3 Min · Morgens direkt fertig</div>
+                        <div class="recipe-time">&#9900; Abends 3 Min · morgens fertig</div>
                         <h4>Overnight Oats</h4>
-                        <p>Haferflocken + Milch (oder Pflanzendrink) + 1 EL Joghurt + TK-Beeren in ein Glas. Umrühren, Kühlschrank. Morgens einfach greifen – fertig.</p>
+                        <p>Haferflocken + Milch (oder Pflanzendrink) + 1 EL Joghurt + TK-Beeren in ein Glas. Umrühren, Kühlschrank. Morgens greifen – fertig.</p>
                     </div>
                     <div class="recipe-card">
                         <div class="recipe-time">&#9900; 4 Minuten</div>
                         <h4>Power-Wrap</h4>
-                        <p>Vollkorn-Wrap mit Hummus bestreichen, Spinat/Salat + Tomaten + Räuchertofu oder gebratene Hähnchenstreifen einrollen. Perfekt zum Mitnehmen.</p>
+                        <p>Vollkorn-Wrap mit Hummus bestreichen, Spinat + Tomaten + Räuchertofu oder Hähnchenstreifen einrollen. Perfekt zum Mitnehmen.</p>
                     </div>
                     <div class="recipe-card">
                         <div class="recipe-time">&#9900; 3 Minuten</div>
@@ -273,52 +392,34 @@
                     <div class="recipe-card">
                         <div class="recipe-time">&#9900; 5 Minuten</div>
                         <h4>Quark-Bowl</h4>
-                        <p>Magerquark + 1 EL Erdnussmus + Banane + Haferflocken + eine Handvoll Nüsse. Satt bis in den Abend. Kein Backofen, kein Kochen.</p>
+                        <p>Magerquark + 1 EL Erdnussmus + Banane + Haferflocken + Nüsse. Satt bis in den Abend. Kein Backofen, kein Kochen.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- §4: GEWOHNHEITEN & 4 LIFE-STRATEGIEN -->
+            <!-- §6: GEWOHNHEITEN & 4 LIFE-STRATEGIEN -->
             <div class="prose-card" id="gewohnheiten">
-                <p class="section-eyebrow">Abschnitt 4</p>
+                <p class="section-eyebrow">Abschnitt 6</p>
                 <h3>Gewohnheiten aufbauen – Ernährung ohne Willenskraft automatisieren</h3>
-                <p class="muted">Du weißt jetzt, was gut für dich ist – aber wie setzt man es um, wenn der Schweinehund laut brüllt? Ganz einfach: Wir wenden die vier psychologischen Life-Strategien direkt auf die Ernährung an. Diese Techniken kennst du schon von der Seite <a href="sinn-und-persoenlichkeitsentwicklung.html" style="color:#C4822A;text-decoration:underline;">Sinn &amp; Persönlichkeitsentwicklung</a> – hier zeigen sie, wie konkret sie im Alltag funktionieren.</p>
-
-                <div class="concept-grid" style="margin-top:18px;">
-                    <div>
-                        <div class="fact-list">
-                            <div class="fact"><strong>2-Minuten-Regel:</strong> Fülle direkt nach dem Abendessen deine Wasserflasche für den nächsten Schultag und stelle sie neben die Tasche. Dauer: 45 Sekunden. Ergebnis: Morgens kein Stress, garantiert genug zu trinken.</div>
-                            <div class="fact"><strong>5-4-3-2-1-Methode:</strong> Du willst aus Gewohnheit die Liefer-App öffnen? 5 – 4 – 3 – 2 – 1: Aufstehen, in die Küche, Wrap bauen. Der Countdown überlistet dein Gehirn, bevor die Bequemlichkeit siegt. (Mel Robbins)</div>
-                            <div class="fact"><strong>Eat the Frog – Meal Prep:</strong> Schneide Sonntag eine große Portion Gemüse vor oder koche extra Reis/Nudeln. Wenn unter der Woche der Stress kickt, ist das „Projekt gesund essen" längst erledigt. (Brian Tracy)</div>
-                            <div class="fact"><strong>5-Minuten-Regel:</strong> Keine Lust zu kochen? Nur 5 Minuten anfangen – danach darfst du aufhören. In mehr als 80 % der Fälle bist du dann im Flow und machst das gesunde Essen fertig.</div>
-                        </div>
-                        <div class="callout" style="margin-top:16px;">
-                            <strong>Im Unterricht:</strong> Schülerinnen und Schüler können eine Woche lang eine der vier Strategien speziell für Ernährungsgewohnheiten erproben – und danach reflektieren: Welche Strategie hat geholfen? Wo war der Schweinehund stärker? Die 5-Minuten-Regel und die 2-Minuten-Regel eignen sich besonders gut als Einstieg.
-                        </div>
-                    </div>
-                    <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0"
-                        aria-label="Ernährungspyramide für Schülerinnen und Schüler – Grafik vergrößern"
-                        data-full="../assets/images/ernaehrung-pyramide.png"
-                        data-label="Ernährungspyramide – Die 5 Ebenen für nachhaltige Energie">
-                        <img src="../assets/images/ernaehrung-pyramide.png"
-                            alt="Ernährungspyramide: von Wasser &amp; Gemüse bis zu Süßem"
-                            style="width:100%;border-radius:10px;display:block;" loading="lazy">
-                        <figcaption>Ernährungspyramide · Grafik antippen zum Vergrößern</figcaption>
-                    </figure>
+                <p class="muted">Du weißt jetzt, was gut für dich ist – aber wie setzt man es um, wenn der Schweinehund laut brüllt? Wir wenden die vier psychologischen Life-Strategien direkt auf die Ernährung an. Diese Techniken kennst du schon von der Seite <a href="sinn-und-persoenlichkeitsentwicklung.html" style="color:#C4822A;text-decoration:underline;">Sinn &amp; Persönlichkeitsentwicklung</a> – hier zeigen sie, wie konkret sie im Alltag funktionieren.</p>
+                <div class="fact-list">
+                    <div class="fact"><strong>2-Minuten-Regel:</strong> Fülle direkt nach dem Abendessen deine Wasserflasche für den nächsten Schultag. Dauer: 45 Sekunden. Ergebnis: morgens kein Stress, garantiert genug zu trinken. (David Allen, GTD)</div>
+                    <div class="fact"><strong>5-4-3-2-1-Methode:</strong> Du willst aus Gewohnheit die Liefer-App öffnen? 5 – 4 – 3 – 2 – 1: Aufstehen, Küche, Wrap bauen. Der Countdown überlistet dein Gehirn, bevor die Bequemlichkeit siegt. (Mel Robbins)</div>
+                    <div class="fact"><strong>Eat the Frog – Meal Prep:</strong> Schneide Sonntag eine große Portion Gemüse vor oder koche extra Reis. Wenn unter der Woche der Stress kickt, ist das Projekt gesund essen längst erledigt. (Brian Tracy)</div>
+                    <div class="fact"><strong>5-Minuten-Regel:</strong> Keine Lust zu kochen? Nur 5 Minuten anfangen – danach darfst du aufhören. In mehr als 80&nbsp;% der Fälle bist du dann im Flow und machst das gesunde Essen fertig.</div>
                 </div>
             </div>
 
-            <!-- §5: HÄUFIGE FRAGEN & PROBLEME -->
+            <!-- §7: HÄUFIGE FRAGEN -->
             <div class="prose-card" id="haeufige-fragen">
-                <p class="section-eyebrow">Abschnitt 5</p>
+                <p class="section-eyebrow">Abschnitt 7</p>
                 <h3>Häufige Probleme – smarte Lösungen</h3>
                 <p class="muted">Die meisten Ernährungsprobleme in der Oberstufe haben konkrete Ursachen und konkrete Lösungen. Kein erhobener Zeigefinger – sondern Strategien, die tatsächlich funktionieren.</p>
-
                 <div style="margin-top:20px;">
                     <div class="problem-block">
                         <p class="problem-label red">Problem: Kantine und Schulkiosk bieten nur Fast Food an</p>
                         <p class="problem-label green">Lösung: Upgrade oder Notfall-Box</p>
-                        <p>Wenn es Pommes gibt: nimm einen Beilagensalat dazu. Pack dir standardmäßig eine „Notfall-Box" ein: eine Handvoll Nüsse, eine Banane, ein Proteinriegel. So tapst du gar nicht erst in die Hungerfalle.</p>
+                        <p>Wenn es Pommes gibt: nimm einen Beilagensalat dazu. Pack dir eine „Notfall-Box" ein: Nüsse, Banane, Proteinriegel. So tapst du gar nicht erst in die Hungerfalle.</p>
                     </div>
                     <div class="problem-block">
                         <p class="problem-label red">Problem: Vor Klausuren automatisch Unmengen Schokolade essen</p>
@@ -326,39 +427,53 @@
                         <p>Stress-Essen passiert unbewusst, weil der Körper nach schneller Energie sucht. Wenn der Heißhunger kommt: erst ein großes Glas kaltes Wasser trinken und 5 Minuten warten. Echter Hunger? Eine Handvoll Nüsse. Nur Stress? Fenster auf, 2 Minuten durchatmen.</p>
                     </div>
                     <div class="problem-block">
-                        <p class="problem-label red">Problem: Auf Social Media sehen alle aus wie aus dem Fitnessstudio</p>
+                        <p class="problem-label red">Problem: Social Media zeigt nur perfekte Fitness-Bodies und Clean Eating</p>
                         <p class="problem-label green">Lösung: Realitäts-Check aktivieren</p>
-                        <p>95 % von dem, was du auf TikTok und Instagram siehst, ist gefiltert, ausgeleuchtet oder schlichtweg fake. Dein Körper befindet sich in der Spätpubertät in der finalen Umbauphase – er braucht Energie und Nährstoffe, keine permanenten Verbote und kein schlechtes Gewissen. Clean Eating als Lifestyle ist keine Gesundheitsstrategie.</p>
+                        <p>95&nbsp;% von dem, was du auf TikTok und Instagram siehst, ist gefiltert, ausgeleuchtet oder schlichtweg fake. Dein Körper befindet sich in der Spätpubertät – er braucht Energie und Nährstoffe, keine permanenten Verbote und kein schlechtes Gewissen.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- §6: 7-TAGE-CHALLENGE -->
+            <!-- §8: 7-TAGE-CHALLENGE -->
             <div class="prose-card" id="challenge">
-                <p class="section-eyebrow">Abschnitt 6</p>
+                <p class="section-eyebrow">Abschnitt 8</p>
                 <h3>Dein Quick-Win für die nächste Woche</h3>
                 <p class="muted">Willst du wissen, wie viel Energie wirklich in dir steckt? Probier die <strong>7-Tage-Fokus-Challenge</strong> aus – sie kostet nichts, braucht keine Vorbereitung und du wirst die Wirkung direkt spüren.</p>
-
                 <div class="challenge-box">
                     <h3>&#9654; 7-Tage-Fokus-Challenge</h3>
                     <p style="margin:0 0 16px;">Nur <strong>zwei Regeln</strong> – sieben Tage lang:</p>
                     <ol>
-                        <li><strong>Jeden zuckerhaltigen Pausensnack ersetzen</strong> – durch eine Handvoll Nüsse oder Obst. Nicht immer, aber so oft wie möglich.</li>
-                        <li><strong>Täglich 2 Liter Wasser trinken</strong> – egal wie. Flasche auf den Schreibtisch, Flasche in die Schultasche.</li>
+                        <li><strong>Jeden zuckerhaltigen Pausensnack ersetzen</strong> – durch eine Handvoll Nüsse oder Obst.</li>
+                        <li><strong>Täglich 2 Liter Wasser trinken</strong> – Flasche auf den Schreibtisch, Flasche in die Schultasche.</li>
                     </ol>
-                    <p style="margin-top:16px;font-size:0.92rem;">Beobachte dabei gezielt: Wie fit bist du an den Nachmittagen? Hast du weniger Kopfschmerzen? Kannst du dich besser konzentrieren? <strong>Dein Notenschnitt wird es dir danken.</strong></p>
-                    <p style="margin-top:12px;font-size:0.85rem;color:#888;">Unterrichtsidee: Die Challenge als Reflexionsauftrag für eine Woche – Schüler:innen dokumentieren ihre Beobachtungen und präsentieren sie in der Gruppe. Schafft Bewusstsein ohne Druck.</p>
+                    <p style="margin-top:16px;font-size:0.92rem;">Beobachte dabei: Wie fit bist du an den Nachmittagen? Hast du weniger Kopfschmerzen? Kannst du dich besser konzentrieren? <strong>Dein Notenschnitt wird es dir danken.</strong></p>
+                    <p style="margin-top:12px;font-size:0.85rem;color:#888;">Unterrichtsidee: Die Challenge als Reflexionsauftrag für eine Woche – Schüler:innen dokumentieren Beobachtungen und präsentieren in der Gruppe.</p>
                 </div>
             </div>
 
         </section>
     </main>
+
+    <nav class="page-toc" id="pageToc" aria-label="Auf dieser Seite">
+        <p class="page-toc-title">Auf dieser Seite</p>
+        <ul>
+            <li><a href="#intro">Überblick</a></li>
+            <li><a href="#ernaehrungskompass">Ernährungskompass</a></li>
+            <li><a href="#grossmutter-test">Großmutter-Test</a></li>
+            <li><a href="#brain-power">Brain Power &amp; Blutzucker</a></li>
+            <li><a href="#hydration">Hydration</a></li>
+            <li><a href="#budget-kueche">Budget-Küche &amp; Rezepte</a></li>
+            <li><a href="#gewohnheiten">Gewohnheiten &amp; Habits</a></li>
+            <li><a href="#haeufige-fragen">Häufige Fragen</a></li>
+            <li><a href="#challenge">7-Tage-Challenge</a></li>
+        </ul>
+    </nav>
 </div>
 
 <footer>
     <div class="footer-inner">
         <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
-        &copy; 2026 Straight Edge Media &middot; Fitness im Schulsport &middot; Material für Lehramt Sport &middot; v1.0.8<br>
+        &copy; 2026 Straight Edge Media &middot; Fitness im Schulsport &middot; Material für Lehramt Sport &middot; v1.0.9<br>
         <a href="../impressum.html">Impressum</a> &middot; <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> &middot; <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
     </div>
 </footer>
@@ -421,10 +536,7 @@ function navLightbox(dir) {
     currentFigIdx = next;
     setFigure(currentFigIdx);
 }
-function closeLightbox() {
-    lb.classList.remove('active');
-    document.body.style.overflow = '';
-}
+function closeLightbox() { lb.classList.remove('active'); document.body.style.overflow = ''; }
 function zoomIn()  { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); applyZoom(); }
 function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); applyZoom(); }
 function zoomReset(){ currentZoom = 1; applyZoom(); }
@@ -441,6 +553,18 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft') navLightbox(-1);
     if (e.key === 'ArrowRight') navLightbox(1);
 });
+
+const tocLinks = document.querySelectorAll('.page-toc a[href^="#"]');
+if (tocLinks.length && window.IntersectionObserver) {
+    const targets = Array.from(tocLinks).map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting)
+                tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+        });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    targets.forEach(t => obs.observe(t));
+}
 
 function toggleAccordion(e) {
     const grp = e.currentTarget.closest('.theme-group');
