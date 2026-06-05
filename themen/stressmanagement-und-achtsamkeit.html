@@ -235,6 +235,52 @@
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
             </ul>
         </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Alltag, Lebensraum &amp; Umwelt</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Soziale Gesundheit</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Material &amp; Werkzeuge</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../grafikbibliothek.html"><span class="dot"></span>Grafikbibliothek</a></li>
+                <li><a href="stressmanagement-und-achtsamkeit.html#praxisecke"><span class="dot"></span>Praxisecke: Entspannungsübungen</a></li>
+                <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
+                <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
+                <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
+            </ul>
+        </div>
     </aside>
 
     <main>
@@ -593,7 +639,7 @@
 <footer>
     <div class="footer-inner">
         <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
-        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport<br>
+        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport · v1.0.0<br>
         <a href="../impressum.html">Impressum</a> · <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> · <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
     </div>
 </footer>
@@ -798,6 +844,7 @@ function closePraxis() {
 praxisOverlay.addEventListener('click', e => { if (e.target === praxisOverlay) closePraxis(); });
 /* Praxisecke automatisch öffnen, wenn die Seite mit #praxisecke aufgerufen wird (z. B. aus dem Menü „Material & Werkzeuge") */
 if (window.location.hash === '#praxisecke') { openPraxis(); }
+window.addEventListener('hashchange', () => { if (window.location.hash === '#praxisecke') openPraxis(); });
 function filterPraxis(btn) {
     const filter = btn.dataset.filter;
     document.querySelectorAll('.praxis-chip').forEach(c => c.classList.remove('active'));
