@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stressmanagement &amp; Achtsamkeit – Mit Stress umgehen lernen · Fitness im Schulsport</title>
+
+    <meta name="description" content="Stressmanagement &amp; Achtsamkeit im Schulsport: Eustress und Distress, das Allgemeine Anpassungssyndrom, Stressoren und Körpersignale erkennen, Prüfungs- und Wettkampfstress bewältigen – mit Praxisecke voller Entspannungsübungen. Aufbereitet für Lehramt Sport.">
+    <meta property="og:title" content="Stressmanagement &amp; Achtsamkeit – Mit Stress umgehen lernen">
+    <meta property="og:description" content="Stress verstehen, früh erkennen und gesundheitsorientiert bewältigen: GAS-Modell, Stressglas, Prüfungs- und Wettkampfstress sowie eine Praxisecke mit Atem- und Entspannungsübungen für den Sportunterricht.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav {
+                transform: translateX(-100%);
+                will-change: transform;
+            }
+        }
+
+        /* Launcher für die Praxisecke */
+        .praxis-launch {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1f6f54 0%, #2c8a6a 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 28px 30px;
+            margin: 28px 0;
+        }
+        .praxis-launch h3 { color: #fff; margin: 0 0 6px; }
+        .praxis-launch p { margin: 0; color: rgba(255,255,255,.9); max-width: 56ch; }
+        .praxis-launch .btn-praxis {
+            flex-shrink: 0;
+            background: #fff;
+            color: #1f6f54;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 22px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .praxis-launch .btn-praxis:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+
+        /* Praxis-Overlay */
+        .praxis-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 30, 25, .72);
+            z-index: 1200;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 16px;
+            overflow-y: auto;
+        }
+        .praxis-overlay.active { display: flex; }
+        .praxis-panel {
+            background: #fff;
+            width: 100%;
+            max-width: 820px;
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(0,0,0,.35);
+            overflow: hidden;
+            animation: praxisIn .25s ease;
+        }
+        @keyframes praxisIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .praxis-panel-head {
+            position: sticky;
+            top: 0;
+            background: #1f6f54;
+            color: #fff;
+            padding: 20px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            z-index: 2;
+        }
+        .praxis-panel-head h2 { color: #fff; margin: 0; font-size: 1.25rem; }
+        .praxis-panel-head p { margin: 4px 0 0; color: rgba(255,255,255,.85); font-size: .9rem; }
+        .praxis-close {
+            flex-shrink: 0;
+            background: rgba(255,255,255,.16);
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .praxis-close:hover { background: rgba(255,255,255,.3); }
+        .praxis-body { padding: 26px; }
+
+        /* Filter-Chips in der Praxisecke */
+        .praxis-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+        .praxis-chip {
+            border: 1px solid #cbd8d2;
+            background: #f4f8f6;
+            color: #1f6f54;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: .85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .15s ease;
+        }
+        .praxis-chip.active { background: #1f6f54; color: #fff; border-color: #1f6f54; }
+
+        /* Übungskarten */
+        .exercise {
+            border: 1px solid #e3e8e6;
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin-bottom: 18px;
+            background: #fcfdfc;
+        }
+        .exercise-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+        .exercise h3 { margin: 0; font-size: 1.1rem; color: #18493a; }
+        .exercise-meta { font-size: .82rem; color: #6b7a74; }
+        .exercise-tag {
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: #e6f1ec;
+            color: #1f6f54;
+        }
+        .exercise-why { font-size: .9rem; color: #4a5a54; margin-top: 10px; font-style: italic; }
+        .exercise ol { margin: 10px 0 0; padding-left: 20px; }
+        .exercise ol li { margin-bottom: 8px; line-height: 1.55; }
+        .exercise-safety {
+            margin-top: 12px;
+            font-size: .85rem;
+            color: #8a5a00;
+            background: #fff8e8;
+            border-left: 3px solid #e0a106;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="theme-page">
+
+<nav>
+    <a href="../index.html" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#grundsatz">Grundsatz</a></li>
+        <li><a href="../index.html#themen">Themen</a></li>
+        <li><a href="../grafikbibliothek.html">Grafikbibliothek</a></li>
+        <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
+</nav>
+
+<div class="shell">
+    <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
+        <p class="theme-nav-title">Fitness im Schulsport</p>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Start</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Regeneration &amp; mentale Balance</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a class="active outer-link" href="stressmanagement-und-achtsamkeit.html"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header class="theme-head">
+            <div class="badge">Gesundheit &amp; mentale Balance · Sekundarstufe I/II · NRW</div>
+            <h1>Stressmanagement &amp; Achtsamkeit – Mit Stress umgehen lernen</h1>
+            <p>Stress hat einen schlechten Ruf – zu Unrecht. In der richtigen Dosis macht er wach, konzentriert und leistungsfähig. Erst wenn er zu groß wird oder zu lange anhält, kippt er ins Schädliche. Entscheidend ist deshalb nicht, Stress zu vermeiden, sondern ihn zu <em>verstehen</em>, früh zu <em>erkennen</em> und gesund zu <em>steuern</em>. Genau das lässt sich lernen – und der Schulsport ist dafür ein idealer Ort.</p>
+            <div class="theme-meta">
+                <span><strong>Grundlage:</strong> Eustress/Distress &amp; Allgemeines Anpassungssyndrom (Selye)</span>
+                <span><strong>Bezug:</strong> NRW – Gesundheit fördern, Gesundheitsbewusstsein entwickeln</span>
+                <span><strong>Ansatz:</strong> Stress regulieren lernen statt nur aushalten</span>
+            </div>
+        </header>
+
+        <div id="top"></div>
+        <p class="nav-anchor"><a href="../index.html">← Zur Startseite</a></p>
+
+        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Die Stresswaage – Eustress und Distress" vergrößern"
+                data-full="../assets/images/Stresswippe.png"
+                data-label="Leitgrafik – Die Stresswaage: Eustress (anregender, positiver Stress) und Distress (überfordernder, schädlicher Stress) im Gleichgewicht. Ziel ist das richtige Maß – weder zu wenig noch zu viel Belastung.">
+            <img src="../assets/images/Stresswippe.png" alt="Infografik „Die Stresswaage“ – eine Wippe mit Eustress auf der einen und Distress auf der anderen Seite. Eustress steht für anregenden, motivierenden Stress, der Energie gibt und beim Meistern von Herausforderungen hilft. Distress steht für überfordernden Stress, der die Gesundheit und Leistung beeinträchtigt. Dieselbe Situation kann je nach Person und Vorbereitung Eu- oder Distress auslösen. Ziel ist die Balance: das richtige Maß an Stress – nicht zu wenig, nicht zu viel." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
+            <figcaption>
+                <span class="fig-num">Leitgrafik</span>
+                <span class="fig-label">Die Stresswaage – Eustress und Distress im Gleichgewicht</span>
+                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+            </figcaption>
+        </figure>
+
+        <section class="section" style="max-width:none;padding:28px 0 40px;">
+
+            <!-- INTRO -->
+            <div class="prose-card" id="intro">
+                <p class="section-eyebrow">Überblick</p>
+                <h3>Nicht der Stress ist das Problem – sondern der Umgang mit ihm</h3>
+                <p class="muted">Klassenarbeiten, Wettkämpfe, Auftritte, Streit, ständige Erreichbarkeit: Stress ist fester Bestandteil des Jugendalltags. Doch Stress ist zunächst eine sinnvolle, uralte Schutzreaktion des Körpers. Problematisch wird er erst, wenn er dauerhaft wird und keine Erholung folgt. Diese Seite macht Stress verstehbar und liefert konkrete Werkzeuge, um ihn zu regulieren.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Stress ist eine Anpassungsleistung:</strong> Der Körper mobilisiert blitzschnell Energie, um auf eine Herausforderung zu reagieren. Diese Reaktion hat dem Menschen über Jahrtausende das Überleben gesichert – sie ist kein Defekt, sondern ein Leistungssystem.</div>
+                    <div class="fact"><strong>Lebensweltbezug der Lerngruppe:</strong> Prüfungsangst, Leistungsdruck, Social-Media-Vergleiche und Schlafmangel sind reale Themen Jugendlicher. Stresskompetenz ist damit hochaktuell und anschlussfähig – und ein Schutzfaktor für die psychische Gesundheit.</div>
+                    <div class="fact"><strong>Anschluss an den Bildungsauftrag:</strong> Die NRW-Perspektive „Gesundheit fördern, Gesundheitsbewusstsein entwickeln“ nennt das Wahrnehmen und Regulieren von Anspannung ausdrücklich als Aufgabe des Schulsports. Entspannungsfähigkeit ist eine erlernbare Kompetenz.</div>
+                </div>
+
+                <div class="callout">
+                    <strong>Leitidee:</strong> <em>Ziel ist nicht ein stressfreies Leben, sondern Stresskompetenz: die eigene Anspannung wahrnehmen, einordnen und bewusst herunterregulieren zu können.</em> Dieselbe Haltung wie bei Belastung &amp; Erholung – diesmal von der mentalen Seite gedacht.
+                </div>
+            </div>
+
+            <!-- ============ TEIL A — WAS IST STRESS? ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil A</span>
+                <span class="part-title">Was ist Stress?</span>
+                <span class="part-sub">Die Grundlagen verständlich aufbereitet: guter und schlechter Stress – und was im Körper dabei passiert.</span>
+            </div>
+
+            <!-- §1 EUSTRESS & DISTRESS -->
+            <div class="prose-card" id="eustress-distress">
+                <p class="section-eyebrow">Abschnitt 1</p>
+                <h3>Eustress &amp; Distress – guter und schlechter Stress</h3>
+                <p class="muted">Nicht jeder Stress schadet. Die Wissenschaft unterscheidet zwischen anregendem und überforderndem Stress. Der Unterschied liegt oft weniger in der Situation selbst als in ihrer Bewertung und in der eigenen Vorbereitung.</p>
+
+                <div class="term-box">
+                    <span class="term-word">Eustress &amp; Distress</span>
+                    <span class="term-def"><strong>Eustress</strong> (von griech. <em>eu</em> = gut, wie in „Euphorie“) ist anregender, positiver Stress: Er gibt Energie, schärft die Konzentration und hilft, Herausforderungen zu meistern. <strong>Distress</strong> ist überfordernder, negativer Stress: Er entsteht bei zu hoher oder zu langer Belastung und beeinträchtigt Gesundheit und Leistung.</span>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Dieselbe Lage – zwei Wirkungen:</strong> Ein Wettkampf, eine Präsentation oder eine Achterbahnfahrt kann für die eine Person aufregend (Eustress), für die andere bedrohlich (Distress) sein. Sogar bei derselben Person entscheidet die Tagesform: Eine gut vorbereitete Klassenarbeit erzeugt Eustress, eine schlecht vorbereitete Distress.</div>
+                    <div class="fact"><strong>Das richtige Maß zählt:</strong> Zu wenig Anforderung führt zu Langeweile und Unterforderung, zu viel zu Überforderung. Optimale Leistung und Wohlbefinden liegen dazwischen – ein anschauliches Modell für die Selbsteinschätzung in der Lerngruppe.</div>
+                    <div class="fact"><strong>Bewegung macht stressresistenter:</strong> Regelmäßige, moderate körperliche Aktivität ist selbst ein milder Stressreiz – und trainiert genau dadurch die Fähigkeit, mit künftigen Belastungen besser umzugehen. Hier schließt der Schulsport unmittelbar an.</div>
+                    <div class="fact"><strong>Reframing als Schlüssel:</strong> „Ich bin nervös“ lässt sich umdeuten in „Mein Körper macht sich bereit“. Schon diese mentale Verschiebung kann Lampenfieber von einer Bedrohung in nutzbare Energie verwandeln – eine einfache, wirksame Strategie für Schülerinnen und Schüler.</div>
+                </div>
+            </div>
+
+            <!-- §2 ANPASSUNGSSYNDROM -->
+            <div class="prose-card" id="anpassungssyndrom">
+                <p class="section-eyebrow">Abschnitt 2</p>
+                <h3>Das Allgemeine Anpassungssyndrom – drei Phasen der Stressreaktion</h3>
+                <p class="muted">Der Stressforscher Hans Selye beschrieb, wie der Körper in drei Phasen auf anhaltenden Stress reagiert. Das Modell macht sichtbar, warum dauerhafter Stress ohne Erholung in die Erschöpfung führt – und warum frühes Gegensteuern so wichtig ist.</p>
+
+                <figure class="lead-figure thumb-figure js-figure" role="button" tabindex="0" aria-label="Das Allgemeine Anpassungssyndrom vergrößern"
+                        data-full="../assets/images/Anpassungssyndrom.png"
+                        data-label="Das Allgemeine Anpassungssyndrom (GAS) nach Selye – die drei Phasen Alarmreaktion, Widerstandsphase und Erschöpfungsphase im Verlauf.">
+                    <img src="../assets/images/Anpassungssyndrom.png" alt="Grafik zum Allgemeinen Anpassungssyndrom (GAS) nach Hans Selye mit drei Phasen: 1. Alarmreaktion – der Körper erkennt den Stressor, schüttet Adrenalin und Cortisol aus, Herzschlag und Muskelspannung steigen. 2. Widerstandsphase – der Körper passt sich an und arbeitet auf erhöhtem Niveau weiter. 3. Erschöpfungsphase – bleiben Stress und fehlende Erholung bestehen, sind die Reserven aufgebraucht, es drohen Müdigkeit, Infekte und Erkrankungen." loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
+                    <figcaption>
+                        <span class="fig-num">Modell</span>
+                        <span class="fig-label">Das Allgemeine Anpassungssyndrom – Alarm, Widerstand, Erschöpfung</span>
+                        <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+                    </figcaption>
+                </figure>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Phase 1 – Alarmreaktion:</strong> Der Körper erkennt die Herausforderung und schaltet in Sekunden auf „Kampf oder Flucht“: Adrenalin und Cortisol werden ausgeschüttet, Herzschlag und Atmung beschleunigen, die Muskeln spannen an. Du bist hellwach und handlungsbereit.</div>
+                    <div class="fact"><strong>Phase 2 – Widerstandsphase:</strong> Hält der Stress an, passt sich der Körper an und arbeitet auf erhöhtem Niveau weiter. Das funktioniert eine Weile gut – verbraucht aber dauerhaft Energie, die eigentlich für Erholung und Entwicklung gebraucht würde.</div>
+                    <div class="fact"><strong>Phase 3 – Erschöpfungsphase:</strong> Fehlt die Erholung dauerhaft, sind die Reserven irgendwann aufgebraucht. Folgen sind anhaltende Müdigkeit, Infektanfälligkeit, Schlaf- und Konzentrationsprobleme. Hier zeigt sich die direkte Brücke zum Thema <a href="belastung-und-erholung.html">Belastung &amp; Erholung</a>: Ohne Regeneration kippt jedes System.</div>
+                    <div class="fact"><strong>Konsequenz:</strong> Je früher man die Übergänge bemerkt, desto leichter lässt sich gegensteuern. Stresskompetenz heißt deshalb vor allem: die eigenen Signale rechtzeitig wahrnehmen – das Thema des nächsten Teils.</div>
+                </div>
+            </div>
+
+            <p class="nav-anchor"><a href="#top">↑ Nach oben</a></p>
+
+            <!-- ============ TEIL B — STRESS ERKENNEN ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil B</span>
+                <span class="part-title">Stress erkennen</span>
+                <span class="part-sub">Was Stress auslöst, wie der Körper reagiert – und warum es auf die Summe der Belastungen ankommt.</span>
+            </div>
+
+            <!-- §3 STRESSOREN -->
+            <div class="prose-card" id="stressoren">
+                <p class="section-eyebrow">Abschnitt 3</p>
+                <h3>Stressoren – was im Schulalltag Stress auslöst</h3>
+                <p class="muted">Ein Stressor ist alles, was eine Stressreaktion auslöst. Sie zu kennen und zu benennen ist der erste Schritt zur Bewältigung – denn man kann nur steuern, was man wahrnimmt.</p>
+
+                <div class="table-wrap">
+                    <table class="data">
+                        <caption>Typische Stressoren im Jugendalltag – nach Bereichen geordnet.</caption>
+                        <thead>
+                            <tr><th style="width:26%;">Bereich</th><th>Beispiele</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Körperlich</strong></td><td>Schlafmangel, Hunger, Krankheit, Lärm, Hitze/Kälte, Übertraining und körperliche Überlastung</td></tr>
+                            <tr><td><strong>Leistung &amp; Schule</strong></td><td>Klassenarbeiten, Prüfungsangst, Noten- und Zeitdruck, Angst zu versagen, Auftritte vor anderen</td></tr>
+                            <tr><td><strong>Sozial</strong></td><td>Streit, Mobbing, Ausgrenzung, Gruppendruck, Erwartungen von Eltern und Freunden</td></tr>
+                            <tr><td><strong>Digital</strong></td><td>Ständige Erreichbarkeit, Vergleich in sozialen Medien, Angst etwas zu verpassen (FOMO), nächtliche Bildschirmzeit</td></tr>
+                            <tr><td><strong>Sport &amp; Wettkampf</strong></td><td>Wettkampfdruck, Beobachtung durch Zuschauer, Vergleich mit anderen, Sorge sich zu blamieren</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Beeinflussbar oder nicht?</strong> Eine hilfreiche Sortierung: Manche Stressoren lassen sich verändern (Lernorganisation, Schlafzeiten, Mediennutzung), andere nicht (Wetter, Verhalten anderer). Bei Letzteren lässt sich immerhin die eigene <em>Reaktion</em> verändern – ein zentraler Bildungsschritt.</div>
+                    <div class="fact"><strong>Digitaler Stress als wachsendes Thema:</strong> Der ständige Vergleich in sozialen Medien und die Angst, etwas zu verpassen, erzeugen einen subtilen Dauerstress. Hier verbindet sich das Thema mit „Digitale Balance“ und mit dem Schlafthema – Bildschirmzeit am Abend ist ein doppelter Stressfaktor.</div>
+                    <div class="fact"><strong>Reflexionsanlass für den Unterricht:</strong> „Welche drei Dinge stressen mich aktuell am meisten? Welche davon kann ich beeinflussen?“ Diese einfache Übung macht Stress besprechbar, ohne bloßzustellen – ideal anonym per Kärtchen oder digitalem Tool.</div>
+                </div>
+            </div>
+
+            <!-- §4 KÖRPERSIGNALE -->
+            <div class="prose-card" id="koerpersignale">
+                <p class="section-eyebrow">Abschnitt 4</p>
+                <h3>Körpersignale – wann Stress zu viel wird</h3>
+                <p class="muted">Stress zeigt sich körperlich, lange bevor wir ihn bewusst „denken“. Wer seine eigenen Signale kennt, kann früh gegensteuern – bevor aus Anspannung Distress wird.</p>
+
+                <figure class="lead-figure thumb-figure js-figure" role="button" tabindex="0" aria-label="Stress im Körper vergrößern"
+                        data-full="../assets/images/Stresskörper.png"
+                        data-label="Stress im Körper – körperliche Stressreaktionen vom Kopf bis zu den Füßen: schnellerer Herzschlag, flache Atmung, Muskelverspannung, Magen-Darm-Reaktionen und mehr.">
+                    <img src="../assets/images/Stresskörper.png" alt="Grafik „Stress im Körper“ – Darstellung körperlicher Stressreaktionen am menschlichen Körper: Kopfschmerzen und angespannter Kiefer, schnellerer Herzschlag und steigender Blutdruck, flache und schnelle Atmung, verspannte Nacken- und Schultermuskulatur, schwitzende Hände, flaues Gefühl und verlangsamte Verdauung im Magen-Darm-Bereich, mehr Zucker im Blut zur Energiebereitstellung. Diese Reaktionen sind kurzfristig sinnvoll, bei Dauerstress jedoch belastend." loading="lazy" onerror="this.closest('.lead-figure').style.display='none'">
+                    <figcaption>
+                        <span class="fig-num">Übersicht</span>
+                        <span class="fig-label">Stress im Körper – körperliche Stressreaktionen erkennen</span>
+                        <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
+                    </figcaption>
+                </figure>
+
+                <div class="table-wrap">
+                    <table class="data">
+                        <caption>Akute und chronische Stresszeichen – kurzfristige Reaktion und langfristige Folgen.</caption>
+                        <thead>
+                            <tr><th style="width:50%;">Akut (sofort)</th><th style="width:50%;">Chronisch (bei Dauerstress)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Schnellerer Herzschlag, flache Atmung</td><td>Wiederkehrende Kopf- und Rückenschmerzen</td></tr>
+                            <tr><td>Muskelverspannung in Nacken und Schultern</td><td>Ein- und Durchschlafstörungen</td></tr>
+                            <tr><td>Schwitzige oder kalte Hände, Zittern</td><td>Geschwächtes Immunsystem, häufige Infekte</td></tr>
+                            <tr><td>Flaues Gefühl im Magen, trockener Mund</td><td>Verdauungsprobleme, anhaltende Müdigkeit</td></tr>
+                            <tr><td>Konzentrationsverlust, Gereiztheit</td><td>Antriebslosigkeit, Grübeln, Selbstzweifel</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.95rem; color: var(--muted);"><strong>Merksatz für die Lerngruppe:</strong> Lerne, deinen Körper zu „lesen“. Wo spürst du Stress zuerst – im Bauch, im Nacken, im Atem? Dieser persönliche Frühwarnpunkt ist dein wichtigstes Signal zum Gegensteuern.</p>
+            </div>
+
+            <!-- §5 STRESSGLAS -->
+            <div class="prose-card" id="stressglas">
+                <p class="section-eyebrow">Abschnitt 5</p>
+                <h3>Das Stressglas – warum es auf die Summe ankommt</h3>
+                <p class="muted">Ein anschauliches Bild für die Lerngruppe: Jeder Mensch trägt ein „Stressglas“ in sich. Jeder Stressor füllt es ein Stück. Entscheidend ist nicht der einzelne Tropfen, sondern der Füllstand – und ob das Glas regelmäßig geleert wird.</p>
+
+                <div class="term-box">
+                    <span class="term-word">Das Stressglas (Stress-Eimer-Modell)</span>
+                    <span class="term-def">Belastungen aus Schule, Sport, Familie, Freundeskreis und Medien sammeln sich wie Wasser in einem Glas. Ist es voll, bringt schon eine Kleinigkeit es zum Überlaufen – die Reaktion wirkt dann „übertrieben“, ist aber Folge des Gesamtfüllstands. <strong>Entspannung, Bewegung, Schlaf und gute Beziehungen sind der Ablauf, der das Glas wieder leert.</strong></span>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Erklärt scheinbar „grundlose“ Ausbrüche:</strong> Wenn jemand wegen einer Kleinigkeit weint oder wütend wird, war das Glas meist schon voll. Das Modell schafft Verständnis – für andere und für sich selbst – und nimmt Schuldgefühle.</div>
+                    <div class="fact"><strong>Macht die Gesamtbelastung sichtbar:</strong> Schule, Verein, Nebenjob, Familie und Social Media zahlen alle in dasselbe Glas ein. Gerade die Kombination – nicht ein einzelner Faktor – führt zur Überlastung. Das deckt sich mit der Übertrainings-Logik aus dem Erholungsthema.</div>
+                    <div class="fact"><strong>Handlungsorientiert:</strong> Zwei Hebel ergeben sich direkt: weniger einfüllen (Stressoren reduzieren) und mehr ablaufen lassen (regelmäßig entspannen und erholen). Beide lassen sich konkret üben – siehe Praxisecke.</div>
+                </div>
+            </div>
+
+            <p class="nav-anchor"><a href="#top">↑ Nach oben</a></p>
+
+            <!-- ============ TEIL C — STRESS BEWÄLTIGEN ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil C</span>
+                <span class="part-title">Stress bewältigen</span>
+                <span class="part-sub">Vom Wissen zum Handeln: die Grundlagen der Widerstandskraft, mentale Strategien und der Weg zu Hilfe.</span>
+            </div>
+
+            <!-- §6 DREI SÄULEN -->
+            <div class="prose-card" id="saeulen">
+                <p class="section-eyebrow">Abschnitt 6</p>
+                <h3>Die Grundlagen der Widerstandskraft</h3>
+                <p class="muted">Bevor es um spezielle Techniken geht, zählt das Fundament. Wer ausreichend schläft, sich regelmäßig bewegt und ausgewogen isst, füllt sein „Stressglas“ langsamer und leert es schneller. Diese drei Säulen wirken zusammen.</p>
+
+                <div class="stat-grid">
+                    <div class="stat"><b>8–10&nbsp;h</b><span>empfohlener Schlaf für Jugendliche – die wirksamste Erholung überhaupt</span></div>
+                    <div class="stat"><b>~30&nbsp;min</b><span>moderate Bewegung täglich senken nachweislich das Stressniveau</span></div>
+                    <div class="stat"><b>3</b><span>Säulen: Schlaf, regelmäßige Bewegung, ausgewogene Ernährung</span></div>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Schlaf zuerst:</strong> Keine Maßnahme erholt umfassender. Schlechter Schlaf verstärkt Stress, guter Schlaf baut ihn ab. Details und die Hintergründe zum Jugend-Schlafrhythmus finden sich im Thema <a href="belastung-und-erholung.html">Schlaf &amp; aktive Erholung</a>.</div>
+                    <div class="fact"><strong>Bewegung als Ventil:</strong> Sport baut Stresshormone ab und schüttet stimmungsaufhellende Botenstoffe aus – Joggende berichten vom „Runner's High“. Wichtig ist <em>moderate, regelmäßige</em> Aktivität, nicht maximale Auspowerung, die selbst zum Stressor werden kann.</div>
+                    <div class="fact"><strong>Ernährung &amp; Pausen:</strong> Regelmäßige Mahlzeiten, ausreichend Wasser und bewusste Pausen stabilisieren Energie und Stimmung. Auch Lachen und Spaß zählen: Sie senken nachweislich Anspannung – „Have fun“ ist kein Luxus, sondern Stressabbau.</div>
+                    <div class="fact"><strong>Beziehungen tragen:</strong> Soziale Unterstützung ist einer der stärksten Schutzfaktoren überhaupt. Über Belastungen mit Eltern, Freunden oder Lehrkräften zu sprechen, ist kein Zeichen von Schwäche, sondern wirksame Stressbewältigung.</div>
+                </div>
+            </div>
+
+            <!-- §7 MENTALE STRATEGIEN -->
+            <div class="prose-card" id="mentale-strategien">
+                <p class="section-eyebrow">Abschnitt 7</p>
+                <h3>Prüfungs- und Wettkampfstress meistern</h3>
+                <p class="muted">Klassenarbeit, Vorspiel, Wettkampf: Situationen, in denen man bewertet wird und vor anderen besteht, lösen besonders intensiven Stress aus. Die gute Nachricht – auch Profis kennen das, und es gibt erprobte Strategien dagegen.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Vorbereitung schlägt Angst:</strong> Wer gut vorbereitet und geübt ist, erlebt eher Eu- als Distress. Realistisches Üben unter ähnlichen Bedingungen (z.&nbsp;B. Probevortrag, Wettkampfsimulation) nimmt der Situation den Schrecken.</div>
+                    <div class="fact"><strong>Routinen geben Sicherheit:</strong> Eine feste Abfolge vor dem Ernstfall – immer dieselben Aufwärmschritte, ein kurzer Atemzyklus, ein bestimmtes Ritual – schafft Kontrolle und Vertrautheit, gerade wenn drumherum alles aufregend ist.</div>
+                    <div class="fact"><strong>Mentales Kopfkino nutzen:</strong> Sich vorab lebhaft vorzustellen, wie man die Situation ruhig und sicher meistert, bahnt im Gehirn den Erfolg an. Viele erfahrene Wettkämpfer stellen sich im Ernstfall vor, sie wären entspannt wie im Training.</div>
+                    <div class="fact"><strong>Atmen als Soforthilfe:</strong> Ein tiefer Atemzug vor dem Start, dem Freiwurf oder dem Solo – und bei aufkommender Anspannung bewusst langsamer atmen. Der Atem ist das einzige vegetative System, das sich willentlich steuern lässt: der schnellste Zugang zur Beruhigung.</div>
+                    <div class="fact"><strong>Akzeptieren, was nicht steuerbar ist:</strong> Gegner, Wetter, Bewertung – vieles liegt außerhalb der eigenen Kontrolle. Den Fokus auf Beeinflussbares zu lenken (eigene Vorbereitung, Einstellung, Einsatz) entlastet spürbar.</div>
+                </div>
+
+                <div class="callout">
+                    <strong>Im Unterricht:</strong> Kurze Atem- oder Anspannungs-Entspannungs-Übungen lassen sich direkt vor Leistungssituationen oder nach intensiven Phasen einbauen, um die Gruppe zu zentrieren. Auch Lehrkräfte und Referendar:innen profitieren – Stressregulation vor der Lerngruppe vorzuleben, ist selbst ein Lernanlass.
+                </div>
+            </div>
+
+            <!-- §8 HILFE HOLEN -->
+            <div class="prose-card" id="hilfe">
+                <p class="section-eyebrow">Abschnitt 8</p>
+                <h3>Hilfe holen – wenn Selbsthilfe nicht reicht</h3>
+                <p class="muted">Manchmal reichen eigene Strategien nicht aus – und das ist völlig normal. Hält Stress lange an oder wird zu groß, ist es ein Zeichen von Stärke, sich Unterstützung zu suchen.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Erste Anlaufstellen in der Schule:</strong> Vertrauenslehrkraft, Beratungslehrkraft, Schulsozialarbeit oder Schulpsychologie behandeln Anliegen vertraulich und kennen die nächsten Schritte.</div>
+                    <div class="fact"><strong>Im persönlichen Umfeld:</strong> Eltern, Familie und Freundeskreis sind oft die wichtigsten ersten Gesprächspartner. Schon das Aussprechen entlastet und ordnet die Gedanken.</div>
+                    <div class="fact"><strong>Professionelle Hilfe:</strong> Bei länger anhaltenden Problemen helfen Hausärzt:innen, psychologische Beratungsstellen oder Psychotherapeut:innen weiter. Für Wettkampfangst gibt es zudem spezialisiertes Mentaltraining.</div>
+                    <div class="fact"><strong>Anonyme Angebote:</strong> Beratungstelefone und Online-Angebote (z.&nbsp;B. „Nummer gegen Kummer“) ermöglichen niedrigschwellige, anonyme Hilfe – ein wichtiger Hinweis, den Schülerinnen und Schüler kennen sollten.</div>
+                </div>
+
+                <div class="callout">
+                    <strong>Kernbotschaft für die Lerngruppe:</strong> <em>Sich Hilfe zu holen ist kein Versagen, sondern eine Kompetenz.</em> Wer früh über Belastungen spricht, verhindert, dass aus Stress eine ernste Krise wird.
+                </div>
+            </div>
+
+            <!-- PRAXISECKE LAUNCHER -->
+            <div class="praxis-launch" id="praxisecke">
+                <div>
+                    <h3>🧘 Praxisecke: Entspannungsübungen</h3>
+                    <p>Atem-, Muskel- und Achtsamkeitsübungen mit Schritt-für-Schritt-Anleitung – sofort einsetzbar, allein oder in der Lerngruppe. Öffnet sich als übersichtliche Sammlung.</p>
+                </div>
+                <button type="button" class="btn-praxis" onclick="openPraxis()">Praxisecke öffnen →</button>
+            </div>
+
+            <!-- QUELLEN -->
+            <div class="prose-card" id="quelle">
+                <p class="section-eyebrow">Quellen &amp; Hintergrund</p>
+                <h3>Grundlagen dieser Seite</h3>
+                <p class="muted">Die Inhalte verbinden gesundheits- und stresswissenschaftliche Grundlagen mit dem schulsportlichen Bildungsauftrag in NRW (Perspektive „Gesundheit fördern, Gesundheitsbewusstsein entwickeln“) und aktuellen Bezügen aus der Lebenswelt Jugendlicher.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Eustress, Distress &amp; Stressreaktion:</strong> Konzept des positiven und negativen Stresses sowie die körperliche Stressreaktion („Kampf oder Flucht“) als Grundlage des Stressverständnisses.</div>
+                    <div class="fact"><strong>Allgemeines Anpassungssyndrom (Selye):</strong> Drei-Phasen-Modell aus Alarmreaktion, Widerstand und Erschöpfung zur Erklärung der Folgen von Dauerstress.</div>
+                    <div class="fact"><strong>Stressbewältigung &amp; Entspannungsverfahren:</strong> Atemtechniken, progressive Muskelentspannung und Achtsamkeit als erprobte Methoden der Stressregulation; mentale Strategien für Wettkampf- und Prüfungssituationen.</div>
+                    <div class="fact"><strong>NRW-Rahmenvorgaben Schulsport:</strong> Pädagogische Perspektive „Gesundheit fördern, Gesundheitsbewusstsein entwickeln“ als Legitimation von Stress- und Entspannungsbildung im Sportunterricht.</div>
+                </div>
+
+                <div class="hero-actions" style="margin-top:10px;">
+                    <a class="btn btn-primary" href="belastung-und-erholung.html">Zu Schlaf &amp; aktiver Erholung</a>
+                    <a class="btn" href="gesundheitsorientiertes-krafttraining.html">Zum Gesund-funktionalen Krafttraining</a>
+                    <button class="btn" onclick="window.print()">Drucken / als PDF</button>
+                </div>
+            </div>
+
+            <p class="nav-anchor"><a href="#top">↑ Nach oben</a></p>
+
+        </section>
+    </main>
+
+    <nav class="page-toc" id="pageToc" aria-label="Auf dieser Seite">
+        <p class="page-toc-title">Auf dieser Seite</p>
+        <ul>
+            <li><a href="#intro">Überblick</a></li>
+            <li><a href="#eustress-distress">Eustress &amp; Distress</a></li>
+            <li><a href="#anpassungssyndrom">Anpassungssyndrom</a></li>
+            <li><a href="#stressoren">Stressoren</a></li>
+            <li><a href="#koerpersignale">Körpersignale</a></li>
+            <li><a href="#stressglas">Das Stressglas</a></li>
+            <li><a href="#saeulen">Widerstandskraft</a></li>
+            <li><a href="#mentale-strategien">Prüfungs- &amp; Wettkampfstress</a></li>
+            <li><a href="#hilfe">Hilfe holen</a></li>
+            <li><a href="#praxisecke">Praxisecke</a></li>
+            <li><a href="#quelle">Quellen</a></li>
+        </ul>
+    </nav>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
+        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport<br>
+        <a href="../impressum.html">Impressum</a> · <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> · <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
+    </div>
+</footer>
+
+<!-- PRAXIS-OVERLAY -->
+<div class="praxis-overlay" id="praxisOverlay" role="dialog" aria-modal="true" aria-label="Praxisecke – Entspannungsübungen">
+    <div class="praxis-panel">
+        <div class="praxis-panel-head">
+            <div>
+                <h2>🧘 Praxisecke – Entspannungsübungen</h2>
+                <p>Schritt für Schritt. Probiere aus, was dir guttut – nicht jede Übung passt zu jedem.</p>
+            </div>
+            <button type="button" class="praxis-close" onclick="closePraxis()" aria-label="Praxisecke schließen">✕</button>
+        </div>
+        <div class="praxis-body">
+            <div class="praxis-filter" id="praxisFilter">
+                <button type="button" class="praxis-chip active" data-filter="all" onclick="filterPraxis(this)">Alle</button>
+                <button type="button" class="praxis-chip" data-filter="atem" onclick="filterPraxis(this)">Atmung</button>
+                <button type="button" class="praxis-chip" data-filter="muskel" onclick="filterPraxis(this)">Muskelentspannung</button>
+                <button type="button" class="praxis-chip" data-filter="achtsamkeit" onclick="filterPraxis(this)">Achtsamkeit</button>
+            </div>
+
+            <!-- 4-7-8 -->
+            <div class="exercise" data-cat="atem">
+                <div class="exercise-top">
+                    <span class="exercise-tag">Atmung</span>
+                    <h3>Die 4-7-8-Atmung</h3>
+                    <span class="exercise-meta">3–5 Min · zur schnellen Beruhigung</span>
+                </div>
+                <ol>
+                    <li>Setz oder leg dich bequem hin. Schließ die Augen oder fixiere einen ruhigen Punkt.</li>
+                    <li>Atme <strong>4 Sekunden</strong> ruhig durch die Nase ein.</li>
+                    <li>Halte den Atem <strong>7 Sekunden</strong> an.</li>
+                    <li>Atme <strong>8 Sekunden</strong> langsam durch den Mund aus – der lange Ausatem ist das Wichtigste.</li>
+                    <li>Wiederhole das Ganze 4- bis 8-mal. Der Atem wird ruhiger, der Puls sinkt.</li>
+                </ol>
+                <p class="exercise-why">Warum es wirkt: Der verlängerte Ausatem aktiviert den „Ruhenerv“ (Parasympathikus) und fährt die Stressreaktion herunter.</p>
+            </div>
+
+            <!-- Box-Atmung -->
+            <div class="exercise" data-cat="atem">
+                <div class="exercise-top">
+                    <span class="exercise-tag">Atmung</span>
+                    <h3>Box-Atmung (Quadrat-Atmung)</h3>
+                    <span class="exercise-meta">2–3 Min · für Fokus vor Prüfung/Wettkampf</span>
+                </div>
+                <ol>
+                    <li>Atme <strong>4 Sekunden</strong> durch die Nase ein.</li>
+                    <li>Halte <strong>4 Sekunden</strong>.</li>
+                    <li>Atme <strong>4 Sekunden</strong> aus.</li>
+                    <li>Halte <strong>4 Sekunden</strong> leer.</li>
+                    <li>Wiederhole 5–10 Runden. Stell dir dabei vor, wie du die vier Seiten eines Quadrats nachzeichnest.</li>
+                </ol>
+                <p class="exercise-why">Warum es wirkt: Die gleichmäßige Struktur schafft Kontrolle und mentale Ruhe – ideal direkt vor einer Leistungssituation.</p>
+            </div>
+
+            <!-- PMR -->
+            <div class="exercise" data-cat="muskel">
+                <div class="exercise-top">
+                    <span class="exercise-tag">Muskelentspannung</span>
+                    <h3>Progressive Muskelentspannung (Kurzform)</h3>
+                    <span class="exercise-meta">5 Min · abends oder nach dem Training</span>
+                </div>
+                <ol>
+                    <li>Leg dich auf den Rücken oder setz dich bequem hin.</li>
+                    <li><strong>Fäuste:</strong> beide Hände 5 Sekunden fest anspannen – dann loslassen und die Entspannung spüren.</li>
+                    <li><strong>Arme:</strong> Oberarme anspannen, halten, lösen.</li>
+                    <li><strong>Schultern/Nacken:</strong> Schultern zu den Ohren ziehen, halten, fallen lassen.</li>
+                    <li><strong>Gesicht:</strong> Stirn, Augen, Wangen anspannen, halten, lösen.</li>
+                    <li><strong>Bauch:</strong> Bauchmuskeln anspannen, halten, lösen.</li>
+                    <li><strong>Beine:</strong> Oberschenkel, Waden und Zehen anspannen, halten, lösen.</li>
+                    <li>Bleib 1–2 Minuten ruhig liegen und spüre den Unterschied zwischen Spannung und Entspannung.</li>
+                </ol>
+                <p class="exercise-why">Warum es wirkt: Das Gehirn lernt, den Unterschied zwischen An- und Entspannung klar zu fühlen – mit Übung gelingt das Loslassen immer schneller.</p>
+            </div>
+
+            <!-- Kiefer -->
+            <div class="exercise" data-cat="muskel">
+                <div class="exercise-top">
+                    <span class="exercise-tag">Muskelentspannung</span>
+                    <h3>Kiefer lösen</h3>
+                    <span class="exercise-meta">1 Min · gegen den heimlichen Spannungshalter</span>
+                </div>
+                <ol>
+                    <li>Sitz aufrecht, Kopf gerade, Schultern locker.</li>
+                    <li>Öffne den Mund so weit wie möglich und atme ein – ein Gähnen ist erlaubt. Dann langsam ausatmen und den Mund lösen.</li>
+                    <li>Schiebe den Unterkiefer sanft nach rechts, halte kurz, löse. Wiederhole nach links.</li>
+                    <li>Insgesamt etwa 10 ruhige Durchgänge.</li>
+                </ol>
+                <p class="exercise-why">Warum es wirkt: Der Kiefer ist ein typischer Spannungsspeicher – viele beißen unter Stress unbewusst die Zähne zusammen. Bewusstes Lösen wirkt sofort entlastend.</p>
+            </div>
+
+            <!-- Body Scan -->
+            <div class="exercise" data-cat="achtsamkeit">
+                <div class="exercise-top">
+                    <span class="exercise-tag">Achtsamkeit</span>
+                    <h3>Body Scan – Körperreise</h3>
+                    <span class="exercise-meta">5 Min · morgens oder als Pause</span>
+                </div>
+                <ol>
+                    <li>Leg dich auf den Rücken oder setz dich bequem hin, schließ die Augen und atme ruhig.</li>
+                    <li>Lenke deine Aufmerksamkeit zu den <strong>Zehen</strong>. Was spürst du – Wärme, Schwere, Kribbeln? Nur wahrnehmen, nichts verändern.</li>
+                    <li>Wandere langsam nach oben: Füße, Beine, Becken, Bauch, Brust, Rücken.</li>
+                    <li>Weiter über Hände und Arme zu Schultern, Nacken, Gesicht und Kopf.</li>
+                    <li>Spüre zum Schluss den ganzen Körper als Ganzes – ruhig und entspannt. Öffne dann langsam die Augen.</li>
+                </ol>
+                <p class="exercise-why">Warum es wirkt: Der Body Scan schult die Körperwahrnehmung und zeigt dir, wo du Anspannung festhältst – die Grundlage, um sie gezielt loszulassen.</p>
+            </div>
+
+            <!-- Achtsames Atmen / Anker -->
+            <div class="exercise" data-cat="achtsamkeit">
+                <div class="exercise-top">
+                    <span class="exercise-tag">Achtsamkeit</span>
+                    <h3>Atem-Anker (5-4-3-2-1)</h3>
+                    <span class="exercise-meta">2–3 Min · gegen Grübeln und akute Anspannung</span>
+                </div>
+                <ol>
+                    <li>Atme einmal bewusst tief durch und richte die Aufmerksamkeit auf das Hier und Jetzt.</li>
+                    <li>Benenne <strong>5 Dinge</strong>, die du <em>siehst</em>.</li>
+                    <li>Dann <strong>4 Dinge</strong>, die du <em>hörst</em>.</li>
+                    <li>Dann <strong>3 Dinge</strong>, die du <em>fühlst</em> (z.&nbsp;B. Boden, Kleidung, Stuhl).</li>
+                    <li>Dann <strong>2 Dinge</strong>, die du <em>riechst</em>, und <strong>1 Sache</strong>, die du <em>schmeckst</em> – oder für die du dankbar bist.</li>
+                </ol>
+                <p class="exercise-why">Warum es wirkt: Die Übung holt die Aufmerksamkeit aus dem Gedankenkarussell zurück in den Moment – ein wirksamer Anker bei Nervosität und Grübeln.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">‹ Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">−</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleAccordion(e) {
+    e.preventDefault();
+    const label = e.target.closest('.theme-group-label');
+    if (!label) return;
+    const group = label.closest('.theme-group');
+
+    const allGroups = document.querySelectorAll('.theme-group');
+    allGroups.forEach(g => {
+        if (g.classList.contains('open') && g !== group) {
+            g.classList.remove('open');
+            g.classList.add('collapsed');
+        }
+    });
+
+    group.classList.toggle('open');
+    group.classList.toggle('collapsed');
+}
+
+function toggleThemeNav() {
+    document.getElementById('themeNav').classList.toggle('open');
+}
+
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) {
+    themeNavToggle.addEventListener('click', function() { toggleThemeNav(); });
+}
+
+document.querySelectorAll('.theme-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('themeNav').classList.remove('open');
+    });
+});
+
+/* ===== Praxis-Overlay ===== */
+const praxisOverlay = document.getElementById('praxisOverlay');
+function openPraxis() {
+    praxisOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closePraxis() {
+    praxisOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+praxisOverlay.addEventListener('click', e => { if (e.target === praxisOverlay) closePraxis(); });
+function filterPraxis(btn) {
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.praxis-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.exercise').forEach(ex => {
+        ex.style.display = (filter === 'all' || ex.dataset.cat === filter) ? '' : 'none';
+    });
+}
+
+/* ===== Lightbox ===== */
+const figures = Array.from(document.querySelectorAll('.js-figure'));
+const IMAGES = figures.map(f => ({ src: f.dataset.full, label: f.dataset.label }));
+
+let currentIdx = 0, currentZoom = 1;
+const ZOOM_STEP = 0.25, ZOOM_MAX = 4, ZOOM_MIN = 0.5;
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(idx) {
+    currentIdx = idx; currentZoom = 1;
+    setImage(currentIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+function setImage(idx) {
+    const d = IMAGES[idx];
+    lbImg.src = d.src; lbImg.alt = d.label; lbLabel.textContent = d.label;
+    btnPrev.disabled = idx === 0; btnNext.disabled = idx === IMAGES.length - 1;
+    updateZoom();
+}
+function navLightbox(dir) {
+    const next = currentIdx + dir;
+    if (next < 0 || next >= IMAGES.length) return;
+    currentIdx = next; currentZoom = 1; lbScroll.scrollTo(0, 0); setImage(currentIdx);
+}
+function closeLightbox() { lb.classList.remove('active'); document.body.style.overflow = ''; lbImg.src = ''; }
+function updateZoom() {
+    const vw = window.innerWidth - 40, vh = window.innerHeight - 90;
+    if (currentZoom === 1) { lbImg.style.width = ''; lbImg.style.maxWidth = vw + 'px'; lbImg.style.maxHeight = vh + 'px'; }
+    else { const base = Math.min(vw, lbImg.naturalWidth || vw); lbImg.style.maxWidth = 'none'; lbImg.style.maxHeight = 'none'; lbImg.style.width = (base * currentZoom) + 'px'; }
+    zoomPct.textContent = Math.round(currentZoom * 100) + '%';
+}
+function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
+function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && praxisOverlay.classList.contains('active')) { closePraxis(); return; }
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === '+') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') zoomReset();
+});
+window.addEventListener('resize', () => { if (lb.classList.contains('active')) updateZoom(); });
+figures.forEach((f, i) => {
+    f.addEventListener('click', () => openLightbox(i));
+    f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+});
+
+(function() {
+    const tocLinks = document.querySelectorAll('.page-toc a[href^="#"]');
+    if (!tocLinks.length || !window.IntersectionObserver) return;
+    const targets = Array.from(tocLinks).map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting)
+                tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+        });
+    }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+    targets.forEach(t => obs.observe(t));
+})();
+</script>
+
+</body>
+</html>
