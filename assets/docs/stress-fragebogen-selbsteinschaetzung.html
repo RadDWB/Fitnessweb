@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stressfragebogen: Wie wirkt sich Stress bei mir aus?</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f9f9f9;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1f6f54;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #1f6f54;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .intro {
+            background: #f0f7f5;
+            border-left: 4px solid #1f6f54;
+            padding: 16px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            color: #1f6f54;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .checkboxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .checkbox-item label {
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .reflection {
+            background: #fffaed;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-top: 24px;
+            font-size: 0.9rem;
+        }
+        .reflection h3 {
+            color: #d97706;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .response-space {
+            margin-top: 16px;
+            min-height: 80px;
+            border: 1px dashed #ccc;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #999;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; }
+            .response-space { min-height: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wie wirkt sich Stress bei mir aus?</h1>
+            <p class="subtitle">Ein Selbsteinschätzungs-Fragebogen</p>
+        </header>
+
+        <div class="intro">
+            <p><strong>Ziel:</strong> Dieser Fragebogen hilft dir, deine persönlichen Stressreaktionen zu erkennen. Es gibt keine richtigen oder falschen Antworten – nur <em>deine</em> Reaktionen. Markiere alles, das auf dich zutrifft, und nutze die Erkenntnisse, um gezielt gegenzusteuern.</p>
+        </div>
+
+        <div class="section">
+            <h2>Körperliche Stresszeichen</h2>
+            <p style="margin-bottom: 12px; font-size: 0.95rem; color: #666;">Wenn du unter Stress stehst, wie reagiert dein Körper?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k1">
+                    <label for="k1">Schnellerer Herzschlag</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k2">
+                    <label for="k2">Flache, schnelle Atmung</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k3">
+                    <label for="k3">Kopfschmerzen</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k4">
+                    <label for="k4">Verspannte Schultern/Nacken</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k5">
+                    <label for="k5">Schwitzende Hände</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k6">
+                    <label for="k6">Zittern</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k7">
+                    <label for="k7">Flaues Gefühl im Magen</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k8">
+                    <label for="k8">Trockener Mund</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k9">
+                    <label for="k9">Angespannter Kiefer</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k10">
+                    <label for="k10">Schlafstörungen</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k11">
+                    <label for="k11">Magen-Darm-Probleme</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="k12">
+                    <label for="k12">Rückenschmerzen</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Emotionale und mentale Stresszeichen</h2>
+            <p style="margin-bottom: 12px; font-size: 0.95rem; color: #666;">Wie drückt sich Stress in deinen Gefühlen und Gedanken aus?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e1">
+                    <label for="e1">Angst oder Sorgen</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e2">
+                    <label for="e2">Reizbarkeit oder Wut</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e3">
+                    <label for="e3">Konzentrationsmangel</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e4">
+                    <label for="e4">Gedankenchaos, Grübeln</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e5">
+                    <label for="e5">Selbstzweifel</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e6">
+                    <label for="e6">Niedergeschlagenheit</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e7">
+                    <label for="e7">Antriebslosigkeit</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="e8">
+                    <label for="e8">Frustration</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Verhaltens-Stresszeichen</h2>
+            <p style="margin-bottom: 12px; font-size: 0.95rem; color: #666;">Wie verändern sich deine Handlungen und Gewohnheiten?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="v1">
+                    <label for="v1">Überessen oder Appetitlosigkeit</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="v2">
+                    <label for="v2">Vermehrte Bildschirmzeit</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="v3">
+                    <label for="v3">Muskelverspannungen, weniger Bewegung</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="v4">
+                    <label for="v4">Ungeduld, Fahrlässigkeit</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="v5">
+                    <label for="v5">Vermeidung von sozialen Kontakten</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="v6">
+                    <label for="v6">Nachlässigkeit bei Aufgaben</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection">
+            <h3>📝 Deine persönlichen Frühwarnzeichen</h3>
+            <p style="margin-bottom: 12px;">Schau dir deine Markierungen an: <strong>Welches Zeichen merkst du <em>zuerst</em>, wenn Stress anfängt?</strong> Das ist dein persönlicher Frühwarnpunkt – nutze ihn, um früh gegenzusteuern.</p>
+            <div class="response-space"></div>
+        </div>
+
+        <div class="reflection">
+            <h3>🎯 Nächste Schritte</h3>
+            <p style="margin-bottom: 12px;">Mit welcher <strong>einen</strong> Stressabbau-Strategie möchtest du diese Woche anfangen?</p>
+            <div class="response-space"></div>
+        </div>
+
+        <div class="footer">
+            <p>Quelle: Stressmanagement & Achtsamkeit im Sportunterricht – Fitness für Schule und Leben</p>
+        </div>
+    </div>
+</body>
+</html>

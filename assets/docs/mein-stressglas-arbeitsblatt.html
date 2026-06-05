@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Stressglas – Arbeitsblatt</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f9f9f9;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1f6f54;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #1f6f54;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .intro {
+            background: #f0f7f5;
+            border-left: 4px solid #1f6f54;
+            padding: 16px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .glass-section {
+            text-align: center;
+        }
+        .glass-visual {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto 16px;
+            position: relative;
+            height: 380px;
+        }
+        .glass-shape {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #1f6f54;
+            border-radius: 0 0 20px 20px;
+            background: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .glass-fill {
+            background: linear-gradient(to top, #a8d8d8, #d4f1f1);
+            border-radius: 0 0 18px 18px;
+            height: 40%;
+            width: 100%;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #1f6f54;
+        }
+        .glass-rim {
+            height: 16px;
+            background: #1f6f54;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+        .glass-label {
+            font-weight: bold;
+            color: #1f6f54;
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+        .sorting-section {
+            flex: 1;
+        }
+        .sorting-section h3 {
+            color: #1f6f54;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        .sort-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .sort-box {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            min-height: 180px;
+            background: #fafafa;
+        }
+        .sort-box.can-change {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .sort-box.cannot-change {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        .sort-box h4 {
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .sort-box.can-change h4 {
+            color: #10b981;
+        }
+        .sort-box.cannot-change h4 {
+            color: #ef4444;
+        }
+        .stressor-list {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        .stressor-item {
+            padding: 4px 0;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            color: #1f6f54;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .working-area {
+            border: 1px dashed #ccc;
+            padding: 20px;
+            min-height: 120px;
+            background: #fafafa;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+        }
+        .reflection {
+            background: #fffaed;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-top: 24px;
+            font-size: 0.9rem;
+        }
+        .reflection h3 {
+            color: #d97706;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .response-space {
+            margin-top: 12px;
+            min-height: 60px;
+            border: 1px dashed #ccc;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #999;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        .hint {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; }
+            .working-area, .response-space { min-height: 80px; }
+            .sort-box { min-height: 140px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mein Stressglas</h1>
+            <p class="subtitle">Wie voll ist mein Glas gerade?</p>
+        </header>
+
+        <div class="intro">
+            <p><strong>Das Konzept:</strong> Jeder von uns trägt ein unsichtbares „Stressglas" mit sich. Belastungen aus Schule, Sport, Familie, Freundeskreis und Medien sammeln sich wie Wasser darin. Nicht der einzelne Tropfen ist entscheidend – sondern der <em>Gesamtfüllstand</em>. Diese Übung hilft dir, deinen aktuellen Füllstand zu sehen und zu verstehen, was du beeinflussen kannst.</p>
+        </div>
+
+        <div class="main-grid">
+            <div class="glass-section">
+                <div class="glass-visual">
+                    <div class="glass-rim"></div>
+                    <div class="glass-shape">
+                        <div class="glass-fill">💧</div>
+                    </div>
+                </div>
+                <p class="glass-label">Zeichne ein, wie voll dein Glas gerade ist (0 % = leer, 100 % = übergelaufen).</p>
+                <div class="hint">Beispiel: 65 % bedeutet: noch Luft nach oben, aber es wird eng.</div>
+            </div>
+
+            <div class="sorting-section">
+                <h3>Deine aktuellen Stressoren</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 12px; color: #666;">Schreib auf, was dein Glas aktuell füllt – und sortiere dann nach zwei Spalten:</p>
+                <div class="sort-columns">
+                    <div class="sort-box can-change">
+                        <h4>✓ Kann ich ändern</h4>
+                        <div class="stressor-list">
+                            <p style="margin-bottom: 6px; font-size: 0.8rem; color: #10b981;">Beispiele: Lernorganisation, Schlafzeiten, Handy-Zeiten, Trainingslast</p>
+                            <div class="stressor-item">—</div>
+                            <div class="stressor-item">—</div>
+                            <div class="stressor-item">—</div>
+                        </div>
+                    </div>
+                    <div class="sort-box cannot-change">
+                        <h4>✗ Kann ich nicht ändern</h4>
+                        <div class="stressor-list">
+                            <p style="margin-bottom: 6px; font-size: 0.8rem; color: #ef4444;">Beispiele: Wetter, Noten anderer, Verhalten von Mitschülern</p>
+                            <div class="stressor-item">—</div>
+                            <div class="stressor-item">—</div>
+                            <div class="stressor-item">—</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Zwei Wege, das Glas zu leeren</h2>
+
+            <h3 style="color: #1f6f54; font-size: 1rem; margin-top: 16px; margin-bottom: 12px;">Weg 1: Weniger einfüllen – was kann ich <em>reduzieren</em>?</h3>
+            <p style="margin-bottom: 12px; font-size: 0.95rem;">Schau auf die Liste „Kann ich ändern". Welche ein oder zwei Sachen könntest du diese Woche weniger tun oder anders organisieren?</p>
+            <div class="working-area"></div>
+
+            <h3 style="color: #1f6f54; font-size: 1rem; margin-top: 24px; margin-bottom: 12px;">Weg 2: Regelmäßig ablaufen lassen – wie kann ich <em>entspannen</em>?</h3>
+            <p style="margin-bottom: 12px; font-size: 0.95rem;">Was hilft <em>dir</em> zu entspannen? (Musik, Bewegung, Zeit mit Freunden, eine Entspannungsübung, Schlaf…)</p>
+            <div class="working-area"></div>
+        </div>
+
+        <div class="reflection">
+            <h3>🔄 Langfristig: Das Glas im Gleichgewicht</h3>
+            <p style="margin-bottom: 12px;">Die beste Strategie verbindet beides: weniger Stress aufbauen <em>und</em> regelmäßig entspannen. Was ist für <em>dich</em> realistisch in dieser Woche?</p>
+            <div class="response-space"></div>
+        </div>
+
+        <div class="footer">
+            <p>Quelle: Das Stressglas-Modell aus „Stressmanagement & Achtsamkeit im Sportunterricht"</p>
+        </div>
+    </div>
+</body>
+</html>

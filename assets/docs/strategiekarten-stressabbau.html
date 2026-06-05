@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategiekarten: Stressabbau im Alltag</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #222;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.6rem;
+            color: #1f6f54;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .instructions {
+            background: white;
+            padding: 16px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1f6f54;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .instructions strong { color: #1f6f54; }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            page-break-inside: avoid;
+            position: relative;
+        }
+        .card.type-reduce {
+            border-color: #ef4444;
+            background: linear-gradient(135deg, #fff5f5 0%, white 100%);
+        }
+        .card.type-relax {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #f0fdf4 0%, white 100%);
+        }
+        .card.type-mental {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fffbeb 0%, white 100%);
+        }
+        .card.type-social {
+            border-color: #3b82f6;
+            background: linear-gradient(135deg, #eff6ff 0%, white 100%);
+        }
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .card h3 {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .card p {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .card-type {
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 12px;
+            width: fit-content;
+            margin-top: 8px;
+        }
+        .card.type-reduce .card-type {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+        .card.type-relax .card-type {
+            background: #dcfce7;
+            color: #10b981;
+        }
+        .card.type-mental .card-type {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .card.type-social .card-type {
+            background: #dbeafe;
+            color: #3b82f6;
+        }
+        .cut-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px dashed rgba(0,0,0,0.2);
+            pointer-events: none;
+            border-radius: 8px;
+        }
+        .page-break {
+            page-break-after: always;
+            margin-bottom: 40px;
+        }
+        .legend {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .legend h2 {
+            font-size: 1.1rem;
+            color: #1f6f54;
+            margin-bottom: 16px;
+        }
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .legend-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .legend-box {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            border: 2px solid;
+        }
+        .legend-box.reduce { border-color: #ef4444; background: #fee2e2; }
+        .legend-box.relax { border-color: #10b981; background: #dcfce7; }
+        .legend-box.mental { border-color: #f59e0b; background: #fef3c7; }
+        .legend-box.social { border-color: #3b82f6; background: #dbeafe; }
+        .legend-text {
+            font-size: 0.9rem;
+        }
+        .legend-text strong { color: #1f6f54; }
+        .activity-instruction {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+        }
+        .activity-instruction h2 {
+            color: #1f6f54;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        .activity-instruction ol {
+            margin-left: 20px;
+        }
+        .activity-instruction li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .cards-grid { gap: 0; page-break-inside: avoid; }
+            .card { box-shadow: none; margin-bottom: 12px; page-break-inside: avoid; }
+            header, .instructions, .legend, .activity-instruction { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Strategiekarten: Stressabbau im Alltag</h1>
+            <p class="subtitle">9 bewährte Strategien – zum Ausschneiden und Ordnen</p>
+        </header>
+
+        <div class="instructions">
+            <p><strong>Anleitung:</strong> Diese Karten sind zum Ausschneiden. Jede Karte zeigt eine Strategie gegen Stress mit einer kurzen Erklärung. Die Farbe zeigt die Kategorie: <span style="color: #ef4444;">■ weniger Stress aufbauen</span>, <span style="color: #10b981;">■ entspannen</span>, <span style="color: #f59e0b;">■ mentale Strategien</span>, <span style="color: #3b82f6;">■ soziale Unterstützung</span>. Im Unterricht oder allein: Ordne die Karten nach „passt zu mir / passt nicht zu mir" und wähle deine Top-3.</p>
+        </div>
+
+        <div class="legend">
+            <h2>Kategorien (Farben)</h2>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-box reduce"></div>
+                    <div class="legend-text"><strong>Weniger füllen:</strong> Stressquellen reduzieren oder besser organisieren</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box relax"></div>
+                    <div class="legend-text"><strong>Entspannen:</strong> Aktiv runterkommen durch Atem- oder Muskelübungen</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box mental"></div>
+                    <div class="legend-text"><strong>Mental neu denken:</strong> Perspektive wechseln, umdeuten, akzeptieren</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box social"></div>
+                    <div class="legend-text"><strong>Zusammenhalt:</strong> Mit anderen sprechen, Unterstützung holen</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KARTEN 1-9 -->
+        <div class="cards-grid">
+
+            <!-- KARTE 1 -->
+            <div class="card type-reduce">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">📋</div>
+                    <h3>Prioritäten setzen – Was ist jetzt WIRKLICH wichtig?</h3>
+                    <p>Statt alles auf einmal zu machen: eine Liste. Wichtiges nach vorn. Unwichtiges: „Kann warten oder fällt weg." Das macht sofort Luft.</p>
+                </div>
+                <div class="card-type">Weniger füllen</div>
+            </div>
+
+            <!-- KARTE 2 -->
+            <div class="card type-reduce">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">📱</div>
+                    <h3>Medienzeit bewusst begrenzen</h3>
+                    <p>Instagram, TikTok, Vergleiche – diese „Likes" füllen das Stressglas unmerklich. Handy-freie Zeiten (v.a. abends) entlasten unmittelbar.</p>
+                </div>
+                <div class="card-type">Weniger füllen</div>
+            </div>
+
+            <!-- KARTE 3 -->
+            <div class="card type-reduce">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">😴</div>
+                    <h3>Besserer Schlaf – die stärkste Waffe</h3>
+                    <p>8–10 Stunden für Jugendliche. Nichts erholt so umfassend. Schlechter Schlaf macht ALLES stressiger – guter Schlaf baut Stress ab.</p>
+                </div>
+                <div class="card-type">Weniger füllen</div>
+            </div>
+
+            <!-- KARTE 4 -->
+            <div class="card type-reduce">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">🚴</div>
+                    <h3>Regelmäßig bewegen – ohne Druck</h3>
+                    <p>30 min moderates Joggen, Radfahren oder Tanzen baut Stresshormone ab. NICHT das nächste Leistungs-Maximum – sondern entspannte Bewegung.</p>
+                </div>
+                <div class="card-type">Weniger füllen</div>
+            </div>
+
+            <!-- KARTE 5 -->
+            <div class="card type-relax">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">🫁</div>
+                    <h3>4-7-8 Atmung – Sofort-Notbremse</h3>
+                    <p>Einatmen 4 Zählungen, halten 7, ausatmen 8. Dreimal wiederholen – und der Körper signalisiert: „Keine Bedrohung, wir entspannen."</p>
+                </div>
+                <div class="card-type">Entspannen</div>
+            </div>
+
+            <!-- KARTE 6 -->
+            <div class="card type-relax">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">💪</div>
+                    <h3>Progressive Muskelentspannung – anspannen & loslassen</h3>
+                    <p>Bewusst Muskeln anspannen (5 Sek), dann plötzlich loslassen. Der Körper merkt den Unterschied und lernt, schneller zu entspannen.</p>
+                </div>
+                <div class="card-type">Entspannen</div>
+            </div>
+
+            <!-- KARTE 7 -->
+            <div class="card type-mental">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">🧠</div>
+                    <h3>Umdeuten – Nervosität ist bereit-sein, nicht Angst</h3>
+                    <p>Das Herz hämmert, Hände zittern – nicht „Ich bin zu nervös", sondern „Mein Körper ist ready und konzentriert." Neu interpretieren = neue Reaktion.</p>
+                </div>
+                <div class="card-type">Mental neu denken</div>
+            </div>
+
+            <!-- KARTE 8 -->
+            <div class="card type-mental">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">✅</div>
+                    <h3>Akzeptieren – nicht alles ist Kontrolle</h3>
+                    <p>Wetter, andere Menschen, Bewertungen – vieles kann ich nicht ändern. Energie auf Beeinflussbares legen (Vorbereitung, Einstellung, Einsatz).</p>
+                </div>
+                <div class="card-type">Mental neu denken</div>
+            </div>
+
+            <!-- KARTE 9 -->
+            <div class="card type-social">
+                <div class="cut-line"></div>
+                <div>
+                    <div class="card-icon">🤝</div>
+                    <h3>Reden hilft – mit Freunden, Familie, Lehrkraft</h3>
+                    <p>Belastungen aussprechen entlastet. Schon das Anhören eines anderen tut gut. Dazu fehlt dir der Mut? Dann wenigstens ein vertrauter Mensch.</p>
+                </div>
+                <div class="card-type">Zusammenhalt</div>
+            </div>
+
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="activity-instruction">
+            <h2>🎯 Idee für die Unterrichtsstunde</h2>
+            <ol>
+                <li><strong>Alle Karten in der Mitte ausbreiten.</strong> Jeder schaut sie an (2–3 min).</li>
+                <li><strong>Sortieren nach „passt zu mir / passt nicht zu mir".</strong> Still, ohne zu kommentieren (5 min).</li>
+                <li><strong>Austausch in Dreiergruppen:</strong> Welche 2–3 Karten sind deine Top-Favoriten und warum? (5–7 min).</li>
+                <li><strong>Kleine Diskussion im Plenum:</strong> Gibt es Unterschiede? Warum passt die eine Strategie zu dir, die andere nicht? (3–5 min).</li>
+                <li><strong>Konkreter Plan:</strong> Jeder schreibt auf: „Diese Woche probiere ich..." (1 Karte = 1 konkrete Handlung).</li>
+            </ol>
+        </div>
+
+        <div class="activity-instruction">
+            <h2>💡 Variationen</h2>
+            <ul style="margin-left: 20px; color: #555; font-size: 0.9rem; line-height: 1.6;">
+                <li><strong>Partner-Match:</strong> „Welche Karte würde ich meinem Partner empfehlen – und welche mir?" Gegenseitig beraten.</li>
+                <li><strong>Tageszeit-Zuordnung:</strong> Welche Strategie passt zu welcher Tageszeit? (z.B. Schlaf zu Nacht, Bewegung zu Mittag).</li>
+                <li><strong>Notfall-Ranking:</strong> Wenn die Zeit knapp ist – Prüfung morgen, Wettkampf in 2 Stunden – welche 1–2 Strategien helfen <em>jetzt sofort</em>?</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

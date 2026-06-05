@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Übungsprotokoll – Entspannungsübungen</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f9f9f9;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1f6f54;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #1f6f54;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .intro {
+            background: #f0f7f5;
+            border-left: 4px solid #1f6f54;
+            padding: 16px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .section {
+            margin-bottom: 32px;
+        }
+        .section h2 {
+            font-size: 1.1rem;
+            color: #1f6f54;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .exercise-list {
+            background: #f9f9f9;
+            border-left: 4px solid #8b5cf6;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .exercise-list h3 {
+            color: #1f6f54;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .exercise-item {
+            padding: 4px 0;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        thead {
+            background: #f0f7f5;
+            border-bottom: 2px solid #1f6f54;
+        }
+        th {
+            text-align: left;
+            padding: 12px;
+            color: #1f6f54;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        tbody tr:nth-child(odd) {
+            background: #fafafa;
+        }
+        .date-cell {
+            font-weight: 500;
+            color: #333;
+            width: 15%;
+        }
+        .exercise-cell {
+            width: 20%;
+            color: #555;
+        }
+        .duration-cell {
+            width: 12%;
+            color: #555;
+        }
+        .effect-cell {
+            width: 20%;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .notes-cell {
+            width: 20%;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .empty-rows {
+            height: 40px;
+        }
+        .reflection {
+            background: #fffaed;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-top: 24px;
+            font-size: 0.9rem;
+        }
+        .reflection h3 {
+            color: #d97706;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .response-space {
+            margin-top: 12px;
+            min-height: 70px;
+            border: 1px dashed #ccc;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #999;
+        }
+        .scale {
+            display: inline-flex;
+            gap: 4px;
+            font-size: 0.85rem;
+        }
+        .scale span {
+            padding: 2px 6px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            color: #666;
+        }
+        .scale span.good { background: #d1fae5; color: #10b981; }
+        .scale span.moderate { background: #fef3c7; color: #d97706; }
+        .scale span.less { background: #fee2e2; color: #ef4444; }
+        .hints {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; }
+            table { page-break-inside: avoid; }
+            .response-space { min-height: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Übungsprotokoll: Entspannungsübungen</h1>
+            <p class="subtitle">Dokumentiere deine Praxis und erkenne, welche Übung für dich wirkt</p>
+        </header>
+
+        <div class="intro">
+            <p><strong>Ziel:</strong> Dieses Protokoll hilft dir, deine Entspannungspraxis zu verfolgen. Welche Übung machst du wann? Wie wirkt sie auf dich? Nach einigen Wochen siehst du klar, welche Übungen für <em>dich persönlich</em> am wirksamsten sind – das ist deine individuelle „Entspannungs-Werkzeugkiste".</p>
+        </div>
+
+        <div class="section">
+            <h2>Die Übungen kurz erklärt</h2>
+            <div class="exercise-list">
+                <h3>Atemübungen</h3>
+                <div class="exercise-item"><strong>4-7-8-Atmung:</strong> Einatmen (4 Zählungen), Atem anhalten (7), ausatmen (8). Wirkt sofort beruhigend.</div>
+                <div class="exercise-item"><strong>Box-Atmung:</strong> Einatmen, halten, ausatmen, halten – je 4 Zählungen. Stabilisiert Puls und Fokus.</div>
+            </div>
+            <div class="exercise-list" style="border-left-color: #ec4899;">
+                <h3>Muskelentspannung</h3>
+                <div class="exercise-item"><strong>Progressive Muskelentspannung (PMR):</strong> Muskeln gezielt anspannen und loslassen. Best für Verspannungen, dauert ~15 min.</div>
+                <div class="exercise-item"><strong>Kiefer lösen:</strong> Schnelle Entspannung für angespannte Kiefer- und Nackenmuskulatur. Nur 2-3 min.</div>
+            </div>
+            <div class="exercise-list" style="border-left-color: #10b981;">
+                <h3>Achtsamkeit</h3>
+                <div class="exercise-item"><strong>Body Scan:</strong> Systematisch durch deinen Körper wandern und Empfindungen wahrnehmen. Sehr entspannend, 10-20 min.</div>
+                <div class="exercise-item"><strong>Atem-Anker:</strong> Einfache Achtsamkeit am Atem, überall durchzuführen, 2-5 min.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mein Übungsprotokoll</h2>
+            <p style="margin-bottom: 12px; font-size: 0.9rem; color: #666;">Trage deine Übungen ein. Nutze diese Abkürzungen: <strong>Atem:</strong> 4-7-8, Box | <strong>Muskel:</strong> PMR, Kiefer | <strong>Achtsamkeit:</strong> Body Scan, Atem-Anker</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="date-cell">Datum</th>
+                        <th class="exercise-cell">Übung</th>
+                        <th class="duration-cell">Dauer</th>
+                        <th class="effect-cell">Wie hat sie gewirkt?</th>
+                        <th class="notes-cell">Notizen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">Mo, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Di, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Mi, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Do, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Fr, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Sa, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">So, ___.</td>
+                        <td class="exercise-cell"></td>
+                        <td class="duration-cell"></td>
+                        <td class="effect-cell"><span class="good">✓ gut</span> <span class="moderate">○ okay</span> <span class="less">✗ wenig</span></td>
+                        <td class="notes-cell"></td>
+                    </tr>
+                    <tr class="empty-rows">
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="empty-rows">
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="empty-rows">
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reflection">
+            <h3>📊 Nach einer Woche – meine Beobachtung</h3>
+            <p style="margin-bottom: 12px;">Schau dir die Woche an: Welche Übung hat dir am meisten geholfen? Welche wirst du öfter machen?</p>
+            <div class="response-space"></div>
+        </div>
+
+        <div class="reflection">
+            <h3>💡 Meine persönliche Entspannungs-Werkzeugkiste</h3>
+            <p style="margin-bottom: 12px;">Nach 2–3 Wochen: Welche 2–3 Übungen funktionieren am besten für dich? Diese sind deine Favoriten, die du schnell zur Hand hast, wenn Stress kommt.</p>
+            <div class="response-space"></div>
+        </div>
+
+        <div class="footer">
+            <p>Quelle: Stressmanagement & Achtsamkeit im Sportunterricht – Praktische Übungen</p>
+        </div>
+    </div>
+</body>
+</html>

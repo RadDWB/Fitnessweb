@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stundenverlauf: Stressmanagement und Entspannung</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f9f9f9;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1f6f54;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #1f6f54;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .lesson-info {
+            background: #f0f7f5;
+            border-left: 4px solid #1f6f54;
+            padding: 16px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .info-item {
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .info-item strong {
+            color: #1f6f54;
+        }
+        .timeline {
+            margin-bottom: 32px;
+        }
+        .timeline h2 {
+            font-size: 1.2rem;
+            color: #1f6f54;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .phase {
+            margin-bottom: 24px;
+            border-left: 4px solid #8b5cf6;
+            padding-left: 20px;
+        }
+        .phase.warm-up {
+            border-left-color: #f59e0b;
+        }
+        .phase.main {
+            border-left-color: #1f6f54;
+        }
+        .phase.cool-down {
+            border-left-color: #10b981;
+        }
+        .phase-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .phase-time {
+            background: #f0f7f5;
+            color: #1f6f54;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .phase-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .phase-content {
+            margin-top: 12px;
+        }
+        .activity {
+            background: #fafafa;
+            border: 1px solid #eee;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .activity h4 {
+            color: #1f6f54;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .activity-desc {
+            color: #555;
+            margin-bottom: 6px;
+        }
+        .materials {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed #ddd;
+        }
+        .materials strong { color: #1f6f54; }
+        .section {
+            margin-bottom: 32px;
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            color: #1f6f54;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .considerations {
+            background: #fffaed;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+        .considerations h3 {
+            color: #d97706;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .considerations ul {
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+        .considerations li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        .assessment {
+            background: #f0f7f5;
+            border-left: 4px solid #1f6f54;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+        .assessment h3 {
+            color: #1f6f54;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .assessment ul {
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+        .assessment li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; }
+            .phase { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stundenverlauf: Stressmanagement & Entspannung</h1>
+            <p class="subtitle">Eine 90-Minuten-Einheit für die Sekundarstufe I & II</p>
+        </header>
+
+        <div class="lesson-info">
+            <strong>Didaktische Absicht:</strong> Schülerinnen und Schüler verstehen Stressreaktionen, erkennen ihre persönlichen Stresssignale und lernen zwei bis drei wirksame Entspannungstechniken, um sie eigenverantwortlich anzuwenden.
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Dauer:</strong> 90 min
+                </div>
+                <div class="info-item">
+                    <strong>Zielgruppe:</strong> Sek. I & II
+                </div>
+                <div class="info-item">
+                    <strong>Raum:</strong> Turnhalle + ruhiger Bereich
+                </div>
+            </div>
+        </div>
+
+        <!-- EINSTIEG -->
+        <div class="timeline">
+            <h2>Stundenablauf</h2>
+
+            <div class="phase warm-up">
+                <div class="phase-header">
+                    <span class="phase-time">0–10 min</span>
+                    <span class="phase-title">Einstieg: Stressiges erleben</span>
+                </div>
+                <div class="phase-content">
+                    <div class="activity">
+                        <h4>Impuls: „Stressige Szenen" (Standbild-Methode)</h4>
+                        <div class="activity-desc">
+                            Die Gruppe steht im Kreis. Drei bis vier Szenen werden kurz genannt (z.&nbsp;B. „5 min vor einer Klassenarbeit", „kurz vor dem Wettkampf", „großes Schulfest mit vielen Leuten"). Die Schüler stellen spontan dar, wie der Körper reagiert – Mimik, Körperhaltung, Atmung. Kurz diskutieren: Was seht ihr? Was unterscheidet sich von einem „entspannten Moment"?
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Keine / evtl. Musik für Atmosphäre</div>
+                    </div>
+                    <div class="activity">
+                        <h4>Lernziele nennen</h4>
+                        <div class="activity-desc">
+                            Tafel / Flip: Heute lernt ihr, (1) wie euer Körper auf Stress reagiert, (2) wie ihr Stress früh erkennt, und (3) zwei bis drei Techniken, um schnell wieder ruhig zu werden.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERARBEITUNGSPHASE 1 -->
+            <div class="phase main">
+                <div class="phase-header">
+                    <span class="phase-time">10–25 min</span>
+                    <span class="phase-title">Erarbeitungsphase 1: Stressreaktionen erkennen</span>
+                </div>
+                <div class="phase-content">
+                    <div class="activity">
+                        <h4>Kurzvortrag mit Grafik: Stress im Körper</h4>
+                        <div class="activity-desc">
+                            Zeige die Grafik „Stress im Körper" (Stresskörper). Gehe durch: schnellerer Herzschlag → flache Atmung → Muskelverspannung → Magenbeschwerden. Betonung: Das ist normal und sinnvoll – für eine kurze Zeit. Aber bei Dauerstress wird es zum Problem.
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Grafik „Stresskörper" (Beamer / Tafel), evtl. ausgedruckt</div>
+                    </div>
+                    <div class="activity">
+                        <h4>Partnerarbeit: „Wo spürst DU Stress zuerst?"</h4>
+                        <div class="activity-desc">
+                            Partner beschreiben sich gegenseitig, wo sie persönlich Stress zuerst spüren – im Bauch, Nacken, Atem, Kopf? Kleine Diskussion im Plenum: Merksatz aufschreiben: „Jeder Mensch hat einen persönlichen Frühwarnpunkt."
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Arbeitsblatt (optional) oder Notizbuch</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERARBEITUNGSPHASE 2 -->
+            <div class="phase main">
+                <div class="phase-header">
+                    <span class="phase-time">25–45 min</span>
+                    <span class="phase-title">Erarbeitungsphase 2: Das Stressglas-Modell</span>
+                </div>
+                <div class="phase-content">
+                    <div class="activity">
+                        <h4>Impuls: Stressglas-Modell erklären</h4>
+                        <div class="activity-desc">
+                            Nimm ein echtes Glas oder zeichne eines an die Tafel. Erklär die Idee: Jede Belastung (Schule, Familie, Sport, Medien) ist ein Tropfen. Die Summe zählt. Ist das Glas voll, bringt eine Kleinigkeit es zum Überlaufen – und dann wirkt die Reaktion „übertrieben", obwohl sie logisch ist.
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Echtes Glas + Wasser ODER Zeichnung an der Tafel / Beamer</div>
+                    </div>
+                    <div class="activity">
+                        <h4>Einzelarbeit + Austausch: Mein Stressglas heute</h4>
+                        <div class="activity-desc">
+                            Jeder zeichnet oder schreibt auf: Wie voll ist mein Glas heute? Was füllt es? Kleine Dreiergruppen: Sich austauschen, ohne sich bloßzustellen. Dann kurz im Plenum reflektieren: Welche verschiedenen Füllanstände gibt es in der Gruppe?
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Papier A4, Stifte, evtl. Arbeitsblatt „Mein Stressglas"</div>
+                    </div>
+                    <div class="activity">
+                        <h4>Erkenntnis: Die zwei Hebel</h4>
+                        <div class="activity-desc">
+                            Tafel: Zwei Strategien gegen Stress. (1) Weniger einfüllen – Stressoren reduzieren oder umdeuten. (2) Regelmäßig ablaufen lassen – Entspannung, Schlaf, Bewegung, Beziehungen. Beides ist wichtig. Beide könnt ihr trainieren.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRAXIS: ENTSPANNUNGSTECHNIKEN -->
+            <div class="phase cool-down">
+                <div class="phase-header">
+                    <span class="phase-time">45–75 min</span>
+                    <span class="phase-title">Praxis: Entspannungstechniken erlernen & üben</span>
+                </div>
+                <div class="phase-content">
+                    <p style="margin-bottom: 12px; font-size: 0.95rem; color: #555;"><strong>Abfolge:</strong> Für jede Technik: kurze Erklärung → alle zusammen üben → Austausch darüber, wie es sich angefühlt hat. Die Gruppe sitzt oder liegt ruhig, gutes Licht (nicht dunkel), entspannter Ton der Lehrkraft.</p>
+
+                    <div class="activity">
+                        <h4>① 4-7-8-Atmung (7–10 min)</h4>
+                        <div class="activity-desc">
+                            <strong>Erklärung:</strong> Wir atmen bewusst: 4 Zählungen ein, 7 halten, 8 aus. Das signalisiert dem Körper: „Keine Bedrohung, wir entspannen." Das ist die schnellste Notbremse für Stress.
+                        </div>
+                        <div class="activity-desc">
+                            <strong>Anleitung im Sitzen:</strong> Erst alle nur zuschauen / zuhören. Dann zusammen: „Einatmen 1–2–3–4, halten 1–2–3–4–5–6–7, ausatmen 1–2–3–4–5–6–7–8." 3–4 Zyklen. Danach: „Was habt ihr bemerkt? Ruhiger? Weniger angespannt?"
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Ruhige Umgebung, evtl. Uhr/Timer sichtbar</div>
+                    </div>
+
+                    <div class="activity">
+                        <h4>② Progressive Muskelentspannung – kurze Variante (10–12 min)</h4>
+                        <div class="activity-desc">
+                            <strong>Erklärung:</strong> Wenn wir unter Druck stehen, spannen sich Muskeln an – automatisch. Wir nutzen das: absichtlich anspannen, dann loslassen. Der Unterschied zwischen „angespannt" und „entspannt" wird für den Körper klar – und er lernt, schneller zu entspannen.
+                        </div>
+                        <div class="activity-desc">
+                            <strong>Anleitung im Sitzen oder Liegen:</strong> Langsam durch Muskelgruppen: Hände / Unterarme (5 Sek anspannen, 5 Sek entspannen), Nacken &amp; Schultern, Kiefer, Bauchmuskeln, Oberschenkel, Zehen. Ruhiger, gleichmäßiger Ton. Nach jeder Gruppe: „Spürt den Unterschied – Anspannung und Entspannung."
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Matten oder Stühle, ruhige Musik (optional), ggf. Anleitung ausgedruckt</div>
+                    </div>
+
+                    <div class="activity">
+                        <h4>③ Body Scan (5–7 min) oder Atem-Anker (3–4 min)</h4>
+                        <div class="activity-desc">
+                            <strong>Body Scan-Variante:</strong> Alle liegen oder sitzen. Langsam mit Aufmerksamkeit den Körper abfahren: oben bei der Stirn, runter über Nacken, Schultern, Rücken, Bauch, Beine, Füße. Nicht „machen", sondern nur wahrnehmen – was spürst du? Das ist eine Achtsamkeitsübung.
+                        </div>
+                        <div class="activity-desc">
+                            <strong>Oder Atem-Anker (kürzer):</strong> Augen geschlossen oder nach unten schauen. Sich nur auf den Atem konzentrieren – nicht verändern, nicht bewerten, nur beobachten. 3–4 min. Das kann überall gemacht werden, auch im Klassenzimmer vor einer Arbeit.
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Matten, ruhige Musik (optional), Ruhe</div>
+                    </div>
+
+                    <div class="activity">
+                        <h4>Plenum-Austausch nach den Übungen (2–3 min)</h4>
+                        <div class="activity-desc">
+                            „Welche Übung hat sich für euch am angenehmsten angefühlt? Welche werdet ihr selbst ausprobieren?" Kurze freiwillige Äußerungen. Betonung: Nicht alle Techniken wirken bei jedem. Es geht darum, die eigenen Favoriten zu finden – wie eine persönliche Werkzeugkiste.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AUSBLICK -->
+            <div class="phase warm-up">
+                <div class="phase-header">
+                    <span class="phase-time">75–90 min</span>
+                    <span class="phase-title">Abschluss & Ausblick</span>
+                </div>
+                <div class="phase-content">
+                    <div class="activity">
+                        <h4>Hausaufgabe / Selbstcheck</h4>
+                        <div class="activity-desc">
+                            Diese Woche: Versucht ein bis zwei Techniken selbst – zuhause oder in einer stressigen Situation (vor einer Arbeit, in Pausen, vor einem Wettkampf). Haltet fest, wie es wirkt. Nächste Woche berichten wir, was geholfen hat.
+                        </div>
+                        <div class="materials"><strong>Material:</strong> Übungsprotokoll (PDF) oder Notizbuch</div>
+                    </div>
+                    <div class="activity">
+                        <h4>Blitzlicht (2–3 min)</h4>
+                        <div class="activity-desc">
+                            Kurzer Sitzkreis im Stehen. Reihum (ganz kurz): „Ich nehme mit: …" oder „Ich probiere zuerst: …" Nur Stichwort, keine langen Reden. Das macht das Gelernte persönlich.
+                        </div>
+                    </div>
+                    <div class="activity">
+                        <h4>Kern-Botschaft zum Mitnehmen</h4>
+                        <div class="activity-desc">
+                            <strong>Merksatz:</strong> „Stress ist normal – und ihr könnt lernen, damit umzugehen. Eure Körpersignale sind der Schlüssel, und Entspannung ist eine Fähigkeit, keine Kunst. Mit Übung wird es leichter."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIDAKTISCHE HINWEISE -->
+        <div class="section">
+            <h2>Didaktische Hinweise & Differenzierung</h2>
+
+            <div class="considerations">
+                <h3>🎯 Für Anfänger (wenig Vorerfahrung mit Entspannungstechniken)</h3>
+                <ul>
+                    <li><strong>Kürzer halten:</strong> Konzentriere dich auf eine bis zwei Techniken (z.&nbsp;B. 4-7-8-Atmung + kurze PMR), nicht auf alle.</li>
+                    <li><strong>Vorteil Atmung:</strong> Atemtechniken wirken schneller und sind niedrigschwelliger – daher anfangen.</li>
+                    <li><strong>Sicherheit schaffen:</strong> Ganz explizit: „Es ist völlig okay, wenn das Gedanken abschweift. Das ist normal." Druck rausnehmen.</li>
+                </ul>
+            </div>
+
+            <div class="considerations">
+                <h3>🎯 Für fortgeschrittene Gruppen</h3>
+                <ul>
+                    <li><strong>Body Scan oder 5-4-3-2-1-Sinnesübung:</strong> Diese erfordern mehr Ausdauer. Ideal, wenn die Gruppe schon ruhig sitzen kann.</li>
+                    <li><strong>Reflexion vertiefen:</strong> „In welcher Situation bei euch (Prüfung, Wettkampf, Mathe) braucht ihr schnelle Hilfe?" Konkrete Anwendungsszenarien durchspielen.</li>
+                    <li><strong>Kombinationen:</strong> Zwei Techniken hintereinander (z.&nbsp;B. erst 4-7-8-Atmung, dann Body Scan) für tiefere Entspannung.</li>
+                </ul>
+            </div>
+
+            <div class="considerations">
+                <h3>⚠️ Besondere Situationen</h3>
+                <ul>
+                    <li><strong>Sehr angespannte Gruppe:</strong> Einstieg mit Bewegung (z.&nbsp;B. kurze Aufwärmlauf, progressive Belastung) kann helfen, bevor Entspannung kommt.</li>
+                    <li><strong>Schüler mit Trauma / Angststörung:</strong> Vorher der Schule Bescheid geben. Liegen vermeiden (kann triggern), Augen-offen-Variante anbieten. Immer Wahlfreiheit: „Du darfst mitmachen oder du sitzt hier ruhig."</li>
+                    <li><strong>Kichern, Unruhe:</strong> Normal. Kurz ansprechen, aber nicht ermutigen. Mit Ruhe weitermachen.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LEISTUNGSBEWERTUNG -->
+        <div class="section">
+            <h2>Leistungsbewertung &amp; Reflexion</h2>
+
+            <div class="assessment">
+                <h3>Formativ (während der Stunde)</h3>
+                <ul>
+                    <li><strong>Beobachtung:</strong> Können die Schüler ihre Körpersignale benennen? (z.&nbsp;B. „Mein Nacken wird steif, wenn ich nervös bin")</li>
+                    <li><strong>Mitarbeit:</strong> Partizipieren sie bei Erklärungen und Übungen? Stellen sie Fragen?</li>
+                    <li><strong>Reflexion:</strong> Können sie – in einfachen Worten – erklären, warum Entspannung hilft?</li>
+                </ul>
+            </div>
+
+            <div class="assessment">
+                <h3>Summativ (Hausaufgabe / Woche danach)</h3>
+                <ul>
+                    <li><strong>Übungsprotokoll:</strong> Haben sie eine Woche lang dokumentiert? Welche Übung hat gewirkt?</li>
+                    <li><strong>Kurzvortrag / Plakat:</strong> In Kleingruppen: „Meine Top-Technik gegen Stress – und warum." Poster gestalten und präsentieren.</li>
+                    <li><strong>Szenario-Anwendung:</strong> „In welcher deiner Stresssituationen könntest du welche Technik einbauen?" Konkrete Pläne machen (z.&nbsp;B. „Vor jeder Klassenarbeit mache ich 3x die 4-7-8-Atmung").</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- WEITERFÜHRENDE RESSOURCEN -->
+        <div class="section">
+            <h2>Weiterführende Ressourcen</h2>
+            <div style="background: #f9f9f9; border-left: 4px solid #8b5cf6; padding: 16px; border-radius: 4px; font-size: 0.95rem;">
+                <ul style="margin-left: 20px;">
+                    <li><strong>Arbeitsblätter zum Download:</strong> Stressfragebogen, Übungsprotokoll, Stressglas-Arbeitsblatt</li>
+                    <li><strong>Grafiken:</strong> Stresskörper, Anpassungssyndrom, Stressglas, Übertraining</li>
+                    <li><strong>Verknüpfung zu anderen Themen:</strong> Belastung & Erholung (Schlaf, aktive Erholung), Gesundheitsorientiertes Krafttraining (Übertraining als Stressor)</li>
+                    <li><strong>Links für Schüler:</strong> Telefonische Beratung (Nummer gegen Kummer), Online-Angebote für Schüler</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Quelle: Stressmanagement & Achtsamkeit im Sportunterricht – Stundenverlauf nach „Fitness for Life" Kapitel 17 und NRW-Orientierungsrahmen</p>
+        </div>
+    </div>
+</body>
+</html>
