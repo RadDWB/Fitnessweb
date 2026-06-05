@@ -38,6 +38,14 @@
         <li><a href="../index.html#themen">Themen</a></li>
         <li><a href="../grafikbibliothek.html">Grafikbibliothek</a></li>
         <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
+</nav>
+
+<div class="shell">
     <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
         <p class="theme-nav-title">Fitness im Schulsport</p>
 
@@ -47,79 +55,79 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="../index.html"><span class="dot"></span>Überblick &amp; Grundsatz</a></li>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
             </ul>
         </div>
 
         <div class="theme-group open">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>◆ Fitness-Fundament</span>
-                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </p>
-            <ul>
-                <li><a href="#" class="placeholder-link"><span class="dot"></span>Fitnesstraining</a></li>
-                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
-                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Muskelfitnesstraining</a></li>
-                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
-                <li><a href="#" class="placeholder-link"><span class="dot"></span>Koordination</a></li>
-                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
-                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Trends & Methoden</a></li>
-            </ul>
-        </div>
-
-        <div class="theme-group collapsed">
-            <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>◇ Regeneration &amp; mentale Balance</span>
-                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </p>
-            <ul>
-                <li><a class="active outer-link" href="belastung-und-erholung.html"><span class="dot"></span>Stressmanagement & Achtsamkeit</a></li>
-                <li><a class="active outer-link" href="belastung-und-erholung.html"><span class="dot"></span>Schlaf & aktive Erholung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
-            </ul>
-        </div>
-
-        <div class="theme-group collapsed">
-            <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
+                <span>Lebensstil &amp; Regeneration</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>An- &amp; Entspannung</a></li>
+                <li><a class="active" href="belastung-und-erholung.html"><span class="dot"></span>Ausreichender Schlaf</a></li>
+                <li><a class="active" href="belastung-und-erholung.html"><span class="dot"></span>Aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Urlaub &amp; Regeneration</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Soziales &amp; Umfeld</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Familie</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Freunde &amp; Beziehungen</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziales Umfeld</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>◇ Alltag, Lebensraum &amp; Umwelt</span>
+                <span>Belastungen reduzieren</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Geringe Exposition</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Weniger Bildschirmzeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressfaktoren reduzieren</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Weitere Einflussfaktoren</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressmanagement</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Mentale Gesundheit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umgebung</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
-            </ul>
-        </div>
-
-        <div class="theme-group collapsed">
-            <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>◇ Soziale Gesundheit</span>
-                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </p>
-            <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
-            </ul>
-        </div>
-
-        <div class="theme-group collapsed">
-            <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>◇ Vorsorge &amp; Stabilität</span>
-                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </p>
-            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzen &amp; Sicherheit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Natur &amp; Bewegung</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
             </ul>
         </div>
 
@@ -139,30 +147,24 @@
 
     <main>
         <header class="theme-head">
-            <div class="badge">Fitness &amp; Trendsportarten · Sekundarstufe II</div>
-            <h1>Fitness und Trendsportarten im Schulsport</h1>
-            <p>Fitnesstrends wie CrossFit, HIIT und Functional Training sind in der Lebenswelt von Jugendlichen präsent. Wie lassen sich diese Formate pädagogisch verantwortbar und gesundheitsorientiert im Unterricht nutzen – nicht als fertige Trainingsprogramme, sondern als Gegenstände kritischer Reflexion?</p>
+            <div class="badge">Trainingslehre &amp; Gesundheit · Sekundarstufe II · NRW</div>
+            <h1>Belastung &amp; Erholung – Regeneration im Schulsport</h1>
+            <p>Wer trainiert, denkt meist an Anstrengung. Doch die eigentliche Leistungsentwicklung geschieht nicht <em>während</em>, sondern <em>nach</em> der Belastung – in der Erholung. Erholung ist damit kein Gegenteil von Training, sondern sein Bestandteil. Wie können Schülerinnen und Schüler lernen, Belastung und Erholung selbst einzuschätzen und gesundheitsorientiert zu steuern?</p>
             <div class="theme-meta">
-                <span><strong>Grundlage:</strong> Ralf Duwenbeck – Mehr als eine CrossFit-Box</span>
-                <span><strong>Quelle:</strong> Sportunterricht, Forum 2/2021</span>
-                <span><strong>Ansatz:</strong> Kritische Analyse und didaktische Einordnung</span>
+                <span><strong>Grundlage:</strong> Trainingsprinzip Belastung &amp; Erholung (Superkompensation)</span>
+                <span><strong>Bezug:</strong> NRW – Gesundheit fördern, Gesundheitsbewusstsein entwickeln</span>
+                <span><strong>Ansatz:</strong> Belastung verstehen und steuern statt nur auspowern</span>
             </div>
         </header>
 
+        <div id="top"></div>
         <p class="nav-anchor"><a href="../index.html">← Zur Startseite</a></p>
 
-        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Fitnesstrends im Sportunterricht" vergrößern"
-                data-full="../assets/images/trendsportarten/fitnesstrends-schulsport.png"
-                data-label="Leitgrafik – Fitnesstrends im Sportunterricht: motivierend, aber nur reflektiert, angepasst und gesundheitsorientiert">
-            <img src="../assets/images/trendsportarten/fitnesstrends-schulsport.png" alt="Infografik „Fitnesstrends im Sportunterricht" – motivierend, aber nur reflektiert, angepasst und gesundheitsorientiert. Fünf Trendbegriffe: CrossFit (intensives Ganzkörpertraining, im Unterricht vereinfacht und reflektiert), HIIT (Intervalltraining mit hoher Intensität, Belastung dosieren), Functional Training (alltagsnahe Bewegungen, für Schule besonders anschlussfähig), Calisthenics (Körpergewichtstraining, Progressionen statt Show-Übungen), Hyrox / Bootcamp (motivierend, aber nicht angepasst). Chancen: hoher Lebensweltbezug, vielseitige Ganzkörperbeanspruchung, motivierend und zeiteffizient. Kritischer Blick: Technikverlust unter Zeitdruck, Überforderung von Anfängern, Vergleichs- und Leistungsdruck, Gefahr der bloßen Trainingskopie. Für die Schule gilt: individuell anpassen, saubere Technik sichern, Belastung steuern, reflektiert statt blind imitieren. Ziel: Training verstehen und steuern lernen – nicht einfach nur auspowern." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
+        <figure class="lead-figure js-figure" role="button" tabindex="0" aria-label="Leitgrafik „Der Belastungs-Erholungs-Kreislauf" vergrößern"
+                data-full="../assets/images/regeneration/regeneration-belastung-erholung.png"
+                data-label="Leitgrafik – Der Belastungs-Erholungs-Kreislauf (Superkompensation): Belastung, Ermüdung, Erholung und Anpassung über das Ausgangsniveau hinaus">
+            <img src="../assets/images/regeneration/regeneration-belastung-erholung.png" alt="Infografik „Der Belastungs-Erholungs-Kreislauf“ – Superkompensation: Auf eine Belastung folgt eine vorübergehende Ermüdung (Leistungsabfall), anschließend stellt die Erholung das Ausgangsniveau nicht nur wieder her, sondern überschießend darüber hinaus. Trifft der nächste Belastungsreiz den optimalen Zeitpunkt, steigt das Leistungsniveau schrittweise an. Zu früh gesetzte Reize verhindern den Aufbau, zu späte lassen den Effekt verpuffen. Drei Säulen der Erholung: Schlaf, aktive und passive Erholung sowie Ernährung. Ziel: Belastung und Erholung bewusst steuern statt maximale Ausbelastung." loading="eager" onerror="this.closest('.lead-figure').style.display='none'">
             <figcaption>
-                <span class="fig-num">Leitgrafik</span>
-                <span class="fig-label">Fitnesstrends im Sportunterricht – motivierend, aber nur reflektiert und gesundheitsorientiert</span>
-                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
-            </figcaption>
-        </figure>
-
-        <section class="section" style="max-width:none;padding:28px 0 40px;">
                 <span class="fig-num">Leitgrafik</span>
                 <span class="fig-label">Der Belastungs-Erholungs-Kreislauf – Erholung ist Teil des Trainings</span>
                 <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
