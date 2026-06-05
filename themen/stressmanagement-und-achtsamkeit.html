@@ -796,6 +796,8 @@ function closePraxis() {
     document.body.style.overflow = '';
 }
 praxisOverlay.addEventListener('click', e => { if (e.target === praxisOverlay) closePraxis(); });
+/* Praxisecke automatisch öffnen, wenn die Seite mit #praxisecke aufgerufen wird (z. B. aus dem Menü „Material & Werkzeuge") */
+if (window.location.hash === '#praxisecke') { openPraxis(); }
 function filterPraxis(btn) {
     const filter = btn.dataset.filter;
     document.querySelectorAll('.praxis-chip').forEach(c => c.classList.remove('active'));
