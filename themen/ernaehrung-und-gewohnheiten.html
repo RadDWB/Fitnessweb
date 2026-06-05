@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ernährung &amp; gesunde Gewohnheiten – Energie, Fokus, smarte Habits · Fitness im Schulsport</title>
+    <meta name="description" content="Ernährung für Schüler:innen: Brain-Food, Hydration, Budget-Küche und smarte Gewohnheiten – wissenschaftlich fundiert, alltagstauglich, ohne erhobenen Zeigefinger.">
+    <meta property="og:title" content="Ernährung &amp; gesunde Gewohnheiten – Energie und Fokus für den Schulalltag">
+    <meta property="og:description" content="Die 4 Säulen für langanhaltende Energie, günstige Ernährung und smarte Habits – aufbereitet für Oberstufenschüler:innen.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav { transform: translateX(-100%); will-change: transform; }
+        }
+        /* Orange-Theme Ernährung & gesunde Gewohnheiten */
+        .fact { border-left-color: #C4822A; background: rgba(196,130,42,0.06); }
+        .fact strong { color: #C4822A; }
+        .callout { border-left-color: #C4822A; }
+        .callout strong { color: #C4822A; }
+        .theme-head { border-left: 5px solid #C4822A; }
+        .section-eyebrow { color: #C4822A; }
+        .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 16px; margin-top: 18px; }
+        .recipe-card { background: rgba(196,130,42,0.06); border: 1px solid rgba(196,130,42,0.2); border-radius: 10px; padding: 20px; }
+        .recipe-card h4 { color: #C4822A; margin: 0 0 4px; font-size: 1rem; }
+        .recipe-time { font-size: 0.78rem; font-weight: 700; color: #C4822A; margin-bottom: 8px; }
+        .recipe-card p { font-size: 0.88rem; color: #555; margin: 0; line-height: 1.65; }
+        .problem-block { border-top: 1px solid #e8dfd4; padding: 20px 0; }
+        .problem-block:first-child { border-top: none; padding-top: 0; }
+        .problem-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+        .problem-label.red { color: #b94040; }
+        .problem-label.green { color: #2D8A4E; }
+        .problem-label.green::before { content: "\2713  "; }
+        .problem-label.red::before { content: "! "; }
+        .challenge-box { background: linear-gradient(135deg, rgba(196,130,42,0.1), rgba(196,130,42,0.03)); border: 2px solid #C4822A; border-radius: 14px; padding: 28px 32px; margin-top: 24px; }
+        .challenge-box h3 { color: #C4822A; margin-top: 0; }
+        .challenge-box ol { padding-left: 22px; margin: 12px 0 0; }
+        .challenge-box li { margin-bottom: 8px; font-size: 0.95rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#grundsatz">Grundsatz</a></li>
+        <li><a href="../index.html#themen">Themen</a></li>
+        <li><a href="../medienbibliothek.html">Medienbibliothek</a></li>
+        <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">&#9776;</button>
+</nav>
+
+<div class="shell">
+    <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
+        <p class="theme-nav-title">Fitness im Schulsport</p>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Start</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="https://kar-reglermodell.vercel.app/index.html" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Regeneration &amp; mentale Balance</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="stressmanagement-und-achtsamkeit.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="sinn-und-persoenlichkeitsentwicklung.html" class="outer-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Ernährung &amp; gesunde Gewohnheiten</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="ernaehrung-und-gewohnheiten.html" class="active outer-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Alltag, Lebensraum &amp; Umwelt</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Soziale Gesundheit</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>&#9671; Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Material &amp; Werkzeuge</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../medienbibliothek.html"><span class="dot"></span>Medienbibliothek</a></li>
+                <li><a href="stressmanagement-und-achtsamkeit.html#praxisecke"><span class="dot"></span>Praxisecke: Entspannungsübungen</a></li>
+                <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
+                <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
+                <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header class="theme-head">
+            <div class="badge">Ernährung &amp; gesunde Gewohnheiten · Sekundarstufe I/II · NRW</div>
+            <h1>Ernährung &amp; gesunde Gewohnheiten – Mehr Energie, Fokus und Habits, die bleiben</h1>
+            <p>In der Oberstufe läuft dein Alltag auf Hochtouren: Klausurenphase, Sport, Freunde, Nebenjob. Dein Körper und vor allem dein Gehirn brauchen verdammt guten Treibstoff. Du musst nicht perfekt essen – du brauchst keine Diäten oder teuren Superfoods. Was du brauchst, sind smarte Grundlagen und Gewohnheiten, die ohne Stress in deinen vollgepackten Alltag passen.</p>
+            <div class="theme-meta">
+                <span><strong>Kernthema:</strong> Ernährung, Hydration, Budget-Küche &amp; Habit-Building</span>
+                <span><strong>Bezug:</strong> NRW – Gesundheitsbewusstsein, gesunde Lebensführung im Alltag</span>
+                <span><strong>Ansatz:</strong> Alltagstaugliche Strategien ohne Perfektionsdruck – für Schüler:innen</span>
+            </div>
+        </header>
+
+        <div id="top"></div>
+        <p class="nav-anchor"><a href="../index.html">&#8592; Zur Startseite</a></p>
+
+        <section class="section" style="max-width:none;padding:28px 0 40px;">
+
+            <!-- INTRO -->
+            <div class="prose-card" id="intro">
+                <p class="section-eyebrow">Überblick</p>
+                <h3>Dein Körper ist kein Notstromaggregat</h3>
+                <p class="muted">Schlechte Ernährung schlägt sich nicht erst nach Jahren nieder – sie schlägt sich direkt im nächsten Unterricht nieder. Wer versteht, wie Nahrung Energie, Konzentration und Stimmung beeinflusst, hat einen klaren Vorteil im Schulalltag. Und: Gesunde Ernährung ist kein Lifestyle-Projekt für Influencer:innen, sondern eine grundlegende Kompetenz für das Leben.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Dein Gehirn frisst 20 % deiner Energie:</strong> Das zentrale Nervensystem ist auf einen gleichmäßigen Blutzuckerspiegel angewiesen. Starke Schwankungen durch Zucker und Energy Drinks führen direkt zu Konzentrationslöchern, Reizbarkeit und Sekundenschlaf im Unterricht – kein Willenproblem, sondern Biochemie.</div>
+                    <div class="fact"><strong>Schon 1–2 % Flüssigkeitsmangel beeinträchtigt kognitive Leistung:</strong> Kopfschmerzen, Müdigkeit und eine „langsame Leitung im Kopf" entstehen oft nicht durch Schlafmangel, sondern schlicht durch Dehydration. Wasser ist der am meisten unterschätzte Leistungs-Hack in der Schule (Adan, 2012).</div>
+                    <div class="fact"><strong>80/20 statt Perfektion:</strong> Wenn 80 % deiner Ernährung aus unverarbeiteten, nährstoffreichen Lebensmitteln bestehen, sind die anderen 20 % für Pizza, Chips und Fast Food völlig in Ordnung. Dieses Prinzip reduziert den mentalen Druck und verhindert das Alles-oder-Nichts-Denken, das die meisten Ernährungsversuche scheitern lässt.</div>
+                </div>
+            </div>
+
+            <!-- §1: BRAIN POWER & BLUTZUCKER -->
+            <div class="prose-card" id="brain-power">
+                <p class="section-eyebrow">Abschnitt 1</p>
+                <h3>Brain Power statt Zucker-Crash</h3>
+                <p class="muted">Dein Gehirn verbraucht rund 20 % deiner täglichen Energie – und es ist wählerisch, was die Qualität dieser Energie angeht. Die Formel für anhaltenden Fokus ist einfach: Kombiniere bei deinen Mahlzeiten immer Protein, komplexe Kohlenhydrate und Vitamine bzw. gesunde Fette. Was danach passiert, ist nachvollziehbar – und lässt sich im Unterricht direkt erleben.</p>
+
+                <div class="concept-grid" style="margin-top:18px;">
+                    <div>
+                        <div class="fact-list">
+                            <div class="fact"><strong>Protein:</strong> Quark, Eier, Tofu, Hülsenfrüchte, Nüsse – Bausteine für Neurotransmitter und langanhaltende Sättigung. Verhindert das Nachmittagstief.</div>
+                            <div class="fact"><strong>Komplexe Kohlenhydrate:</strong> Vollkornbrot, Haferflocken, Reis – setzen Glukose langsam und gleichmäßig frei. Kein Energiespike, kein Crash danach.</div>
+                            <div class="fact"><strong>Vitamine &amp; gesunde Fette:</strong> Gemüse, Obst, Avocado, Nüsse – Mikronährstoffe für die Nervenfunktion, Omega-3-Fette für die Konzentrationsfähigkeit.</div>
+                        </div>
+                        <div class="callout" style="margin-top:16px;">
+                            <strong>Das Problem mit Energy Drinks:</strong> Ein Energy Drink lässt den Blutzucker innerhalb von 20–30 Minuten steil ansteigen – und danach genauso steil abstürzen. Die Folge ist das klassische „Konzentrationsloch" in der zweiten Hälfte des Unterrichts. Der Körper gleicht das mit Cortisol aus, was Stress erhöht und den Schlaf verschlechtert.
+                        </div>
+                    </div>
+                    <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0"
+                        aria-label="Blutzucker-Kurve: Zucker-Crash vs. stabiler Fokus – Grafik vergrößern"
+                        data-full="../assets/images/ernaehrung-blutzucker.png"
+                        data-label="Blutzucker-Kurve – Zucker-Crash vs. stabiler Fokus über 3 Stunden">
+                        <img src="../assets/images/ernaehrung-blutzucker.png"
+                            alt="Blutzucker-Kurve: Vergleich Zucker-Crash vs. stabile Energie"
+                            style="width:100%;border-radius:10px;display:block;" loading="lazy">
+                        <figcaption>Zucker-Crash vs. stabiler Fokus · Grafik antippen zum Vergrößern</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- §2: HYDRATION -->
+            <div class="prose-card" id="hydration">
+                <p class="section-eyebrow">Abschnitt 2</p>
+                <h3>Hydration: Der einfachste Noten-Hack</h3>
+                <p class="muted">Wassermangel ist der Konzentrationskiller Nummer eins. Schon ein leichtes Flüssigkeitsdefizit von 1–2 % des Körpergewichts sorgt für Kopfschmerzen, Müdigkeit und eine langsame Leitung im Kopf. Softdrinks und Energy Drinks zählen hier übrigens nicht – sie entziehen durch ihren Zuckergehalt dem Körper oft noch Flüssigkeit.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Tagesziel:</strong> 2–2,5 Liter Wasser oder ungesüßter Tee täglich – auf den eigenen Körper hören, bei Sport und Hitze mehr.</div>
+                    <div class="fact"><strong>Lernsessions-Hack:</strong> Stelle dir zu Beginn jeder Lernsession eine 1-Liter-Flasche auf den Schreibtisch. Bei jeder kurzen Pause: ein großes Glas trinken. Klingt banal – wirkt zuverlässig.</div>
+                    <div class="fact"><strong>Schule:</strong> Trinkflasche morgens befüllen, mit in die Schule nehmen. Wer in der Schule nichts trinkt, kommt nachmittags schon dehydriert ans Schreibtisch.</div>
+                </div>
+
+                <div class="callout" style="margin-top:16px;">
+                    <strong>Warum Kaffee und Energy Drinks nicht zählen:</strong> Koffein ist ein Diuretikum – es treibt die Urinproduktion an. Bei moderatem Konsum gleicht das Wasser im Getränk dies etwa aus, bei großen Mengen nicht mehr. Wer morgens 2 Becher Kaffee oder Energy Drinks trinkt, hat noch keinen nennenswerten Flüssigkeitsbedarf gedeckt.
+                </div>
+            </div>
+
+            <!-- §3: SMART & GÜNSTIG + REZEPTE -->
+            <div class="prose-card" id="budget-kueche">
+                <p class="section-eyebrow">Abschnitt 3</p>
+                <h3>Smart &amp; Günstig – Budget-Küche für den Alltag</h3>
+                <p class="muted">Gesundes Essen muss weder teuer sein noch Stunden in der Küche erfordern. Ob im Elternhaus oder in der ersten eigenen WG: Diese Basics kosten fast nichts, sind extrem nährstoffreich und lassen sich in 5 Minuten zubereiten.</p>
+
+                <div class="fact-list" style="margin-bottom:24px;">
+                    <div class="fact"><strong>Deine Budget-Besties:</strong> Haferflocken, Eier, Bananen, Quark, Kichererbsen, Erdnussmus, TK-Gemüse (ungewürzt) – kaum teurer als Fast Food, aber um ein Vielfaches wertvoller.</div>
+                    <div class="fact"><strong>Die 80/20-Regel:</strong> 80 % der Ernährung aus unverarbeiteten Lebensmitteln – die restlichen 20 % für Pizza, Chips und Fast Food. Kein schlechtes Gewissen nötig, kein Alles-oder-Nichts.</div>
+                    <div class="fact"><strong>Meal-Prep als Frosch:</strong> Ein Sonntag, 30 Minuten: Gemüse vorschneiden, Reis/Nudeln vorkochen, Overnight Oats ansetzen. Unter der Woche ist das „Projekt gesunde Ernährung" dann längst erledigt.</div>
+                </div>
+
+                <h4 style="font-size:1rem;font-weight:600;color:var(--text);margin:0 0 4px;">5-Minuten-Rezepte für stressige Tage</h4>
+                <p class="muted" style="margin-bottom:0;">Alle dauern kürzer als das Warten beim Bäcker.</p>
+
+                <div class="recipe-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-time">&#9900; Abends 3 Min · Morgens direkt fertig</div>
+                        <h4>Overnight Oats</h4>
+                        <p>Haferflocken + Milch (oder Pflanzendrink) + 1 EL Joghurt + TK-Beeren in ein Glas. Umrühren, Kühlschrank. Morgens einfach greifen – fertig.</p>
+                    </div>
+                    <div class="recipe-card">
+                        <div class="recipe-time">&#9900; 4 Minuten</div>
+                        <h4>Power-Wrap</h4>
+                        <p>Vollkorn-Wrap mit Hummus bestreichen, Spinat/Salat + Tomaten + Räuchertofu oder gebratene Hähnchenstreifen einrollen. Perfekt zum Mitnehmen.</p>
+                    </div>
+                    <div class="recipe-card">
+                        <div class="recipe-time">&#9900; 3 Minuten</div>
+                        <h4>Upgrade-Toast</h4>
+                        <p>Vollkornbrot mit Hüttenkäse oder Avocado, obendrauf ein gekochtes Ei und Tomatenscheiben. Protein, Fett, Kohlenhydrate – alles drin.</p>
+                    </div>
+                    <div class="recipe-card">
+                        <div class="recipe-time">&#9900; 5 Minuten</div>
+                        <h4>Quark-Bowl</h4>
+                        <p>Magerquark + 1 EL Erdnussmus + Banane + Haferflocken + eine Handvoll Nüsse. Satt bis in den Abend. Kein Backofen, kein Kochen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- §4: GEWOHNHEITEN & 4 LIFE-STRATEGIEN -->
+            <div class="prose-card" id="gewohnheiten">
+                <p class="section-eyebrow">Abschnitt 4</p>
+                <h3>Gewohnheiten aufbauen – Ernährung ohne Willenskraft automatisieren</h3>
+                <p class="muted">Du weißt jetzt, was gut für dich ist – aber wie setzt man es um, wenn der Schweinehund laut brüllt? Ganz einfach: Wir wenden die vier psychologischen Life-Strategien direkt auf die Ernährung an. Diese Techniken kennst du schon von der Seite <a href="sinn-und-persoenlichkeitsentwicklung.html" style="color:#C4822A;text-decoration:underline;">Sinn &amp; Persönlichkeitsentwicklung</a> – hier zeigen sie, wie konkret sie im Alltag funktionieren.</p>
+
+                <div class="concept-grid" style="margin-top:18px;">
+                    <div>
+                        <div class="fact-list">
+                            <div class="fact"><strong>2-Minuten-Regel:</strong> Fülle direkt nach dem Abendessen deine Wasserflasche für den nächsten Schultag und stelle sie neben die Tasche. Dauer: 45 Sekunden. Ergebnis: Morgens kein Stress, garantiert genug zu trinken.</div>
+                            <div class="fact"><strong>5-4-3-2-1-Methode:</strong> Du willst aus Gewohnheit die Liefer-App öffnen? 5 – 4 – 3 – 2 – 1: Aufstehen, in die Küche, Wrap bauen. Der Countdown überlistet dein Gehirn, bevor die Bequemlichkeit siegt. (Mel Robbins)</div>
+                            <div class="fact"><strong>Eat the Frog – Meal Prep:</strong> Schneide Sonntag eine große Portion Gemüse vor oder koche extra Reis/Nudeln. Wenn unter der Woche der Stress kickt, ist das „Projekt gesund essen" längst erledigt. (Brian Tracy)</div>
+                            <div class="fact"><strong>5-Minuten-Regel:</strong> Keine Lust zu kochen? Nur 5 Minuten anfangen – danach darfst du aufhören. In mehr als 80 % der Fälle bist du dann im Flow und machst das gesunde Essen fertig.</div>
+                        </div>
+                        <div class="callout" style="margin-top:16px;">
+                            <strong>Im Unterricht:</strong> Schülerinnen und Schüler können eine Woche lang eine der vier Strategien speziell für Ernährungsgewohnheiten erproben – und danach reflektieren: Welche Strategie hat geholfen? Wo war der Schweinehund stärker? Die 5-Minuten-Regel und die 2-Minuten-Regel eignen sich besonders gut als Einstieg.
+                        </div>
+                    </div>
+                    <figure class="lead-figure js-figure" style="align-self:start;margin:0;" role="button" tabindex="0"
+                        aria-label="Ernährungspyramide für Schülerinnen und Schüler – Grafik vergrößern"
+                        data-full="../assets/images/ernaehrung-pyramide.png"
+                        data-label="Ernährungspyramide – Die 5 Ebenen für nachhaltige Energie">
+                        <img src="../assets/images/ernaehrung-pyramide.png"
+                            alt="Ernährungspyramide: von Wasser &amp; Gemüse bis zu Süßem"
+                            style="width:100%;border-radius:10px;display:block;" loading="lazy">
+                        <figcaption>Ernährungspyramide · Grafik antippen zum Vergrößern</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- §5: HÄUFIGE FRAGEN & PROBLEME -->
+            <div class="prose-card" id="haeufige-fragen">
+                <p class="section-eyebrow">Abschnitt 5</p>
+                <h3>Häufige Probleme – smarte Lösungen</h3>
+                <p class="muted">Die meisten Ernährungsprobleme in der Oberstufe haben konkrete Ursachen und konkrete Lösungen. Kein erhobener Zeigefinger – sondern Strategien, die tatsächlich funktionieren.</p>
+
+                <div style="margin-top:20px;">
+                    <div class="problem-block">
+                        <p class="problem-label red">Problem: Kantine und Schulkiosk bieten nur Fast Food an</p>
+                        <p class="problem-label green">Lösung: Upgrade oder Notfall-Box</p>
+                        <p>Wenn es Pommes gibt: nimm einen Beilagensalat dazu. Pack dir standardmäßig eine „Notfall-Box" ein: eine Handvoll Nüsse, eine Banane, ein Proteinriegel. So tapst du gar nicht erst in die Hungerfalle.</p>
+                    </div>
+                    <div class="problem-block">
+                        <p class="problem-label red">Problem: Vor Klausuren automatisch Unmengen Schokolade essen</p>
+                        <p class="problem-label green">Lösung: Pause-Taste drücken</p>
+                        <p>Stress-Essen passiert unbewusst, weil der Körper nach schneller Energie sucht. Wenn der Heißhunger kommt: erst ein großes Glas kaltes Wasser trinken und 5 Minuten warten. Echter Hunger? Eine Handvoll Nüsse. Nur Stress? Fenster auf, 2 Minuten durchatmen.</p>
+                    </div>
+                    <div class="problem-block">
+                        <p class="problem-label red">Problem: Auf Social Media sehen alle aus wie aus dem Fitnessstudio</p>
+                        <p class="problem-label green">Lösung: Realitäts-Check aktivieren</p>
+                        <p>95 % von dem, was du auf TikTok und Instagram siehst, ist gefiltert, ausgeleuchtet oder schlichtweg fake. Dein Körper befindet sich in der Spätpubertät in der finalen Umbauphase – er braucht Energie und Nährstoffe, keine permanenten Verbote und kein schlechtes Gewissen. Clean Eating als Lifestyle ist keine Gesundheitsstrategie.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- §6: 7-TAGE-CHALLENGE -->
+            <div class="prose-card" id="challenge">
+                <p class="section-eyebrow">Abschnitt 6</p>
+                <h3>Dein Quick-Win für die nächste Woche</h3>
+                <p class="muted">Willst du wissen, wie viel Energie wirklich in dir steckt? Probier die <strong>7-Tage-Fokus-Challenge</strong> aus – sie kostet nichts, braucht keine Vorbereitung und du wirst die Wirkung direkt spüren.</p>
+
+                <div class="challenge-box">
+                    <h3>&#9654; 7-Tage-Fokus-Challenge</h3>
+                    <p style="margin:0 0 16px;">Nur <strong>zwei Regeln</strong> – sieben Tage lang:</p>
+                    <ol>
+                        <li><strong>Jeden zuckerhaltigen Pausensnack ersetzen</strong> – durch eine Handvoll Nüsse oder Obst. Nicht immer, aber so oft wie möglich.</li>
+                        <li><strong>Täglich 2 Liter Wasser trinken</strong> – egal wie. Flasche auf den Schreibtisch, Flasche in die Schultasche.</li>
+                    </ol>
+                    <p style="margin-top:16px;font-size:0.92rem;">Beobachte dabei gezielt: Wie fit bist du an den Nachmittagen? Hast du weniger Kopfschmerzen? Kannst du dich besser konzentrieren? <strong>Dein Notenschnitt wird es dir danken.</strong></p>
+                    <p style="margin-top:12px;font-size:0.85rem;color:#888;">Unterrichtsidee: Die Challenge als Reflexionsauftrag für eine Woche – Schüler:innen dokumentieren ihre Beobachtungen und präsentieren sie in der Gruppe. Schafft Bewusstsein ohne Druck.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
+        &copy; 2026 Straight Edge Media &middot; Fitness im Schulsport &middot; Material für Lehramt Sport &middot; v1.0.8<br>
+        <a href="../impressum.html">Impressum</a> &middot; <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> &middot; <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">&#8249; Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">&#8722;</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">&#xff0b;</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">&#8634;</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">&#10005;</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+const FIGURES = Array.from(document.querySelectorAll('.js-figure'));
+let currentFigIdx = 0;
+let currentZoom = 1;
+const ZOOM_STEP = 0.25, ZOOM_MAX = 4, ZOOM_MIN = 0.5;
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(fig) {
+    currentFigIdx = FIGURES.indexOf(fig);
+    currentZoom = 1;
+    setFigure(currentFigIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+function setFigure(idx) {
+    const fig = FIGURES[idx];
+    lbImg.src = fig.dataset.full;
+    lbImg.alt = fig.dataset.label;
+    lbLabel.textContent = fig.dataset.label;
+    zoomPct.textContent = '100%';
+    currentZoom = 1;
+    lbImg.style.transform = 'scale(1)';
+    if (btnPrev) btnPrev.disabled = idx === 0;
+    if (btnNext) btnNext.disabled = idx === FIGURES.length - 1;
+}
+function navLightbox(dir) {
+    const next = currentFigIdx + dir;
+    if (next < 0 || next >= FIGURES.length) return;
+    currentFigIdx = next;
+    setFigure(currentFigIdx);
+}
+function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+}
+function zoomIn()  { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); applyZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); applyZoom(); }
+function zoomReset(){ currentZoom = 1; applyZoom(); }
+function applyZoom(){ lbImg.style.transform = 'scale(' + currentZoom + ')'; zoomPct.textContent = Math.round(currentZoom * 100) + '%'; }
+
+FIGURES.forEach(fig => {
+    fig.addEventListener('click', () => openLightbox(fig));
+    fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(fig); });
+});
+lb.addEventListener('click', e => { if (e.target === lb || e.target === lbScroll) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+});
+
+function toggleAccordion(e) {
+    const grp = e.currentTarget.closest('.theme-group');
+    const isOpen = grp.classList.contains('open');
+    document.querySelectorAll('.theme-group.open').forEach(g => g.classList.replace('open','collapsed'));
+    if (!isOpen) grp.classList.replace('collapsed','open');
+}
+const toggle = document.getElementById('themeNavToggle');
+const nav    = document.getElementById('themeNav');
+if (toggle) toggle.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

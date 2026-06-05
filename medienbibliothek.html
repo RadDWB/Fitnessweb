@@ -417,6 +417,40 @@
             </div>
         </div>
 
+
+        <!-- ============ ERNÄHRUNG & GESUNDE GEWOHNHEITEN ============ -->
+        <div class="section-subheading" style="margin: 48px 0 24px; padding-top: 32px; border-top: 1px solid var(--border);">
+            <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">Ernährung &amp; gesunde Gewohnheiten</h3>
+            <p style="font-size: 0.875rem; color: var(--muted);">Brain-Food, Blutzucker und Ernährungspyramide – Grafiken zur Seite Gesunde Ernährung</p>
+        </div>
+
+        <div class="grafiken-grid-thumbnails">
+            <div class="grafik-card portrait" onclick="openLightbox(34)" role="button" tabindex="0" aria-label="Ernährungspyramide vergrößern">
+                <img src="assets/images/ernaehrung-pyramide.png" alt="Ernährungspyramide für Schüler:innen" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Pyramide</div>
+                    <div class="grafik-label">Ernährungspyramide – Die 5 Ebenen für nachhaltige Energie</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+            <div class="grafik-card landscape" onclick="openLightbox(35)" role="button" tabindex="0" aria-label="Blutzucker-Kurve vergrößern">
+                <img src="assets/images/ernaehrung-blutzucker.png" alt="Blutzucker-Kurve: Zucker-Crash vs. stabiler Fokus" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Verlauf</div>
+                    <div class="grafik-label">Blutzucker-Kurve – Zucker-Crash vs. stabiler Fokus im Vergleich</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+            <div class="grafik-card portrait" onclick="openLightbox(36)" role="button" tabindex="0" aria-label="Energie-Formel vergrößern">
+                <img src="assets/images/ernaehrung-energie-formel.png" alt="Energie-Formel: Protein + Kohlenhydrate + Vitamine = stabiler Fokus" loading="lazy">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Formel</div>
+                    <div class="grafik-label">Die Energie-Formel – Protein + Kohlenhydrate + Vitamine = anhaltender Fokus</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+        </div>
+
         <!-- ============ ARBEITSBLÄTTER ============ -->
         <div id="arbeitsblaetter" style="margin-top:56px;padding-top:36px;border-top:1px solid var(--border);">
             <div class="section-subheading" style="margin:0 0 24px;">
@@ -470,7 +504,7 @@
 <footer>
     <div class="footer-inner">
         <img src="assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
-        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport · v1.0.7<br>
+        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport · v1.0.8<br>
         <a href="impressum.html">Impressum</a> · <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> · <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
     </div>
 </footer>
@@ -538,6 +572,9 @@ const IMAGES = [
     { src: 'assets/images/Stress im Alltag.png', label: 'Stress im Alltag bewältigen – wirksame Strategien für den Umgang mit Distress' },
         { src: 'assets/images/stress meistern.png', label: 'Prüfungs- und Wettkampfstress meistern – erprobte Mentaltechniken und Strategien' },
     { src: 'assets/images/4 strategien.png', label: '4 Life-Strategien – Dinge machbar machen: 2-Minuten-Regel, 5-4-3-2-1, Eat the Frog, 5-Minuten-Regel' },
+    { src: 'assets/images/ernaehrung-pyramide.png', label: 'Ernährungspyramide – Die 5 Ebenen für nachhaltige Energie' },
+    { src: 'assets/images/ernaehrung-blutzucker.png', label: 'Blutzucker-Kurve – Zucker-Crash vs. stabiler Fokus über 3 Stunden' },
+    { src: 'assets/images/ernaehrung-energie-formel.png', label: 'Die Energie-Formel – Protein + Kohlenhydrate + Vitamine = anhaltender Fokus' },
 ];
 
 let currentIdx = 0;
