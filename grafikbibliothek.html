@@ -42,18 +42,6 @@
         <h2 class="section-heading">Grafikbibliothek</h2>
         <p class="section-lead">Hier finden Sie alle Infografiken des Fitnessweb gebündelt an einem Ort. Diese Grafiken eignen sich, um sie auszudrucken, Schülerinnen und Schülern zur Verfügung zu stellen oder sie – auch nur in Auszügen – auf einem Großmonitor im Unterricht zu thematisieren. Jede Grafik fasst wichtige Zusammenhänge kompakt zusammen und versteht sich so als eine Art „modernes Arbeitsblatt".</p>
 
-        <div class="print-bar">
-            <button class="btn btn-primary" onclick="window.print()">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 6 2 18 2 18 9"/>
-                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                    <rect x="6" y="14" width="12" height="8"/>
-                </svg>
-                Drucken / Als PDF speichern
-            </button>
-            <span class="print-hint">Jede Grafik wird auf einer eigenen DIN-A4-Seite ausgegeben</span>
-        </div>
-
         <!-- ============ EINFÜHRUNG & GRUNDLAGEN ============ -->
         <div class="section-subheading" style="margin: 8px 0 24px;">
             <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">Einführung &amp; Grundlagen</h3>
@@ -271,6 +259,13 @@
             <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
             <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
             <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" onclick="printLightboxImage()" title="Drucken / Als PDF speichern">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"/>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                    <rect x="6" y="14" width="12" height="8"/>
+                </svg>
+            </button>
             <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
             <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
         </div>
@@ -346,6 +341,14 @@ function updateZoom() {
 function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
 function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
 function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+function printLightboxImage() {
+    const img = lbImg.src;
+    const label = lbLabel.textContent;
+    const w = window.open('', '', 'width=800,height=600');
+    w.document.write('<html><head><title>' + label + '</title><style>body{margin:0;padding:20px;display:flex;align-items:center;justify-content:center;min-height:100vh;}img{max-width:100%;max-height:100vh;}</style></head><body><img src="' + img + '" alt="' + label + '"></body></html>');
+    w.document.close();
+    setTimeout(() => w.print(), 500);
+}
 lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
 document.addEventListener('keydown', e => {
     if (!lb.classList.contains('active')) return;
