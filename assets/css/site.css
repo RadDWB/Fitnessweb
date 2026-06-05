@@ -1173,7 +1173,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 10px 30px rgba(18, 64, 35, 0.05);
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 78px);
     overflow-y: auto;
     overflow-x: hidden;
 }
