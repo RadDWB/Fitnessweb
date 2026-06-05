@@ -17,6 +17,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav {
+                transform: translateX(-100%);
+                will-change: transform;
+            }
+        }
+    </style>
 </head>
 <body class="theme-page">
 
@@ -28,15 +36,14 @@
     <ul class="nav-links">
         <li><a href="../index.html#grundsatz">Grundsatz</a></li>
         <li><a href="../index.html#themen">Themen</a></li>
-        <li><a href="../index.html#grafiken">Grafiken</a></li>
+        <li><a href="../grafikbibliothek.html">Grafikbibliothek</a></li>
         <li><a href="../index.html#quellen">Quellen</a></li>
         <li><a href="../index.html#quiz">Quiz</a></li>
         <li><a href="../index.html#glossar">Glossar</a></li>
     </ul>
     <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
 </nav>
-
-<button class="btn theme-nav-toggle" onclick="toggleThemeNav()" id="themeNavToggle">☰ Themen &amp; Bereiche</button>
 
 <div class="shell">
     <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
@@ -48,7 +55,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="../index.html"><span class="dot"></span>Überblick &amp; Grundsatz</a></li>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
             </ul>
         </div>
 
@@ -69,58 +76,57 @@
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Lebensstil &amp; Regeneration</span>
+                <span>◇ Regeneration &amp; mentale Balance</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>An- &amp; Entspannung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Ausreichender Schlaf</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Aktive Erholung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Urlaub &amp; Regeneration</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene</a></li>
+                <li><a href="stressmanagement-und-achtsamkeit.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Soziales &amp; Umfeld</span>
+                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Familie</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Freunde &amp; Beziehungen</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziales Umfeld</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Belastungen reduzieren</span>
+                <span>◇ Alltag, Lebensraum &amp; Umwelt</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Geringe Exposition</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Weniger Bildschirmzeit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressfaktoren reduzieren</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Weitere Einflussfaktoren</span>
+                <span>◇ Soziale Gesundheit</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressmanagement</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Mentale Gesundheit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umgebung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzen &amp; Sicherheit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Natur &amp; Bewegung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
             </ul>
         </div>
 
@@ -130,7 +136,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="../index.html#grafiken"><span class="dot"></span>Grafiken</a></li>
+                <li><a href="../grafikbibliothek.html"><span class="dot"></span>Grafikbibliothek</a></li>
                 <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
                 <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
                 <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
@@ -691,6 +697,21 @@ function toggleAccordion(e) {
 function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
 }
+
+// Ensure button works on all devices
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) {
+    themeNavToggle.addEventListener('click', function(e) {
+        toggleThemeNav();
+    });
+}
+
+// Auto-close sidebar when clicking navigation links
+document.querySelectorAll('.theme-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('themeNav').classList.remove('open');
+    });
+});
 
 /* Galerie wird automatisch aus allen .js-figure in DOM-Reihenfolge gebaut –
    neue Grafiken einfach als <figure class="... js-figure" data-full data-label> einfügen. */

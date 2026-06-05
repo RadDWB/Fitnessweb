@@ -36,12 +36,13 @@
     <ul class="nav-links">
         <li><a href="#grundsatz">Grundsatz</a></li>
         <li><a href="#themen">Themen</a></li>
-        <li><a href="#grafiken">Grafiken</a></li>
+        <li><a href="grafikbibliothek.html">Grafikbibliothek</a></li>
         <li><a href="#quellen">Quellen</a></li>
         <li><a href="#quiz">Quiz</a></li>
         <li><a href="#glossar">Glossar</a></li>
     </ul>
     <a href="impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
 </nav>
 
 <header class="hero" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Ganzheitliche Fitnessgrafik öffnen">
@@ -50,14 +51,12 @@
         <h1>Fitness - im Schulsport</h1>
         <p>Eine Grundsatzseite für eine reflektierte Fitnesspädagogik: Fitness wird hier nicht auf Training, Körperform oder Leistungsoptimierung reduziert, sondern als lernbarer, verantwortbarer und gesundheitsorientierter Lebensstil verstanden.</p>
         <div class="hero-actions">
-            <a class="btn btn-primary" href="#grafiken" onclick="event.stopPropagation()">Grafiken ansehen</a>
+            <a class="btn btn-primary" href="grafikbibliothek.html" onclick="event.stopPropagation()">Grafikbibliothek</a>
             <a class="btn btn-ghost" href="#quellen" onclick="event.stopPropagation()">Quellen öffnen</a>
         </div>
         <div class="hero-open-hint">Grafik „Fitness ganzheitlich denken" vergrößern</div>
     </div>
 </header>
-
-<button class="btn theme-nav-toggle" onclick="toggleThemeNav()" id="themeNavToggle">☰ Themen &amp; Bereiche</button>
 
 <div class="shell">
     <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
@@ -69,7 +68,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a class="active" href="index.html"><span class="dot"></span>Überblick &amp; Grundsatz</a></li>
+                <li><a class="active" href="index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
             </ul>
         </div>
 
@@ -90,58 +89,57 @@
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Lebensstil &amp; Regeneration</span>
+                <span>◇ Regeneration &amp; mentale Balance</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>An- &amp; Entspannung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Ausreichender Schlaf</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Aktive Erholung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Urlaub &amp; Regeneration</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene</a></li>
+                <li><a href="themen/stressmanagement-und-achtsamkeit.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="themen/belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Soziales &amp; Umfeld</span>
+                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Familie</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Freunde &amp; Beziehungen</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziales Umfeld</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Belastungen reduzieren</span>
+                <span>◇ Alltag, Lebensraum &amp; Umwelt</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Geringe Exposition</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Weniger Bildschirmzeit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressfaktoren reduzieren</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Weitere Einflussfaktoren</span>
+                <span>◇ Soziale Gesundheit</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressmanagement</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Mentale Gesundheit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umgebung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzen &amp; Sicherheit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Natur &amp; Bewegung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
             </ul>
         </div>
 
@@ -151,7 +149,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#grafiken"><span class="dot"></span>Grafiken</a></li>
+                <li><a href="grafikbibliothek.html"><span class="dot"></span>Grafikbibliothek</a></li>
                 <li><a href="#quellen"><span class="dot"></span>Quellen</a></li>
                 <li><a href="#quiz"><span class="dot"></span>Quiz</a></li>
                 <li><a href="#glossar"><span class="dot"></span>Glossar</a></li>
@@ -186,7 +184,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="blickrichtungen">
         <p class="section-eyebrow">Orientierung</p>
         <h2 class="section-heading">Vier Blickrichtungen für Unterrichtsplanung</h2>
         <div class="dimensions">
@@ -213,6 +211,39 @@
         </div>
     </section>
 
+    <section class="section" id="lebenslange-fitness">
+        <p class="section-eyebrow">Didaktischer Einschub</p>
+        <h2 class="section-heading">Die Treppe zur lebenslangen Fitness</h2>
+        <p class="section-lead">Die meisten Jugendlichen sind sportlich aktiv – aber bleiben sie es auch als Erwachsene? Genau hier setzt das Bildungsziel an: Schülerinnen und Schüler sollen Schritt für Schritt von der Fremdsteuerung zur Eigenständigkeit gelangen, bis sie ihre Fitness ein Leben lang selbst einschätzen, planen und verantworten können. Das Modell der „Treppe zur lebenslangen Fitness" macht diesen Weg über drei Ebenen und sechs Stufen anschaulich.</p>
+
+        <div class="concept-grid">
+            <div class="text-panel">
+                <h3>Drei Ebenen – sechs Stufen</h3>
+                <div class="key-list">
+                    <div class="key-item"><strong>Ebene 1 – Abhängigkeit (Stufe 1–2):</strong> Bewegung wird von außen organisiert: Sportunterricht, Verein, Eltern geben Übungen und Strukturen vor. Ein guter Einstieg, aber fremdgesteuert – fällt dieser Rahmen später weg, sinkt bei vielen die Aktivität.</div>
+                    <div class="key-item"><strong>Ebene 2 – Entscheidungsfindung (Stufe 3–4):</strong> Selbstbeurteilung und eigenständige Planung: Erst das eigene, gesundheitsorientierte Fitnesslevel kennen (Ausdauer, Kraft, Beweglichkeit) – dann daraus ein persönliches, passendes Trainingsprogramm entwickeln. Kein Mensch hat dieselben Bedürfnisse wie ein anderer.</div>
+                    <div class="key-item"><strong>Ebene 3 – Unabhängigkeit (Stufe 5–6):</strong> Lebenslange sportliche Aktivität und Fitness: Man bewegt sich nicht mehr, weil man „muss", sondern weil man verstanden hat, warum es guttut – und kann das eigene Training lebenslang flexibel anpassen, ob in Beruf, Studium oder Alter.</div>
+                </div>
+                <div class="callout" style="margin-top:18px;">
+                    <strong>Kernbotschaft:</strong> <em>Ein guter Sportler ist nicht zwingend derjenige, der am weitesten springt, sondern derjenige, der gelernt hat, eigenverantwortlich und gesundheitsbewusst durchs Leben zu gehen.</em>
+                </div>
+                <div class="hero-actions" style="margin-top:18px;">
+                    <a class="btn btn-primary" href="assets/docs/schuelerinfotext-treppe-zur-fitness.pdf" target="_blank" rel="noopener">Schülerinfotext (PDF)</a>
+                </div>
+                <p style="margin-top:14px;font-size:0.8rem;color:var(--muted);">Modell nach Corbin, Charles B. / Lindsey, Ruth (2007): <em>Fitness for Life.</em> Updated 5th ed., Human Kinetics.</p>
+            </div>
+
+            <div class="grafik-card portrait" onclick="openLightbox(5)" role="button" tabindex="0" aria-label="Grafik „Die Treppe zur lebenslangen Fitness" vergrößern" style="align-self:start;">
+                <img src="assets/images/grundlagen/fitnesstreppe-lebenslange-fitness.png" alt="Infografik „Die Treppe zur lebenslangen Fitness“ – ein Leitfaden für sportliche Unabhängigkeit und Gesundheit. Drei Ebenen mit sechs Stufen: Ebene 1 Abhängigkeit (Stufe 1: körperliche Aktivität ausüben, fremdgesteuert; Stufe 2: fit werden nach Vorgaben anderer), Ebene 2 Entscheidungsfindung (Stufe 3: Selbstbeurteilung der eigenen Fitness; Stufe 4: eigenständige Planung eines persönlichen Programms), Ebene 3 Unabhängigkeit (Stufe 5: lebenslange sportliche Aktivität aus eigener Entscheidung; Stufe 6: lebenslange Fitness in voller Eigenverantwortung). Der Weg führt von der Fremdsteuerung zur Eigenständigkeit." loading="lazy" onerror="this.closest('.grafik-card').style.display='none'">
+                <div class="grafik-caption">
+                    <div class="grafik-num">Infografik</div>
+                    <div class="grafik-label">Die Treppe zur lebenslangen Fitness</div>
+                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="themen">
         <p class="section-eyebrow">Themenbereiche</p>
         <h2 class="section-heading">Vertiefungen nach Themen</h2>
@@ -228,6 +259,11 @@
                 <strong>Fitness und Trendsportarten im Schulsport</strong>
                 <span>CrossFit, HIIT, Functional Training und weitere Fitnesstrends: Kritische Analyse ihrer pädagogischen Nutzbarkeit. Wie lassen sich Trends didaktisch reduzieren und gesundheitsorientiert aufbereiten – nicht als fertige Trainingsprogramme, sondern als Gegenstände reflektierter Praxis?</span>
             </a>
+            <a class="source-link" href="themen/belastung-und-erholung.html">
+                <span class="source-meta">Trainingslehre &amp; Gesundheit</span>
+                <strong>Belastung &amp; Erholung – Regeneration im Schulsport</strong>
+                <span>Superkompensation, Schlaf, aktive und passive Erholung, Pausengestaltung und Übertraining: Warum Erholung kein Gegenteil von Training ist, sondern sein Bestandteil – und wie Schülerinnen und Schüler lernen, Belastung und Erholung selbst zu steuern.</span>
+            </a>
             <span class="source-link" style="opacity:.6;cursor:default;">
                 <span class="source-meta">In Vorbereitung</span>
                 <strong>Weitere Themenbereiche folgen</strong>
@@ -238,19 +274,11 @@
 
     <section class="section grafiken-section" id="grafiken">
         <p class="section-eyebrow">Lernmaterial</p>
-        <h2 class="section-heading">Grafiken zur Arbeit mit Lerngruppen</h2>
-        <p class="section-lead">Die Grafiken lassen sich einzeln in der Lightbox öffnen, zoomen und im Unterrichtsgespräch auswerten. Die ganzheitliche Fitnessgrafik bleibt als Header- und Vorschaubild erhalten und öffnet sich per Klick auf den Seitenkopf.</p>
+        <h2 class="section-heading">Grafikbibliothek</h2>
+        <p class="section-lead">Alle Infografiken des Fitnessweb sind in einer eigenen Bibliothek gebündelt – zum Ausdrucken, zur Weitergabe an Lerngruppen oder zur Projektion im Unterricht. Hier ein Auszug der vier Einführungsgrafiken; die vollständige Sammlung mit Krafttraining, Trendsportarten und Regeneration finden Sie auf der Bibliotheksseite.</p>
 
-        <div class="print-bar">
-            <button class="btn btn-primary" onclick="window.print()">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 6 2 18 2 18 9"/>
-                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                    <rect x="6" y="14" width="12" height="8"/>
-                </svg>
-                Drucken / Als PDF speichern
-            </button>
-            <span class="print-hint">Jede Grafik wird auf einer eigenen DIN-A4-Seite ausgegeben</span>
+        <div class="hero-actions" style="margin-bottom:28px;">
+            <a class="btn btn-primary" href="grafikbibliothek.html">Zur Grafikbibliothek →</a>
         </div>
 
         <div class="grafiken-grid">
@@ -288,109 +316,6 @@
             </div>
         </div>
 
-        <div class="section-subheading" style="margin: 40px 0 24px; padding-top: 24px; border-top: 1px solid var(--border);">
-            <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">Gesund-funktionales Krafttraining</h3>
-            <p style="font-size: 0.875rem; color: var(--muted);">Grafiken und Konzepte aus dem Bereich Krafttraining</p>
-        </div>
-
-        <div class="grafiken-grid-thumbnails">
-            <div class="grafik-card" onclick="openLightbox(5)" role="button" tabindex="0" aria-label="Krafttraining Leitbild vergrößern">
-                <img src="assets/images/krafttraining/kt-leitbild-fitnessstudio-turnhalle.png" alt="Leitbild Krafttraining" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Leitbild</div>
-                    <div class="grafik-label">Das Fitness-Studio in der Turnhalle</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(6)" role="button" tabindex="0" aria-label="Krafttraining Grafik 1 vergrößern">
-                <img src="assets/images/krafttraining/kt-1-warum-krafttraining.png" alt="Warum Krafttraining" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 1 von 11</div>
-                    <div class="grafik-label">Warum Krafttraining in den Schulsport gehört</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(7)" role="button" tabindex="0" aria-label="Krafttraining Grafik 2 vergrößern">
-                <img src="assets/images/krafttraining/kt-8-sanft-belastungskurve.png" alt="Sanftes Krafttraining Belastungskurve" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 2 von 11</div>
-                    <div class="grafik-label">Sanftes Krafttraining: wirksam ohne maximale Ausbelastung</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(8)" role="button" tabindex="0" aria-label="Krafttraining Grafik 3 vergrößern">
-                <img src="assets/images/krafttraining/kt-9-langfristig-statt-maximal.png" alt="Langfristig statt maximal" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 3 von 11</div>
-                    <div class="grafik-label">Langfristig statt maximal</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(9)" role="button" tabindex="0" aria-label="Krafttraining Grafik 4 vergrößern">
-                <img src="assets/images/krafttraining/kt-10-vorteile-sanft.png" alt="Vorteile sanftes Krafttraining" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 4 von 11</div>
-                    <div class="grafik-label">Die Vorteile des sanften Krafttrainings</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(10)" role="button" tabindex="0" aria-label="Krafttraining Grafik 5 vergrößern">
-                <img src="assets/images/krafttraining/kt-11-zielgruppen-sanft.png" alt="Zielgruppen sanftes Krafttraining" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 5 von 11</div>
-                    <div class="grafik-label">Für wen besonders geeignet?</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(11)" role="button" tabindex="0" aria-label="Krafttraining Grafik 6 vergrößern">
-                <img src="assets/images/krafttraining/kt-7-einsatz-mehrsatz.png" alt="Ein-Satz-Training" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 6 von 11</div>
-                    <div class="grafik-label">Warum Ein-Satz-Training im Schulsport sinnvoll ist</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(12)" role="button" tabindex="0" aria-label="Krafttraining Grafik 7 vergrößern">
-                <img src="assets/images/krafttraining/kt-6-sicherheitslogik.png" alt="Sicherheitslogik Krafttraining" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 7 von 11</div>
-                    <div class="grafik-label">Sicherheitslogik des gesund-funktionalen Krafttrainings</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(13)" role="button" tabindex="0" aria-label="Krafttraining Grafik 8 vergrößern">
-                <img src="assets/images/krafttraining/kt-4-dd-skala.png" alt="D&amp;D-Skala" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 8 von 11</div>
-                    <div class="grafik-label">D&amp;D-Skala: Wie schwer darf es sein?</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(14)" role="button" tabindex="0" aria-label="Krafttraining Grafik 9 vergrößern">
-                <img src="assets/images/krafttraining/kt-2-einordnung.png" alt="Basistraining Schulsport" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 9 von 11</div>
-                    <div class="grafik-label">Basistraining im Schulsport: Die richtige Mitte</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(15)" role="button" tabindex="0" aria-label="Krafttraining Grafik 10 vergrößern">
-                <img src="assets/images/krafttraining/kt-12-zwei-wege-ein-prinzip.png" alt="Zwei Wege ein Prinzip" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 10 von 11</div>
-                    <div class="grafik-label">Zwei Wege – ein Prinzip</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-            <div class="grafik-card" onclick="openLightbox(16)" role="button" tabindex="0" aria-label="Krafttraining Grafik 11 vergrößern">
-                <img src="assets/images/krafttraining/kt-5-kernvariablen.png" alt="Trainingsrezept Krafttraining" loading="lazy">
-                <div class="grafik-caption">
-                    <div class="grafik-num">Grafik 11 von 11</div>
-                    <div class="grafik-label">Das Trainingsrezept: Schulisches Basistraining</div>
-                    <div class="grafik-hint">Antippen zum Vergrößern &amp; Zoomen</div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="section source-section" id="quellen">
@@ -552,6 +477,20 @@
         </div>
     </section>
 </main>
+
+    <nav class="page-toc" id="pageToc" aria-label="Auf dieser Seite">
+        <p class="page-toc-title">Auf dieser Seite</p>
+        <ul>
+            <li><a href="#grundsatz">Fitness ist mehr</a></li>
+            <li><a href="#blickrichtungen">Vier Blickrichtungen</a></li>
+            <li><a href="#lebenslange-fitness">Treppe zur lebenslangen Fitness</a></li>
+            <li><a href="#themen">Vertiefungen nach Themen</a></li>
+            <li><a href="#grafiken">Grafikbibliothek</a></li>
+            <li><a href="#quellen">Quellen</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#glossar">Glossar</a></li>
+        </ul>
+    </nav>
 </div>
 
 <footer>
@@ -608,18 +547,7 @@ const IMAGES = [
     { src: 'assets/images/fitness-2.png', label: 'Grafik 2 - Gesundheitsorientierung und Lebenswelt' },
     { src: 'assets/images/fitness-3.png', label: 'Grafik 3 - Fitnesspädagogik im Unterricht' },
     { src: 'assets/images/fitness-4.png', label: 'Grafik 4 - Verantwortung für die eigene Fitness' },
-    { src: 'assets/images/krafttraining/kt-leitbild-fitnessstudio-turnhalle.png', label: 'Leitbild – Das Fitness-Studio in der Turnhalle: didaktische Prinzipien des gesund-funktionalen Krafttrainings' },
-    { src: 'assets/images/krafttraining/kt-1-warum-krafttraining.png', label: 'Grafik 1 – Warum Krafttraining in den Schulsport gehört' },
-    { src: 'assets/images/krafttraining/kt-8-sanft-belastungskurve.png', label: 'Grafik 2 – Sanftes Krafttraining: wirksam ohne maximale Ausbelastung' },
-    { src: 'assets/images/krafttraining/kt-9-langfristig-statt-maximal.png', label: 'Grafik 3 – Gesundheitsorientiertes Krafttraining: langfristig statt maximal' },
-    { src: 'assets/images/krafttraining/kt-10-vorteile-sanft.png', label: 'Grafik 4 – Die Vorteile des sanften Krafttrainings' },
-    { src: 'assets/images/krafttraining/kt-11-zielgruppen-sanft.png', label: 'Grafik 5 – Sanftes Krafttraining: Für wen besonders geeignet?' },
-    { src: 'assets/images/krafttraining/kt-7-einsatz-mehrsatz.png', label: 'Grafik 6 – Warum Ein-Satz-Training im Schulsport sinnvoll ist' },
-    { src: 'assets/images/krafttraining/kt-6-sicherheitslogik.png', label: 'Grafik 7 – Sicherheitslogik des gesund-funktionalen Krafttrainings' },
-    { src: 'assets/images/krafttraining/kt-4-dd-skala.png', label: 'Grafik 8 – D&D-Skala: Wie schwer darf es sein?' },
-    { src: 'assets/images/krafttraining/kt-2-einordnung.png', label: 'Grafik 9 – Basistraining im Schulsport: Die richtige Mitte' },
-    { src: 'assets/images/krafttraining/kt-12-zwei-wege-ein-prinzip.png', label: 'Grafik 10 – Gesundheitsorientiertes Krafttraining: Zwei Wege – ein Prinzip' },
-    { src: 'assets/images/krafttraining/kt-5-kernvariablen.png', label: 'Grafik 11 – Das Trainingsrezept: Schulisches Basistraining' },
+    { src: 'assets/images/grundlagen/fitnesstreppe-lebenslange-fitness.png', label: 'Die Treppe zur lebenslangen Fitness – von der Fremdsteuerung zur Eigenständigkeit (3 Ebenen, 6 Stufen)' },
 ];
 
 let currentIdx = 0;
@@ -723,6 +651,7 @@ const TERMS = [
     { term: 'Aerobe Ausdauer', def: 'Ausdauerleistung, bei der Energie überwiegend mit Sauerstoff bereitgestellt wird. Im Schulsport wichtig für gesundheitsorientiertes Herz-Kreislauf-Training und länger andauernde moderate Belastungen.' },
     { term: 'Anaerobe Belastung', def: 'Kurzzeitige, intensive Belastung, bei der Energie teilweise ohne ausreichende Sauerstoffbereitstellung gewonnen wird. Für Schule nur dosiert und reflektiert einsetzen.' },
     { term: 'AMRAP', def: 'As many repetitions as possible: möglichst viele Wiederholungen in vorgegebener Zeit. Im Unterricht nur sinnvoll, wenn Technikqualität, Belastungssteuerung, Differenzierung und Reflexion abgesichert sind.' },
+    { term: 'Aktive Erholung', def: 'Leichte Bewegung auf niedriger Intensität (lockeres Auslaufen, ruhiges Spiel) nach Belastung. Fördert Durchblutung und Abtransport von Stoffwechselprodukten, ohne neuen Trainingsreiz zu setzen.' },
     { term: 'Ausdauer', def: 'Motorische Fähigkeit, eine Belastung über längere Zeit aufrechtzuerhalten, Ermüdung zu widerstehen und sich anschließend angemessen zu erholen.' },
     { term: 'Beanspruchung', def: 'Individuelle innere Reaktion auf eine Belastung. Zwei Lernende können dieselbe Aufgabe ausführen, aber sehr unterschiedlich beansprucht sein.' },
     { term: 'Belastung', def: 'Äußere Anforderung einer Übung oder Trainingsform, etwa Dauer, Intensität, Wiederholungszahl, Tempo, Zusatzgewicht oder Pausenlänge.' },
@@ -751,6 +680,7 @@ const TERMS = [
     { term: 'Gesundheitsbildung', def: 'Bildungsauftrag, Lernende zu Wissen, Urteilsfähigkeit und verantwortlichem Handeln in Bezug auf Gesundheit zu befähigen.' },
     { term: 'Gesundheitsorientierung', def: 'Unterrichtliche Ausrichtung, bei der Bewegung, Belastung und Lebensstil im Hinblick auf Wohlbefinden, Prävention und verantwortliches Handeln reflektiert werden.' },
     { term: 'HIIT', def: 'High Intensity Interval Training: sehr intensive Intervalle mit Pausen. Im Schulsport nur mit Vorsicht, klarer Techniksteuerung und individueller Anpassung.' },
+    { term: 'Homöostase', def: 'Inneres Gleichgewicht des Körpers (Temperatur, Flüssigkeitshaushalt, Energiestoffwechsel etc.). Ein Trainingsreiz stört dieses Gleichgewicht vorübergehend, worauf der Körper mit Anpassung reagiert.' },
     { term: 'Individualisierung', def: 'Anpassung von Trainingszielen und Belastungen an persönliche Voraussetzungen, Bedürfnisse und Lernstände.' },
     { term: 'Intervallmethode', def: 'Wechsel von Belastungs- und Erholungsphasen. Im Unterricht gut geeignet, wenn Intensität und Pausen transparent gesteuert werden.' },
     { term: 'Kondition', def: 'Sammelbegriff für energetisch geprägte motorische Fähigkeiten wie Ausdauer, Kraft und Schnelligkeit; oft ergänzt durch Beweglichkeit.' },
@@ -764,6 +694,7 @@ const TERMS = [
     { term: 'Monitoring', def: 'Beobachten und Dokumentieren von Belastung, Befinden oder Fortschritt, z. B. über Puls, RPE, Trainingsprotokoll oder Reflexionsbogen.' },
     { term: 'Motorische Grundeigenschaften', def: 'Zentrale körperliche Fähigkeiten: Ausdauer, Kraft, Schnelligkeit, Beweglichkeit und Koordination.' },
     { term: 'Pacing', def: 'Einteilung von Kraft und Tempo über eine Belastungsdauer. Wichtig, damit Lernende Belastung kontrollieren statt nur maximal starten.' },
+    { term: 'Passive Erholung', def: 'Vollständige Ruhe nach Belastung – kein Sport, keine intensive Aktivität. Sinnvoll bei starkem Muskelkater, ersten Krankheitszeichen, Verletzung oder nach sehr intensiven Phasen, um den Körper vollständig zu schonen.' },
     { term: 'Progression', def: 'Allmähliche Steigerung von Anforderungen. Im Unterricht kann Progression über Technik, Umfang, Intensität, Komplexität oder Selbstständigkeit erfolgen.' },
     { term: 'Prävention', def: 'Vorbeugung von Risiken und Erkrankungen. Im Schulsport wichtig, aber nicht der einzige Sinn von Fitness und Gesundheitsbildung.' },
     { term: 'Regeneration', def: 'Wiederherstellung nach Belastung. Schlaf, Pausen, Ernährung, Entspannung und Stressmanagement sind dafür zentral.' },
@@ -776,6 +707,7 @@ const TERMS = [
     { term: 'Stressmanagement', def: 'Umgang mit psychischer Belastung, z. B. über Atmung, Entspannung, Bewegung, Pausen, soziale Unterstützung und Reflexion.' },
     { term: 'Superkompensation', def: 'Modell der Anpassung nach Belastung und Erholung. Für Schule eher als Grundidee nützlich: Training braucht passende Reize und ausreichende Regeneration.' },
     { term: 'Tabata', def: 'Intervallformat mit sehr kurzen, intensiven Belastungen und Pausen. Im Unterricht nur stark angepasst und mit Technikfokus sinnvoll.' },
+    { term: 'Übertraining', def: 'Chronische Überlastung durch zu viel Belastung bei zu wenig Erholung. Warnsignale sind Leistungsabfall trotz Trainings, dauerhafte Müdigkeit, Reizbarkeit und erhöhte Infektanfälligkeit. Prävention durch bewusste Belastungs- und Erholungssteuerung.' },
     { term: 'Theorie-Praxis-Verzahnung', def: 'Fachliche Informationen werden nicht nur besprochen, sondern an praktischen Erfahrungen überprüft und für eigenes Handeln nutzbar gemacht.' },
     { term: 'Trainingsprinzipien', def: 'Regeln zur Gestaltung von Belastung, Anpassung und Erholung, etwa Progression, Variation, Individualisierung und angemessene Belastungsdosierung.' },
     { term: 'Trainingsreiz', def: 'Belastungsimpuls, der Anpassung anregen kann. Zu schwache Reize bleiben wirkungslos, zu starke Reize können überfordern.' },
@@ -943,10 +875,28 @@ const QUIZ = [
         f: 'Körpergewichtstraining wird schulgeeignet, wenn abgestufte Varianten und Bewegungsqualität im Vordergrund stehen.'
     },
     {
-        q: 'Was ist das Leitziel des gesund-funktionalen Muskelfitnesstrainings?',
-        a: ['Muskel- und Bewegungsfunktionen verstehen und Gesundheit vor maximale Leistung stellen.', 'Möglichst schnell die individuelle Maximalkraft jeder Schülerin und jedes Schülers steigern.', 'Vor allem einen sichtbaren Muskelaufbau (Hypertrophie) erreichen.'],
+        q: 'Was meint das Modell der Superkompensation?',
+        a: ['Nach Belastung und passender Erholung passt sich der Körper über das Ausgangsniveau hinaus an.', 'Der Körper kehrt nach Belastung zur Ausgangsfähigkeit zurück; weitere Verbesserung braucht neue Reize.', 'Durch mehrfache intensive Belastungen hintereinander entsteht schneller Trainingsfortschritt.'],
         c: 0,
-        f: 'Im Zentrum steht funktionales Verständnis und gesundheitsorientiertes Handeln – nicht maximale Ausbelastung.'
+        f: 'Superkompensation zeigt: Training funktioniert nur mit passender Erholung. Zu frühe Reize verhindern Aufbau, zu späte lassen den Effekt verpuffen.'
+    },
+    {
+        q: 'Wie viel Schlaf empfehlen Schlafforscher für 14- bis 17-Jährige?',
+        a: ['8 bis 10 Stunden pro Nacht', 'mindestens 6 bis 7 Stunden', '10 bis 12 Stunden für optimales Wachstum'],
+        c: 0,
+        f: 'Schlaf ist zentrale Regeneration: Muskeln, Gehirn, Immunsystem und Gedächtnis reparieren und konsolidieren sich hauptsächlich nachts.'
+    },
+    {
+        q: 'Was ist der Unterschied zwischen aktiver und passiver Erholung?',
+        a: ['Aktiv: leichte Bewegung fördert Durchblutung. Passiv: vollständige Ruhe bei starkem Ermüdungssignal.', 'Aktiv bedeutet gezieltes Training, passiv einfach Pausen machen.', 'Der Unterschied ist minimal – beide Formen wirken gleich.'],
+        c: 0,
+        f: 'Je nach Belastung und Befinden ist der richtige Mix wichtig: Nach moderater Belastung hilft aktive Erholung; bei Übertrainingssignalen ist passive Ruhe angebracht.'
+    },
+    {
+        q: 'Welche Aussage passt zu Übertraining?',
+        a: ['Chronisches Übertraining entsteht durch zu viel Belastung bei zu wenig Erholung – Warnsignale sind Leistungsabfall, Müdigkeit und schlechtere Immunabwehr.', 'Übertraining ist harmlos und verschwindet nach wenigen Tagen Pause von selbst.', 'Übertraining passiert nur im Hochleistungssport, im Schulsport ist es kein echtes Risiko.'],
+        c: 0,
+        f: 'Ziel ist, angesammelte Erschöpfung rechtzeitig abzubauen, bevor daraus echtes Übertraining entsteht. Prävention durch bewusste Belastungs- und Erholungssteuerung.'
     },
 ];
 
@@ -1084,8 +1034,50 @@ function toggleGlossar() {
 }
 
 function toggleThemeNav() {
-    document.getElementById('themeNav').classList.toggle('open');
+    const nav = document.getElementById('themeNav');
+    if (nav) {
+        nav.classList.toggle('open');
+        console.log('Toggled themeNav, open class now:', nav.classList.contains('open'));
+    } else {
+        console.error('themeNav element not found');
+    }
 }
+
+// Ensure button works on iOS
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) {
+    themeNavToggle.addEventListener('click', function(e) {
+        console.log('Button clicked');
+        toggleThemeNav();
+    });
+} else {
+    console.error('themeNavToggle button not found');
+}
+
+// Close menu when clicking on a link (mobile UX)
+const themeNav = document.getElementById('themeNav');
+if (themeNav) {
+    const navLinks = themeNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            themeNav.classList.remove('open');
+        });
+    });
+}
+
+// Right page-toc scroll-spy
+(function() {
+    const tocLinks = document.querySelectorAll('.page-toc a[href^="#"]');
+    if (!tocLinks.length || !window.IntersectionObserver) return;
+    const targets = Array.from(tocLinks).map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting)
+                tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+        });
+    }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+    targets.forEach(t => obs.observe(t));
+})();
 
 buildGlossar();
 buildQuiz();

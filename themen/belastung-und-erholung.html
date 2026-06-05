@@ -17,6 +17,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav {
+                transform: translateX(-100%);
+                will-change: transform;
+            }
+        }
+    </style>
 </head>
 <body class="theme-page">
 
@@ -28,15 +36,14 @@
     <ul class="nav-links">
         <li><a href="../index.html#grundsatz">Grundsatz</a></li>
         <li><a href="../index.html#themen">Themen</a></li>
-        <li><a href="../index.html#grafiken">Grafiken</a></li>
+        <li><a href="../grafikbibliothek.html">Grafikbibliothek</a></li>
         <li><a href="../index.html#quellen">Quellen</a></li>
         <li><a href="../index.html#quiz">Quiz</a></li>
         <li><a href="../index.html#glossar">Glossar</a></li>
     </ul>
     <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
 </nav>
-
-<button class="btn theme-nav-toggle" onclick="toggleThemeNav()" id="themeNavToggle">☰ Themen &amp; Bereiche</button>
 
 <div class="shell">
     <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
@@ -48,7 +55,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="../index.html"><span class="dot"></span>Überblick &amp; Grundsatz</a></li>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
             </ul>
         </div>
 
@@ -69,58 +76,57 @@
 
         <div class="theme-group open">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Lebensstil &amp; Regeneration</span>
+                <span>◇ Regeneration &amp; mentale Balance</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>An- &amp; Entspannung</a></li>
-                <li><a class="active" href="belastung-und-erholung.html"><span class="dot"></span>Ausreichender Schlaf</a></li>
-                <li><a class="active" href="belastung-und-erholung.html"><span class="dot"></span>Aktive Erholung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Urlaub &amp; Regeneration</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene</a></li>
+                <li><a href="stressmanagement-und-achtsamkeit.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a class="active outer-link" href="belastung-und-erholung.html"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Soziales &amp; Umfeld</span>
+                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Familie</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Freunde &amp; Beziehungen</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziales Umfeld</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Belastungen reduzieren</span>
+                <span>◇ Alltag, Lebensraum &amp; Umwelt</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Geringe Exposition</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Weniger Bildschirmzeit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressfaktoren reduzieren</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
             </ul>
         </div>
 
         <div class="theme-group collapsed">
             <p class="theme-group-label" onclick="toggleAccordion(event)">
-                <span>Weitere Einflussfaktoren</span>
+                <span>◇ Soziale Gesundheit</span>
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Stressmanagement</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Mentale Gesundheit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umgebung</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzen &amp; Sicherheit</a></li>
-                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Natur &amp; Bewegung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
                 <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
             </ul>
         </div>
 
@@ -130,7 +136,7 @@
                 <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </p>
             <ul>
-                <li><a href="../index.html#grafiken"><span class="dot"></span>Grafiken</a></li>
+                <li><a href="../grafikbibliothek.html"><span class="dot"></span>Grafikbibliothek</a></li>
                 <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
                 <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
                 <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
@@ -211,10 +217,20 @@
 
             <!-- ANIMATION: SUPERKOMPENSATION -->
             <figure class="lead-figure animation-figure" style="margin: 32px 0;">
-                <video controls autoplay muted style="width: 100%; height: auto; border-radius: 8px; background: #f5f5f5;">
-                    <source src="../assets/images/Superkompanimation.mp4" type="video/mp4">
-                    Ihr Browser unterstützt HTML5-Video nicht. Bitte laden Sie die Animation direkt herunter oder aktualisieren Sie Ihren Browser.
-                </video>
+                <div style="position: relative; display: inline-block; width: 100%;">
+                    <video id="superkompVideo" controls autoplay muted style="width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; display: block;">
+                        <source src="../assets/images/Superkompanimation.mp4" type="video/mp4">
+                        Ihr Browser unterstützt HTML5-Video nicht. Bitte laden Sie die Animation direkt herunter oder aktualisieren Sie Ihren Browser.
+                    </video>
+                    <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+                        <span style="font-size: 0.9rem; color: var(--muted); font-weight: 500; align-self: center;">Geschwindigkeit:</span>
+                        <button class="speed-btn" data-speed="0.5" style="padding: 6px 12px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">0,5x</button>
+                        <button class="speed-btn" data-speed="0.75" style="padding: 6px 12px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">0,75x</button>
+                        <button class="speed-btn active" data-speed="1" style="padding: 6px 12px; background: #333; color: white; border: 1px solid #333; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">1x</button>
+                        <button class="speed-btn" data-speed="1.5" style="padding: 6px 12px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">1,5x</button>
+                        <button class="speed-btn" data-speed="2" style="padding: 6px 12px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">2x</button>
+                    </div>
+                </div>
                 <figcaption style="margin-top: 12px; font-size: 0.9rem; color: var(--muted);">
                     <span class="fig-num">Animation</span>
                     <span class="fig-label">Superkompensation in Aktion – Der Ablauf der Leistungsanpassung</span>
@@ -449,6 +465,42 @@ function toggleAccordion(e) {
 
 function toggleThemeNav() {
     document.getElementById('themeNav').classList.toggle('open');
+}
+
+// Ensure button works on all devices
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) {
+    themeNavToggle.addEventListener('click', function(e) {
+        toggleThemeNav();
+    });
+}
+
+// Auto-close sidebar when clicking navigation links
+document.querySelectorAll('.theme-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('themeNav').classList.remove('open');
+    });
+});
+
+// Video speed controls
+const superkompVideo = document.getElementById('superkompVideo');
+if (superkompVideo) {
+    document.querySelectorAll('.speed-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const speed = parseFloat(btn.dataset.speed);
+            superkompVideo.playbackRate = speed;
+            document.querySelectorAll('.speed-btn').forEach(b => {
+                b.classList.remove('active');
+                b.style.background = '#f0f0f0';
+                b.style.color = '#000';
+                b.style.border = '1px solid #ddd';
+            });
+            btn.classList.add('active');
+            btn.style.background = '#333';
+            btn.style.color = 'white';
+            btn.style.border = '1px solid #333';
+        });
+    });
 }
 
 const figures = Array.from(document.querySelectorAll('.js-figure'));

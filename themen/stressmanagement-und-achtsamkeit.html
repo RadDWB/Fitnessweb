@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stressmanagement &amp; Achtsamkeit – Stress im Schulsport verstehen und bewältigen · Fitness im Schulsport</title>
+
+    <meta name="description" content="Stressmanagement &amp; Achtsamkeit im Schulsport: GAS-Modell, Eustress vs. Distress, Stressoren erkennen, Körpersignale deuten und praktische Entspannungstechniken – für Schüler, Lehrkräfte und Referendare.">
+    <meta property="og:title" content="Stressmanagement &amp; Achtsamkeit – Schülern und Lehrenden bei Stressabbau helfen">
+    <meta property="og:description" content="Von Eustress bis Distress: Stressabbau im Schulalltag durch mentale Strategien, Achtsamkeit und Entspannungstechniken. Erfahren Sie das GAS-Modell, erkennen Sie Stressoren und meistern Sie Wettkampfangst.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav {
+                transform: translateX(-100%);
+                will-change: transform;
+            }
+        }
+
+        .audience-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .audience-tag.students {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .audience-tag.teachers {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .audience-tag.referendars {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .exercise-box {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-left: 4px solid #1976d2;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #1976d2;
+        }
+
+        .exercise-steps {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        .exercise-steps li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .info-callout {
+            background-color: #fffbea;
+            border-left: 4px solid #f57f17;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .info-callout strong {
+            color: #f57f17;
+        }
+
+        .section-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="theme-page">
+
+<nav>
+    <a href="../index.html" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#grundsatz">Grundsatz</a></li>
+        <li><a href="../index.html#themen">Themen</a></li>
+        <li><a href="../grafikbibliothek.html">Grafikbibliothek</a></li>
+        <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
+</nav>
+
+<div class="shell">
+    <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
+        <p class="theme-nav-title">Fitness im Schulsport</p>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Start</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Ausdauer</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Regeneration &amp; mentale Balance</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a class="active outer-link" href="stressmanagement-und-achtsamkeit.html"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <article class="theme-article">
+            <header class="theme-header">
+                <span class="theme-badge">Regeneration &amp; mentale Balance</span>
+                <h1>Stressmanagement &amp; Achtsamkeit</h1>
+                <p class="theme-intro">Stress ist Teil des Lebens – auch im Schulsport. Doch während etwas Stress uns motivieren kann (Eustress), kann zu viel Stress schaden (Distress). Diese Seite hilft dir, Stress zu verstehen, früh zu erkennen und wirksam zu bewältigen. Mit praktischen Techniken und wissenschaftlichem Hintergrund.</p>
+            </header>
+
+            <section id="basics" class="theme-section">
+                <h2>Kapitel 1: Was ist Stress? Die Grundlagen</h2>
+
+                <p><span class="audience-tag students">Für Schüler</span><span class="audience-tag teachers">Für Lehrkräfte</span></p>
+
+                <p>Stress ist deine körperliche und mentale Reaktion auf Anforderungen oder Bedrohungen. Es ist ein natürliches System, das deinen Körper auf Herausforderungen vorbereitet – ob das ein Wettkampf, eine Klassenarbeit oder ein schwieriges Gespräch ist.</p>
+
+                <p>Wissenschaftler unterscheiden zwei Arten von Stress:</p>
+
+                <h3>Eustress: Der gute Stress</h3>
+                <p>Ein wenig Stress kann dir mehr Energie geben und dich helfen, eine Herausforderung zu meistern. Diese positive Form von Stress heißt <strong>Eustress</strong> (vom Griechischen „eu" = gut). Eustress:</p>
+                <ul>
+                    <li>Motiviert dich zu besserer Leistung</li>
+                    <li>Hilft dir, dich zu konzentrieren</li>
+                    <li>Macht dich wacher und aufmerksamer</li>
+                    <li>Kann sogar Spaß machen (wie beim Wettkampf oder großen Ereignis)</li>
+                </ul>
+
+                <h3>Distress: Der schädliche Stress</h3>
+                <p><strong>Distress</strong> entsteht, wenn der Stress zu groß oder zu lange anhält. Zu viel Stress kann dir schaden, deine Gesundheit beeinträchtigen und deine Leistung verschlechtern statt verbessern.</p>
+
+                <div class="section-image">
+                    <img src="../assets/images/stress-wippe.png" alt="Stresswippe: Balance zwischen Eustress und Distress" style="max-width: 100%; height: auto;">
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic;">Die Stresswippe zeigt die Balance: Eustress motiviert, Distress belastet.</p>
+                </div>
+
+                <h3>Das Allgemeine Anpassungssyndrom (GAS)</h3>
+                <p><span class="audience-tag referendars">Für Referendare</span></p>
+
+                <p>Der Stressforscher Hans Selye beschrieb 1936 ein Modell, das erklärt, wie dein Körper auf Stress reagiert. Das <strong>Allgemeine Anpassungssyndrom (GAS)</strong> hat drei Phasen:</p>
+
+                <div class="section-image">
+                    <img src="../assets/images/stress-anpassungssyndrom.png" alt="Das Allgemeine Anpassungssyndrom (GAS) mit drei Phasen: Alarmreaktion, Widerstandsphase, Erschöpfungsphase" style="max-width: 100%; height: auto;">
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic;">GAS-Modell: So reagiert dein Körper auf Stress.</p>
+                </div>
+
+                <p><strong>Phase 1: Alarmreaktion</strong><br>
+                Dein Körper erkennt die Gefahr oder Herausforderung. Das Nervensystem gibt ein Signal: Adrenalin und Cortisol werden ausgeschüttet. Dein Herzschlag steigt, Muskeln spannen sich an, du bist alert und bereit zu handeln (oder zu fliehen). Diese Phase dauert Minuten bis Stunden.</p>
+
+                <p><strong>Phase 2: Widerstandsphase</strong><br>
+                Wenn der Stress anhält, passt sich dein Körper an. Die Hormonlevels stabilisieren sich auf höherem Niveau. Du kannst über längere Zeit unter Belastung arbeiten. Diese Phase kann Tage oder Wochen dauern.</p>
+
+                <p><strong>Phase 3: Erschöpfungsphase</strong><br>
+                Wenn der Stress nicht gelöst wird und die Erholung ausbleibt, sind deine Energiereserven aufgebraucht. Der Körper kann nicht mehr kompensieren. Müdigkeit, Infektionen, Krankheiten und psychische Probleme treten auf.</p>
+
+                <p style="margin-top: 1rem;"><strong>Wichtig:</strong> Der Übergang von Eustress zu Distress ist schleichend. Je früher du merkst, dass der Stress zu viel wird, desto besser kannst du gegensteuern.</p>
+            </section>
+
+            <section id="stressors" class="theme-section">
+                <h2>Kapitel 2: Stressoren erkennen – Was stresst dich im Schulalltag?</h2>
+
+                <p><span class="audience-tag students">Für Schüler</span><span class="audience-tag teachers">Für Lehrkräfte</span></p>
+
+                <p>Ein Stressor ist alles, das Stress in dir auslöst. Im Schulsport und Schulalltag gibt es viele potenzielle Stressoren. Sie lassen sich in Kategorien einteilen:</p>
+
+                <h3>Körperliche Stressoren</h3>
+                <ul>
+                    <li>Mangel an Schlaf oder schlechte Schlafqualität</li>
+                    <li>Hunger oder unausgewogene Ernährung</li>
+                    <li>Übertraining oder körperliche Überbelastung</li>
+                    <li>Lärm, schlechte Luftqualität, extreme Temperaturen</li>
+                    <li>Krankheit oder Verletzungen</li>
+                    <li>Zeitumstellung oder Jetlag</li>
+                </ul>
+
+                <h3>Emotionale und soziale Stressoren</h3>
+                <ul>
+                    <li>Prüfungsangst und Klassenarbeiten</li>
+                    <li>Druck durch Leistungserwartungen (von dir selbst oder anderen)</li>
+                    <li>Streit mit Freunden oder Familie</li>
+                    <li>Mobbing oder sozialer Ausschluss</li>
+                    <li>Zukunftsängste (Karriere, Berufswahl)</li>
+                    <li>Beziehungsprobleme</li>
+                </ul>
+
+                <h3>Sport- und Schulsport-spezifische Stressoren</h3>
+                <ul>
+                    <li><strong>Wettkampfangst:</strong> Sorge um eigene Leistung, Angst zu versagen</li>
+                    <li><strong>Leistungsdruck:</strong> Konkurrenz mit anderen, Noten, Platzierungen</li>
+                    <li><strong>Soziale Faktoren:</strong> Im Schulsport sich vor anderen blamieren, von Zuschauern beobachtet werden</li>
+                    <li><strong>Ungünstige Bedingungen:</strong> Schlecht vorbereitete Ausstattung, ungünstiges Wetter</li>
+                    <li><strong>Trainingsintensität:</strong> Zu hartes Training ohne Erholung</li>
+                </ul>
+
+                <div class="info-callout">
+                    <strong>Selbstreflexion für dich:</strong> Welche drei Stressoren treffen auf dich zu? Schreib sie auf. Welche kannst du beeinflussen, welche nicht? Bei denen, die du nicht beeinflussen kannst, kannst du deine Reaktion darauf ändern.
+                </div>
+            </section>
+
+            <section id="body-signals" class="theme-section">
+                <h2>Kapitel 3: Körpersignale erkennen – Wann wird Stress zu viel?</h2>
+
+                <p><span class="audience-tag students">Für Schüler</span><span class="audience-tag teachers">Für Lehrkräfte</span></p>
+
+                <p>Stress äußert sich körperlich. Wenn du die Zeichen kennst, kannst du früh gegensteuern, bevor Distress entsteht.</p>
+
+                <h3>Akute Stresszeichen (sofort)</h3>
+                <p>Wenn du gerade gestresst bist, merkst du sofort:</p>
+                <ul>
+                    <li>Erhöhter Herzschlag und schnelleres Atmen</li>
+                    <li>Schwitzende Handflächen oder kalte Hände</li>
+                    <li>Bauchschmerzen, flaues Gefühl im Magen</li>
+                    <li>Muskelverspannungen, besonders im Nacken und in den Schultern</li>
+                    <li>Zittrigkeit oder Nervosität</li>
+                    <li>Mundtrockenheit, Kopfschmerzen</li>
+                </ul>
+
+                <div class="section-image">
+                    <img src="../assets/images/stress-koerper.png" alt="Stresskörper: Physische Auswirkungen von Stress auf den menschlichen Körper" style="max-width: 100%; height: auto;">
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic;">Der Stresskörper zeigt, wo Stress sich körperlich manifestiert.</p>
+                </div>
+
+                <h3>Chronische Stresszeichen (langfristig)</h3>
+                <p>Wenn der Stress lange anhält, entstehen Probleme, die länger bestehen bleiben:</p>
+                <ul>
+                    <li>Kopfschmerzen und Migräne (wiederkehrend)</li>
+                    <li>Schlafprobleme (Ein- oder Durchschlafstörungen)</li>
+                    <li>Schwächeres Immunsystem (häufiger erkältet, Infekte)</li>
+                    <li>Verdauungsprobleme (Verstopfung, Durchfall, Sodbrennen)</li>
+                    <li>Chronische Müdigkeit und mangelnde Energie</li>
+                    <li>Nacken- und Rückenschmerzen</li>
+                    <li>Hautprobleme (Akne-Schübe, Ausschläge)</li>
+                </ul>
+
+                <h3>Mentale und emotionale Zeichen</h3>
+                <ul>
+                    <li>Konzentrationsprobleme, Vergesslichkeit</li>
+                    <li>Reizbarkeit, emotionale Überreaktionen</li>
+                    <li>Angst und Sorgen</li>
+                    <li>Motivationsverlust</li>
+                    <li>Negative Gedankenmuster und Selbstzweifel</li>
+                </ul>
+
+                <div class="info-callout">
+                    <strong>Tipp:</strong> Lerne, deinen Körper zu „lesen". Wo bemerkst du Stress zuerst? Im Bauch? Im Nacken? In deinem Atem? Diese persönliche Körperkenntnis hilft dir, schnell zu reagieren.
+                </div>
+            </section>
+
+            <section id="management" class="theme-section">
+                <h2>Kapitel 4: Stress bewältigen – Strategien und mentale Techniken</h2>
+
+                <p><span class="audience-tag students">Für Schüler</span><span class="audience-tag teachers">Für Lehrkräfte</span><span class="audience-tag referendars">Für Referendare</span></p>
+
+                <p>Es gibt viele Wege, mit Stress umzugehen. Die besten Strategien sind diejenigen, die du selbst testest und findest, die dir helfen.</p>
+
+                <h3>Die drei Säulen der mentalen Widerstandskraft</h3>
+
+                <p><strong>1. Schlaf</strong><br>
+                8–10 Stunden Schlaf pro Nacht sind für Jugendliche essentiell. Schlaf ist nicht „vergeudete Zeit" – es ist deine Chance, körperlich und mental zu regenerieren. Schlechter Schlaf verstärkt Stress, guter Schlaf baut ihn ab.</p>
+
+                <p><strong>2. Regelmäßige moderate Bewegung</strong><br>
+                Sport und Bewegung sind fantastische Stressabbauer. Nicht extremes Training, sondern regelmäßige moderate Aktivität (wie Spaziergang, Joggen, Radfahren, Tanzen). 30 Minuten täglich reichen aus.</p>
+
+                <p><strong>3. Ausgewogene Ernährung</strong><br>
+                Nährstoffe beeinflussen deine Hormon- und Neurotransmitter-Balance. Eine gute Ernährung mit Vollkornprodukten, Obst, Gemüse und ausreichend Wasser hilft, Stress zu reduzieren.</p>
+
+                <h3>Mentale Strategien für Wettkampfstress</h3>
+
+                <p><strong>Wettkampfangst erkennen und reinterpretieren</strong><br>
+                Wettkampfangst ist normal – auch Profisportler kennen sie. Das Wichtige: Reinterpretiere deine Nervosität als <em>Erregung</em> und <em>Bereitschaft</em>, nicht als Angst. Schon diese mentale Verschiebung kann helfen.</p>
+
+                <p><strong>Identifiziere Stresszeichen früh</strong><br>
+                Kenne deine körperlichen Reaktionen auf Wettkampfstress (höherer Puls, Nervosität, Magenschmerzen). Je früher du sie erkennst, desto schneller kannst du reagieren.</p>
+
+                <p><strong>Nutze Muskelentspannungstechniken</strong><br>
+                Angespannte Muskeln verstärken die mentale Angst. Gezieltes Entspannen der Muskulatur signalisiert deinem Körper: „Alles ist okay." Dies kann direkt vor oder während des Wettkampfs helfen.</p>
+
+                <p><strong>Mentale Visualisierung</strong><br>
+                Stelle dir vor, wie du den Wettkampf erfolgreich meisterst. Nicht nur das Ergebnis, sondern die Gefühle während der guten Leistung – Selbstvertrauen, Fokus, Freude. Regelmäßige mentale Bilder trainieren dein Gehirn auf Erfolg.</p>
+
+                <p><strong>Routine entwickeln</strong><br>
+                Sportler und Performer finden Sicherheit in Routinen. Eine feste Routine vor dem Wettkampf (bestimmte Dehnübungen, eine Atemtechnik, ein Rituel) gibt dir Kontrolle und Sicherheit.</p>
+
+                <p><strong>Tiefes, bewusstes Atmen</strong><br>
+                Dein Atem ist dein Anker. Tiefes, bewusstes Atmen aktiviert das parasympathische Nervensystem – die Entspannungsseite. 3–5 tiefe Atemzüge können die Angst deutlich senken.</p>
+
+                <p><strong>Akzeptiere, was du nicht kontrollieren kannst</strong><br>
+                Du kannst das Wetter, die Konkurrenz oder die Schiedsrichter nicht kontrollieren. Konzentriere dich auf das, was in deiner Hand liegt: deine Vorbereitung, deine Einstellung, deinen Einsatz.</p>
+
+                <h3>Alltägliche Stressabbau-Techniken</h3>
+                <ul>
+                    <li><strong>Spaziergang in der Natur:</strong> 15–30 Minuten reichen, um Cortisol zu senken</li>
+                    <li><strong>Musik hören:</strong> Beruhigende Musik kann Herzfrequenz und Blutdruck senken</li>
+                    <li><strong>Journaling:</strong> Schreib deine Sorgen auf; oft klärt sich damit die Perspektive</li>
+                    <li><strong>Meditation oder Achtsamkeit:</strong> Nur 5 Minuten täglich können einen Unterschied machen</li>
+                    <li><strong>Zeit mit Freunden und Familie:</strong> Soziale Unterstützung ist einer der stärksten Stressabbauer</li>
+                    <li><strong>Hobby und kreative Aktivitäten:</strong> Malen, Musik, Schreiben – Dinge, die dir Freude bereiten</li>
+                </ul>
+            </section>
+
+            <section id="exercises" class="theme-section">
+                <h2>Kapitel 5: Praxis-Box – Entspannungsübungen zum Selbermachen</h2>
+
+                <p><span class="audience-tag students">Für Schüler</span><span class="audience-tag teachers">Für Lehrkräfte</span></p>
+
+                <p>Theorie ist schön, aber nur die Praxis hilft wirklich. Hier sind konkrete Übungen, die du sofort anwenden kannst.</p>
+
+                <h3>Atemtechniken</h3>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Die 4-7-8 Atemtechnik (für schnelle Beruhigung)</div>
+                    <p><strong>Dauer:</strong> 3–5 Minuten | <strong>Beste Zeit:</strong> Wenn du merkst, dass Stress aufbaut</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Sitz oder liege bequem hin. Schließ deine Augen oder fokussier auf einen Punkt.</li>
+                        <li><strong>Einatmen:</strong> Atme durch die Nase für einen Zähler von 4 ein.</li>
+                        <li><strong>Halten:</strong> Halte den Atem für einen Zähler von 7 an.</li>
+                        <li><strong>Ausatmen:</strong> Atme durch den Mund für einen Zähler von 8 aus. Der lange Ausatem ist zentral!</li>
+                        <li><strong>Wiederhole:</strong> Mache das 4–8 Mal. Der Atem wird natürlicher, dein Puls sinkt.</li>
+                    </ol>
+                    <p><strong>Warum das funktioniert:</strong> Der längere Ausatem aktiviert dein parasympathisches Nervensystem (Entspannungsseite).</p>
+                </div>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Box-Atemtechnik (für Fokus vor dem Wettkampf)</div>
+                    <p><strong>Dauer:</strong> 2–3 Minuten | <strong>Beste Zeit:</strong> Direkt vor Wettkampf oder wichtiger Leistung</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Einatmen:</strong> Atme durch die Nase für einen Zähler von 4 ein.</li>
+                        <li><strong>Halten:</strong> Halte für einen Zähler von 4.</li>
+                        <li><strong>Ausatmen:</strong> Atme aus für einen Zähler von 4.</li>
+                        <li><strong>Halten:</strong> Halte leer für einen Zähler von 4.</li>
+                        <li><strong>Wiederhole:</strong> 5–10 Zyklen. Diese Symmetrie schafft mentale Balance und Kontrolle.</li>
+                    </ol>
+                </div>
+
+                <h3>Muskelentspannungstechniken</h3>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Progressive Muskelentspannung (PMR) – Kurze Version (3–5 min)</div>
+                    <p><strong>Dauer:</strong> 5 Minuten | <strong>Beste Zeit:</strong> Abends vor dem Schlafengehen oder nach dem Training</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Liege auf dem Rücken oder sitz bequem.</li>
+                        <li><strong>Fäuste:</strong> Spanne deine Fäuste für 5 Sekunden an, dann lass los. Spüre die Entspannung.</li>
+                        <li><strong>Arme:</strong> Spanne deine Bizeps an (beuge Arme), halten, loslassen.</li>
+                        <li><strong>Schultern und Nacken:</strong> Ziehe Schultern zu den Ohren, halten, fallen lassen.</li>
+                        <li><strong>Gesicht:</strong> Spanne Stirn, Augen und Wangen an, halten, loslassen.</li>
+                        <li><strong>Kiefer:</strong> Spanne Kiefer an, dann entspanne.</li>
+                        <li><strong>Bauch:</strong> Spanne Bauchmuskeln an, halten, loslassen.</li>
+                        <li><strong>Beine:</strong> Spanne Oberschenkel, Unterschenkel und Zehen an, dann entspanne.</li>
+                        <li><strong>Abschluss:</strong> Liege 1–2 Minuten entspannt. Spüre deine Entspannung.</li>
+                    </ol>
+                    <p><strong>Warum das funktioniert:</strong> Dein Gehirn lernt den Unterschied zwischen Spannung und Entspannung. Mit der Zeit kannst du schneller entspannen.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Rag Doll (Lappen-Puppe) – Schnelle Nackenentspannung</div>
+                    <p><strong>Dauer:</strong> 1–2 Minuten | <strong>Beste Zeit:</strong> Zwischendurch, wenn Nacken verspannt ist</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Sitz auf einem Stuhl oder steh mit leicht gebeugten Knien.</li>
+                        <li><strong>Vorbeugen:</strong> Beuge deinen Oberkörper nach vorne. Lass Kopf, Arme und Rumpf entspannt herunterhängen wie eine Lappen-Puppe.</li>
+                        <li><strong>Halten:</strong> Bleibe 10–15 Sekunden in dieser Position. Spüre, wie die Schwerkraft deine Muskeln dehnt.</li>
+                        <li><strong>Wackeltest:</strong> Schüttle leicht deinen Kopf und Oberkörper. Achte darauf, dass alles locker ist.</li>
+                        <li><strong>Aufrollen:</strong> Rolle langsam, Wirbel für Wirbel, wieder hoch.</li>
+                    </ol>
+                    <p><strong>Sicherheit:</strong> Nicht zu schnell aufrichten, um Schwindel zu vermeiden.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Nackenrolle (Neck Roll) – Mobilität und Entspannung</div>
+                    <p><strong>Dauer:</strong> 1–2 Minuten | <strong>Beste Zeit:</strong> Morgens oder nach langem Sitzen</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Sitz auf einem Stuhl oder auf dem Boden mit gekreuzten Beinen.</li>
+                        <li><strong>Kopf nach links:</strong> Drehe deinen Kopf nach links, so weit es sich angenehm anfühlt. Halte kurz.</li>
+                        <li><strong>Langsame Rolle nach vorne:</strong> Rolle dein Kinn langsam nach unten zu deiner Brust.</li>
+                        <li><strong>Kopf nach rechts:</strong> Setze die Bewegung fort und rolle nach rechts.</li>
+                        <li><strong>Nach hinten:</strong> Rolle weiter nach hinten (nicht zu extremer Rückenbeugung).</li>
+                        <li><strong>Wiederhole:</strong> 3–5 Rollen in jede Richtung. Bewegungen sollten sanft und fließend sein.</li>
+                    </ol>
+                    <p><strong>Vorsicht:</strong> Nicht den Kopf schnell nach hinten werfen – sanfte, kontrollierte Bewegungen!</p>
+                </div>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Body Board (Holzbrett) – Tiefe Entspannung</div>
+                    <p><strong>Dauer:</strong> 2–3 Minuten | <strong>Beste Zeit:</strong> Nach dem Training oder abends</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Liege auf deiner rechten Seite. Halte deine Arme über deinem Kopf.</li>
+                        <li><strong>Körper versteifen:</strong> Atme ein und spanne deinen ganzen Körper an wie ein Holzbrett – von Kopf bis Fuß.</li>
+                        <li><strong>Ausatmen und entspannen:</strong> Atme aus und lasse deinen Körper völlig entspannen. Dein Kopf, Arme und Rumpf fallen nach vorne/unten. Entspanne deine Muskulatur komplett. Bleibe 10 Sekunden entspannt.</li>
+                        <li><strong>Seitenwechsel:</strong> Wiederhole auf der linken Seite.</li>
+                    </ol>
+                    <p><strong>Effekt:</strong> Dies ist eine tiefe Entspannungstechnik, die den Unterschied zwischen Spannung und Tiefenentspannung deutlich macht.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Jaw Stretch (Kiefer-Dehnung) – Für Kiefer und Nacken</div>
+                    <p><strong>Dauer:</strong> 1 Minute | <strong>Beste Zeit:</strong> Wenn du merkst, dass du deinen Kiefer anspannst (oft unbewusst unter Stress)</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Sitz aufrecht, Kopf gerade.</li>
+                        <li><strong>Mund öffnen:</strong> Öffne deinen Mund so weit wie möglich. Atme ein. Das kann auch ein Gähnen sein – das ist okay!</li>
+                        <li><strong>Entspannen und ausatmen:</strong> Atme aus und lass deinen Mund langsam wieder zu.</li>
+                        <li><strong>Kieferversatz:</strong> Schiebe deinen Unterkiefer nach rechts, so weit es geht. Halte kurz. Entspanne. Wiederhole nach links.</li>
+                        <li><strong>Wiederhole:</strong> 10 Zyklen insgesamt.</li>
+                    </ol>
+                    <p><strong>Hintergrund:</strong> Der Kiefer ist ein Spannungsindikator. Viele Menschen spannen den Kiefer unter Stress an, ohne es zu merken!</p>
+                </div>
+
+                <h3>Körperbewusstsein und Mentale Techniken</h3>
+
+                <div class="exercise-box">
+                    <div class="exercise-title">Body Scan – Kurze Achtsamkeitsmeditation (5 min)</div>
+                    <p><strong>Dauer:</strong> 5 Minuten | <strong>Beste Zeit:</strong> Morgens oder als Pause zwischen Aktivitäten</p>
+                    <ol class="exercise-steps">
+                        <li><strong>Ausgangsposition:</strong> Liege auf dem Rücken oder sitz bequem.</li>
+                        <li><strong>Schließ deine Augen</strong> und atme langsam.</li>
+                        <li><strong>Fokus auf Zehen:</strong> Lenke deine Aufmerksamkeit auf deine Zehen. Was nimmst du wahr? Wärme? Schwere? Kribbeln? Einfach wahrnehmen, nicht verändern.</li>
+                        <li><strong>Langsam nach oben scannen:</strong> Bewege deine Aufmerksamkeit zu Fußsohlen, Schienbeine, Oberschenkel. Für jeden Bereich kurz innehalten.</li>
+                        <li><strong>Weitermachen:</strong> Bauch, Brust, Rücken, Arme (von den Schultern zu den Fingerspitzen), Nacken, Kopf, Gesicht.</li>
+                        <li><strong>Gesamteindruck:</strong> Zum Abschluss: Spüre deinen ganzen Körper. Offen, entspannt.</li>
+                        <li><strong>Langsam zurückkehren:</strong> Öffne deine Augen langsam.</li>
+                    </ol>
+                    <p><strong>Nutzen:</strong> Body Scans schulen Körperbewusstsein und zeigen dir, wo du Spannungen hältst.</p>
+                </div>
+
+                <div class="info-callout">
+                    <strong>Tipp für Lehrkräfte:</strong> Diese Übungen können in den Unterricht integriert werden – zum Beispiel 2–3 Minuten Atemtechnik nach einer anstrengenden Phase, um die Schüler zu zentrieren. Nutzt die Übungen auch selbst als Lehrkraft; Stressabbau ist keine Schwäche, sondern Professionalität!
+                </div>
+            </section>
+
+            <section id="resources" class="theme-section">
+                <h2>Weitere Hilfe und Ressourcen</h2>
+
+                <p><span class="audience-tag students">Für Schüler</span></p>
+
+                <p>Manchmal reichen Selbsthilfetechniken nicht aus. Das ist völlig normal. Es gibt professionelle Hilfe:</p>
+
+                <ul>
+                    <li><strong>Schulberater/in oder Schulpsychologe/in:</strong> Erste Ansprechperson in der Schule</li>
+                    <li><strong>Vertrauenslehrer/in:</strong> Lehrer, dem du vertraust und der dein Anliegen vertraulich behandelt</li>
+                    <li><strong>Eltern und Familie:</strong> Oft ist ein offenes Gespräch der erste wichtige Schritt</li>
+                    <li><strong>Psychotherapeut/in oder Psycholog/in:</strong> Professionelle Unterstützung bei länger anhaltenden Problemen</li>
+                    <li><strong>Sportmentaltrainer:</strong> Speziell für Wettkampfangst und mentale Leistungsförderung</li>
+                </ul>
+
+                <p><strong>Es ist kein Zeichen von Schwäche, Hilfe zu holen. Es ist ein Zeichen von Mut und Selbstbewusstsein.</strong></p>
+            </section>
+
+            <section id="summary" class="theme-section">
+                <h2>Zusammenfassung: Dein Stress-Management-Plan</h2>
+
+                <ol>
+                    <li><strong>Erkenne deinen Stress:</strong> Welche Stressoren treffen auf dich zu? Wo merkst du Stress in deinem Körper?</li>
+                    <li><strong>Wende die Grundlagen an:</strong> Achte auf ausreichend Schlaf, regelmäßige Bewegung, gute Ernährung.</li>
+                    <li><strong>Teste Techniken:</strong> Nicht alle Entspannungsmethoden helfen jedem. Probiere verschiedene aus und finde DEINE beste Methode.</li>
+                    <li><strong>Schaffe eine Routine:</strong> Eine regelmäßige Praxis ist wichtiger als gelegentliche Anwendung.</li>
+                    <li><strong>Hole dir Hilfe:</strong> Wenn Stress chronisch wird, scheue nicht vor professioneller Unterstützung zurück.</li>
+                </ol>
+            </section>
+
+        </article>
+
+        <nav class="theme-footer" id="themeFooter">
+            <a href="#" class="back-to-top">↑ Nach oben</a>
+        </nav>
+    </main>
+</div>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
