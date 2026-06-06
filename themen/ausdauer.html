@@ -25,6 +25,53 @@
             }
         }
 
+        /* DDA-Skala Stufen-Visualisierung */
+        .dda-scale {
+            display: grid;
+            gap: 6px;
+            margin: 16px 0 18px;
+        }
+        .dda-level {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 12px;
+            align-items: center;
+            border-radius: 10px;
+            padding: 9px 14px 9px 0;
+            border-left: 4px solid transparent;
+        }
+        .dda-num {
+            font-family: var(--fh);
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            border-radius: 8px;
+            padding: 4px 0;
+            color: #fff;
+            line-height: 1;
+        }
+        .dda-text { font-size: 0.92rem; line-height: 1.45; color: var(--text); }
+        .dda-text strong { display: block; font-size: 0.94rem; }
+        .dda-level.dda-1 { background: rgba(22,101,52,0.08); border-left-color: #166534; }
+        .dda-level.dda-1 .dda-num { background: #166534; }
+        .dda-level.dda-2 { background: rgba(22,163,74,0.08); border-left-color: #16a34a; }
+        .dda-level.dda-2 .dda-num { background: #16a34a; }
+        .dda-level.dda-3 { background: rgba(202,138,4,0.08); border-left-color: #ca8a04; }
+        .dda-level.dda-3 .dda-num { background: #ca8a04; }
+        .dda-level.dda-4 { background: rgba(234,88,12,0.08); border-left-color: #ea580c; }
+        .dda-level.dda-4 .dda-num { background: #ea580c; }
+        .dda-level.dda-5 { background: rgba(220,38,38,0.08); border-left-color: #dc2626; }
+        .dda-level.dda-5 .dda-num { background: #dc2626; }
+        .dda-level.dda-6 { background: rgba(153,27,27,0.10); border-left-color: #991b1b; }
+        .dda-level.dda-6 .dda-num { background: #991b1b; }
+        .dda-target-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em;
+            background: var(--accent-lg); border: 1px solid var(--border-hl);
+            color: var(--accent); border-radius: 999px; padding: 4px 12px;
+            margin: 2px 4px 2px 0;
+        }
+
         /* Ressourcen-Karten für externe Links */
         .resource-grid {
             display: grid;
@@ -229,20 +276,36 @@
 
         <p class="nav-anchor"><a href="../index.html">← Zur Startseite</a></p>
 
-        <figure class="lead-figure js-figure" role="button" tabindex="0"
-                aria-label="Infografik „Ausdauer macht Spaß" vergrößern"
-                data-full="../assets/images/Ausdauer%20macht%20spass.png"
-                data-label="Ausdauer macht Spaß – Infografik zum Unterrichtsvorhaben Ausdauertraining im Schulsport">
-            <img src="../assets/images/Ausdauer%20macht%20spass.png"
-                 alt="Infografik „Ausdauer macht Spaß": Überblick über das Unterrichtsvorhaben Ausdauertraining im Schulsport – Lernweg, Methoden und Kompetenzziele"
-                 loading="eager"
-                 onerror="this.closest('.lead-figure').style.display='none'">
-            <figcaption>
-                <span class="fig-num">Lernweg-Infografik</span>
-                <span class="fig-label">Ausdauer macht Spaß – Überblick über Lernprogression und Unterrichtsvorhaben</span>
-                <span class="fig-hint">Antippen zum Vergrößern &amp; Zoomen</span>
-            </figcaption>
-        </figure>
+        <div class="thumb-row">
+            <figure class="thumb-figure js-figure" role="button" tabindex="0"
+                    aria-label="Infografik „Ausdauer macht Spaß" vergrößern"
+                    data-full="../assets/images/Ausdauer%20macht%20spass.png"
+                    data-label="Ausdauer macht Spaß – Infografik zum Unterrichtsvorhaben Ausdauertraining im Schulsport">
+                <img src="../assets/images/Ausdauer%20macht%20spass.png"
+                     alt="Infografik „Ausdauer macht Spaß": Überblick über Lernprogression und Unterrichtsvorhaben"
+                     loading="eager"
+                     onerror="this.closest('.thumb-figure').style.display='none'">
+                <figcaption>
+                    <span class="fig-num">Lernweg-Infografik</span>
+                    <span class="fig-label">Ausdauer macht Spaß</span>
+                    <span class="fig-hint">Antippen zum Vergrößern</span>
+                </figcaption>
+            </figure>
+            <figure class="thumb-figure js-figure" role="button" tabindex="0"
+                    aria-label="DDA-Skala vergrößern"
+                    data-full="../assets/images/DDA_Skala1.png"
+                    data-label="DDA-Skala (Deddens &amp; Duwenbeck 2013) – 6-stufige subjektive Belastungsskala für den Schulsport">
+                <img src="../assets/images/DDA_Skala1.png"
+                     alt="DDA-Skala: 6 Belastungsstufen von sehr leicht bis maximal"
+                     loading="eager"
+                     onerror="this.closest('.thumb-figure').style.display='none'">
+                <figcaption>
+                    <span class="fig-num">DDA-Skala</span>
+                    <span class="fig-label">Deddens &amp; Duwenbeck 2013</span>
+                    <span class="fig-hint">Antippen zum Vergrößern</span>
+                </figcaption>
+            </figure>
+        </div>
 
         <section class="section" style="max-width:none;padding:28px 0 40px;">
 
@@ -277,10 +340,31 @@
                 <h3>Belastungssteuerung: Die D&amp;D-Skala</h3>
                 <p class="muted">Zentrales Instrument für ein gesundheitsorientiertes Ausdauertraining ist die subjektive Belastungswahrnehmung. Die D&amp;D-Skala (Deddens &amp; Duwenbeck) operationalisiert diese im Schulkontext.</p>
 
-                <div class="stat-grid">
-                    <div class="stat"><b>3–4</b><span>Zielbereich auf der D&amp;D-Skala für gesundheitsorientiertes Ausdauertraining</span></div>
-                    <div class="stat"><b>Puls</b><span>Objektive Messgröße, die mit dem subjektiven Empfinden abgeglichen wird</span></div>
-                    <div class="stat"><b>Redefähig</b><span>Einfacher Alltagstest für ein angemessenes Belastungsniveau im aeroben Bereich</span></div>
+                <div class="dda-scale">
+                    <div class="dda-level dda-1">
+                        <div class="dda-num">1</div>
+                        <div class="dda-text"><strong>Sehr leicht</strong>Kaum spürbar – Ruhezustand oder leichtes Aufwärmen; keine Anstrengung wahrnehmbar</div>
+                    </div>
+                    <div class="dda-level dda-2">
+                        <div class="dda-num">2</div>
+                        <div class="dda-text"><strong>Leicht</strong>Angenehme Belastung – gut unterhalten, problemlos mehrere Sätze sprechen</div>
+                    </div>
+                    <div class="dda-level dda-3">
+                        <div class="dda-num">3</div>
+                        <div class="dda-text"><strong>Etwas anstrengend</strong>Aerober Zielbereich – kurze Sätze möglich, Atmung hörbar <span class="dda-target-badge">✓ Zielbereich</span></div>
+                    </div>
+                    <div class="dda-level dda-4">
+                        <div class="dda-num">4</div>
+                        <div class="dda-text"><strong>Anstrengend</strong>Oberer aerober Bereich – einzelne Wörter möglich, deutlich erhöhte Atemfrequenz <span class="dda-target-badge">✓ Zielbereich</span></div>
+                    </div>
+                    <div class="dda-level dda-5">
+                        <div class="dda-num">5</div>
+                        <div class="dda-text"><strong>Sehr anstrengend</strong>Anaerober Bereich – Sprechen kaum möglich, starkes Brennen in der Muskulatur</div>
+                    </div>
+                    <div class="dda-level dda-6">
+                        <div class="dda-num">6</div>
+                        <div class="dda-text"><strong>Maximal</strong>Absolute Grenzbelastung – Sprechen unmöglich, maximale Herzfrequenz</div>
+                    </div>
                 </div>
 
                 <div class="fact-list">
@@ -313,10 +397,24 @@
                         </div>
                         <div class="rc-meta">
                             <span>Klasse 5–13</span>
-                            <span>9 Module</span>
+                            <span>9 eigenständige Web-Apps</span>
                             <span>Interaktiv</span>
                         </div>
-                        <p>Das AusdauerLab ist ein digitales Lernlabor für den Sportunterricht. Es behandelt Ausdauer als steuerbaren, messbaren und reflektierbaren Prozess. Die Module bauen aufeinander auf – von der Pulsphysiologie über subjektive Belastungssteuerung bis zu Ausdauertests und Energiesystemen.</p>
+                        <figure class="thumb-figure js-figure" role="button" tabindex="0" style="margin:4px 0 8px;"
+                                aria-label="AusdauerLab Screenshot vergrößern"
+                                data-full="../assets/images/screenshotAudauerlab.png"
+                                data-label="AusdauerLab – Übersicht der 9 eigenständigen Web-Anwendungen für den Schulsport">
+                            <img src="../assets/images/screenshotAudauerlab.png"
+                                 alt="Screenshot des AusdauerLabs mit Modulübersicht"
+                                 loading="lazy"
+                                 onerror="this.closest('.thumb-figure').style.display='none'">
+                            <figcaption>
+                                <span class="fig-num">Screenshot</span>
+                                <span class="fig-label">AusdauerLab – Modulübersicht</span>
+                                <span class="fig-hint">Antippen zum Vergrößern</span>
+                            </figcaption>
+                        </figure>
+                        <p>Das AusdauerLab ist eine Sammlung von <strong>9 eigenständigen Web-Anwendungen</strong> für den Schulsport – einsetzbar von Klasse 5 bis 13, unabhängig voneinander. Jede App behandelt einen eigenen Ausdauer-Schwerpunkt: von Pulsphysiologie und subjektiver Belastungssteuerung bis zu Ausdauertests und Energiesystemen. Die Apps laufen direkt im Browser, ohne Installation.</p>
                         <p><strong>Module im Überblick:</strong></p>
                         <div class="fact-list" style="margin-top:4px;">
                             <div class="fact"><strong>Modul 01 – Basics:</strong> Pulsphysiologie interaktiv, D&amp;D-Skala einführen, Erholungskurve beobachten.</div>
