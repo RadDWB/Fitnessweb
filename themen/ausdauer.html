@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausdauer im Schulsport · Fitness im Schulsport</title>
+
+    <meta name="description" content="Ausdauertraining im Schulsport: Das interaktive AusdauerLab mit 9 digitalen Modulen und das Unterrichtsvorhaben „Dauerlauf macht Spaß" für Klasse 7 – motivierend, gesundheitsorientiert und lehrplankonform.">
+    <meta property="og:title" content="Ausdauer im Schulsport">
+    <meta property="og:description" content="Ausdauertraining gesundheitsorientiert und motivierend gestalten: AusdauerLab mit interaktiven Modulen und Unterrichtsvorhaben für Klasse 7.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <link rel="icon" href="../favicon.ico?v=2" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        @media (max-width: 980px) {
+            .theme-nav {
+                transform: translateX(-100%);
+                will-change: transform;
+            }
+        }
+
+        /* DDA-Skala Stufen-Visualisierung */
+        .dda-scale {
+            display: grid;
+            gap: 6px;
+            margin: 16px 0 18px;
+        }
+        .dda-level {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 12px;
+            align-items: center;
+            border-radius: 10px;
+            padding: 9px 14px 9px 0;
+            border-left: 4px solid transparent;
+        }
+        .dda-num {
+            font-family: var(--fh);
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            border-radius: 8px;
+            padding: 4px 0;
+            color: #fff;
+            line-height: 1;
+        }
+        .dda-text { font-size: 0.92rem; line-height: 1.45; color: var(--text); }
+        .dda-text strong { display: block; font-size: 0.94rem; }
+        .dda-level.dda-1 { background: rgba(22,101,52,0.08); border-left-color: #166534; }
+        .dda-level.dda-1 .dda-num { background: #166534; }
+        .dda-level.dda-2 { background: rgba(22,163,74,0.08); border-left-color: #16a34a; }
+        .dda-level.dda-2 .dda-num { background: #16a34a; }
+        .dda-level.dda-3 { background: rgba(202,138,4,0.08); border-left-color: #ca8a04; }
+        .dda-level.dda-3 .dda-num { background: #ca8a04; }
+        .dda-level.dda-4 { background: rgba(234,88,12,0.08); border-left-color: #ea580c; }
+        .dda-level.dda-4 .dda-num { background: #ea580c; }
+        .dda-level.dda-5 { background: rgba(220,38,38,0.08); border-left-color: #dc2626; }
+        .dda-level.dda-5 .dda-num { background: #dc2626; }
+        .dda-level.dda-6 { background: rgba(153,27,27,0.10); border-left-color: #991b1b; }
+        .dda-level.dda-6 .dda-num { background: #991b1b; }
+        .dda-target-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em;
+            background: var(--accent-lg); border: 1px solid var(--border-hl);
+            color: var(--accent); border-radius: 999px; padding: 4px 12px;
+            margin: 2px 4px 2px 0;
+        }
+
+        /* Ressourcen-Karten für externe Links */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+            gap: 20px;
+            margin-top: 14px;
+        }
+        @media (max-width: 860px) { .resource-grid { grid-template-columns: 1fr; } }
+
+        .resource-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: box-shadow .2s, border-color .2s;
+        }
+        .resource-card:hover {
+            border-color: var(--border-hl);
+            box-shadow: 0 8px 28px rgba(47,125,50,0.10);
+        }
+        .resource-card .rc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2px;
+        }
+        .resource-card h3 {
+            font-family: var(--fh);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0 0 6px;
+        }
+        .resource-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+            flex: 1;
+        }
+        .resource-card .rc-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        .resource-card .rc-meta span {
+            background: var(--accent-lg);
+            border-radius: 999px;
+            padding: 3px 10px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .resource-card .rc-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body class="theme-page">
+
+<nav>
+    <a href="../index.html" class="nav-brand">
+        <span class="brand-mark">F</span>
+        <span class="nav-title">Fitness <em>im Schulsport</em></span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html#grundsatz">Grundsatz</a></li>
+        <li><a href="../index.html#themen">Themen</a></li>
+        <li><a href="../medienbibliothek.html">Medienbibliothek</a></li>
+        <li><a href="../index.html#quellen">Quellen</a></li>
+        <li><a href="../index.html#quiz">Quiz</a></li>
+        <li><a href="../index.html#glossar">Glossar</a></li>
+    </ul>
+    <a href="../impressum.html" class="nav-impressum">Impressum</a>
+    <button type="button" class="theme-nav-toggle" id="themeNavToggle" aria-label="Themennavigation öffnen">☰</button>
+</nav>
+
+<div class="shell">
+    <aside class="theme-nav" id="themeNav" aria-label="Themenübersicht">
+        <p class="theme-nav-title">Fitness im Schulsport</p>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Start</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../index.html"><span class="dot"></span>Einführung und Grundsätzliches</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group open">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Kernbereiche</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="gesundheitsorientiertes-krafttraining.html"><span class="dot"></span>Gesund-funktionales Krafttraining</a></li>
+                <li><a href="fitness-und-trendsportarten.html"><span class="dot"></span>Fitnesstraining &amp; Trends</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Beweglichkeit</a></li>
+                <li><a href="https://kar-reglermodell.vercel.app/index.html" target="_blank" rel="noopener" class="external-link"><span class="dot"></span>Koordination</a></li>
+                <li><a href="#" class="placeholder-link"><span class="dot"></span>Schnelligkeit</a></li>
+                <li><a class="active" href="ausdauer.html"><span class="dot"></span>Ausdauer</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Regeneration &amp; mentale Balance</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="stressmanagement-und-achtsamkeit.html" class="outer-link"><span class="dot"></span>Stressmanagement &amp; Achtsamkeit</a></li>
+                <li><a href="belastung-und-erholung.html" class="outer-link"><span class="dot"></span>Schlaf &amp; aktive Erholung</a></li>
+                <li><a href="sinn-und-persoenlichkeitsentwicklung.html" class="outer-link"><span class="dot"></span>Sinn &amp; Persönlichkeitsentwicklung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Ernährung &amp; gesunde Gewohnheiten</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="ernaehrung-und-gewohnheiten.html" class="outer-link"><span class="dot"></span>Gesunde Ernährung</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Persönliche Hygiene &amp; Körperpflege</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Drogenfreie Lebensführung</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Alltag, Lebensraum &amp; Umwelt</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Arbeitsplatz &amp; Alltag</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Umwelt &amp; Natur</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Soziale Gesundheit</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Soziale Kontakte &amp; Beziehungen</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>◇ Vorsorge &amp; Stabilität</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Prävention &amp; Regelmäßigkeit</a></li>
+                <li><a href="#" class="outer-link placeholder-link"><span class="dot"></span>Finanzielle Sicherheit &amp; Zukunft</a></li>
+            </ul>
+        </div>
+
+        <div class="theme-group collapsed">
+            <p class="theme-group-label" onclick="toggleAccordion(event)">
+                <span>Material &amp; Werkzeuge</span>
+                <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </p>
+            <ul>
+                <li><a href="../medienbibliothek.html"><span class="dot"></span>Medienbibliothek</a></li>
+                <li><a href="stressmanagement-und-achtsamkeit.html#praxisecke"><span class="dot"></span>Praxisecke: Entspannungsübungen</a></li>
+                <li><a href="../index.html#quellen"><span class="dot"></span>Quellen</a></li>
+                <li><a href="../index.html#quiz"><span class="dot"></span>Quiz</a></li>
+                <li><a href="../index.html#glossar"><span class="dot"></span>Glossar</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header class="theme-head">
+            <div class="badge">Ausdauertraining · Sekundarstufe I &amp; II · NRW</div>
+            <h1>Ausdauer im Schulsport – Dauerlauf macht Spaß</h1>
+            <p>Ausdauertraining motivierend und gesundheitsgerecht gestalten: Schülerinnen und Schüler entwickeln durch Wahrnehmung, Belastungssteuerung und reflektiertes Laufen ein individuell angemessenes Ausdauertraining – weit jenseits des bloßen Durchhaltens.</p>
+            <div class="theme-meta">
+                <span><strong>Schwerpunkt:</strong> Aerobe Ausdauer, Belastungssteuerung, Motivation</span>
+                <span><strong>Zielgruppe:</strong> Sek I (Kl. 5–10) und Sek II</span>
+                <span><strong>Grundlage:</strong> KLP Sport NRW · BF/SB 1 &amp; 3</span>
+            </div>
+        </header>
+
+        <p class="nav-anchor"><a href="../index.html">← Zur Startseite</a></p>
+
+        <div class="thumb-row">
+            <figure class="thumb-figure js-figure" role="button" tabindex="0"
+                    aria-label="Infografik „Ausdauer macht Spaß" vergrößern"
+                    data-full="../assets/images/Ausdauer%20macht%20spass.png"
+                    data-label="Ausdauer macht Spaß – Infografik zum Unterrichtsvorhaben Ausdauertraining im Schulsport">
+                <img src="../assets/images/Ausdauer%20macht%20spass.png"
+                     alt="Infografik „Ausdauer macht Spaß": Überblick über Lernprogression und Unterrichtsvorhaben"
+                     loading="eager"
+                     onerror="this.closest('.thumb-figure').style.display='none'">
+                <figcaption>
+                    <span class="fig-num">Lernweg-Infografik</span>
+                    <span class="fig-label">Ausdauer macht Spaß</span>
+                    <span class="fig-hint">Antippen zum Vergrößern</span>
+                </figcaption>
+            </figure>
+            <figure class="thumb-figure js-figure" role="button" tabindex="0"
+                    aria-label="DDA-Skala vergrößern"
+                    data-full="../assets/images/DDA_Skala1.png"
+                    data-label="DDA-Skala (Deddens &amp; Duwenbeck 2013) – 6-stufige subjektive Belastungsskala für den Schulsport">
+                <img src="../assets/images/DDA_Skala1.png"
+                     alt="DDA-Skala: 6 Belastungsstufen von sehr leicht bis maximal"
+                     loading="eager"
+                     onerror="this.closest('.thumb-figure').style.display='none'">
+                <figcaption>
+                    <span class="fig-num">DDA-Skala</span>
+                    <span class="fig-label">Deddens &amp; Duwenbeck 2013</span>
+                    <span class="fig-hint">Antippen zum Vergrößern</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <section class="section" style="max-width:none;padding:28px 0 40px;">
+
+            <!-- ============ TEIL A — GRUNDLAGEN ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil A</span>
+                <span class="part-title">Grundlagen: Warum Ausdauer im Schulsport?</span>
+                <span class="part-sub">Die pädagogische Legitimation des Ausdauertrainings und die Leitidee des motivierenden Dauerlaufs.</span>
+            </div>
+
+            <!-- §1 KONZEPT -->
+            <div class="prose-card" id="konzept">
+                <p class="section-eyebrow">Abschnitt 1</p>
+                <h3>Aerobe Ausdauer als Bildungsgegenstand</h3>
+                <p class="muted">Ausdauertraining zählt neben Kraft, Beweglichkeit, Koordination und Schnelligkeit zu den motorischen Grundeigenschaften, die im Schulsport erfahren und entwickelt werden. Es geht dabei nicht um maximale Leistung, sondern um Gesundheit, Körperwissen und lebenslange Sportteilhabe.</p>
+
+                <div class="term-box">
+                    <span class="term-word">Aerobe Ausdauer</span>
+                    <span class="term-def">Die Fähigkeit, eine Belastung über längere Zeit aufrechtzuerhalten, Ermüdung zu widerstehen und sich anschließend angemessen zu erholen. Im Schulsport wird sie vorrangig <strong>gesundheitsorientiert</strong> entwickelt – als präventiver Schutzfaktor für Herz-Kreislauf-System, Wohlbefinden und kognitive Leistungsfähigkeit.</span>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Kardiologische Prävention:</strong> Bewegungsmangel bedingt nachweislich kardiovaskuläre Pathologien in der zweiten Lebenshälfte. Ursachen wie Adipositas, Hypertonie und Fettstoffwechselstörungen werden oft in der Jugend grundgelegt. Aerobe Ausdaueraktivität im Schulsport ist daher ein hocheffektives präventives Schutzgut. <span class="ref">KLP Sport NRW, BF/SB 1</span></div>
+                    <div class="fact"><strong>Kognitive Wirkung:</strong> Regelmäßiges Ausdauertraining verbessert Konzentration, Gedächtnisleistung und Stressresistenz. Für Schülerinnen und Schüler sind dies unmittelbar relevant erlebbare Effekte jenseits der sportlichen Leistung. <span class="ref">Sportpädagogische Forschung</span></div>
+                    <div class="fact"><strong>Motivation als Schlüssel:</strong> Ausdauer wird im Schulsport häufig als anstrengend oder langweilig erlebt. Das didaktische Ziel ist deshalb nicht das bloße Durchhalten, sondern die Erfahrung, dass ausdauerndes Laufen durch Spielformen, Körperbewusstsein und Variation <em>Spaß machen kann</em>. <span class="ref">Duwenbeck – Dauerlauf macht Spaß</span></div>
+                </div>
+            </div>
+
+            <!-- §2 BELASTUNGSSTEUERUNG -->
+            <div class="prose-card" id="steuerung">
+                <p class="section-eyebrow">Abschnitt 2</p>
+                <h3>Belastungssteuerung: Die D&amp;D-Skala</h3>
+                <p class="muted">Zentrales Instrument für ein gesundheitsorientiertes Ausdauertraining ist die subjektive Belastungswahrnehmung. Die D&amp;D-Skala (Deddens &amp; Duwenbeck) operationalisiert diese im Schulkontext.</p>
+
+                <div class="dda-scale">
+                    <div class="dda-level dda-1">
+                        <div class="dda-num">1</div>
+                        <div class="dda-text"><strong>Sehr leicht</strong>Kaum spürbar – Ruhezustand oder leichtes Aufwärmen; keine Anstrengung wahrnehmbar</div>
+                    </div>
+                    <div class="dda-level dda-2">
+                        <div class="dda-num">2</div>
+                        <div class="dda-text"><strong>Leicht</strong>Angenehme Belastung – gut unterhalten, problemlos mehrere Sätze sprechen</div>
+                    </div>
+                    <div class="dda-level dda-3">
+                        <div class="dda-num">3</div>
+                        <div class="dda-text"><strong>Etwas anstrengend</strong>Aerober Zielbereich – kurze Sätze möglich, Atmung hörbar <span class="dda-target-badge">✓ Zielbereich</span></div>
+                    </div>
+                    <div class="dda-level dda-4">
+                        <div class="dda-num">4</div>
+                        <div class="dda-text"><strong>Anstrengend</strong>Oberer aerober Bereich – einzelne Wörter möglich, deutlich erhöhte Atemfrequenz <span class="dda-target-badge">✓ Zielbereich</span></div>
+                    </div>
+                    <div class="dda-level dda-5">
+                        <div class="dda-num">5</div>
+                        <div class="dda-text"><strong>Sehr anstrengend</strong>Anaerober Bereich – Sprechen kaum möglich, starkes Brennen in der Muskulatur</div>
+                    </div>
+                    <div class="dda-level dda-6">
+                        <div class="dda-num">6</div>
+                        <div class="dda-text"><strong>Maximal</strong>Absolute Grenzbelastung – Sprechen unmöglich, maximale Herzfrequenz</div>
+                    </div>
+                </div>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Subjektive Steuerung:</strong> Schülerinnen und Schüler lernen, Belastung nicht nur nach Tempo, sondern nach Körpergefühl – Atmung, Muskelwahrnehmung, subjektive Anstrengung – zu steuern und zu beurteilen. Dies fördert eigenverantwortliches Training über die Schule hinaus.</div>
+                    <div class="fact"><strong>Vergleich Puls vs. Gefühl:</strong> Durch die Gegenüberstellung von subjektivem Belastungsempfinden und objektivem Pulswert werden Kausalzusammenhänge erfahrbar. Schülerinnen und Schüler entwickeln ein kritisches Urteilsvermögen gegenüber Trainingssteuerung und Fitness-Trends.</div>
+                    <div class="fact"><strong>Differenzierung:</strong> Die D&amp;D-Skala ermöglicht es, Lerngruppen heterogen zu führen: Jede Person trainiert im individuell angemessenen Bereich, ohne Vergleich nach absoluter Geschwindigkeit oder Strecke.</div>
+                </div>
+            </div>
+
+            <!-- ============ TEIL B — MATERIALIEN ============ -->
+            <div class="part-divider">
+                <span class="part-num">Teil B</span>
+                <span class="part-title">Materialien &amp; Ressourcen</span>
+                <span class="part-sub">Zwei aufeinander abgestimmte Angebote für den Ausdauer-Unterricht – ein interaktives digitales Labor und ein vollständiges Unterrichtsvorhaben für Klasse 7.</span>
+            </div>
+
+            <!-- §3 RESSOURCEN -->
+            <div class="prose-card" id="ressourcen">
+                <p class="section-eyebrow">Abschnitt 3</p>
+                <h3>Zwei Angebote für den Ausdauer-Unterricht</h3>
+                <p class="muted">Das AusdauerLab bietet interaktive digitale Module für alle Jahrgangsstufen. Das Unterrichtsvorhaben „Dauerlauf macht Spaß" liefert einen vollständigen, bewährten Verlaufsplan für Klasse 7 (Sek I).</p>
+
+                <div class="resource-grid">
+
+                    <!-- AusdauerLab -->
+                    <div class="resource-card">
+                        <div>
+                            <div class="rc-badge">Externes Tool · AusdauerLab</div>
+                            <h3>AusdauerLab</h3>
+                        </div>
+                        <div class="rc-meta">
+                            <span>Klasse 5–13</span>
+                            <span>9 eigenständige Web-Apps</span>
+                            <span>Interaktiv</span>
+                        </div>
+                        <figure class="thumb-figure js-figure" role="button" tabindex="0" style="margin:4px 0 8px;"
+                                aria-label="AusdauerLab Screenshot vergrößern"
+                                data-full="../assets/images/screenshotAudauerlab.png"
+                                data-label="AusdauerLab – Übersicht der 9 eigenständigen Web-Anwendungen für den Schulsport">
+                            <img src="../assets/images/screenshotAudauerlab.png"
+                                 alt="Screenshot des AusdauerLabs mit Modulübersicht"
+                                 loading="lazy"
+                                 onerror="this.closest('.thumb-figure').style.display='none'">
+                            <figcaption>
+                                <span class="fig-num">Screenshot</span>
+                                <span class="fig-label">AusdauerLab – Modulübersicht</span>
+                                <span class="fig-hint">Antippen zum Vergrößern</span>
+                            </figcaption>
+                        </figure>
+                        <p>Das AusdauerLab ist eine Sammlung von <strong>9 eigenständigen Web-Anwendungen</strong> für den Schulsport – einsetzbar von Klasse 5 bis 13, unabhängig voneinander. Jede App behandelt einen eigenen Ausdauer-Schwerpunkt: von Pulsphysiologie und subjektiver Belastungssteuerung bis zu Ausdauertests und Energiesystemen. Die Apps laufen direkt im Browser, ohne Installation.</p>
+                        <p><strong>Module im Überblick:</strong></p>
+                        <div class="fact-list" style="margin-top:4px;">
+                            <div class="fact"><strong>Modul 01 – Basics:</strong> Pulsphysiologie interaktiv, D&amp;D-Skala einführen, Erholungskurve beobachten.</div>
+                            <div class="fact"><strong>Modul 02 – Lohnende Pause:</strong> Erholung als Steuerinstrument erforschen – in zwei Varianten (Einzel- und Klassen-Modus).</div>
+                            <div class="fact"><strong>Modul 03 – Belastungssteuerung:</strong> Subjektives Empfinden vs. Pulswert: Steigt der Puls systematisch mit der DDA-Stufe?</div>
+                            <div class="fact"><strong>Modul 06 – Ausdauer testen:</strong> 6-Min-, 12-Min-, Beep-Test und 30-Min-Lauf mit integriertem Timer und Schülerverwaltung.</div>
+                            <div class="fact"><strong>Modul 08 – Energiesysteme:</strong> ATP-PC, Glykolyse und aerobe Oxidation interaktiv visualisiert. Mit Schwellenkonzept und Quiz (Kl. 9–13).</div>
+                        </div>
+                        <div class="rc-actions">
+                            <a class="btn btn-primary" href="https://lp-2-tan.vercel.app/" target="_blank" rel="noopener">AusdauerLab öffnen ↗</a>
+                            <a class="btn" href="https://lp-2-tan.vercel.app/module/m01-basics/" target="_blank" rel="noopener">Modul 01 direkt starten ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- UV Klasse 7 -->
+                    <div class="resource-card">
+                        <div>
+                            <div class="rc-badge">Unterrichtsvorhaben · Klasse 7</div>
+                            <h3>Dauerlauf macht Spaß</h3>
+                        </div>
+                        <div class="rc-meta">
+                            <span>Klasse 7</span>
+                            <span>8 Unterrichtseinheiten</span>
+                            <span>Sek I · NRW</span>
+                        </div>
+                        <p>Ein vollständiges, erprobtes Unterrichtsvorhaben für die Sekundarstufe I: Ausdauerndes Laufen motivierend und gesundheitsgerecht gestalten. Schülerinnen und Schüler entwickeln über Wahrnehmung, Steuerung, Variation und Bewertung ein individuell angemessenes Ausdauertraining.</p>
+                        <p><strong>Reihenstruktur (8 UE):</strong></p>
+                        <div class="fact-list" style="margin-top:4px;">
+                            <div class="fact"><strong>UE 1–2:</strong> Tempowechselmethode als Ausgangslage; D&amp;D-Skala vs. Puls als Steuerungsgrößen.</div>
+                            <div class="fact"><strong>UE 3–5:</strong> Walking; kooperatives Laufen (6-Tage-Rennen, Tabu-Laufspiel); Orientierungslauf.</div>
+                            <div class="fact"><strong>UE 6–7:</strong> Freeletics-App kritisch erproben; kooperativer Wettkampf – „Goldene Ananas".</div>
+                            <div class="fact"><strong>UE 8:</strong> Leistungsüberprüfung: Kolloquium zur Beurteilung von Ausdauerformen.</div>
+                        </div>
+                        <p style="margin-top:8px;"><strong>Lehrplanbezug:</strong> BF/SB 1 (Körper wahrnehmen) &amp; BF/SB 3 (Leichtathletik), Perspektiven D, E, F – KLP Sport Sek I NRW.</p>
+                        <div class="rc-actions">
+                            <a class="btn btn-primary" href="ausdauer-unterrichtsvorhaben.html">Zum Unterrichtsvorhaben</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- §4 DIDAKTISCHE EINORDNUNG -->
+            <div class="prose-card" id="didaktik">
+                <p class="section-eyebrow">Abschnitt 4</p>
+                <h3>Didaktische Einordnung</h3>
+                <p class="muted">Beide Angebote verfolgen denselben pädagogischen Grundsatz: Belastung wird nicht nur erlebt, sondern beobachtet, gemessen, ausgewertet und beurteilt.</p>
+
+                <div class="fact-list">
+                    <div class="fact"><strong>Kompetenzorientierung:</strong> Schülerinnen und Schüler laufen nicht nur – sie erfassen Belastung, vergleichen Steuerungsgrößen, wählen Methoden und beurteilen deren motivationalen und gesundheitlichen Wert. Bewegungspraxis wird systematisch mit Sach-, Methoden- und Urteilskompetenz verbunden.</div>
+                    <div class="fact"><strong>Vom Erleben zum Verstehen:</strong> Das AusdauerLab schließt direkt an Praxiserfahrungen an: Erst erleben die Lernenden Belastung und Pulsreaktionen, dann erklären interaktive Module die biologischen Hintergründe. Dies fördert die Verknüpfung von Theorie und Praxis.</div>
+                    <div class="fact"><strong>Differenzierung:</strong> Beide Ressourcen ermöglichen individualisierende Unterrichtsführung. Die D&amp;D-Skala als gemeinsames Instrument verbindet das Unterrichtsvorhaben mit dem AusdauerLab: Schülerinnen und Schüler wenden dieselbe Methode in verschiedenen Kontexten an.</div>
+                    <div class="fact"><strong>Empfohlene Reihenfolge:</strong> AusdauerLab Modul 01 → UV UE 1–2 (Grundlagen und Steuerung) → AusdauerLab Modul 03 (DDA-Experiment) → UV UE 3–7 (Variation und Motivation) → AusdauerLab Modul 06 (Leistungsdiagnostik).</div>
+                </div>
+
+                <div class="callout">
+                    <strong>Hinweis zu digitalen Fitness-Trends:</strong> Die Freeletics-Stunde (UE 6) und das AusdauerLab sind bewusst kritisch-reflexiv gerahmt. Schülerinnen und Schüler sollen nicht einfach Apps nutzen, sondern Belastung, Technik, Spaß, Risiken und Passung zur eigenen Gesundheit eigenständig beurteilen – eine wesentliche Kompetenz für lebenslanges Sporttreiben.
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <nav class="page-toc" id="pageToc" aria-label="Auf dieser Seite">
+        <p class="page-toc-title">Auf dieser Seite</p>
+
+        <p class="toc-section-label">A · Grundlagen</p>
+        <ul>
+            <li><a href="#konzept">Aerobe Ausdauer als Bildungsgegenstand</a></li>
+            <li><a href="#steuerung">Belastungssteuerung &amp; D&amp;D-Skala</a></li>
+        </ul>
+
+        <p class="toc-section-label">B · Materialien</p>
+        <ul>
+            <li><a href="#ressourcen">AusdauerLab &amp; Unterrichtsvorhaben</a></li>
+            <li><a href="#didaktik">Didaktische Einordnung</a></li>
+        </ul>
+    </nav>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../assets/images/Straight Edge Media Logo schwarz.png" alt="Straight Edge Media" class="footer-logo" onerror="this.style.display='none'">
+        © 2026 Straight Edge Media · Fitness im Schulsport · Material für Lehramt Sport · v1.0.9<br>
+        <a href="../impressum.html">Impressum</a> · <a href="mailto:sme@oneonone.de">sme@oneonone.de</a> · <a href="https://sportunterricht.eu" target="_blank" rel="noopener">sportunterricht.eu</a>
+        <div class="footer-support-buttons" style="margin-top:10px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center;">
+            <a href="https://ko-fi.com/R5R319DK8N" target="_blank" rel="noopener noreferrer"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" border="0" alt="Buy Me a Coffee at ko-fi.com"></a>
+            <a href="https://www.buymeacoffee.com/rduwenbecky" target="_blank" rel="noopener noreferrer"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" style="height:36px !important;width:auto !important;"></a>
+        </div>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Grafik-Vollansicht">
+    <div class="lb-topbar">
+        <span class="lb-label" id="lbLabel"></span>
+        <div class="lb-controls">
+            <button class="lb-btn" id="btnPrev" onclick="navLightbox(-1)" title="Vorherige Grafik">‹ Zurück</button>
+            <button class="lb-btn" onclick="zoomOut()" title="Verkleinern">−</button>
+            <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
+            <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
+            <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
+            <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
+        </div>
+    </div>
+    <div class="lb-scroll" id="lbScroll">
+        <div class="lb-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleAccordion(e) {
+    e.preventDefault();
+    const label = e.target.closest('.theme-group-label');
+    if (!label) return;
+    const group = label.closest('.theme-group');
+    const isOpen = group.classList.contains('open');
+
+    const allGroups = document.querySelectorAll('.theme-group');
+    allGroups.forEach(g => {
+        if (g.classList.contains('open') && g !== group) {
+            g.classList.remove('open');
+            g.classList.add('collapsed');
+        }
+    });
+
+    group.classList.toggle('open');
+    group.classList.toggle('collapsed');
+}
+
+function toggleThemeNav() {
+    document.getElementById('themeNav').classList.toggle('open');
+}
+
+const themeNavToggle = document.getElementById('themeNavToggle');
+if (themeNavToggle) {
+    themeNavToggle.addEventListener('click', function(e) {
+        toggleThemeNav();
+    });
+}
+
+document.querySelectorAll('.theme-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('themeNav').classList.remove('open');
+    });
+});
+
+const figures = Array.from(document.querySelectorAll('.js-figure'));
+const IMAGES = figures.map(f => ({ src: f.dataset.full, label: f.dataset.label }));
+
+let currentIdx = 0;
+let currentZoom = 1;
+const ZOOM_STEP = 0.25, ZOOM_MAX = 4, ZOOM_MIN = 0.5;
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbLabel = document.getElementById('lbLabel');
+const lbScroll = document.getElementById('lbScroll');
+const zoomPct = document.getElementById('zoomPct');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+
+function openLightbox(idx) {
+    currentIdx = idx;
+    currentZoom = 1;
+    setImage(currentIdx);
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbScroll.scrollTo(0, 0);
+}
+
+function setImage(idx) {
+    const d = IMAGES[idx];
+    lbImg.src = d.src;
+    lbImg.alt = d.label;
+    lbLabel.textContent = d.label;
+    btnPrev.disabled = idx === 0;
+    btnNext.disabled = idx === IMAGES.length - 1;
+    updateZoom();
+}
+
+function navLightbox(dir) {
+    const next = currentIdx + dir;
+    if (next < 0 || next >= IMAGES.length) return;
+    currentIdx = next;
+    currentZoom = 1;
+    lbScroll.scrollTo(0, 0);
+    setImage(currentIdx);
+}
+
+function closeLightbox() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+}
+
+function updateZoom() {
+    const vw = window.innerWidth - 40;
+    const vh = window.innerHeight - 90;
+    if (currentZoom === 1) {
+        lbImg.style.width = '';
+        lbImg.style.maxWidth = vw + 'px';
+        lbImg.style.maxHeight = vh + 'px';
+    } else {
+        const base = Math.min(vw, lbImg.naturalWidth || vw);
+        lbImg.style.maxWidth = 'none';
+        lbImg.style.maxHeight = 'none';
+        lbImg.style.width = (base * currentZoom) + 'px';
+    }
+    zoomPct.textContent = Math.round(currentZoom * 100) + '%';
+}
+
+function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
+function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
+function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+
+lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === '+') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') zoomReset();
+});
+
+window.addEventListener('resize', () => { if (lb.classList.contains('active')) updateZoom(); });
+
+figures.forEach((f, i) => {
+    f.addEventListener('click', () => openLightbox(i));
+    f.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+    });
+});
+
+(function() {
+    const tocLinks = document.querySelectorAll('.page-toc a[href^="#"]');
+    if (!tocLinks.length || !window.IntersectionObserver) return;
+    const targets = Array.from(tocLinks).map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting)
+                tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+        });
+    }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+    targets.forEach(t => obs.observe(t));
+})();
+</script>
+</body>
+</html>
