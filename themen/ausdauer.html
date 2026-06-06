@@ -519,6 +519,13 @@
             <button class="lb-btn" id="zoomPct" style="min-width:52px;cursor:default;" disabled>100%</button>
             <button class="lb-btn" onclick="zoomIn()" title="Vergrößern">＋</button>
             <button class="lb-btn" onclick="zoomReset()" title="Zoom zurücksetzen">↺</button>
+            <button class="lb-btn" onclick="printLightboxImage()" title="Drucken / Als PDF speichern">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"/>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                    <rect x="6" y="14" width="12" height="8"/>
+                </svg>
+            </button>
             <button class="lb-btn" id="btnNext" onclick="navLightbox(1)" title="Nächste Grafik">Weiter ›</button>
             <button class="lb-btn lb-btn-close" onclick="closeLightbox()" title="Schließen">✕</button>
         </div>
@@ -635,6 +642,20 @@ function updateZoom() {
 function zoomIn() { currentZoom = Math.min(currentZoom + ZOOM_STEP, ZOOM_MAX); updateZoom(); }
 function zoomOut() { currentZoom = Math.max(currentZoom - ZOOM_STEP, ZOOM_MIN); updateZoom(); }
 function zoomReset() { currentZoom = 1; lbScroll.scrollTo(0, 0); updateZoom(); }
+
+function printLightboxImage() {
+    const w = window.open('', '', 'width=900,height=700');
+    w.document.write(
+        '<html><head><title>' + lbLabel.textContent + '</title>' +
+        '<style>body{margin:0;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;font-family:sans-serif;}' +
+        'img{max-width:100%;max-height:85vh;object-fit:contain;}' +
+        'p{margin:12px 0 0;font-size:.85rem;color:#555;}</style></head>' +
+        '<body><img src="' + lbImg.src + '" alt="' + lbLabel.textContent + '">' +
+        '<p>' + lbLabel.textContent + '</p></body></html>'
+    );
+    w.document.close();
+    setTimeout(() => w.print(), 400);
+}
 
 lbScroll.addEventListener('click', e => { if (e.target === lbScroll) closeLightbox(); });
 
